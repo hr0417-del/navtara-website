@@ -1,0 +1,94 @@
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered Delay Utilities */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* Parallax Wrapper */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Hover effects for images */
+.hover-zoom {
+  overflow: hidden;
+}
+
+.hover-zoom img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-zoom:hover img {
+  transform: scale(1.1);
+}
+
+/* ─── Curtain Reveal ─── */
+.curtain-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.curtain-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent-dark);
+  transform: translateX(0%);
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 2;
+}
+
+.curtain-wrap.curtain-open::after {
+  transform: translateX(101%);
+}
+
+.curtain-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.curtain-wrap.curtain-open img {
+  transform: scale(1);
+}

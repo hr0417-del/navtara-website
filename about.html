@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Navtara Projects Pvt. Ltd.</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <style>
+        .page-header {
+            padding: 120px 0 var(--space-xl);
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-align: center;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .about-stat-card {
+            background: var(--color-light-grey);
+            padding: var(--space-md);
+            border-radius: 8px;
+            border-left: 4px solid var(--color-accent-dark);
+        }
+
+        .about-stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .mission-vision {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+        }
+
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                NV <span>NAVTARA</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" style="color: var(--color-accent);">About</a>
+                <a href="capabilities.html">Capabilities</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container reveal">
+            <h1 class="heading-lg">About Us</h1>
+            <p class="body-lg text-light" style="max-width: 600px; margin: 1rem auto 0; opacity: 0.8;">
+                Built on a foundation of technical mastery and strategic vision.
+            </p>
+        </div>
+    </header>
+
+    <!-- About Content -->
+    <section class="section-padding">
+        <div class="container about-grid">
+            <div class="reveal-left">
+                <h2 class="heading-lg">Engineering Excellence, Real-world Execution.</h2>
+                <p class="body-lg" style="margin-top: var(--space-sm);">
+                    Navtara Projects Pvt. Ltd. stands at the intersection of deep engineering expertise and real-world industrial execution. Founded by industry veterans, the company brings together a high-performance team of engineers, designers, and technicians to deliver robust, precision-driven heavy engineering solutions that solve complex industrial challenges with efficiency and reliability.
+                </p>
+                <p class="body-lg" style="margin-top: var(--space-sm);">
+                    At Navtara, we go beyond conventional project delivery—we become long-term partners in our clients' growth journey. Every solution we design is aligned with the principles of durability, sustainability, and operational excellence, ensuring that industries not only perform today but are ready for tomorrow.
+                </p>
+                
+                <div class="about-stats delay-200">
+                    <div class="about-stat-card">
+                        <div class="about-stat-number">5+</div>
+                        <div>Core Industries Served</div>
+                    </div>
+                    <div class="about-stat-card">
+                        <div class="about-stat-number">PAN</div>
+                        <div>India Execution</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image curtain-wrap reveal-right delay-100" style="height: 450px;">
+                <img src="assets/images/fabrication.png" alt="Navtara Operations">
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section-padding mission-vision">
+        <div class="container grid-2">
+            <div class="reveal-left">
+                <h3 class="heading-md text-accent">Our Mission</h3>
+                <p class="body-lg text-light" style="margin-top: var(--space-sm);">
+                    To provide world-class heavy engineering and industrial solutions through a commitment to quality, safety, and innovation. We strive to empower core industries by delivering mission-critical projects on time, every time.
+                </p>
+            </div>
+            <div class="reveal-right delay-100">
+                <h3 class="heading-md text-accent">Our Vision</h3>
+                <p class="body-lg text-light" style="margin-top: var(--space-sm);">
+                    To be the most trusted and capable engineering partner for the infrastructure, power, steel, and cement sectors globally, recognized for our unwavering dedication to excellence and sustainable growth.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-primary text-light">
+        <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
+            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/cursor.js"></script>
+</body>
+</html>

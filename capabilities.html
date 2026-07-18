@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Capabilities | Navtara Projects Pvt. Ltd.</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <style>
+        .page-header {
+            padding: 120px 0 var(--space-xl);
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-align: center;
+        }
+
+        .cap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .cap-card {
+            background: var(--color-white);
+            border-radius: 8px;
+            padding: var(--space-lg) var(--space-md);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition-slow);
+            border-bottom: 4px solid transparent;
+            text-align: center;
+        }
+
+        .cap-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--color-accent-dark);
+        }
+
+        .cap-icon {
+            font-size: 3rem;
+            color: var(--color-accent-dark);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .cap-title {
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+            font-size: 1.25rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .workflow-section {
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-align: center;
+            padding: var(--space-xl) 0;
+        }
+
+        .workflow-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .workflow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.8;
+            transition: var(--transition-fast);
+        }
+
+        .workflow-step:hover {
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+
+        .workflow-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+        }
+        
+        .workflow-arrow {
+            color: var(--color-accent);
+            font-size: 2rem;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .workflow-arrow {
+                transform: rotate(90deg);
+                margin: 1rem 0;
+            }
+            .workflow-steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                NV <span>NAVTARA</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="capabilities.html" style="color: var(--color-accent);">Capabilities</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container reveal">
+            <h1 class="heading-lg">End-to-End Capabilities</h1>
+            <p class="body-lg text-light" style="max-width: 600px; margin: 1rem auto 0; opacity: 0.8;">
+                Built on Expertise. Delivered with Precision.
+            </p>
+        </div>
+    </header>
+
+    <!-- Capabilities Grid -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center reveal">
+                <h2 class="heading-lg">Core Services</h2>
+                <p class="body-lg" style="margin-top: var(--space-sm);">Integrated solutions for complex industrial challenges.</p>
+            </div>
+
+            <div class="cap-grid">
+                <!-- 1 -->
+                <div class="cap-card reveal delay-100">
+                    <div class="cap-icon">⚙️</div>
+                    <h3 class="cap-title">Fabrication</h3>
+                    <p>Precision fabrication of heavy structural, mechanical, and process equipment as per international standards.</p>
+                </div>
+                <!-- 2 -->
+                <div class="cap-card reveal delay-200">
+                    <div class="cap-icon">🏗️</div>
+                    <h3 class="cap-title">Erection</h3>
+                    <p>Safe and efficient erection of structures, equipment, piping, and mechanical systems with expert execution.</p>
+                </div>
+                <!-- 3 -->
+                <div class="cap-card reveal delay-300">
+                    <div class="cap-icon">🖌️</div>
+                    <h3 class="cap-title">Painting & Coating</h3>
+                    <p>Industrial painting and protective coatings for corrosion resistance, aesthetics, and long-term durability.</p>
+                </div>
+                <!-- 4 -->
+                <div class="cap-card reveal delay-100">
+                    <div class="cap-icon">🏭</div>
+                    <h3 class="cap-title">Sheeting</h3>
+                    <p>High-quality sheeting solutions for industrial buildings, warehouses, and process infrastructure.</p>
+                </div>
+                <!-- 5 -->
+                <div class="cap-card reveal delay-200">
+                    <div class="cap-icon">🧱</div>
+                    <h3 class="cap-title">Civil Work</h3>
+                    <p>Reliable civil engineering and construction for industrial foundations, infrastructure, and commercial facilities.</p>
+                </div>
+                <!-- 6 -->
+                <div class="cap-card reveal delay-300">
+                    <div class="cap-icon">🔧</div>
+                    <h3 class="cap-title">Industrial Maintenance</h3>
+                    <p>Comprehensive plant maintenance, mechanical shutdowns, and repairs ensuring uninterrupted operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Execution Workflow -->
+    <section class="workflow-section">
+        <div class="container reveal">
+            <h2 class="heading-lg text-white">Our Execution Process</h2>
+            <p class="body-lg text-light" style="margin-top: var(--space-sm); opacity: 0.8;">A systematic approach to flawless project delivery.</p>
+            
+            <div class="workflow-steps reveal delay-200">
+                <div class="workflow-step">
+                    <div class="workflow-circle">1</div>
+                    <h4 style="margin-top: 10px;">Consult & Plan</h4>
+                </div>
+                <div class="workflow-arrow">➔</div>
+                <div class="workflow-step">
+                    <div class="workflow-circle">2</div>
+                    <h4 style="margin-top: 10px;">Design & Engineer</h4>
+                </div>
+                <div class="workflow-arrow">➔</div>
+                <div class="workflow-step">
+                    <div class="workflow-circle">3</div>
+                    <h4 style="margin-top: 10px;">Procure & Execute</h4>
+                </div>
+                <div class="workflow-arrow">➔</div>
+                <div class="workflow-step">
+                    <div class="workflow-circle">4</div>
+                    <h4 style="margin-top: 10px;">Test & Commission</h4>
+                </div>
+                <div class="workflow-arrow">➔</div>
+                <div class="workflow-step">
+                    <div class="workflow-circle">5</div>
+                    <h4 style="margin-top: 10px;">Handover</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-primary text-light" style="border-top: none;">
+        <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
+            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/cursor.js"></script>
+</body>
+</html>

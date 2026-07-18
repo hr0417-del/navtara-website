@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality & Safety | Navtara Projects Pvt. Ltd.</title>
+    <meta name="description" content="Navtara's rigorous Quality and Safety Management System ensures every project is delivered to the highest standards.">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <style>
+        .page-header {
+            padding: 120px 0 var(--space-xl);
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-align: center;
+        }
+
+        /* ─── Timeline ─── */
+        .timeline-section {
+            padding: var(--space-xl) 0;
+            background: var(--color-light-grey);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: var(--space-lg) auto 0;
+            padding: 0 var(--space-md);
+        }
+
+        /* The vertical connecting line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom,
+                var(--color-accent-dark),
+                var(--color-secondary),
+                var(--color-accent-dark));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 50px);
+            position: relative;
+            margin-bottom: var(--space-lg);
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 50px);
+            transform: translateX(40px);
+        }
+
+        .timeline-item.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* The circle node on the line */
+        .timeline-node {
+            position: absolute;
+            left: 50%;
+            top: 24px;
+            transform: translateX(-50%);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            border: 3px solid var(--color-accent-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-item.active .timeline-node {
+            background: var(--color-accent-dark);
+            box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
+        }
+
+        .timeline-card {
+            background: var(--color-white);
+            border-radius: 10px;
+            padding: var(--space-md);
+            max-width: 340px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--color-accent-dark);
+        }
+
+        .timeline-card h3 {
+            color: var(--color-primary);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-card p {
+            color: var(--color-dark-grey);
+            font-size: 0.95rem;
+        }
+
+        /* ─── Why Quality Matters ─── */
+        .quality-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .pillar-card {
+            background: var(--color-white);
+            border-radius: 10px;
+            padding: var(--space-md);
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            transition: transform 0.4s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .pillar-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        /* ─── Certifications Band ─── */
+        .cert-band {
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: var(--space-lg) 0;
+            text-align: center;
+        }
+
+        .cert-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+            margin-top: var(--space-md);
+        }
+
+        .cert-badge {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 1rem 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before { left: 30px; }
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-left: 90px;
+                padding-right: 0;
+            }
+            .timeline-node {
+                left: 30px;
+                transform: translateX(-50%);
+            }
+            .timeline-card { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">NV <span>NAVTARA</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="capabilities.html">Capabilities</a>
+                <a href="projects.html">Projects</a>
+                <a href="quality.html" style="color: var(--color-accent);">Quality & Safety</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container reveal">
+            <h1 class="heading-lg">Quality & Safety</h1>
+            <p class="body-lg text-light" style="max-width: 600px; margin: 1rem auto 0; opacity: 0.8;">
+                Every project executed under a rigorous, end-to-end quality management framework.
+            </p>
+        </div>
+    </header>
+
+    <!-- Quality Pillars -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center reveal">
+                <h2 class="heading-lg">Our Commitment</h2>
+                <p class="body-lg" style="margin-top: var(--space-sm);">Quality and safety are not afterthoughts. They are built into every phase of execution.</p>
+            </div>
+            <div class="quality-pillars">
+                <div class="pillar-card reveal delay-100">
+                    <div class="pillar-icon">🛡️</div>
+                    <h3 class="heading-md">Safety First</h3>
+                    <p>Zero-compromise safety culture on every site. Full PPE compliance, toolbox talks, and risk assessment protocols before work commences.</p>
+                </div>
+                <div class="pillar-card reveal delay-200">
+                    <div class="pillar-icon">🔬</div>
+                    <h3 class="heading-md">NDT Inspection</h3>
+                    <p>Non-Destructive Testing on all critical welds and structural joints—UT, RT, and MPI as per client specifications.</p>
+                </div>
+                <div class="pillar-card reveal delay-300">
+                    <div class="pillar-icon">📋</div>
+                    <h3 class="heading-md">Documentation</h3>
+                    <p>Complete traceability from material receipt to final dispatch—MTC, inspection reports, and as-built records maintained for every package.</p>
+                </div>
+                <div class="pillar-card reveal delay-400">
+                    <div class="pillar-icon">✅</div>
+                    <h3 class="heading-md">Client Witness Points</h3>
+                    <p>Structured Hold Points and Witness Points built into the ITP so clients and third-party inspectors can verify quality at every critical stage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Workflow Timeline -->
+    <section class="timeline-section">
+        <div class="container text-center reveal">
+            <h2 class="heading-lg">Our Quality Workflow</h2>
+            <p class="body-lg" style="margin-top: var(--space-sm);">A disciplined process from raw material to final delivery.</p>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item tl-item">
+                <div class="timeline-node">📦</div>
+                <div class="timeline-card">
+                    <h3>Material Inspection</h3>
+                    <p>All incoming raw materials are inspected against Mill Test Certificates (MTC). Dimensions, heat number, and chemical composition are verified before acceptance.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item tl-item">
+                <div class="timeline-node">⚙️</div>
+                <div class="timeline-card">
+                    <h3>Fabrication</h3>
+                    <p>Fabrication carried out as per approved drawings by qualified welders. In-process dimensional checks performed at each stage. WPS/PQR compliance maintained throughout.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item tl-item">
+                <div class="timeline-node">🔬</div>
+                <div class="timeline-card">
+                    <h3>NDT Testing</h3>
+                    <p>Non-Destructive Testing (UT, RT, MPI) performed on all critical weld joints by ASNT certified technicians. Reports reviewed and accepted before proceeding.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item tl-item">
+                <div class="timeline-node">🖌️</div>
+                <div class="timeline-card">
+                    <h3>Surface Preparation & Painting</h3>
+                    <p>Abrasive blasting to Sa 2.5 followed by primer and final coat application as per approved painting scheme. DFT checks at each coat.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item tl-item">
+                <div class="timeline-node">🔍</div>
+                <div class="timeline-card">
+                    <h3>Final Inspection</h3>
+                    <p>Pre-dispatch inspection by client and/or third party. Dimensional check, paint DFT, weld review, and documentation package audit completed.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item tl-item">
+                <div class="timeline-node">🚚</div>
+                <div class="timeline-card">
+                    <h3>Dispatch</h3>
+                    <p>Secure packaging, proper marking and tagging, and dispatch documentation including packing list, MTC copies, and inspection clearance issued before shipment.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Certifications Band -->
+    <section class="cert-band">
+        <div class="container reveal">
+            <h2 class="heading-md">Standards We Work To</h2>
+            <div class="cert-logos">
+                <div class="cert-badge">IS / BS Standards</div>
+                <div class="cert-badge">ASME Codes</div>
+                <div class="cert-badge">AWS D1.1</div>
+                <div class="cert-badge">SSPC / NACE Coatings</div>
+                <div class="cert-badge">Client-Specific ITPs</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-primary text-light" style="border-top: none;">
+        <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
+            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/cursor.js"></script>
+    <script>
+        /* Timeline scroll animation */
+        const tlItems = document.querySelectorAll('.tl-item');
+        const tlObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    tlObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        tlItems.forEach(item => tlObserver.observe(item));
+    </script>
+</body>
+</html>

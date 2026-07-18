@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries We Serve | Navtara Projects Pvt. Ltd.</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <style>
+        .page-header {
+            padding: 120px 0 var(--space-xl);
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-align: center;
+        }
+
+        .industry-showcase {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            margin-top: var(--space-lg);
+        }
+
+        .industry-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+
+        .industry-row:nth-child(even) .industry-text {
+            order: -1;
+        }
+
+        .industry-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .industry-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .industry-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .industry-text h3 {
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        @media (max-width: 768px) {
+            .industry-row {
+                grid-template-columns: 1fr;
+            }
+            .industry-row:nth-child(even) .industry-text {
+                order: 0;
+            }
+            .industry-image img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                NV <span>NAVTARA</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="capabilities.html">Capabilities</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container reveal">
+            <h1 class="heading-lg">Industries We Serve</h1>
+            <p class="body-lg text-light" style="max-width: 600px; margin: 1rem auto 0; opacity: 0.8;">
+                Delivering engineered solutions that drive 5 core sectors forward.
+            </p>
+        </div>
+    </header>
+
+    <!-- Industries Showcase -->
+    <section class="section-padding">
+        <div class="container industry-showcase">
+            
+            <!-- Industry 1 -->
+            <div class="industry-row reveal">
+                <div class="industry-image">
+                    <img src="assets/images/fabrication.png" alt="Steel Industry">
+                </div>
+                <div class="industry-text">
+                    <h3>Steel</h3>
+                    <p class="body-lg">
+                        We provide high-performance structures, fabrication, and erection systems tailored for the demanding environments of the steel industry. Our solutions ensure structural integrity and operational efficiency for steel manufacturing plants.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Industry 2 -->
+            <div class="industry-row reveal delay-100">
+                <div class="industry-image">
+                    <img src="assets/images/hero.png" alt="Power Plants">
+                </div>
+                <div class="industry-text">
+                    <h3>Power Plants</h3>
+                    <p class="body-lg">
+                        Reliable engineering and construction for power generation and energy infrastructure. From structural erection to critical piping systems, we support thermal and renewable energy projects with zero compromise on safety.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Industry 3 -->
+            <div class="industry-row reveal delay-100">
+                <div class="industry-image">
+                    <div style="background: var(--color-secondary); width: 100%; height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">🏭</div>
+                </div>
+                <div class="industry-text">
+                    <h3>Cement</h3>
+                    <p class="body-lg">
+                        Engineering excellence for cement manufacturing and processing plants. We handle complex structural fabrication, material handling systems, and large-scale silos required by top cement producers across India.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-primary text-light">
+        <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
+            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/cursor.js"></script>
+</body>
+</html>

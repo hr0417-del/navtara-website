@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navtara Projects Pvt. Ltd. | Heavy Engineering & Industrial Solutions</title>
+    <meta name="description" content="Navtara Projects Pvt. Ltd. delivers mission-critical heavy engineering, fabrication, and industrial construction projects across India.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Internal CSS for index.html specific layout -->
+    <style>
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.7)), url('assets/images/hero.png') center/cover no-repeat;
+            color: var(--color-white);
+        }
+        .hero-content {
+            max-width: 900px;
+        }
+        .hero .subheadline {
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-white);
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+        .stat-card {
+            text-align: center;
+            padding: var(--space-md);
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+        .stat-card:last-child { border-right: none; }
+        .stat-number {
+            font-size: 4rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            color: var(--color-accent);
+            margin-bottom: var(--space-xs);
+        }
+        .stat-number span { font-size: 2.5rem; }
+        .stat-label {
+            font-size: 1.125rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Industries Section */
+        .industry-card {
+            position: relative;
+            height: 400px;
+            background: var(--color-charcoal);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: var(--space-md);
+            cursor: pointer;
+            transition: var(--transition-slow);
+        }
+        .industry-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 25, 47, 0.9) 0%, rgba(10, 25, 47, 0.2) 100%);
+            z-index: 1;
+            transition: var(--transition-fast);
+        }
+        .industry-card:hover::before {
+            background: linear-gradient(to top, rgba(10, 25, 47, 0.95) 0%, rgba(0, 163, 255, 0.4) 100%);
+        }
+        .industry-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+            opacity: 0.6;
+        }
+        .industry-card:hover img {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+        .industry-content {
+            position: relative;
+            z-index: 2;
+            color: var(--color-white);
+        }
+        .industry-content h3 {
+            color: var(--color-white);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        /* Capabilities List */
+        .capability-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+        .cap-item {
+            padding: var(--space-md);
+            background: var(--color-light-grey);
+            border-radius: 8px;
+            border-left: 4px solid var(--color-accent-dark);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                NV <span>NAVTARA</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="capabilities.html">Capabilities</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="menu-toggle">☰</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-content reveal">
+            <p class="subheadline delay-100">Engineering Strength • Delivering Reliability</p>
+            <h1 class="heading-xl text-light delay-200">Engineering Industrial Excellence. Delivering Mission-Critical Projects.</h1>
+            <p class="body-lg text-light delay-300" style="margin-top: 1rem; max-width: 600px;">
+                Heavy Engineering • Fabrication • Industrial Construction • Surface Protection • EPC Support
+            </p>
+            <div class="hero-buttons delay-400">
+                <a href="capabilities.html" class="btn btn-primary">Explore Capabilities</a>
+                <a href="projects.html" class="btn btn-outline">View Projects</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trusted By Section (Infinite Marquee) -->
+    <section class="section-padding-sm bg-light">
+        <div class="container text-center reveal" style="margin-bottom: 2rem;">
+            <p style="font-weight: 700; letter-spacing: 3px; font-size: 0.8rem; text-transform: uppercase; color: var(--color-dark-grey); opacity: 0.6;">TRUSTED PARTNER TO INDIA'S INDUSTRY LEADERS</p>
+        </div>
+        <div class="marquee-wrapper">
+            <div class="marquee-track">
+                <!-- Set 1 -->
+                <span class="marquee-item">TATA PROJECTS <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">LARSEN &amp; TOUBRO <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">JINDAL STEEL &amp; POWER <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">ACC LIMITED <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">ISGEC HEAVY ENGINEERING <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">KEC INTERNATIONAL <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">MAHAGENCO <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">MAHA CEMENT <span class="marquee-divider">✦</span></span>
+                <!-- Set 2 (duplicate for seamless loop) -->
+                <span class="marquee-item">TATA PROJECTS <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">LARSEN &amp; TOUBRO <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">JINDAL STEEL &amp; POWER <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">ACC LIMITED <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">ISGEC HEAVY ENGINEERING <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">KEC INTERNATIONAL <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">MAHAGENCO <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">MAHA CEMENT <span class="marquee-divider">✦</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Counters -->
+    <section class="section-padding stats-section">
+        <div class="container grid-4">
+            <div class="stat-card reveal-left">
+                <div class="stat-number"><span class="counter-value" data-target="100">0</span><span>+</span></div>
+                <div class="stat-label">Projects Executed</div>
+            </div>
+            <div class="stat-card reveal-left delay-100">
+                <div class="stat-number"><span class="counter-value" data-target="30">0</span><span>+</span></div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-card reveal-right delay-100">
+                <div class="stat-number"><span class="counter-value" data-target="10">0</span><span>+</span></div>
+                <div class="stat-label">States Served</div>
+            </div>
+            <div class="stat-card reveal-right">
+                <div class="stat-number"><span class="counter-value" data-target="250">0</span><span>+</span></div>
+                <div class="stat-label">Skilled Professionals</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center reveal" style="margin-bottom: var(--space-lg);">
+                <h2 class="heading-lg">Industries We Serve</h2>
+                <p class="body-lg" style="max-width: 600px; margin: 0 auto;">Delivering engineered solutions that drive core sectors forward.</p>
+            </div>
+            
+            <div class="grid-3">
+                <div class="industry-card reveal delay-100">
+                    <img src="assets/images/fabrication.png" alt="Steel Industry">
+                    <div class="industry-content">
+                        <h3>Steel</h3>
+                        <p>High-performance structures and systems for the steel industry.</p>
+                    </div>
+                </div>
+                <div class="industry-card reveal delay-200">
+                    <img src="assets/images/hero.png" alt="Power Plants">
+                    <div class="industry-content">
+                        <h3>Power Plants</h3>
+                        <p>Reliable engineering for power generation and energy infrastructure.</p>
+                    </div>
+                </div>
+                <div class="industry-card reveal delay-300">
+                    <div style="background: var(--color-secondary); position: absolute; inset: 0; opacity: 0.5;"></div>
+                    <div class="industry-content">
+                        <h3>Mining & Cement</h3>
+                        <p>Robust solutions for material handling and processing plants.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div class="reveal-left">
+                    <h2 class="heading-lg">Our Capabilities</h2>
+                    <p class="body-lg" style="margin-bottom: var(--space-md);">End-to-End Engineering • Built on Expertise • Delivered with Precision. We execute projects with strict adherence to quality, safety and timelines.</p>
+                    <a href="capabilities.html" class="btn btn-primary">View All Services</a>
+                </div>
+                <div class="capability-list reveal-right">
+                    <div class="cap-item">
+                        <h4 class="heading-md">Fabrication</h4>
+                        <p>Precision fabrication of heavy structural and process equipment.</p>
+                    </div>
+                    <div class="cap-item">
+                        <h4 class="heading-md">Erection</h4>
+                        <p>Safe and efficient erection of structures, equipment, and piping.</p>
+                    </div>
+                    <div class="cap-item">
+                        <h4 class="heading-md">Surface Protection</h4>
+                        <p>Industrial painting and protective coatings for long-term durability.</p>
+                    </div>
+                    <div class="cap-item">
+                        <h4 class="heading-md">Civil Works</h4>
+                        <p>Reliable civil engineering and construction for industrial projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-primary text-light">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+                        NV <span>NAVTARA</span>
+                    </a>
+                    <p style="opacity: 0.7; max-width: 300px;">Navtara Projects Pvt. Ltd. stands at the intersection of deep engineering expertise and real-world industrial execution.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Project Portfolio</a></li>
+                        <li><a href="capabilities.html">Capabilities</a></li>
+                        <li><a href="machinery.html">Plant & Machinery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="quality.html">Quality & Safety</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p style="opacity: 0.7; margin-bottom: 0.5rem;">Email: info@navtaraprojects.com</p>
+                    <p style="opacity: 0.7;">Corporate Office: India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved. Designed for Excellence.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/cursor.js"></script>
+</body>
+</html>
