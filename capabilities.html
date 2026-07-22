@@ -4,242 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Capabilities | Navtara Projects Pvt. Ltd.</title>
-    <meta name="description" content="End-to-end heavy engineering capabilities: fabrication, erection, painting, civil works, and industrial maintenance.">
-    <meta property="og:title" content="Capabilities | Navtara Projects">
+    <meta name="description" content="Explore Navtara Projects' core heavy engineering capabilities: Structural Fabrication, Mechanical Equipment Erection, Surface Protection, and Industrial Civil Infrastructure.">
+    <meta property="og:title" content="Engineering Capabilities | Navtara Projects">
     <meta property="og:image" content="assets/images/hero.png">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <!-- CSS -->
+
+    <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/fixes.css">
-    
+
     <style>
-        .page-header {
-            padding: 120px 0 var(--space-xl);
-            background: var(--color-primary);
-            color: var(--color-white);
+        .page-header-v3 {
+            padding: calc(var(--nav-height) + var(--s-xl)) 0 var(--s-xl);
+            background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-md) 100%);
+            color: var(--c-white);
             text-align: center;
         }
 
-        .cap-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-lg);
-            margin-top: var(--space-lg);
+        .capability-detail-card {
+            background: var(--c-white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--c-grey-100);
+            padding: var(--s-xl);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--s-xl);
+            transition: all 0.4s var(--ease-out);
         }
 
-        .cap-card {
-            background: var(--color-white);
-            border-radius: 8px;
-            padding: var(--space-lg) var(--space-md);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: var(--transition-slow);
-            border-bottom: 4px solid transparent;
-            text-align: center;
-        }
-
-        .cap-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-bottom: 4px solid var(--color-accent-dark);
-        }
-
-        .cap-icon {
-            font-size: 3rem;
-            color: var(--color-accent-dark);
-            margin-bottom: var(--space-sm);
-        }
-        
-        .cap-title {
-            font-family: var(--font-heading);
-            color: var(--color-primary);
-            font-size: 1.25rem;
-            margin-bottom: var(--space-sm);
-        }
-
-        .workflow-section {
-            background: var(--color-primary);
-            color: var(--color-white);
-            text-align: center;
-            padding: var(--space-xl) 0;
-        }
-
-        .workflow-steps {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-
-        .workflow-step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            opacity: 0.8;
-            transition: var(--transition-fast);
-        }
-
-        .workflow-step:hover {
-            opacity: 1;
-            transform: translateY(-5px);
-        }
-
-        .workflow-circle {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            border: 2px solid var(--color-accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--color-accent);
-        }
-        
-        .workflow-arrow {
-            color: var(--color-accent);
-            font-size: 2rem;
-            opacity: 0.5;
-        }
-
-        @media (max-width: 768px) {
-            .workflow-arrow {
-                transform: rotate(90deg);
-                margin: 1rem 0;
-            }
-            .workflow-steps {
-                flex-direction: column;
-            }
+        .capability-detail-card:hover {
+            box-shadow: var(--shadow-xl);
+            border-color: var(--c-accent-d);
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar scrolled">
-        <div class="container nav-container">
+    <!-- Navigation Bar -->
+    <nav class="navbar scrolled" role="navigation">
+        <div class="nav-container">
             <a href="index.html" class="logo">
-                NV <span>NAVTARA</span>
+                <span class="logo-mark">NV</span>
+                <div>
+                    <span class="logo-text">NAVTARA</span>
+                    <span class="logo-sub">PROJECTS PVT. LTD.</span>
+                </div>
             </a>
-            <div class="nav-links">
+            <div class="nav-links" id="main-nav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="capabilities.html" style="color: var(--color-accent);">Capabilities</a>
+                <a href="capabilities.html" class="active">Capabilities</a>
                 <a href="projects.html">Projects</a>
+                <a href="machinery.html">Plant &amp; Machinery</a>
+                <a href="quality.html">Quality &amp; Safety</a>
+                <a href="leadership.html">Leadership</a>
+                <a href="clients.html">Clients</a>
                 <a href="contact.html">Contact</a>
             </div>
+            <a href="contact.html" class="nav-cta">Request Quote →</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
         </div>
     </nav>
 
     <!-- Page Header -->
-    <header class="page-header">
+    <header class="page-header-v3">
         <div class="container reveal">
-            <h1 class="heading-lg">End-to-End Capabilities</h1>
-            <p class="body-lg text-light" style="max-width: 600px; margin: 1rem auto 0; opacity: 0.8;">
-                Built on Expertise. Delivered with Precision.
+            <div class="section-label section-label--light">Technical Mastery</div>
+            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">Engineering Expertise</h1>
+            <p class="body-lg text-light" style="max-width: 680px; margin: 0 auto; opacity: 0.85;">
+                From heavy structural shop fabrication to site erection, pressure piping, protective coatings, and turnkey civil infrastructure.
             </p>
         </div>
     </header>
 
-    <!-- Capabilities Grid -->
-    <section class="section-padding bg-light">
+    <!-- Detailed Capability Sections -->
+    <section class="section bg-off-white">
         <div class="container">
-            <div class="text-center reveal">
-                <h2 class="heading-lg">Core Services</h2>
-                <p class="body-lg" style="margin-top: var(--space-sm);">Integrated solutions for complex industrial challenges.</p>
+
+            <!-- Capability 1 -->
+            <div class="capability-detail-card reveal">
+                <div class="grid-2" style="align-items: center; gap: var(--s-xl);">
+                    <div>
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">CAPABILITY 01</span>
+                        <h2 class="heading-lg" style="margin-bottom: var(--s-xs);">Heavy Structural Fabrication</h2>
+                        <p class="body-lg text-muted" style="margin-bottom: var(--s-md);">
+                            Precision fabrication of complex steel structures, crane girders, technology frames, boiler ducting, hoppers, and pressure spools conducted under strict AWS D1.1 and ASME Section IX codes.
+                        </p>
+                        <ul class="body-md text-muted" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: var(--s-md);">
+                            <li>✓ Submerged Arc Welding (SAW) &amp; Multi-pass MIG/MMA welding</li>
+                            <li>✓ Trial assembly of heavy technology structures in workshop bays</li>
+                            <li>✓ Full material traceability against Mill Test Certificates (MTC)</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary btn--sm">Inquire Fabrication Package →</a>
+                    </div>
+                    <div class="curtain-wrap" style="height: 340px;">
+                        <img src="assets/images/fabrication.png" alt="Heavy structural fabrication workshop" loading="lazy">
+                    </div>
+                </div>
             </div>
 
-            <div class="cap-grid">
-                <!-- 1 -->
-                <div class="cap-card reveal delay-100">
-                    <div class="cap-icon">⚙️</div>
-                    <h3 class="cap-title">Fabrication</h3>
-                    <p>Precision fabrication of heavy structural, mechanical, and process equipment as per international standards.</p>
-                </div>
-                <!-- 2 -->
-                <div class="cap-card reveal delay-200">
-                    <div class="cap-icon">🏗️</div>
-                    <h3 class="cap-title">Erection</h3>
-                    <p>Safe and efficient erection of structures, equipment, piping, and mechanical systems with expert execution.</p>
-                </div>
-                <!-- 3 -->
-                <div class="cap-card reveal delay-300">
-                    <div class="cap-icon">🖌️</div>
-                    <h3 class="cap-title">Painting & Coating</h3>
-                    <p>Industrial painting and protective coatings for corrosion resistance, aesthetics, and long-term durability.</p>
-                </div>
-                <!-- 4 -->
-                <div class="cap-card reveal delay-100">
-                    <div class="cap-icon">🏭</div>
-                    <h3 class="cap-title">Sheeting</h3>
-                    <p>High-quality sheeting solutions for industrial buildings, warehouses, and process infrastructure.</p>
-                </div>
-                <!-- 5 -->
-                <div class="cap-card reveal delay-200">
-                    <div class="cap-icon">🧱</div>
-                    <h3 class="cap-title">Civil Work</h3>
-                    <p>Reliable civil engineering and construction for industrial foundations, infrastructure, and commercial facilities.</p>
-                </div>
-                <!-- 6 -->
-                <div class="cap-card reveal delay-300">
-                    <div class="cap-icon">🔧</div>
-                    <h3 class="cap-title">Industrial Maintenance</h3>
-                    <p>Comprehensive plant maintenance, mechanical shutdowns, and repairs ensuring uninterrupted operations.</p>
+            <!-- Capability 2 -->
+            <div class="capability-detail-card reveal delay-100">
+                <div class="grid-2" style="align-items: center; gap: var(--s-xl);">
+                    <div class="curtain-wrap" style="height: 340px;">
+                        <img src="assets/images/hero.png" alt="Mechanical equipment erection" loading="lazy">
+                    </div>
+                    <div>
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">CAPABILITY 02</span>
+                        <h2 class="heading-lg" style="margin-bottom: var(--s-xs);">Mechanical Erection &amp; Plant Piping</h2>
+                        <p class="body-lg text-muted" style="margin-bottom: var(--s-md);">
+                            Field erection of heavy industrial machinery, rotary kilns, mill shells, boilers, electrostatic precipitators (ESP), and high-pressure carbon/stainless steel process piping networks.
+                        </p>
+                        <ul class="body-md text-muted" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: var(--s-md);">
+                            <li>✓ Engineered heavy crane lifting plans and rigging calculations</li>
+                            <li>✓ Optical alignment, laser leveling, and precision grouting</li>
+                            <li>✓ Hydrostatic testing up to 350 bar with calibrated logging</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary btn--sm">Inquire Erection Package →</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Execution Workflow -->
-    <section class="workflow-section">
-        <div class="container reveal">
-            <h2 class="heading-lg text-white">Our Execution Process</h2>
-            <p class="body-lg text-light" style="margin-top: var(--space-sm); opacity: 0.8;">A systematic approach to flawless project delivery.</p>
-            
-            <div class="workflow-steps reveal delay-200">
-                <div class="workflow-step">
-                    <div class="workflow-circle">1</div>
-                    <h4 style="margin-top: 10px;">Consult & Plan</h4>
-                </div>
-                <div class="workflow-arrow">➔</div>
-                <div class="workflow-step">
-                    <div class="workflow-circle">2</div>
-                    <h4 style="margin-top: 10px;">Design & Engineer</h4>
-                </div>
-                <div class="workflow-arrow">➔</div>
-                <div class="workflow-step">
-                    <div class="workflow-circle">3</div>
-                    <h4 style="margin-top: 10px;">Procure & Execute</h4>
-                </div>
-                <div class="workflow-arrow">➔</div>
-                <div class="workflow-step">
-                    <div class="workflow-circle">4</div>
-                    <h4 style="margin-top: 10px;">Test & Commission</h4>
-                </div>
-                <div class="workflow-arrow">➔</div>
-                <div class="workflow-step">
-                    <div class="workflow-circle">5</div>
-                    <h4 style="margin-top: 10px;">Handover</h4>
+            <!-- Capability 3 -->
+            <div class="capability-detail-card reveal delay-200">
+                <div class="grid-2" style="align-items: center; gap: var(--s-xl);">
+                    <div>
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">CAPABILITY 03</span>
+                        <h2 class="heading-lg" style="margin-bottom: var(--s-xs);">Surface Protection &amp; Industrial Coatings</h2>
+                        <p class="body-lg text-muted" style="margin-bottom: var(--s-md);">
+                            Heavy abrasive grit blasting (Sa 2.5) and high-ratio airless spray application of protective epoxies, polyurethane, glass-flake linings, and passive fireproofing systems.
+                        </p>
+                        <ul class="body-md text-muted" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: var(--s-md);">
+                            <li>✓ Environmental logging (dew point, relative humidity) before application</li>
+                            <li>✓ Digital DFT gauge auditing per SSPC-PA2 guidelines</li>
+                            <li>✓ High-voltage holiday spark testing for pinhole verification</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary btn--sm">Inquire Coating Package →</a>
+                    </div>
+                    <div style="background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-steel) 100%); border-radius: var(--radius-lg); height: 340px; display: flex; align-items: center; justify-content: center; color: var(--c-white); font-size: 5rem;">
+                        🖌️
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer bg-primary text-light" style="border-top: none;">
+    <footer class="footer bg-charcoal text-light" role="contentinfo">
         <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
             <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scroll to Top Button -->
     <button id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
+    <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/transitions.js"></script>
     <script src="js/cursor.js"></script>

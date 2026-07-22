@@ -4,142 +4,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant & Machinery | Navtara Projects Pvt. Ltd.</title>
-    <meta name="description" content="Navtara Projects' owned fleet of fabrication, painting, inspection and testing equipment enabling in-house execution at scale.">
-    <meta property="og:title" content="Plant & Machinery | Navtara Projects">
+    <meta name="description" content="Inspect Navtara Projects' owned heavy plant equipment fleet: fabrication workshop, EOT cranes, airless painting setups, NDT testing units, and heavy machinery.">
+    <meta property="og:title" content="Plant & Machinery Fleet | Navtara Projects">
     <meta property="og:image" content="assets/images/hero.png">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/fixes.css">
+
     <style>
-        .page-header { padding: 120px 0 var(--space-xl); background: var(--color-primary); color: var(--color-white); text-align: center; }
-
-        .equipment-category { margin-bottom: var(--space-xl); }
-        .category-header {
-            display: flex; align-items: center; gap: 1rem;
-            border-bottom: 2px solid var(--color-light-grey);
-            padding-bottom: 1rem; margin-bottom: var(--space-md);
+        .page-header-v3 {
+            padding: calc(var(--nav-height) + var(--s-xl)) 0 var(--s-xl);
+            background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-md) 100%);
+            color: var(--c-white);
+            text-align: center;
         }
-        .category-icon { font-size: 2rem; }
-        .category-title { font-size: 1.5rem; color: var(--color-primary); font-family: var(--font-heading); font-weight: 700; }
 
-        .equipment-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
-
-        .eq-card {
-            background: var(--color-white);
-            border-radius: 10px;
-            padding: var(--space-md);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-            border-top: 4px solid var(--color-accent-dark);
-            transition: var(--transition-slow);
-            display: flex; flex-direction: column; gap: 0.5rem;
+        .machinery-category {
+            margin-bottom: var(--s-2xl);
         }
-        .eq-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
-        .eq-name { font-family: var(--font-heading); font-weight: 700; color: var(--color-primary); font-size: 1rem; }
-        .eq-spec { font-size: 0.875rem; color: var(--color-dark-grey); }
-        .eq-qty { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--color-accent-dark); }
 
-        .capability-banner {
-            background: var(--color-charcoal); color: white;
-            border-radius: 12px; padding: var(--space-lg);
-            display: grid; grid-template-columns: 1fr auto;
-            align-items: center; gap: var(--space-md);
-            margin-top: var(--space-lg);
+        .machinery-category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--c-navy);
+            margin-bottom: var(--s-md);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--c-grey-100);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
-        @media (max-width: 768px) { .capability-banner { grid-template-columns: 1fr; } }
+
+        .equipment-card-v3 {
+            background: var(--c-white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--c-grey-100);
+            padding: var(--s-md);
+            box-shadow: var(--shadow-md);
+            transition: all 0.35s var(--ease-out);
+            border-top: 4px solid var(--c-accent-d);
+        }
+
+        .equipment-card-v3:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-top-color: var(--c-accent);
+        }
+
+        .eq-status-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--c-accent-d);
+            background: rgba(0, 112, 192, 0.08);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <nav class="navbar scrolled" role="navigation">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">NV <span>NAVTARA</span></a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-mark">NV</span>
+                <div>
+                    <span class="logo-text">NAVTARA</span>
+                    <span class="logo-sub">PROJECTS PVT. LTD.</span>
+                </div>
+            </a>
             <div class="nav-links" id="main-nav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="capabilities.html">Capabilities</a>
                 <a href="projects.html">Projects</a>
-                <a href="machinery.html" style="color:var(--color-accent);">Plant &amp; Machinery</a>
+                <a href="machinery.html" class="active">Plant &amp; Machinery</a>
+                <a href="quality.html">Quality &amp; Safety</a>
+                <a href="leadership.html">Leadership</a>
+                <a href="clients.html">Clients</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <button class="menu-toggle" aria-label="Open menu">☰</button>
+            <a href="contact.html" class="nav-cta">Request Quote →</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
         </div>
     </nav>
 
-    <header class="page-header">
+    <!-- Page Header -->
+    <header class="page-header-v3">
         <div class="container reveal">
-            <h1 class="heading-lg">Plant &amp; Machinery</h1>
-            <p class="body-lg text-light" style="max-width:600px;margin:1rem auto 0;opacity:0.8;">Our owned fleet of equipment is a direct reflection of our execution capability — not just inventory.</p>
+            <div class="section-label section-label--light">Execution Infrastructure</div>
+            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">Owned Plant &amp; Equipment Fleet</h1>
+            <p class="body-lg text-light" style="max-width: 680px; margin: 0 auto; opacity: 0.85;">
+                We present our machinery fleet as tangible proof of execution capability — enabling rapid mobilization, self-performance, and high-tolerance quality control.
+            </p>
         </div>
     </header>
 
-    <section class="section-padding">
+    <!-- Machinery Directory Section -->
+    <section class="section bg-off-white">
         <div class="container">
 
-            <!-- Painting Equipment -->
-            <div class="equipment-category reveal">
-                <div class="category-header">
-                    <span class="category-icon">🖌️</span>
-                    <span class="category-title">Painting &amp; Surface Equipment</span>
-                </div>
-                <div class="equipment-grid">
-                    <div class="eq-card"><div class="eq-qty">Owned</div><div class="eq-name">Airless Spray Painting Machine</div><div class="eq-spec">High-pressure airless system for industrial coatings</div></div>
-                    <div class="eq-card"><div class="eq-qty">Multiple Units</div><div class="eq-name">Abrasive Blasting Machines</div><div class="eq-spec">Portable pot blasters for surface preparation Sa 2.5</div></div>
-                    <div class="eq-card"><div class="eq-qty">Owned</div><div class="eq-name">Air Compressors</div><div class="eq-spec">High-capacity compressors for blast &amp; spray operations</div></div>
-                    <div class="eq-card"><div class="eq-qty">Owned</div><div class="eq-name">DFT Gauge (Dry Film Thickness)</div><div class="eq-spec">Elcometer — digital coating thickness measurement</div></div>
-                    <div class="eq-card"><div class="eq-qty">Owned</div><div class="eq-name">Holiday Detector</div><div class="eq-spec">Pinhole detection in coatings and linings</div></div>
+            <!-- Category 1: Workshop & Heavy Lifting -->
+            <div class="machinery-category reveal">
+                <h2 class="machinery-category-title">
+                    <span>🏗️</span> Workshop Infrastructure &amp; Heavy Lifting Equipment
+                </h2>
+                <div class="grid-3">
+                    <div class="equipment-card-v3">
+                        <span class="eq-status-badge">OWNED ASSET</span>
+                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">EOT Cranes (10T &amp; 15T Capacity)</h3>
+                        <p class="body-md text-muted">Overhead traveling cranes for heavy plate handling, component positioning, and trial assembly in fabrication bays.</p>
+                    </div>
+
+                    <div class="equipment-card-v3">
+                        <span class="eq-status-badge">FLEET ASSET</span>
+                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Hydraulic Mobile Cranes (20T – 50T)</h3>
+                        <p class="body-md text-muted">Telescopic and lattice boom cranes dedicated for site erection, structural placement, and heavy ducting positionings.</p>
+                    </div>
+
+                    <div class="equipment-card-v3">
+                        <span class="eq-status-badge">WORKSHOP ASSET</span>
+                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Hydraulic Plate Bending &amp; Press</h3>
+                        <p class="body-md text-muted">100T capacity hydraulic press and 3-roll bending machine for heavy shell, cone, and hopper fabrication.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Fabrication Equipment -->
-            <div class="equipment-category reveal delay-100">
-                <div class="category-header">
-                    <span class="category-icon">⚙️</span>
-                    <span class="category-title">Fabrication Equipment</span>
-                </div>
-                <div class="equipment-grid">
-                    <div class="eq-card"><div class="eq-qty">Workshop</div><div class="eq-name">SAW / MIG / MMA Welding Sets</div><div class="eq-spec">Complete range for structural and pipe welding</div></div>
-                    <div class="eq-card"><div class="eq-qty">Owned</div><div class="eq-name">Plate Rolling Machine</div><div class="eq-spec">Heavy duty 3-roll plate bending machine</div></div>
-                    <div class="eq-card"><div class="eq-qty">Owned</div><div class="eq-name">Hydraulic Press</div><div class="eq-spec">100T capacity for structural forming operations</div></div>
-                    <div class="eq-card"><div class="eq-qty">Owned</div><div class="eq-name">Pipe Bending Machine</div><div class="eq-spec">For piping fabrication and spool work</div></div>
-                    <div class="eq-card"><div class="eq-qty">Workshop</div><div class="eq-name">CNC Plasma Cutting</div><div class="eq-spec">High-precision plate cutting for complex profiles</div></div>
-                    <div class="eq-card"><div class="eq-qty">Owned</div><div class="eq-name">EOT Crane — 10T</div><div class="eq-spec">In-house overhead crane for heavy lifts</div></div>
+            <!-- Category 2: Fabrication & Welding -->
+            <div class="machinery-category reveal delay-100">
+                <h2 class="machinery-category-title">
+                    <span>⚙️</span> Welding &amp; Fabrication Systems
+                </h2>
+                <div class="grid-3">
+                    <div class="equipment-card-v3">
+                        <span class="eq-status-badge">HEAVY CAPABILITY</span>
+                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Submerged Arc Welding (SAW) Rigs</h3>
+                        <p class="body-md text-muted">Automatic SAW column and boom machines for heavy girder webs, flanges, and longitudinal shell seams.</p>
+                    </div>
+
+                    <div class="equipment-card-v3">
+                        <span class="eq-status-badge">WORKSHOP UNITS</span>
+                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">MIG / TIG / MMA Inverter Welders</h3>
+                        <p class="body-md text-muted">High-efficiency Lincoln &amp; ESAB digital inverter power sources for structural and stainless steel piping spools.</p>
+                    </div>
+
+                    <div class="equipment-card-v3">
+                        <span class="eq-status-badge">PRECISION CUTTING</span>
+                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">CNC Oxy-Fuel &amp; Plasma Profile Cutters</h3>
+                        <p class="body-md text-muted">Multi-torch CNC cutting beds capable of profiling heavy carbon steel plates up to 100mm thickness.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Inspection Equipment -->
-            <div class="equipment-category reveal delay-200">
-                <div class="category-header">
-                    <span class="category-icon">🔬</span>
-                    <span class="category-title">Inspection &amp; Testing Equipment</span>
-                </div>
-                <div class="equipment-grid">
-                    <div class="eq-card"><div class="eq-qty">Certified</div><div class="eq-name">Ultrasonic Testing (UT) Equipment</div><div class="eq-spec">Flaw detection on welds and base materials</div></div>
-                    <div class="eq-card"><div class="eq-qty">Certified</div><div class="eq-name">Magnetic Particle Inspection (MPI)</div><div class="eq-spec">Surface and sub-surface flaw detection</div></div>
-                    <div class="eq-card"><div class="eq-qty">Owned</div><div class="eq-name">Hardness Tester</div><div class="eq-spec">Portable Leeb / Brinell hardness measurement</div></div>
-                    <div class="eq-card"><div class="eq-qty">Owned</div><div class="eq-name">Dial Gauges &amp; Vernier Calipers</div><div class="eq-spec">Precision dimensional inspection instruments</div></div>
-                    <div class="eq-card"><div class="eq-qty">Owned</div><div class="eq-name">Hydro Test Pump</div><div class="eq-spec">Hydraulic pressure testing of vessels and piping</div></div>
+            <!-- Category 3: Surface Preparation & Painting -->
+            <div class="machinery-category reveal delay-200">
+                <h2 class="machinery-category-title">
+                    <span>🖌️</span> Surface Protection &amp; Coating Systems
+                </h2>
+                <div class="grid-3">
+                    <div class="equipment-card-v3">
+                        <span class="eq-status-badge">HIGH-PRESSURE</span>
+                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Airless Spray Painting Machines</h3>
+                        <p class="body-md text-muted">Heavy-duty pneumatic airless spray pumps (Graco / Wiwa) for high-build epoxy and polyurethane application.</p>
+                    </div>
+
+                    <div class="equipment-card-v3">
+                        <span class="eq-status-badge">MOBILE BLASTING</span>
+                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Abrasive Grit Blasting Pots &amp; Compressors</h3>
+                        <p class="body-md text-muted">High-CFM diesel screw compressors and pressure blast pots for achieving Sa 2.5 near-white metal surface finishes.</p>
+                    </div>
+
+                    <div class="equipment-card-v3">
+                        <span class="eq-status-badge">COATING AUDIT</span>
+                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Calibrated Elcometer Inspection Suite</h3>
+                        <p class="body-md text-muted">Digital DFT gauges, surface profile gauges, blast pressure meters, and holiday detectors.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Capability Banner -->
-            <div class="capability-banner reveal">
-                <div>
-                    <h3 style="color:white;margin-bottom:0.5rem;">Need a dedicated machinery list for your project?</h3>
-                    <p style="opacity:0.7;">We can provide a full equipment deployment plan and mobilisation schedule for any project requirement.</p>
+            <!-- Category 4: Inspection & Testing -->
+            <div class="machinery-category reveal delay-300">
+                <h2 class="machinery-category-title">
+                    <span>🔬</span> Inspection, Testing &amp; Quality Control Instruments
+                </h2>
+                <div class="grid-3">
+                    <div class="equipment-card-v3">
+                        <span class="eq-status-badge">ASNT LEVEL II</span>
+                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Ultrasonic Flaw Detectors (UT)</h3>
+                        <p class="body-md text-muted">Digital flaw detectors for volumetric weld inspection and base metal thickness gauging.</p>
+                    </div>
+
+                    <div class="equipment-card-v3">
+                        <span class="eq-status-badge">MPI TESTING</span>
+                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Magnetic Particle Yokes &amp; Contrast Media</h3>
+                        <p class="body-md text-muted">Portable AC/DC yokes for surface defect detection on structural welds and crane girders.</p>
+                    </div>
+
+                    <div class="equipment-card-v3">
+                        <span class="eq-status-badge">HYDRO TESTING</span>
+                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Motorized Hydrostatic Test Pumps</h3>
+                        <p class="body-md text-muted">High-pressure test pumps up to 350 bar with calibrated chart recorders for piping and vessel testing.</p>
+                    </div>
                 </div>
-                <a href="contact.html" class="btn btn-primary">Request Details</a>
             </div>
 
         </div>
     </section>
 
-    <footer class="footer bg-primary text-light">
-        <div class="container text-center" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.1);">
+    <!-- Footer -->
+    <footer class="footer bg-charcoal text-light" role="contentinfo">
+        <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
             <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
     <button id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
+    <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/transitions.js"></script>
     <script src="js/cursor.js"></script>

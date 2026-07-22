@@ -4,157 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leadership | Navtara Projects Pvt. Ltd.</title>
-    <meta name="description" content="Meet the experienced engineering leaders driving Navtara Projects' vision of industrial excellence across India.">
-    <meta property="og:title" content="Leadership | Navtara Projects">
+    <meta name="description" content="Meet the executive leadership and technical directors behind Navtara Projects Pvt. Ltd. — engineers with Metso lineage driving industrial execution across India.">
+    <meta property="og:title" content="Executive Leadership | Navtara Projects">
     <meta property="og:image" content="assets/images/hero.png">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/fixes.css">
+
     <style>
-        .page-header { padding: 120px 0 var(--space-xl); background: var(--color-primary); color: var(--color-white); text-align: center; }
-
-        .leadership-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: var(--space-lg);
-            margin-top: var(--space-lg);
-        }
-
-        .leader-profile {
-            background: var(--color-white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: var(--transition-slow);
-        }
-        .leader-profile:hover { transform: translateY(-10px); box-shadow: 0 24px 60px rgba(0,0,0,0.12); }
-
-        .leader-photo {
-            height: 320px;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 6rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .leader-photo::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(10,25,47,0.6) 0%, transparent 60%);
-        }
-
-        .leader-body { padding: var(--space-md); }
-        .leader-role {
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--color-accent-dark);
-            margin-bottom: 0.5rem;
-        }
-        .leader-name { font-size: 1.5rem; color: var(--color-primary); margin-bottom: 1rem; }
-        .leader-bio { font-size: 0.95rem; color: var(--color-dark-grey); line-height: 1.7; }
-        .leader-tags {
-            display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;
-        }
-        .leader-tag {
-            font-size: 0.75rem; font-weight: 600;
-            background: var(--color-light-grey);
-            color: var(--color-dark-grey);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-        }
-
-        .philosophy-section {
-            background: var(--color-charcoal);
-            color: white;
+        .page-header-v3 {
+            padding: calc(var(--nav-height) + var(--s-xl)) 0 var(--s-xl);
+            background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-md) 100%);
+            color: var(--c-white);
             text-align: center;
-            padding: var(--space-xl) 0;
         }
-        .philosophy-quote {
-            font-family: var(--font-heading);
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            font-weight: 700;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.4;
-            color: white;
+
+        .founder-quote-box {
+            background: var(--c-navy-md);
+            border-left: 6px solid var(--c-accent);
+            border-radius: var(--radius-lg);
+            padding: var(--s-xl);
+            color: var(--c-white);
+            margin: var(--s-2xl) 0;
+            box-shadow: var(--shadow-xl);
         }
-        .philosophy-quote span { color: var(--color-accent); }
     </style>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <nav class="navbar scrolled" role="navigation">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">NV <span>NAVTARA</span></a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-mark">NV</span>
+                <div>
+                    <span class="logo-text">NAVTARA</span>
+                    <span class="logo-sub">PROJECTS PVT. LTD.</span>
+                </div>
+            </a>
             <div class="nav-links" id="main-nav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="capabilities.html">Capabilities</a>
                 <a href="projects.html">Projects</a>
-                <a href="leadership.html" style="color:var(--color-accent);">Leadership</a>
+                <a href="machinery.html">Plant &amp; Machinery</a>
+                <a href="quality.html">Quality &amp; Safety</a>
+                <a href="leadership.html" class="active">Leadership</a>
+                <a href="clients.html">Clients</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <button class="menu-toggle" aria-label="Open menu">☰</button>
+            <a href="contact.html" class="nav-cta">Request Quote →</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
         </div>
     </nav>
 
-    <header class="page-header">
+    <!-- Page Header -->
+    <header class="page-header-v3">
         <div class="container reveal">
-            <h1 class="heading-lg">Our Leadership</h1>
-            <p class="body-lg text-light" style="max-width:600px;margin:1rem auto 0;opacity:0.8;">The team behind India's most reliable heavy engineering delivery.</p>
+            <div class="section-label section-label--light">Trust &amp; Technical Vision</div>
+            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">Executive Leadership</h1>
+            <p class="body-lg text-light" style="max-width: 680px; margin: 0 auto; opacity: 0.85;">
+                Navtara Projects is led by seasoned heavy engineering professionals committed to safety, engineering precision, and long-term client trust.
+            </p>
         </div>
     </header>
 
-    <!-- Leadership Profiles -->
-    <section class="section-padding">
+    <!-- Founder Philosophy Section -->
+    <section class="section bg-white">
         <div class="container">
-            <div class="leadership-grid">
+            <div class="founder-quote-box reveal">
+                <div class="section-label section-label--light" style="color: var(--c-accent);">Leadership Philosophy</div>
+                <blockquote style="font-family: var(--f-display); font-size: clamp(1.25rem, 2.5vw, 1.85rem); font-weight: 700; line-height: 1.4; margin-bottom: var(--s-md);">
+                    "In heavy engineering, credibility is not built on promises — it is forged in the precision of every weld, the safety of every lift, and the punctuality of every project handover."
+                </blockquote>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--c-accent-d); display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">👤</div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 1.1rem; color: var(--c-white);">Managing Director</div>
+                        <div style="font-size: 0.85rem; color: var(--c-grey-300);">Navtara Projects Pvt. Ltd.</div>
+                    </div>
+                </div>
+            </div>
 
-                <div class="leader-profile reveal delay-100">
-                    <div class="leader-photo">👤</div>
-                    <div class="leader-body">
-                        <p class="leader-role">Founder &amp; Managing Director</p>
-                        <h2 class="leader-name">Director, Navtara Projects</h2>
-                        <p class="leader-bio">A veteran of heavy engineering and industrial construction with over two decades of experience across steel, power, and cement sectors. Founded Navtara Projects with a vision to set a new benchmark for quality and reliability in industrial project execution across India.</p>
-                        <div class="leader-tags">
-                            <span class="leader-tag">Ex-Metso</span>
-                            <span class="leader-tag">Heavy Engineering</span>
-                            <span class="leader-tag">Pan-India Projects</span>
-                            <span class="leader-tag">EPC</span>
+            <!-- Executive Leadership Cards -->
+            <div class="grid-3" style="margin-top: var(--s-xl);">
+
+                <!-- Leader 1 -->
+                <div class="leader-card-v3 reveal delay-100">
+                    <div class="leader-avatar-box">
+                        <div style="font-size: 5rem;">👤</div>
+                        <div class="leader-avatar-badge">FOUNDER &amp; MD</div>
+                    </div>
+                    <div style="padding: var(--s-lg);">
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">EXECUTIVE GOVERNANCE</span>
+                        <h3 class="heading-md" style="margin-bottom: 0.25rem;">Managing Director</h3>
+                        <p class="body-md text-muted" style="margin-bottom: 1rem; font-size: 0.9rem;">
+                            20+ years of industrial leadership across steel, power, and infrastructure sectors in India. Spearheading strategic direction, EPC client relations, and enterprise scale.
+                        </p>
+                        <div style="border-top: 1px solid var(--c-grey-100); padding-top: 0.75rem; font-size: 0.8rem; color: var(--c-grey-500);">
+                            <strong>Core Competencies:</strong> Enterprise Strategy, Turnkey Project Management, Client Assurance.
                         </div>
                     </div>
                 </div>
 
-                <div class="leader-profile reveal delay-200">
-                    <div class="leader-photo">👤</div>
-                    <div class="leader-body">
-                        <p class="leader-role">Head of Engineering &amp; Technical Operations</p>
-                        <h2 class="leader-name">Head of Engineering</h2>
-                        <p class="leader-bio">Brings deep technical expertise in structural fabrication, erection methodology, and NDT inspection. Responsible for ensuring every project is executed to the highest quality standard with complete traceability and documentation.</p>
-                        <div class="leader-tags">
-                            <span class="leader-tag">Structural Engineering</span>
-                            <span class="leader-tag">NDT Certified</span>
-                            <span class="leader-tag">Quality Systems</span>
+                <!-- Leader 2 -->
+                <div class="leader-card-v3 reveal delay-200">
+                    <div class="leader-avatar-box">
+                        <div style="font-size: 5rem;">👤</div>
+                        <div class="leader-avatar-badge">HEAD OF TECHNICAL</div>
+                    </div>
+                    <div style="padding: var(--s-lg);">
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">EX-METSO LINEAGE</span>
+                        <h3 class="heading-md" style="margin-bottom: 0.25rem;">Head of Engineering</h3>
+                        <p class="body-md text-muted" style="margin-bottom: 1rem; font-size: 0.9rem;">
+                            Formative technical career rooted in Metso engineering systems. Leading WPS/PQR design, structural integrity audits, AWS codes compliance, and NDT Level II quality controls.
+                        </p>
+                        <div style="border-top: 1px solid var(--c-grey-100); padding-top: 0.75rem; font-size: 0.8rem; color: var(--c-grey-500);">
+                            <strong>Core Competencies:</strong> Structural Fabrication, Metallurgical Integrity, ASNT NDT Systems.
                         </div>
                     </div>
                 </div>
 
-                <div class="leader-profile reveal delay-300">
-                    <div class="leader-photo">👤</div>
-                    <div class="leader-body">
-                        <p class="leader-role">Project Director &amp; Site Operations</p>
-                        <h2 class="leader-name">Project Director</h2>
-                        <p class="leader-bio">Expert in large-scale project mobilisation, site management, and multi-disciplinary coordination. Has led the execution of over 40 industrial projects across Odisha, Maharashtra, Telangana, and beyond.</p>
-                        <div class="leader-tags">
-                            <span class="leader-tag">Site Management</span>
-                            <span class="leader-tag">Safety Leadership</span>
-                            <span class="leader-tag">Multi-state Ops</span>
+                <!-- Leader 3 -->
+                <div class="leader-card-v3 reveal delay-300">
+                    <div class="leader-avatar-box">
+                        <div style="font-size: 5rem;">👤</div>
+                        <div class="leader-avatar-badge">SITE OPERATIONS</div>
+                    </div>
+                    <div style="padding: var(--s-lg);">
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">PAN-INDIA DEPLOYMENT</span>
+                        <h3 class="heading-md" style="margin-bottom: 0.25rem;">Director of Site Operations</h3>
+                        <p class="body-md text-muted" style="margin-bottom: 1rem; font-size: 0.9rem;">
+                            Directing multi-state site mobilization, HSE protocols, site logistics, and heavy crane erection maneuvers across remote project sites in Odisha, Maharashtra, and Telangana.
+                        </p>
+                        <div style="border-top: 1px solid var(--c-grey-100); padding-top: 0.75rem; font-size: 0.8rem; color: var(--c-grey-500);">
+                            <strong>Core Competencies:</strong> Zero-Harm HSE Management, Heavy Crane Lifting, Turnkey Erection.
                         </div>
                     </div>
                 </div>
@@ -163,25 +151,17 @@
         </div>
     </section>
 
-    <!-- Leadership Philosophy -->
-    <section class="philosophy-section">
-        <div class="container reveal">
-            <p style="font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;opacity:0.5;margin-bottom:2rem;">OUR PHILOSOPHY</p>
-            <blockquote class="philosophy-quote">
-                "We don't just deliver projects — we build <span>long-term partnerships</span> founded on trust, transparency, and technical excellence."
-            </blockquote>
-            <div style="margin-top:var(--space-md);">
-                <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer bg-primary text-light">
-        <div class="container text-center" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.1);">
+    <!-- Footer -->
+    <footer class="footer bg-charcoal text-light" role="contentinfo">
+        <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
             <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
     <button id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
+    <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/transitions.js"></script>
     <script src="js/cursor.js"></script>

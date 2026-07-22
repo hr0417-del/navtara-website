@@ -4,146 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Industries We Serve | Navtara Projects Pvt. Ltd.</title>
-    <meta name="description" content="Navtara serves Steel, Power, Cement, Mining and Infrastructure sectors with heavy engineering solutions across India.">
-    <meta property="og:title" content="Industries | Navtara Projects">
+    <meta name="description" content="Navtara Projects Pvt. Ltd. delivers specialized heavy engineering solutions for Steel, Power Generation, Cement &amp; Mining, and Infrastructure sectors across India.">
+    <meta property="og:title" content="Industries Served | Navtara Projects">
     <meta property="og:image" content="assets/images/hero.png">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <!-- CSS -->
+
+    <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/fixes.css">
-    
+
     <style>
-        .page-header {
-            padding: 120px 0 var(--space-xl);
-            background: var(--color-primary);
-            color: var(--color-white);
+        .page-header-v3 {
+            padding: calc(var(--nav-height) + var(--s-xl)) 0 var(--s-xl);
+            background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-md) 100%);
+            color: var(--c-white);
             text-align: center;
         }
 
-        .industry-showcase {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-xl);
-            margin-top: var(--space-lg);
-        }
-
-        .industry-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-lg);
-            align-items: center;
-        }
-
-        .industry-row:nth-child(even) .industry-text {
-            order: -1;
-        }
-
-        .industry-image {
-            border-radius: 8px;
+        .industry-section-row {
+            margin-bottom: var(--s-2xl);
+            background: var(--c-white);
+            border-radius: var(--radius-lg);
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .industry-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-
-        .industry-image:hover img {
-            transform: scale(1.05);
-        }
-
-        .industry-text h3 {
-            font-size: 2rem;
-            color: var(--color-primary);
-            margin-bottom: var(--space-sm);
-        }
-
-        @media (max-width: 768px) {
-            .industry-row {
-                grid-template-columns: 1fr;
-            }
-            .industry-row:nth-child(even) .industry-text {
-                order: 0;
-            }
-            .industry-image img {
-                height: 250px;
-            }
+            border: 1px solid var(--c-grey-100);
+            box-shadow: var(--shadow-md);
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar scrolled">
-        <div class="container nav-container">
+    <!-- Navigation Bar -->
+    <nav class="navbar scrolled" role="navigation">
+        <div class="nav-container">
             <a href="index.html" class="logo">
-                NV <span>NAVTARA</span>
+                <span class="logo-mark">NV</span>
+                <div>
+                    <span class="logo-text">NAVTARA</span>
+                    <span class="logo-sub">PROJECTS PVT. LTD.</span>
+                </div>
             </a>
-            <div class="nav-links">
+            <div class="nav-links" id="main-nav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="capabilities.html">Capabilities</a>
                 <a href="projects.html">Projects</a>
+                <a href="machinery.html">Plant &amp; Machinery</a>
+                <a href="quality.html">Quality &amp; Safety</a>
+                <a href="leadership.html">Leadership</a>
+                <a href="clients.html">Clients</a>
                 <a href="contact.html">Contact</a>
             </div>
+            <a href="contact.html" class="nav-cta">Request Quote →</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
         </div>
     </nav>
 
     <!-- Page Header -->
-    <header class="page-header">
+    <header class="page-header-v3">
         <div class="container reveal">
-            <h1 class="heading-lg">Industries We Serve</h1>
-            <p class="body-lg text-light" style="max-width: 600px; margin: 1rem auto 0; opacity: 0.8;">
-                Delivering engineered solutions that drive 5 core sectors forward.
+            <div class="section-label section-label--light">Core Sector Focus</div>
+            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">Industries We Serve</h1>
+            <p class="body-lg text-light" style="max-width: 680px; margin: 0 auto; opacity: 0.85;">
+                Delivering tailored heavy engineering, structural fabrication, plant erection, and surface protection across core industrial sectors.
             </p>
         </div>
     </header>
 
-    <!-- Industries Showcase -->
-    <section class="section-padding">
-        <div class="container industry-showcase">
-            
-            <!-- Industry 1 -->
-            <div class="industry-row reveal">
-                <div class="industry-image">
-                    <img src="assets/images/fabrication.png" alt="Steel Industry">
-                </div>
-                <div class="industry-text">
-                    <h3>Steel</h3>
-                    <p class="body-lg">
-                        We provide high-performance structures, fabrication, and erection systems tailored for the demanding environments of the steel industry. Our solutions ensure structural integrity and operational efficiency for steel manufacturing plants.
-                    </p>
+    <!-- Industry Sectors Grid -->
+    <section class="section bg-off-white">
+        <div class="container">
+
+            <!-- Sector 1: Steel Plants -->
+            <div class="industry-section-row reveal">
+                <div class="grid-2" style="align-items: center; gap: 0;">
+                    <div style="padding: var(--s-xl);">
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">PRIMARY SECTOR</span>
+                        <h2 class="heading-lg" style="margin-bottom: var(--s-xs);">Integrated Steel Plants</h2>
+                        <p class="body-lg text-muted" style="margin-bottom: var(--s-md);">
+                            Heavy technology structures, blast furnace ducting, rolling mill buildings, crane girders, and protective coating systems designed for high thermal and abrasive environments.
+                        </p>
+                        <a href="projects.html" class="btn btn-outline btn--sm" style="color: var(--c-navy); border-color: var(--c-navy);">View Steel Plant Projects →</a>
+                    </div>
+                    <div style="height: 360px; overflow: hidden;">
+                        <img src="assets/images/fabrication.png" alt="Steel plant fabrication" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    </div>
                 </div>
             </div>
 
-            <!-- Industry 2 -->
-            <div class="industry-row reveal delay-100">
-                <div class="industry-image">
-                    <img src="assets/images/hero.png" alt="Power Plants">
-                </div>
-                <div class="industry-text">
-                    <h3>Power Plants</h3>
-                    <p class="body-lg">
-                        Reliable engineering and construction for power generation and energy infrastructure. From structural erection to critical piping systems, we support thermal and renewable energy projects with zero compromise on safety.
-                    </p>
+            <!-- Sector 2: Power Generation -->
+            <div class="industry-section-row reveal delay-100">
+                <div class="grid-2" style="align-items: center; gap: 0;">
+                    <div style="height: 360px; overflow: hidden;">
+                        <img src="assets/images/hero.png" alt="Thermal power plant engineering" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    </div>
+                    <div style="padding: var(--s-xl);">
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">ENERGY SECTOR</span>
+                        <h2 class="heading-lg" style="margin-bottom: var(--s-xs);">Power Generation &amp; Thermal Utilities</h2>
+                        <p class="body-lg text-muted" style="margin-bottom: var(--s-md);">
+                            High-pressure fire water piping, boiler ducting spools, coal handling structures, ESP steelwork, and turbine hall erection executed during greenfield or shutdown maintenance windows.
+                        </p>
+                        <a href="projects.html" class="btn btn-outline btn--sm" style="color: var(--c-navy); border-color: var(--c-navy);">View Power Station Projects →</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Industry 3 -->
-            <div class="industry-row reveal delay-100">
-                <div class="industry-image">
-                    <div style="background: var(--color-secondary); width: 100%; height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">🏭</div>
-                </div>
-                <div class="industry-text">
-                    <h3>Cement</h3>
-                    <p class="body-lg">
-                        Engineering excellence for cement manufacturing and processing plants. We handle complex structural fabrication, material handling systems, and large-scale silos required by top cement producers across India.
-                    </p>
+            <!-- Sector 3: Cement & Mining -->
+            <div class="industry-section-row reveal delay-200">
+                <div class="grid-2" style="align-items: center; gap: 0;">
+                    <div style="padding: var(--s-xl);">
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">PROCESS SECTOR</span>
+                        <h2 class="heading-lg" style="margin-bottom: var(--s-xs);">Cement Plants &amp; Mineral Processing</h2>
+                        <p class="body-lg text-muted" style="margin-bottom: var(--s-md);">
+                            Clinker line structures, pre-heater tower steelwork, raw material hoppers, conveyor gantries, and wear-resistant liner plate installations.
+                        </p>
+                        <a href="projects.html" class="btn btn-outline btn--sm" style="color: var(--c-navy); border-color: var(--c-navy);">View Cement Projects →</a>
+                    </div>
+                    <div style="height: 360px; background: linear-gradient(135deg, var(--c-navy-md) 0%, var(--c-steel) 100%); display: flex; align-items: center; justify-content: center; color: var(--c-white); font-size: 5rem;">
+                        🏭
+                    </div>
                 </div>
             </div>
 
@@ -151,14 +131,16 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer bg-primary text-light">
+    <footer class="footer bg-charcoal text-light" role="contentinfo">
         <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
             <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scroll to Top Button -->
     <button id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
+    <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/transitions.js"></script>
     <script src="js/cursor.js"></script>

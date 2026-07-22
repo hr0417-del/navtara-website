@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navtara Projects Pvt. Ltd. | Heavy Engineering & Industrial Solutions</title>
-    <meta name="description" content="Navtara Projects Pvt. Ltd. delivers mission-critical heavy engineering, fabrication, erection, painting and industrial construction projects across India.">
+    <meta name="description" content="Navtara Projects Pvt. Ltd. is a premier Indian heavy engineering enterprise delivering mission-critical structural fabrication, erection, industrial piping, surface protection, and EPC solutions across core industrial sectors.">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Navtara Projects Pvt. Ltd. | Heavy Engineering & Industrial Solutions">
-    <meta property="og:description" content="Mission-critical heavy engineering, fabrication, and industrial construction across India.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Navtara Projects Pvt. Ltd. | Industrial Heavy Engineering">
+    <meta property="og:description" content="Engineering Industrial Excellence. Delivering Mission-Critical Heavy Projects across India.">
     <meta property="og:image" content="assets/images/hero.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hr0417-del.github.io/navtara-website/">
@@ -16,287 +16,211 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-    <!-- CSS -->
+    <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/fixes.css">
 
     <style>
-        /* ── Hero ── */
-        .hero {
+        /* Section-specific Custom Styles for Hero & Map */
+        .hero-v3 {
             position: relative;
-            height: 100vh;
-            min-height: 600px;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(10,25,47,0.82), rgba(10,25,47,0.72)),
+            background: linear-gradient(135deg, rgba(7, 17, 31, 0.92) 0%, rgba(13, 30, 53, 0.85) 100%),
                         url('assets/images/hero.png') center/cover no-repeat;
-            color: var(--color-white);
-        }
-        .hero-content { max-width: 900px; }
-        .hero .subheadline {
-            font-size: 1rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--color-accent);
-            margin-bottom: var(--space-md);
-            font-weight: 600;
-        }
-        .hero-buttons {
-            display: flex;
-            gap: var(--space-sm);
-            margin-top: var(--space-md);
-            flex-wrap: wrap;
-        }
-
-        /* ── Stats ── */
-        .stats-section { background: var(--color-primary); color: var(--color-white); }
-        .stat-card {
-            text-align: center;
-            padding: var(--space-md);
-            border-right: 1px solid rgba(255,255,255,0.1);
-        }
-        .stat-card:last-child { border-right: none; }
-        .stat-number {
-            font-size: clamp(2.5rem, 4vw, 4rem);
-            font-family: var(--font-heading);
-            font-weight: 800;
-            color: var(--color-accent);
-            margin-bottom: var(--space-xs);
-            line-height: 1;
-        }
-        .stat-number .suffix { font-size: 2rem; }
-        .stat-label {
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            opacity: 0.8;
-        }
-
-        /* ── Industries ── */
-        .industry-card {
-            position: relative;
-            height: 400px;
-            background: var(--color-charcoal);
-            border-radius: 8px;
+            color: var(--c-white);
             overflow: hidden;
+            padding-top: var(--nav-height);
+        }
+
+        .hero-v3::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(7, 17, 31, 0) 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(14, 165, 233, 0.12);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            color: var(--c-accent);
+            padding: 0.4rem 1rem;
+            border-radius: var(--radius-pill);
+            font-size: var(--t-xs);
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: var(--s-md);
+        }
+
+        .hero-badge-pill::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--c-accent);
+            box-shadow: 0 0 10px var(--c-accent);
+        }
+
+        .stat-card-v3 {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: var(--s-md);
+            text-align: center;
+            transition: all 0.35s var(--ease-out);
+        }
+
+        .stat-card-v3:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--c-accent);
+            transform: translateY(-4px);
+        }
+
+        .cap-card-v3 {
+            background: var(--c-white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--c-grey-100);
+            padding: var(--s-lg);
+            transition: all 0.4s var(--ease-out);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cap-card-v3:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--c-accent-d);
+        }
+
+        .cap-card-v3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--c-accent-d);
+            transition: width 0.3s ease;
+        }
+
+        .cap-card-v3:hover::before {
+            width: 8px;
+        }
+
+        .case-study-hero-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: var(--s-md);
+            margin-top: var(--s-lg);
+        }
+
+        .cs-card-large {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            min-height: 480px;
             display: flex;
             align-items: flex-end;
-            padding: var(--space-md);
-            cursor: pointer;
-            transition: var(--transition-slow);
-        }
-        .industry-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(10,25,47,0.92) 0%, rgba(10,25,47,0.15) 100%);
-            z-index: 1;
-            transition: var(--transition-fast);
-        }
-        .industry-card:hover::before {
-            background: linear-gradient(to top, rgba(10,25,47,0.95) 0%, rgba(0,102,204,0.4) 100%);
-        }
-        .industry-card img {
-            position: absolute;
-            inset: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transition: var(--transition-slow);
-            opacity: 0.65;
-        }
-        .industry-card .industry-bg {
-            position: absolute;
-            inset: 0;
-            transition: var(--transition-slow);
-        }
-        .industry-card:hover img,
-        .industry-card:hover .industry-bg { transform: scale(1.08); opacity: 0.85; }
-        .industry-content {
-            position: relative;
-            z-index: 2;
-            color: var(--color-white);
-        }
-        .industry-content h3 {
-            color: var(--color-white);
-            margin-bottom: 0.5rem;
-            font-size: 1.5rem;
-        }
-        .industry-content p { font-size: 0.95rem; opacity: 0.85; }
-
-        /* ── Capabilities ── */
-        .cap-item {
-            padding: var(--space-md);
-            background: var(--color-white);
-            border-radius: 8px;
-            border-left: 4px solid var(--color-accent-dark);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: var(--transition-fast);
-        }
-        .cap-item:hover { border-left-color: var(--color-primary); transform: translateX(4px); }
-
-        /* ── Why Navtara ── */
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-        .why-card {
-            padding: var(--space-md);
-            border-radius: 8px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            transition: var(--transition-fast);
-        }
-        .why-card:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: var(--color-accent);
-            transform: translateY(-6px);
-        }
-        .why-icon { font-size: 2rem; margin-bottom: 1rem; }
-        .why-card h3 { color: var(--color-white); font-size: 1.125rem; margin-bottom: 0.5rem; }
-        .why-card p { color: rgba(255,255,255,0.65); font-size: 0.95rem; line-height: 1.6; }
-
-        /* ── Featured Projects ── */
-        .featured-projects {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 1rem;
-            height: 600px;
-        }
-        .fp-card {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
             cursor: pointer;
         }
-        .fp-card:first-child { grid-row: 1 / 3; }
-        .fp-card img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-        .fp-card:hover img { transform: scale(1.08); }
-        .fp-card::after {
-            content: '';
+
+        .cs-card-large img {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(10,25,47,0.9) 0%, transparent 50%);
-        }
-        .fp-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1.5rem;
-            z-index: 2;
-            color: white;
-        }
-        .fp-content .client-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--color-accent);
-            margin-bottom: 0.5rem;
-        }
-        .fp-content h3 {
-            color: white;
-            font-size: 1.25rem;
-            margin: 0;
-        }
-        .fp-card-small .fp-content h3 { font-size: 1rem; }
-
-        /* ── Leadership Strip ── */
-        .leadership-strip {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-        .leader-card {
-            background: var(--color-white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
-            text-align: center;
-            transition: var(--transition-slow);
-        }
-        .leader-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
-        .leader-img {
             width: 100%;
-            height: 280px;
+            height: 100%;
             object-fit: cover;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
+            transition: transform 0.8s var(--ease-out);
         }
-        .leader-info { padding: 1.5rem; }
-        .leader-info h3 { font-size: 1.125rem; margin-bottom: 0.25rem; }
-        .leader-info p { font-size: 0.875rem; color: var(--color-accent-dark); font-weight: 600; margin: 0; }
 
-        /* ── Responsive ── */
-        @media (max-width: 992px) {
-            .why-grid { grid-template-columns: repeat(2, 1fr); }
-            .featured-projects { grid-template-columns: 1fr; grid-template-rows: repeat(3, 300px); height: auto; }
-            .fp-card:first-child { grid-row: auto; }
-            .leadership-strip { grid-template-columns: repeat(2, 1fr); }
+        .cs-card-large:hover img {
+            transform: scale(1.06);
         }
-        @media (max-width: 768px) {
-            .why-grid { grid-template-columns: 1fr; }
-            .leadership-strip { grid-template-columns: 1fr; }
-            .stat-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
-            .stat-card:last-child { border-bottom: none; }
+
+        .cs-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(7, 17, 31, 0.95) 0%, rgba(7, 17, 31, 0.2) 60%);
+            z-index: 1;
+        }
+
+        .cs-card-body {
+            position: relative;
+            z-index: 2;
+            padding: var(--s-lg);
+            color: var(--c-white);
+        }
+
+        @media (max-width: 992px) {
+            .case-study-hero-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ✦ Navigation ✦ -->
+    <!-- ✦ Navigation Bar ✦ -->
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
-        <div class="container nav-container">
-            <a href="index.html" class="logo" aria-label="Navtara Home">
-                NV <span>NAVTARA</span>
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="Navtara Projects Home">
+                <span class="logo-mark">NV</span>
+                <div>
+                    <span class="logo-text">NAVTARA</span>
+                    <span class="logo-sub">PROJECTS PVT. LTD.</span>
+                </div>
             </a>
             <div class="nav-links" id="main-nav">
-                <a href="index.html">Home</a>
+                <a href="index.html" class="active">Home</a>
                 <a href="about.html">About</a>
                 <a href="capabilities.html">Capabilities</a>
                 <a href="projects.html">Projects</a>
+                <a href="machinery.html">Plant &amp; Machinery</a>
                 <a href="quality.html">Quality &amp; Safety</a>
+                <a href="leadership.html">Leadership</a>
+                <a href="clients.html">Clients</a>
                 <a href="contact.html">Contact</a>
             </div>
-            <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+            <a href="contact.html" class="nav-cta">Request Quote →</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
         </div>
     </nav>
 
-    <!-- ✦ Hero ✦ -->
-    <header class="hero" role="banner">
+    <!-- ✦ Hero Section ✦ -->
+    <header class="hero-v3" role="banner">
         <div class="container hero-content">
-            <p class="subheadline">Engineering Strength &bull; Delivering Reliability</p>
-            <h1 class="heading-xl text-light">Engineering Industrial Excellence.<br>Delivering Mission-Critical Projects.</h1>
-            <p class="body-lg text-light" style="margin-top: 1rem; max-width: 640px; opacity: 0.85;">
-                Heavy Engineering &bull; Fabrication &bull; Industrial Construction &bull; Surface Protection &bull; EPC Support
+            <div class="hero-badge-pill">Precision Engineering &bull; Pan-India Execution</div>
+            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-md);">
+                Engineering Industrial Excellence.<br>
+                <span class="text-accent">Delivering Mission-Critical Projects.</span>
+            </h1>
+            <p class="body-lg text-light" style="max-width: 680px; margin-bottom: var(--s-lg); opacity: 0.9;">
+                Navtara Projects Pvt. Ltd. is a trusted heavy engineering enterprise specializing in high-tolerance structural fabrication, plant erection, industrial piping, and protective surface coatings for Steel, Power, Cement, and Infrastructure sectors.
             </p>
             <div class="hero-buttons">
-                <a href="capabilities.html" class="btn btn-primary">Explore Capabilities</a>
-                <a href="projects.html" class="btn btn-outline">View Projects</a>
+                <a href="capabilities.html" class="btn btn-primary btn--lg">Our Capabilities</a>
+                <a href="projects.html" class="btn btn-outline btn--lg">Project Explorer</a>
             </div>
         </div>
     </header>
 
-    <!-- ✦ Trusted By (Marquee) ✦ -->
-    <section class="section-padding-sm bg-light" aria-label="Trusted By">
-        <div class="container text-center reveal" style="margin-bottom:1.5rem;">
-            <p style="font-weight:700;letter-spacing:4px;font-size:0.75rem;text-transform:uppercase;color:var(--color-dark-grey);opacity:0.5;">TRUSTED PARTNER TO INDIA'S INDUSTRY LEADERS</p>
+    <!-- ✦ Trusted Client Partner Infinite Marquee ✦ -->
+    <section class="section--xs bg-off-white" aria-label="Trusted Industry Partners">
+        <div class="container text-center" style="margin-bottom: var(--s-sm);">
+            <div class="section-label">Trusted Partner to India's Core Industrial Leaders</div>
         </div>
-        <div class="marquee-wrapper" role="marquee" aria-label="Client logos">
+        <div class="marquee-wrapper" role="region" aria-label="Client marquee">
             <div class="marquee-track">
                 <span class="marquee-item">TATA PROJECTS <span class="marquee-divider">✦</span></span>
                 <span class="marquee-item">LARSEN &amp; TOUBRO <span class="marquee-divider">✦</span></span>
@@ -305,8 +229,9 @@
                 <span class="marquee-item">ISGEC HEAVY ENGINEERING <span class="marquee-divider">✦</span></span>
                 <span class="marquee-item">KEC INTERNATIONAL <span class="marquee-divider">✦</span></span>
                 <span class="marquee-item">MAHAGENCO <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">THERMAX LIMITED <span class="marquee-divider">✦</span></span>
                 <span class="marquee-item">MAHA CEMENT <span class="marquee-divider">✦</span></span>
-                <!-- Duplicate for seamless loop -->
+                <!-- Loop duplicates -->
                 <span class="marquee-item">TATA PROJECTS <span class="marquee-divider">✦</span></span>
                 <span class="marquee-item">LARSEN &amp; TOUBRO <span class="marquee-divider">✦</span></span>
                 <span class="marquee-item">JINDAL STEEL &amp; POWER <span class="marquee-divider">✦</span></span>
@@ -314,246 +239,377 @@
                 <span class="marquee-item">ISGEC HEAVY ENGINEERING <span class="marquee-divider">✦</span></span>
                 <span class="marquee-item">KEC INTERNATIONAL <span class="marquee-divider">✦</span></span>
                 <span class="marquee-item">MAHAGENCO <span class="marquee-divider">✦</span></span>
+                <span class="marquee-item">THERMAX LIMITED <span class="marquee-divider">✦</span></span>
                 <span class="marquee-item">MAHA CEMENT <span class="marquee-divider">✦</span></span>
             </div>
         </div>
     </section>
 
-    <!-- ✦ Statistics ✦ -->
-    <section class="section-padding stats-section" aria-label="Company Statistics">
+    <!-- ✦ Key Enterprise Metrics & Scale ✦ -->
+    <section class="section bg-navy stats-section" aria-label="Enterprise Execution Metrics">
         <div class="container grid-4">
-            <div class="stat-card reveal-left">
-                <div class="stat-number"><span class="counter-value" data-target="100">0</span><span class="suffix">+</span></div>
-                <div class="stat-label">Projects Executed</div>
+            <div class="stat-card-v3 reveal-scale">
+                <div class="stat-number heading-xl text-accent"><span class="counter-value" data-target="100">0</span><span>+</span></div>
+                <div class="stat-label text-light">Projects Executed</div>
             </div>
-            <div class="stat-card reveal-left delay-100">
-                <div class="stat-number"><span class="counter-value" data-target="30">0</span><span class="suffix">+</span></div>
-                <div class="stat-label">Happy Clients</div>
+            <div class="stat-card-v3 reveal-scale delay-100">
+                <div class="stat-number heading-xl text-accent"><span class="counter-value" data-target="30">0</span><span>+</span></div>
+                <div class="stat-label text-light">Enterprise Clients</div>
             </div>
-            <div class="stat-card reveal-right delay-100">
-                <div class="stat-number"><span class="counter-value" data-target="10">0</span><span class="suffix">+</span></div>
-                <div class="stat-label">States Served</div>
+            <div class="stat-card-v3 reveal-scale delay-200">
+                <div class="stat-number heading-xl text-accent"><span class="counter-value" data-target="10">0</span><span>+</span></div>
+                <div class="stat-label text-light">States Served</div>
             </div>
-            <div class="stat-card reveal-right">
-                <div class="stat-number"><span class="counter-value" data-target="250">0</span><span class="suffix">+</span></div>
-                <div class="stat-label">Skilled Professionals</div>
+            <div class="stat-card-v3 reveal-scale delay-300">
+                <div class="stat-number heading-xl text-accent"><span class="counter-value" data-target="250">0</span><span>+</span></div>
+                <div class="stat-label text-light">Engineers &amp; Specialists</div>
             </div>
         </div>
     </section>
 
-    <!-- ✦ Industries We Serve ✦ -->
-    <section class="section-padding" aria-labelledby="industries-heading">
+    <!-- ✦ Strategic Positioning: Why Navtara ✦ -->
+    <section class="section bg-white" aria-labelledby="why-navtara-heading">
         <div class="container">
-            <div class="text-center reveal" style="margin-bottom:var(--space-lg);">
-                <h2 class="heading-lg" id="industries-heading">Industries We Serve</h2>
-                <p class="body-lg" style="max-width:600px;margin:0 auto;">Delivering engineered solutions that drive core sectors forward.</p>
+            <div class="text-center reveal" style="max-width: 760px; margin: 0 auto var(--s-xl);">
+                <div class="section-label">Engineering Leadership</div>
+                <h2 class="heading-lg" id="why-navtara-heading">Built on Discipline. Driven by Precision.</h2>
+                <p class="body-lg" style="margin-top: var(--s-xs);">
+                    Navtara Projects combines deep technical mastery with operational agility to execute complex industrial packages safely, on schedule, and to exact specifications.
+                </p>
             </div>
+
             <div class="grid-3">
-                <div class="industry-card reveal delay-100">
-                    <img src="assets/images/fabrication.png" alt="Steel industry fabrication workshop" loading="lazy">
-                    <div class="industry-content">
-                        <h3>Steel</h3>
-                        <p>High-performance structures and systems for the steel industry.</p>
-                    </div>
+                <div class="cap-card-v3 reveal delay-100">
+                    <div style="font-size: 2.2rem; margin-bottom: var(--s-sm);">⚙️</div>
+                    <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Metso Technical Lineage</h3>
+                    <p class="body-md text-muted">
+                        Our leadership and core technical team stem from Metso-trained engineering standards, ensuring world-class quality systems and high-precision execution.
+                    </p>
                 </div>
-                <div class="industry-card reveal delay-200">
-                    <img src="assets/images/hero.png" alt="Power plant industrial facility" loading="lazy">
-                    <div class="industry-content">
-                        <h3>Power Plants</h3>
-                        <p>Reliable engineering for power generation and energy infrastructure.</p>
-                    </div>
+                <div class="cap-card-v3 reveal delay-200">
+                    <div style="font-size: 2.2rem; margin-bottom: var(--s-sm);">🛡️</div>
+                    <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Zero-Harm HSE Culture</h3>
+                    <p class="body-md text-muted">
+                        Integrated Safety Management Systems with mandatory JSA, Daily Toolbox Talks, PPE compliance, and zero-accident target operational protocols.
+                    </p>
                 </div>
-                <div class="industry-card reveal delay-300">
-                    <!-- Styled gradient background — image will be swapped when quota resets -->
-                    <div class="industry-bg" style="background: linear-gradient(135deg, #1a3a5c 0%, #0a2240 40%, #1e4d6e 100%);"></div>
-                    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;font-size:6rem;opacity:0.15;">🏭</div>
-                    <div class="industry-content">
-                        <h3>Mining &amp; Cement</h3>
-                        <p>Robust solutions for material handling and processing plants.</p>
-                    </div>
+                <div class="cap-card-v3 reveal delay-300">
+                    <div style="font-size: 2.2rem; margin-bottom: var(--s-sm);">📐</div>
+                    <h3 class="heading-md" style="margin-bottom: var(--s-xs);">AWS / ASME Compliance</h3>
+                    <p class="body-md text-muted">
+                        Fabrication procedures governed by approved WPS/PQR, qualified welders, and certified ASNT Level II Non-Destructive Testing (UT, RT, MPI).
+                    </p>
+                </div>
+                <div class="cap-card-v3 reveal delay-100">
+                    <div style="font-size: 2.2rem; margin-bottom: var(--s-sm);">🚚</div>
+                    <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Pan-India Mobilization</h3>
+                    <p class="body-md text-muted">
+                        Rapid deployment capabilities across remote and demanding industrial zones in Odisha, Maharashtra, Telangana, Jharkhand, and Chhattisgarh.
+                    </p>
+                </div>
+                <div class="cap-card-v3 reveal delay-200">
+                    <div style="font-size: 2.2rem; margin-bottom: var(--s-sm);">🖌️</div>
+                    <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Advanced Surface Protection</h3>
+                    <p class="body-md text-muted">
+                        Heavy abrasive blasting (Sa 2.5) and high-ratio airless spray coating for maximum structural lifespan in hostile chemical and marine environments.
+                    </p>
+                </div>
+                <div class="cap-card-v3 reveal delay-300">
+                    <div style="font-size: 2.2rem; margin-bottom: var(--s-sm);">⏱️</div>
+                    <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Guaranteed On-Time Handover</h3>
+                    <p class="body-md text-muted">
+                        Rigorous Primavera / MS Project milestone tracking ensuring reliable turnaround time for plant shutdowns and new greenfield projects.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ✦ Featured Projects ✦ -->
-    <section class="section-padding bg-light" aria-labelledby="projects-heading">
+    <!-- ✦ Core Engineering Expertise (Capabilities Overview) ✦ -->
+    <section class="section bg-off-white" aria-labelledby="capabilities-heading">
         <div class="container">
-            <div class="text-center reveal" style="margin-bottom:var(--space-lg);">
-                <h2 class="heading-lg" id="projects-heading">Featured Projects</h2>
-                <p class="body-lg" style="max-width:600px;margin:0 auto;">A selection of our most impactful project deliveries across India.</p>
-            </div>
-            <div class="featured-projects reveal">
-                <!-- Large card -->
-                <div class="fp-card">
-                    <img src="assets/images/fabrication.png" alt="Blasting and Painting Works, Jindal Steel, Angul" loading="lazy">
-                    <div class="fp-content">
-                        <p class="client-tag">Jindal Steel &amp; Power · Angul, Odisha</p>
-                        <h3>Blasting &amp; Painting Works — ₹3.8 Cr</h3>
-                    </div>
-                </div>
-                <!-- Top right -->
-                <div class="fp-card fp-card-small">
-                    <img src="assets/images/hero.png" alt="Fire Fighting System, Mahagenco, Nagpur" loading="lazy">
-                    <div class="fp-content">
-                        <p class="client-tag">Mahagenco · Nagpur, Maharashtra</p>
-                        <h3>Fire Fighting System Installation</h3>
-                    </div>
-                </div>
-                <!-- Bottom right -->
-                <div class="fp-card fp-card-small" style="background:linear-gradient(135deg,#2C5282,#0A192F);">
-                    <div class="fp-content">
-                        <p class="client-tag">KEC International (Maha Cement) · Telangana</p>
-                        <h3>Fabrication &amp; Erection Works — ₹1.9 Cr</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top:var(--space-md);">
-                <a href="projects.html" class="btn btn-primary">View All Projects</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ✦ Capabilities Preview ✦ -->
-    <section class="section-padding" aria-labelledby="capabilities-heading">
-        <div class="container">
-            <div class="grid-2" style="align-items:center;gap:var(--space-xl);">
+            <div class="grid-2" style="align-items: center; gap: var(--s-xl);">
                 <div class="reveal-left">
-                    <h2 class="heading-lg" id="capabilities-heading">Our Capabilities</h2>
-                    <p class="body-lg" style="margin-bottom:var(--space-md);">End-to-End Engineering &bull; Built on Expertise &bull; Delivered with Precision.<br>We execute projects with strict adherence to quality, safety, and timelines.</p>
-                    <a href="capabilities.html" class="btn btn-primary">View All Services</a>
+                    <div class="section-label">Core Capabilities</div>
+                    <h2 class="heading-lg" id="capabilities-heading">Comprehensive Engineering Solutions for Core Sectors</h2>
+                    <p class="body-lg" style="margin-top: var(--s-sm); margin-bottom: var(--s-md);">
+                        From heavy structural fabrication to mechanical equipment erection, process piping, and industrial civil infrastructure — we provide end-to-end execution.
+                    </p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="capabilities.html" class="btn btn-primary">Full Capability Directory</a>
+                        <a href="machinery.html" class="btn btn-outline" style="color: var(--c-navy); border-color: var(--c-navy);">Machinery Fleet</a>
+                    </div>
                 </div>
-                <div class="reveal-right" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-                    <div class="cap-item"><h4 class="heading-md" style="font-size:1.1rem;">Fabrication</h4><p>Precision fabrication of heavy structural and process equipment.</p></div>
-                    <div class="cap-item"><h4 class="heading-md" style="font-size:1.1rem;">Erection</h4><p>Safe and efficient erection of structures, equipment, and piping.</p></div>
-                    <div class="cap-item"><h4 class="heading-md" style="font-size:1.1rem;">Surface Protection</h4><p>Industrial painting and protective coatings for long-term durability.</p></div>
-                    <div class="cap-item"><h4 class="heading-md" style="font-size:1.1rem;">Civil Works</h4><p>Reliable civil engineering and construction for industrial projects.</p></div>
+
+                <div class="reveal-right" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-md);">
+                    <div class="card" style="padding: var(--s-md); border-top: 4px solid var(--c-accent-d);">
+                        <h4 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.5rem;">Structural Fabrication</h4>
+                        <p class="body-md text-muted">Heavy beams, ducting, hoppers, technology structures &amp; pressure equipment.</p>
+                    </div>
+                    <div class="card" style="padding: var(--s-md); border-top: 4px solid var(--c-accent-d);">
+                        <h4 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.5rem;">Mechanical Erection</h4>
+                        <p class="body-md text-muted">Precision positioning, alignment &amp; commissioning of heavy plant machinery.</p>
+                    </div>
+                    <div class="card" style="padding: var(--s-md); border-top: 4px solid var(--c-accent-d);">
+                        <h4 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.5rem;">Surface Protection</h4>
+                        <p class="body-md text-muted">Abrasive grit blasting, protective epoxies, polyurethane &amp; fireproof coatings.</p>
+                    </div>
+                    <div class="card" style="padding: var(--s-md); border-top: 4px solid var(--c-accent-d);">
+                        <h4 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.5rem;">Industrial Civil Works</h4>
+                        <p class="body-md text-muted">Heavy equipment foundations, RCC structures, trenches &amp; industrial buildings.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ✦ Why Navtara ✦ -->
-    <section class="section-padding bg-primary" aria-labelledby="why-heading">
+    <!-- ✦ Proof of Execution: Featured Projects & Explorer ✦ -->
+    <section class="section bg-white" aria-labelledby="featured-projects-heading">
         <div class="container">
-            <div class="text-center reveal">
-                <h2 class="heading-lg text-light" id="why-heading">Why Navtara</h2>
-                <p class="body-lg text-light" style="max-width:600px;margin:1rem auto 0;opacity:0.75;">What sets us apart is not just what we build — it's how we build it.</p>
+            <div class="text-center reveal" style="max-width: 700px; margin: 0 auto var(--s-lg);">
+                <div class="section-label">Proof of Execution</div>
+                <h2 class="heading-lg" id="featured-projects-heading">Case Studies &amp; High-Impact Deliveries</h2>
+                <p class="body-lg" style="margin-top: var(--s-xs);">
+                    Demonstrated success delivering high-value engineering packages for India's foremost EPC contractors and plant operators.
+                </p>
             </div>
-            <div class="why-grid">
-                <div class="why-card reveal delay-100">
-                    <div class="why-icon">🏆</div>
-                    <h3>Engineering Leadership</h3>
-                    <p>Led by industry veterans with decades of hands-on experience in heavy engineering and industrial construction.</p>
+
+            <div class="case-study-hero-grid reveal">
+                <!-- Main Featured Project Card -->
+                <div class="cs-card-large" data-project-trigger data-title="Surface Preparation &amp; Heavy Coating Package" data-client="Jindal Steel &amp; Power Ltd." data-loc="Angul, Odisha" data-value="₹3.8 Crore" data-scope="Abrasive Blasting (Sa 2.5), Multi-Layer Epoxy &amp; Polyurethane Coating of Structural Steelwork" data-desc="Complete surface protection execution for JSPL steel plant expansion. Over 15,000 MT of structural steel blasted and coated under strict DFT inspection benchmarks.">
+                    <img src="assets/images/fabrication.png" alt="Jindal Steel Project Fabrication" loading="lazy">
+                    <div class="cs-card-overlay"></div>
+                    <div class="cs-card-body">
+                        <span class="tag tag--accent" style="margin-bottom: 0.75rem;">STEEL &amp; POWER</span>
+                        <h3 class="heading-md text-light" style="margin-bottom: 0.5rem;">Jindal Steel &amp; Power Ltd. — Angul</h3>
+                        <p class="body-md text-light" style="opacity: 0.85; margin-bottom: 1rem;">Surface Preparation &amp; Protective Coating Package (₹3.8 Cr)</p>
+                        <span class="btn btn-outline btn--sm">View Engineering Case Study →</span>
+                    </div>
                 </div>
-                <div class="why-card reveal delay-200">
-                    <div class="why-icon">🎯</div>
-                    <h3>Ex-Metso Expertise</h3>
-                    <p>Core team draws from Metso-trained technical expertise, bringing world-class precision to every project.</p>
+
+                <!-- Secondary Featured Cards -->
+                <div style="display: flex; flex-direction: column; gap: var(--s-md);">
+                    <div class="card" style="padding: var(--s-md); background: var(--c-navy-md); color: var(--c-white);" data-project-trigger data-title="Industrial Fire Protection &amp; Piping System" data-client="Mahagenco" data-loc="Nagpur, Maharashtra" data-value="Turnkey Package" data-scope="Fire Water Piping, Pumping Station Erection &amp; Automated Deluge Valves" data-desc="Execution of complete fire safety and high-pressure water piping networks for Mahagenco thermal power units.">
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem; align-self: flex-start;">POWER SECTOR</span>
+                        <h3 class="heading-md text-light" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Mahagenco Thermal Station</h3>
+                        <p class="body-md text-light" style="opacity: 0.75; font-size: 0.875rem; margin-bottom: 1rem;">Fire Fighting &amp; Piping Installation Package</p>
+                        <span class="btn btn-outline btn--sm" style="align-self: flex-start;">View Details</span>
+                    </div>
+
+                    <div class="card" style="padding: var(--s-md); background: var(--c-navy-lt); color: var(--c-white);" data-project-trigger data-title="Cement Plant Structural Fabrication &amp; Erection" data-client="KEC International / Maha Cement" data-loc="Telangana" data-value="₹1.9 Crore" data-scope="Structural Steel Fabrication, Silo Erection &amp; Conveyor Support Fabrication" data-desc="Heavy structural fabrication package for cement clinker plant expansion. Total tonnage executed: 1,200 MT within tight shutdown timeline.">
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem; align-self: flex-start;">CEMENT &amp; MINING</span>
+                        <h3 class="heading-md text-light" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Maha Cement Clinker Line</h3>
+                        <p class="body-md text-light" style="opacity: 0.75; font-size: 0.875rem; margin-bottom: 1rem;">Fabrication &amp; Erection Package (₹1.9 Cr)</p>
+                        <span class="btn btn-outline btn--sm" style="align-self: flex-start;">View Details</span>
+                    </div>
                 </div>
-                <div class="why-card reveal delay-300">
-                    <div class="why-icon">✅</div>
-                    <h3>Quality Assurance</h3>
-                    <p>Rigorous ITP-based quality management with NDT testing, inspection, and full documentation on every package.</p>
+            </div>
+
+            <div class="text-center" style="margin-top: var(--s-xl);">
+                <a href="projects.html" class="btn btn-primary btn--lg">Explore Full 100+ Project Directory →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✦ Interactive Pan-India Project Footprint Map ✦ -->
+    <section class="section bg-navy text-light" aria-labelledby="map-heading">
+        <div class="container">
+            <div class="text-center reveal" style="max-width: 700px; margin: 0 auto var(--s-xl);">
+                <div class="section-label section-label--light">Pan-India Reach</div>
+                <h2 class="heading-lg text-light" id="map-heading">Our Nationwide Project Execution Footprint</h2>
+                <p class="body-lg text-light" style="opacity: 0.8; margin-top: var(--s-xs);">
+                    Demonstrated deployment capacity across major industrial hubs in 10+ states across India.
+                </p>
+            </div>
+
+            <div class="india-map-container reveal">
+                <!-- Interactive Pins representing major sites -->
+                <!-- Odisha -->
+                <div class="map-pin" style="top: 48%; left: 66%;" data-project-trigger data-title="Jindal Steel &amp; Power Project Site" data-client="JSPL" data-loc="Angul, Odisha" data-value="₹3.8 Cr Scope" data-scope="Surface Protection &amp; Fabrication" data-desc="Active project site in Angul industrial belt.">
+                    <div class="map-pin-dot"></div>
+                    <div class="map-pin-ring"></div>
+                    <div class="map-pin-tooltip">
+                        <strong>Odisha (Angul)</strong><br>JSPL Blast &amp; Paint Package
+                    </div>
                 </div>
-                <div class="why-card reveal delay-100">
-                    <div class="why-icon">🛡️</div>
-                    <h3>Safety First</h3>
-                    <p>Zero-compromise safety culture with PPE compliance, toolbox talks, and formal risk assessments before every task.</p>
+
+                <!-- Maharashtra -->
+                <div class="map-pin" style="top: 52%; left: 36%;" data-project-trigger data-title="Mahagenco Thermal Power Site" data-client="Mahagenco" data-loc="Nagpur, Maharashtra" data-value="Power Piping" data-scope="Fire Fighting &amp; Piping Erection" data-desc="Nagpur thermal power installation site.">
+                    <div class="map-pin-dot"></div>
+                    <div class="map-pin-ring"></div>
+                    <div class="map-pin-tooltip">
+                        <strong>Maharashtra (Nagpur)</strong><br>Mahagenco Power Installation
+                    </div>
                 </div>
-                <div class="why-card reveal delay-200">
-                    <div class="why-icon">⏱️</div>
-                    <h3>Timely Delivery</h3>
-                    <p>We honour commitments. Every project is managed with detailed scheduling to ensure on-time handover.</p>
+
+                <!-- Telangana -->
+                <div class="map-pin" style="top: 64%; left: 45%;" data-project-trigger data-title="Maha Cement Project Site" data-client="KEC / Maha Cement" data-loc="Telangana" data-value="₹1.9 Cr Scope" data-scope="Clinker Line Structural Erection" data-desc="Cement plant expansion site in Telangana.">
+                    <div class="map-pin-dot"></div>
+                    <div class="map-pin-ring"></div>
+                    <div class="map-pin-tooltip">
+                        <strong>Telangana</strong><br>Maha Cement Fabrication
+                    </div>
                 </div>
-                <div class="why-card reveal delay-300">
-                    <div class="why-icon">🗺️</div>
-                    <h3>Pan-India Execution</h3>
-                    <p>Proven track record of mobilising and executing projects across 10+ states throughout India.</p>
+
+                <!-- Jharkhand -->
+                <div class="map-pin" style="top: 42%; left: 62%;">
+                    <div class="map-pin-dot"></div>
+                    <div class="map-pin-ring"></div>
+                    <div class="map-pin-tooltip">
+                        <strong>Jharkhand (Jamshedpur)</strong><br>Steel Structural Works
+                    </div>
+                </div>
+
+                <!-- Map Background Label -->
+                <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;">
+                    <div style="text-align: center; opacity: 0.15; font-family: var(--f-display); font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; letter-spacing: 0.1em; color: var(--c-white);">
+                        PAN-INDIA PROJECT MAP
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ✦ Leadership Preview ✦ -->
-    <section class="section-padding" aria-labelledby="leadership-heading">
+    <!-- ✦ Executive Leadership Preview ✦ -->
+    <section class="section bg-white" aria-labelledby="leadership-heading">
         <div class="container">
-            <div class="text-center reveal" style="margin-bottom:var(--space-lg);">
-                <h2 class="heading-lg" id="leadership-heading">Leadership</h2>
-                <p class="body-lg" style="max-width:500px;margin:0 auto;">Experienced engineers. Proven leaders. Driven by excellence.</p>
+            <div class="text-center reveal" style="max-width: 700px; margin: 0 auto var(--s-xl);">
+                <div class="section-label">Trust &amp; Governance</div>
+                <h2 class="heading-lg" id="leadership-heading">Executive Leadership</h2>
+                <p class="body-lg" style="margin-top: var(--s-xs);">
+                    Guided by seasoned heavy engineering directors committed to technical integrity and client satisfaction.
+                </p>
             </div>
-            <div class="leadership-strip">
-                <div class="leader-card reveal delay-100">
-                    <div class="leader-img">👤</div>
-                    <div class="leader-info">
-                        <h3>Director / Founder</h3>
-                        <p>Navtara Projects Pvt. Ltd.</p>
+
+            <div class="grid-3">
+                <div class="leader-card-v3 reveal delay-100">
+                    <div class="leader-avatar-box">
+                        <div style="font-size: 5rem;">👤</div>
+                        <div class="leader-avatar-badge">FOUNDER &amp; MD</div>
+                    </div>
+                    <div style="padding: var(--s-md);">
+                        <p class="tag tag--accent" style="margin-bottom: 0.5rem;">STRATEGIC VISION</p>
+                        <h3 class="heading-md" style="margin-bottom: 0.25rem;">Director, Navtara Projects</h3>
+                        <p class="body-md text-muted" style="font-size: 0.9rem;">
+                            Over 20+ years driving large-scale industrial construction, EPC execution, and corporate engineering governance across India.
+                        </p>
                     </div>
                 </div>
-                <div class="leader-card reveal delay-200">
-                    <div class="leader-img">👤</div>
-                    <div class="leader-info">
-                        <h3>Head of Engineering</h3>
-                        <p>Technical Operations</p>
+
+                <div class="leader-card-v3 reveal delay-200">
+                    <div class="leader-avatar-box">
+                        <div style="font-size: 5rem;">👤</div>
+                        <div class="leader-avatar-badge">HEAD OF ENGINEERING</div>
+                    </div>
+                    <div style="padding: var(--s-md);">
+                        <p class="tag tag--accent" style="margin-bottom: 0.5rem;">EX-METSO LINEAGE</p>
+                        <h3 class="heading-md" style="margin-bottom: 0.25rem;">Head of Technical Operations</h3>
+                        <p class="body-md text-muted" style="font-size: 0.9rem;">
+                            Specialist in heavy structural design, WPS/PQR validation, AWS codes, and Level-II NDT quality control frameworks.
+                        </p>
                     </div>
                 </div>
-                <div class="leader-card reveal delay-300">
-                    <div class="leader-img">👤</div>
-                    <div class="leader-info">
-                        <h3>Project Director</h3>
-                        <p>Execution &amp; Delivery</p>
+
+                <div class="leader-card-v3 reveal delay-300">
+                    <div class="leader-avatar-box">
+                        <div style="font-size: 5rem;">👤</div>
+                        <div class="leader-avatar-badge">PROJECT DIRECTOR</div>
+                    </div>
+                    <div style="padding: var(--s-md);">
+                        <p class="tag tag--accent" style="margin-bottom: 0.5rem;">SITE EXECUTION</p>
+                        <h3 class="heading-md" style="margin-bottom: 0.25rem;">Director of Site Operations</h3>
+                        <p class="body-md text-muted" style="font-size: 0.9rem;">
+                            Directing site mobilization, HSE compliance, resource management, and turnkey commissionings for steel &amp; power plants.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="text-center" style="margin-top:var(--space-md);">
-                <a href="leadership.html" class="btn btn-primary">Meet the Team</a>
+
+            <div class="text-center" style="margin-top: var(--s-xl);">
+                <a href="leadership.html" class="btn btn-outline" style="color: var(--c-navy); border-color: var(--c-navy);">Read Leadership Vision &amp; Philosophy →</a>
             </div>
         </div>
     </section>
 
     <!-- ✦ Footer ✦ -->
-    <footer class="footer bg-primary text-light" role="contentinfo">
+    <footer class="footer bg-charcoal text-light" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="logo" style="margin-bottom:1rem;" aria-label="Navtara Home">
-                        NV <span>NAVTARA</span>
+                    <a href="index.html" class="logo" aria-label="Navtara Projects Home">
+                        <span class="logo-mark">NV</span>
+                        <div>
+                            <span class="logo-text">NAVTARA</span>
+                            <span class="logo-sub">PROJECTS PVT. LTD.</span>
+                        </div>
                     </a>
-                    <p style="opacity:0.65;max-width:300px;font-size:0.95rem;line-height:1.7;">Navtara Projects Pvt. Ltd. stands at the intersection of deep engineering expertise and real-world industrial execution.</p>
+                    <p style="margin-top: var(--s-md);">
+                        Navtara Projects Pvt. Ltd. delivers high-precision heavy engineering, fabrication, erection, and protective coating solutions for India's core infrastructure sectors.
+                    </p>
                 </div>
+
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
+                    <h5>Navigation</h5>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="projects.html">Project Portfolio</a></li>
-                        <li><a href="capabilities.html">Capabilities</a></li>
+                        <li><a href="about.html">About Enterprise</a></li>
+                        <li><a href="capabilities.html">Core Capabilities</a></li>
+                        <li><a href="projects.html">Project Directory</a></li>
                         <li><a href="machinery.html">Plant &amp; Machinery</a></li>
-                        <li><a href="leadership.html">Leadership</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="capabilities.html">Fabrication</a></li>
-                        <li><a href="capabilities.html">Erection &amp; Construction</a></li>
-                        <li><a href="capabilities.html">Surface Protection</a></li>
                         <li><a href="quality.html">Quality &amp; Safety</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p style="opacity:0.7;margin-bottom:0.5rem;font-size:0.9rem;">📧 info@navtaraprojects.com</p>
-                    <p style="opacity:0.7;margin-bottom:1.5rem;font-size:0.9rem;">🏢 India (Pan-India Operations)</p>
-                    <a href="contact.html" class="btn btn-primary" style="font-size:0.8rem;padding:0.75rem 1.5rem;">Request a Quote</a>
+                    <h5>Sectors Served</h5>
+                    <ul>
+                        <li><a href="industries.html">Steel Plants</a></li>
+                        <li><a href="industries.html">Power Generation</a></li>
+                        <li><a href="industries.html">Cement &amp; Mining</a></li>
+                        <li><a href="industries.html">Infrastructure &amp; EPC</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-contact">
+                    <h5>Corporate Desk</h5>
+                    <p><strong>📧</strong> info@navtaraprojects.com</p>
+                    <p><strong>🏢</strong> Corporate Office: India</p>
+                    <p><strong>🌐</strong> Pan-India Site Operations</p>
+                    <div style="margin-top: var(--s-sm);">
+                        <a href="contact.html" class="btn btn-primary btn--sm">Inquire for Tenders</a>
+                    </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                &copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.
+                <span>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</span>
+                <span>Designed to Enterprise Industrial Standards.</span>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top -->
+    <!-- ✦ Interactive Case Study Detail Modal / Drawer ✦ -->
+    <div class="project-modal" id="project-detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+        <div class="project-modal-content">
+            <div class="project-modal-close" id="modal-close-btn">&times;</div>
+            <div style="padding: var(--s-lg);">
+                <span class="tag tag--accent" id="modal-project-client" style="margin-bottom: 0.5rem;">Client Name</span>
+                <h2 class="heading-lg" id="modal-project-title" style="margin-bottom: var(--s-sm);">Project Title</h2>
+                <div class="grid-2" style="margin: var(--s-md) 0; padding: var(--s-md); background: var(--c-off-white); border-radius: var(--radius-md);">
+                    <div><strong>Location:</strong> <span id="modal-project-loc">City, State</span></div>
+                    <div><strong>Value / Scope:</strong> <span id="modal-project-value">Package Value</span></div>
+                </div>
+                <h4 class="heading-md" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Technical Scope of Work</h4>
+                <p class="body-md text-muted" id="modal-project-scope" style="margin-bottom: var(--s-md);">Scope summary</p>
+                <h4 class="heading-md" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Engineering Execution Overview</h4>
+                <p class="body-md text-muted" id="modal-project-desc">Detailed description</p>
+                <div style="margin-top: var(--s-lg); text-align: right;">
+                    <a href="contact.html" class="btn btn-primary">Inquire Similar Package →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
     <button id="scroll-top-btn" aria-label="Scroll to top">↑</button>
 
     <!-- Scripts -->

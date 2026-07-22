@@ -4,345 +4,266 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quality & Safety | Navtara Projects Pvt. Ltd.</title>
-    <meta name="description" content="Navtara's rigorous Quality and Safety Management System ensures every project is delivered to the highest standards.">
-    <meta property="og:title" content="Quality & Safety | Navtara Projects">
+    <meta name="description" content="Explore Navtara's interactive engineering quality workflow: Material Inspection, Fabrication, NDT, Surface Painting, Final Quality Control, and Dispatch.">
+    <meta property="og:title" content="Quality & Safety Management | Navtara Projects">
     <meta property="og:image" content="assets/images/hero.png">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/fixes.css">
 
     <style>
-        .page-header {
-            padding: 120px 0 var(--space-xl);
-            background: var(--color-primary);
-            color: var(--color-white);
+        .page-header-v3 {
+            padding: calc(var(--nav-height) + var(--s-xl)) 0 var(--s-xl);
+            background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-md) 100%);
+            color: var(--c-white);
             text-align: center;
         }
 
-        /* ─── Timeline ─── */
-        .timeline-section {
-            padding: var(--space-xl) 0;
-            background: var(--color-light-grey);
+        .workflow-pane {
+            display: none;
+            background: var(--c-white);
+            border-radius: var(--radius-lg);
+            padding: var(--s-lg);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--c-grey-100);
+            margin-top: var(--s-md);
+            animation: fadeIn 0.4s ease;
         }
 
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: var(--space-lg) auto 0;
-            padding: 0 var(--space-md);
+        .workflow-pane.active {
+            display: block;
         }
 
-        /* The vertical connecting line */
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom,
-                var(--color-accent-dark),
-                var(--color-secondary),
-                var(--color-accent-dark));
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            display: flex;
-            justify-content: flex-end;
-            padding-right: calc(50% + 50px);
-            position: relative;
-            margin-bottom: var(--space-lg);
-            opacity: 0;
-            transform: translateX(-40px);
-            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .timeline-item:nth-child(even) {
-            justify-content: flex-start;
-            padding-right: 0;
-            padding-left: calc(50% + 50px);
-            transform: translateX(40px);
-        }
-
-        .timeline-item.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* The circle node on the line */
-        .timeline-node {
-            position: absolute;
-            left: 50%;
-            top: 24px;
-            transform: translateX(-50%);
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: var(--color-primary);
-            border: 3px solid var(--color-accent-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            z-index: 2;
-            transition: all 0.4s ease;
-        }
-
-        .timeline-item.active .timeline-node {
-            background: var(--color-accent-dark);
-            box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
-        }
-
-        .timeline-card {
-            background: var(--color-white);
-            border-radius: 10px;
-            padding: var(--space-md);
-            max-width: 340px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            border-top: 4px solid var(--color-accent-dark);
-        }
-
-        .timeline-card h3 {
-            color: var(--color-primary);
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-card p {
-            color: var(--color-dark-grey);
-            font-size: 0.95rem;
-        }
-
-        /* ─── Why Quality Matters ─── */
-        .quality-pillars {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-
-        .pillar-card {
-            background: var(--color-white);
-            border-radius: 10px;
-            padding: var(--space-md);
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-            transition: transform 0.4s ease;
-        }
-
-        .pillar-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .pillar-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--space-sm);
-        }
-
-        /* ─── Certifications Band ─── */
-        .cert-band {
-            background: var(--color-primary);
-            color: var(--color-white);
-            padding: var(--space-lg) 0;
-            text-align: center;
-        }
-
-        .cert-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: var(--space-lg);
-            flex-wrap: wrap;
-            margin-top: var(--space-md);
-        }
-
-        .cert-badge {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 8px;
-            padding: 1rem 2rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .timeline::before { left: 30px; }
-            .timeline-item,
-            .timeline-item:nth-child(even) {
-                justify-content: flex-start;
-                padding-left: 90px;
-                padding-right: 0;
-            }
-            .timeline-node {
-                left: 30px;
-                transform: translateX(-50%);
-            }
-            .timeline-card { max-width: 100%; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar scrolled">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">NV <span>NAVTARA</span></a>
-            <div class="nav-links">
+    <!-- Navigation Bar -->
+    <nav class="navbar scrolled" role="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-mark">NV</span>
+                <div>
+                    <span class="logo-text">NAVTARA</span>
+                    <span class="logo-sub">PROJECTS PVT. LTD.</span>
+                </div>
+            </a>
+            <div class="nav-links" id="main-nav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="capabilities.html">Capabilities</a>
                 <a href="projects.html">Projects</a>
-                <a href="quality.html" style="color: var(--color-accent);">Quality & Safety</a>
+                <a href="machinery.html">Plant &amp; Machinery</a>
+                <a href="quality.html" class="active">Quality &amp; Safety</a>
+                <a href="leadership.html">Leadership</a>
+                <a href="clients.html">Clients</a>
                 <a href="contact.html">Contact</a>
             </div>
+            <a href="contact.html" class="nav-cta">Request Quote →</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
         </div>
     </nav>
 
     <!-- Page Header -->
-    <header class="page-header">
+    <header class="page-header-v3">
         <div class="container reveal">
-            <h1 class="heading-lg">Quality & Safety</h1>
-            <p class="body-lg text-light" style="max-width: 600px; margin: 1rem auto 0; opacity: 0.8;">
-                Every project executed under a rigorous, end-to-end quality management framework.
+            <div class="section-label section-label--light">Zero Compromise Compliance</div>
+            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">Quality &amp; Safety Management System</h1>
+            <p class="body-lg text-light" style="max-width: 680px; margin: 0 auto; opacity: 0.85;">
+                Every engineering package executed under a continuous, multi-stage Quality Assurance &amp; Health, Safety, Environment (HSE) control framework.
             </p>
         </div>
     </header>
 
-    <!-- Quality Pillars -->
-    <section class="section-padding">
+    <!-- Interactive Workflow Section -->
+    <section class="section bg-off-white">
         <div class="container">
-            <div class="text-center reveal">
-                <h2 class="heading-lg">Our Commitment</h2>
-                <p class="body-lg" style="margin-top: var(--space-sm);">Quality and safety are not afterthoughts. They are built into every phase of execution.</p>
-            </div>
-            <div class="quality-pillars">
-                <div class="pillar-card reveal delay-100">
-                    <div class="pillar-icon">🛡️</div>
-                    <h3 class="heading-md">Safety First</h3>
-                    <p>Zero-compromise safety culture on every site. Full PPE compliance, toolbox talks, and risk assessment protocols before work commences.</p>
-                </div>
-                <div class="pillar-card reveal delay-200">
-                    <div class="pillar-icon">🔬</div>
-                    <h3 class="heading-md">NDT Inspection</h3>
-                    <p>Non-Destructive Testing on all critical welds and structural joints—UT, RT, and MPI as per client specifications.</p>
-                </div>
-                <div class="pillar-card reveal delay-300">
-                    <div class="pillar-icon">📋</div>
-                    <h3 class="heading-md">Documentation</h3>
-                    <p>Complete traceability from material receipt to final dispatch—MTC, inspection reports, and as-built records maintained for every package.</p>
-                </div>
-                <div class="pillar-card reveal delay-400">
-                    <div class="pillar-icon">✅</div>
-                    <h3 class="heading-md">Client Witness Points</h3>
-                    <p>Structured Hold Points and Witness Points built into the ITP so clients and third-party inspectors can verify quality at every critical stage.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Animated Workflow Timeline -->
-    <section class="timeline-section">
-        <div class="container text-center reveal">
-            <h2 class="heading-lg">Our Quality Workflow</h2>
-            <p class="body-lg" style="margin-top: var(--space-sm);">A disciplined process from raw material to final delivery.</p>
-        </div>
-
-        <div class="timeline">
-
-            <div class="timeline-item tl-item">
-                <div class="timeline-node">📦</div>
-                <div class="timeline-card">
-                    <h3>Material Inspection</h3>
-                    <p>All incoming raw materials are inspected against Mill Test Certificates (MTC). Dimensions, heat number, and chemical composition are verified before acceptance.</p>
-                </div>
+            <div class="text-center reveal" style="max-width: 700px; margin: 0 auto var(--s-lg);">
+                <div class="section-label">Interactive Quality Journey</div>
+                <h2 class="heading-lg">End-to-End Engineering Quality Workflow</h2>
+                <p class="body-lg" style="margin-top: var(--s-xs);">
+                    Click on any stage below to inspect the mandatory inspection hold-points and testing procedures.
+                </p>
             </div>
 
-            <div class="timeline-item tl-item">
-                <div class="timeline-node">⚙️</div>
-                <div class="timeline-card">
-                    <h3>Fabrication</h3>
-                    <p>Fabrication carried out as per approved drawings by qualified welders. In-process dimensional checks performed at each stage. WPS/PQR compliance maintained throughout.</p>
+            <!-- Stepper Navigation -->
+            <div class="workflow-stepper reveal">
+                <div class="workflow-step active" data-step="1">
+                    <div class="workflow-step-icon">📦</div>
+                    <div class="workflow-step-title">1. Material Inspection</div>
+                    <div class="workflow-step-desc">MTC &amp; Verification</div>
+                </div>
+
+                <div class="workflow-step" data-step="2">
+                    <div class="workflow-step-icon">⚙️</div>
+                    <div class="workflow-step-title">2. Fabrication</div>
+                    <div class="workflow-step-desc">WPS / PQR Control</div>
+                </div>
+
+                <div class="workflow-step" data-step="3">
+                    <div class="workflow-step-icon">🔬</div>
+                    <div class="workflow-step-title">3. NDT Testing</div>
+                    <div class="workflow-step-desc">UT / RT / MPI</div>
+                </div>
+
+                <div class="workflow-step" data-step="4">
+                    <div class="workflow-step-icon">🖌️</div>
+                    <div class="workflow-step-title">4. Surface Protection</div>
+                    <div class="workflow-step-desc">Sa 2.5 &amp; DFT Control</div>
+                </div>
+
+                <div class="workflow-step" data-step="5">
+                    <div class="workflow-step-icon">✅</div>
+                    <div class="workflow-step-title">5. Final Inspection</div>
+                    <div class="workflow-step-desc">TPA / Client Sign-off</div>
+                </div>
+
+                <div class="workflow-step" data-step="6">
+                    <div class="workflow-step-icon">🚚</div>
+                    <div class="workflow-step-title">6. Dispatch</div>
+                    <div class="workflow-step-desc">Traceable Delivery</div>
                 </div>
             </div>
 
-            <div class="timeline-item tl-item">
-                <div class="timeline-node">🔬</div>
-                <div class="timeline-card">
-                    <h3>NDT Testing</h3>
-                    <p>Non-Destructive Testing (UT, RT, MPI) performed on all critical weld joints by ASNT certified technicians. Reports reviewed and accepted before proceeding.</p>
+            <!-- Workflow Panes -->
+            <div class="workflow-pane active" id="workflow-pane-1">
+                <span class="tag tag--accent" style="margin-bottom: 0.5rem;">STAGE 01</span>
+                <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Raw Material Inspection &amp; Mill Certificate Verification</h3>
+                <p class="body-md text-muted" style="margin-bottom: var(--s-md);">
+                    All incoming structural steel plates, sections, pipes, and welding consumables undergo physical, dimensional, and chemical validation against original Mill Test Certificates (MTC) prior to shop release.
+                </p>
+                <div class="grid-3">
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Material Verification:</strong> Heat number stamping match &amp; ultrasonic flaw check for heavy plates.
+                    </div>
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Dimensional Check:</strong> Thickness tolerances, flatness, camber &amp; squareness verification.
+                    </div>
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Traceability:</strong> Color coding and unique job card tagging across the workshop.
+                    </div>
                 </div>
             </div>
 
-            <div class="timeline-item tl-item">
-                <div class="timeline-node">🖌️</div>
-                <div class="timeline-card">
-                    <h3>Surface Preparation & Painting</h3>
-                    <p>Abrasive blasting to Sa 2.5 followed by primer and final coat application as per approved painting scheme. DFT checks at each coat.</p>
+            <div class="workflow-pane" id="workflow-pane-2">
+                <span class="tag tag--accent" style="margin-bottom: 0.5rem;">STAGE 02</span>
+                <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Structural Fabrication &amp; Welding Quality Control</h3>
+                <p class="body-md text-muted" style="margin-bottom: var(--s-md);">
+                    Fabrication is carried out strictly per approved shop drawings and Welding Procedure Specifications (WPS/PQR) under AWS D1.1 and ASME Section IX codes.
+                </p>
+                <div class="grid-3">
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Qualified Welders:</strong> 100% qualified welding personnel tested under 3G/4G/6G positions.
+                    </div>
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Joint Fit-Up Hold Points:</strong> Root gap, bevel angle, and alignment verified prior to root run.
+                    </div>
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Interpass Control:</strong> Pre-heat and interpass temperature monitoring via calibrated pyrometers.
+                    </div>
                 </div>
             </div>
 
-            <div class="timeline-item tl-item">
-                <div class="timeline-node">🔍</div>
-                <div class="timeline-card">
-                    <h3>Final Inspection</h3>
-                    <p>Pre-dispatch inspection by client and/or third party. Dimensional check, paint DFT, weld review, and documentation package audit completed.</p>
+            <div class="workflow-pane" id="workflow-pane-3">
+                <span class="tag tag--accent" style="margin-bottom: 0.5rem;">STAGE 03</span>
+                <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Non-Destructive Testing (NDT) &amp; Volumetric Examination</h3>
+                <p class="body-md text-muted" style="margin-bottom: var(--s-md);">
+                    Volumetric and surface NDT examination conducted by certified ASNT Level II inspectors to guarantee 100% joint integrity.
+                </p>
+                <div class="grid-3">
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Ultrasonic Testing (UT):</strong> Full penetration groove weld inspection for internal flaws.
+                    </div>
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Magnetic Particle (MPI):</strong> Surface flaw detection on critical load-bearing structural joints.
+                    </div>
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Radiographic Testing (RT):</strong> Spot/100% RT examination for pressure piping spools.
+                    </div>
                 </div>
             </div>
 
-            <div class="timeline-item tl-item">
-                <div class="timeline-node">🚚</div>
-                <div class="timeline-card">
-                    <h3>Dispatch</h3>
-                    <p>Secure packaging, proper marking and tagging, and dispatch documentation including packing list, MTC copies, and inspection clearance issued before shipment.</p>
+            <div class="workflow-pane" id="workflow-pane-4">
+                <span class="tag tag--accent" style="margin-bottom: 0.5rem;">STAGE 04</span>
+                <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Surface Preparation (Sa 2.5) &amp; Protective Coating Application</h3>
+                <p class="body-md text-muted" style="margin-bottom: var(--s-md);">
+                    Abrasive blast cleaning followed by multi-coat airless spray painting applied according to client-approved coating systems and SSPC/NACE standards.
+                </p>
+                <div class="grid-3">
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Surface Profile Check:</strong> Blast profile measurement (50–75 microns) using surface comparator.
+                    </div>
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Environmental Logging:</strong> Dew point, ambient temp &amp; relative humidity logged before spray.
+                    </div>
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>DFT Verification:</strong> Digital magnetic gauge verification for primer, intermediate &amp; topcoats.
+                    </div>
                 </div>
             </div>
 
-        </div>
-    </section>
-
-    <!-- Certifications Band -->
-    <section class="cert-band">
-        <div class="container reveal">
-            <h2 class="heading-md">Standards We Work To</h2>
-            <div class="cert-logos">
-                <div class="cert-badge">IS / BS Standards</div>
-                <div class="cert-badge">ASME Codes</div>
-                <div class="cert-badge">AWS D1.1</div>
-                <div class="cert-badge">SSPC / NACE Coatings</div>
-                <div class="cert-badge">Client-Specific ITPs</div>
+            <div class="workflow-pane" id="workflow-pane-5">
+                <span class="tag tag--accent" style="margin-bottom: 0.5rem;">STAGE 05</span>
+                <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Final Pre-Dispatch Quality Control &amp; Client/TPA Sign-off</h3>
+                <p class="body-md text-muted" style="margin-bottom: var(--s-md);">
+                    Dimensional audit, visual check, coating DFT audit, and document dossier verification in the presence of Client &amp; Third-Party Inspection Agencies (TPA).
+                </p>
+                <div class="grid-3">
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Trial Assembly:</strong> Fitment trial for complex technology structures prior to shop dispatch.
+                    </div>
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>TPA Inspection:</strong> Inspection clearance by agencies such as BV, TUV, RITES, or DNV.
+                    </div>
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Document Dossier:</strong> As-built drawings, MTCs, NDT reports, and ITP sign-offs bundled.
+                    </div>
+                </div>
             </div>
+
+            <div class="workflow-pane" id="workflow-pane-6">
+                <span class="tag tag--accent" style="margin-bottom: 0.5rem;">STAGE 06</span>
+                <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Logistics, Lashing &amp; Site Dispatch</h3>
+                <p class="body-md text-muted" style="margin-bottom: var(--s-md);">
+                    Careful packaging, identification tagging, heavy lashing, and transport coordination for safe delivery to project sites across India.
+                </p>
+                <div class="grid-3">
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Member Marking:</strong> Hard punching and high-visibility paint marking as per erection key plan.
+                    </div>
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Coating Protection:</strong> Wooden dunnage and rubber wrapping to prevent transport damage.
+                    </div>
+                    <div style="background: var(--c-off-white); padding: var(--s-md); border-radius: var(--radius-md);">
+                        <strong>Dispatch Clearance:</strong> Final Shipping Release Note (SRN) issued upon loading.
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer bg-primary text-light" style="border-top: none;">
+    <footer class="footer bg-charcoal text-light" role="contentinfo">
         <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
             <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scroll to Top Button -->
     <button id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
+    <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/transitions.js"></script>
     <script src="js/cursor.js"></script>
-    <script>
-        /* Timeline scroll animation */
-        const tlItems = document.querySelectorAll('.tl-item');
-        const tlObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    tlObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.3 });
-
-        tlItems.forEach(item => tlObserver.observe(item));
-    </script>
 </body>
 </html>
