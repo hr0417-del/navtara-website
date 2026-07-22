@@ -1,5 +1,6 @@
 /* ═══════════════════════════════════════════════════════
-   LAYOUT SAFEGUARDS & EXTENDED COMPONENTS — Navtara v3.1
+   LAYOUT SAFEGUARDS & EXTENDED COMPONENTS — Navtara v3.2
+   "Zero Overlapping, 100% Map Visibility & Perfect Layout Alignment"
 ═══════════════════════════════════════════════════════ */
 
 /* ── Hero Load Animations ────────────────────────────── */
@@ -24,62 +25,78 @@
   animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
 }
 
-/* ── Interactive India Vector Map Styling ────────────── */
-.india-map-container {
+/* ── Pan-India Map Side-by-Side (Zero Overlap Layout) ── */
+.india-map-section-v3 {
+  background: var(--c-navy);
+  color: var(--c-white);
   position: relative;
-  width: 100%;
-  max-width: 960px;
-  height: 520px;
-  margin: 0 auto;
-  background: var(--c-navy-md, #0D1E35);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg, 16px);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl, 0 32px 80px rgba(0,0,0,0.14));
-  display: flex;
+  padding: var(--s-2xl) 0;
+}
+
+.india-map-grid-v3 {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--s-xl);
   align-items: center;
+}
+
+.india-map-card-v3 {
+  background: var(--c-navy-md, #0D1E35);
+  border: 1.5px solid rgba(14, 165, 233, 0.25);
+  border-radius: var(--radius-lg, 16px);
+  padding: var(--s-lg);
+  position: relative;
+  box-shadow: var(--shadow-xl, 0 32px 80px rgba(0,0,0,0.3));
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  min-height: 480px;
 }
 
-.india-vector-svg {
-  width: 90%;
-  height: 90%;
-  max-height: 480px;
+.india-vector-svg-v3 {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  max-height: 440px;
+  filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));
 }
 
-.state-path {
-  fill: #1A3459;
-  stroke: rgba(255, 255, 255, 0.2);
+.state-region {
+  fill: #162C4A;
+  stroke: rgba(255, 255, 255, 0.3);
   stroke-width: 1.5;
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
   cursor: pointer;
 }
 
-.state-path:hover,
-.state-path.active-state {
+.state-region:hover,
+.state-region.active-state {
   fill: var(--c-accent-d, #0070C0);
   stroke: var(--c-accent, #0EA5E9);
-  filter: drop-shadow(0 0 12px rgba(14, 165, 233, 0.6));
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 16px rgba(14, 165, 233, 0.8));
 }
 
-.map-site-card {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
-  right: 1.5rem;
-  background: rgba(7, 17, 31, 0.92);
+.map-node-pulse {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.map-node-pulse:hover {
+  transform: scale(1.25);
+}
+
+.map-site-panel-v3 {
+  background: rgba(13, 30, 53, 0.95);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(14, 165, 233, 0.3);
-  border-radius: var(--radius-md, 8px);
-  padding: 1rem 1.5rem;
-  color: var(--c-white, #fff);
+  border-radius: var(--radius-lg, 16px);
+  padding: var(--s-xl);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  z-index: 30;
-  transition: all 0.3s ease;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 /* ── Interactive Engineering Workflow ───────────────── */
@@ -154,24 +171,6 @@
   padding: var(--s-lg);
   box-shadow: var(--shadow-xl);
   margin-bottom: var(--s-xl);
-}
-
-.estimator-step-bar {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: var(--s-md);
-}
-
-.estimator-step-pill {
-  flex: 1;
-  height: 6px;
-  background: var(--c-grey-100);
-  border-radius: 3px;
-  transition: background 0.3s ease;
-}
-
-.estimator-step-pill.active {
-  background: var(--c-accent-d);
 }
 
 .option-radio-grid {
@@ -282,6 +281,7 @@
   border-bottom: 2px solid var(--c-grey-50);
   margin-bottom: 1.5rem;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .modal-tab-btn {
@@ -329,7 +329,7 @@
   background: rgba(0,0,0,0.12);
 }
 
-/* ── UI QA Safeguards ────────────────────────────────── */
+/* ── UI QA Safeguards & Overlap Prevention ───────────── */
 h1, h2, h3, h4, p, span, a, button {
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -337,6 +337,19 @@ h1, h2, h3, h4, p, span, a, button {
 
 .grid-2, .grid-3, .grid-4, .grid-auto-2, .grid-auto-3 {
   align-items: stretch;
+}
+
+/* Guarantee zero button text collisions */
+.btn {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+@media (max-width: 992px) {
+  .india-map-grid-v3 {
+    grid-template-columns: 1fr;
+    gap: var(--s-lg);
+  }
 }
 
 @media (max-width: 768px) {
@@ -361,9 +374,5 @@ h1, h2, h3, h4, p, span, a, button {
   .workflow-step-icon {
     margin: 0;
     flex-shrink: 0;
-  }
-  .map-site-card {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }

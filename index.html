@@ -407,45 +407,80 @@
         </div>
     </section>
 
-    <!-- ✦ Interactive Vector India Project Map ✦ -->
-    <section class="section bg-navy text-light" aria-labelledby="map-heading">
+    <!-- ✦ Interactive Vector India Project Map (Zero Overlap Side-by-Side Layout) ✦ -->
+    <section class="india-map-section-v3" aria-labelledby="map-heading">
         <div class="container">
             <div class="text-center reveal" style="max-width: 700px; margin: 0 auto var(--s-xl);">
                 <div class="section-label section-label--light">Interactive Pan-India Map</div>
                 <h2 class="heading-lg text-light" id="map-heading">Our Nationwide Project Execution Footprint</h2>
                 <p class="body-lg text-light" style="opacity: 0.8; margin-top: var(--s-xs);">
-                    Click on key industrial states to view live project deployment metrics.
+                    Click on any active state node below to view site deployment details.
                 </p>
             </div>
 
-            <div class="india-map-container reveal">
-                <!-- Interactive Vector SVG Map representation -->
-                <svg class="india-vector-svg" viewBox="0 0 500 550" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Odisha Path -->
-                    <path class="state-path active-state" d="M 310,260 L 360,270 L 350,310 L 310,310 Z" data-state-name="Odisha" data-site-client="Jindal Steel & Power Ltd." data-site-scope="15,000+ MT Blasting & Coating Package (Angul)"></path>
+            <div class="india-map-grid-v3 reveal">
+                <!-- Left: Full Visible Vector SVG Map of India with High-Visibility Paths -->
+                <div class="india-map-card-v3">
+                    <svg class="india-vector-svg-v3" viewBox="0 0 600 650" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background India Map Silhouette -->
+                        <path d="M 280,40 L 320,60 L 350,110 L 390,140 L 450,160 L 490,190 L 430,220 L 380,240 L 360,310 L 320,380 L 290,480 L 270,550 L 250,570 L 230,520 L 200,430 L 160,370 L 110,320 L 80,280 L 120,250 L 180,230 L 230,170 L 250,110 Z" fill="#0B1A2E" stroke="rgba(14, 165, 233, 0.2)" stroke-width="2"></path>
 
-                    <!-- Maharashtra Path -->
-                    <path class="state-path" d="M 160,280 L 250,270 L 240,340 L 170,350 Z" data-state-name="Maharashtra" data-site-client="Mahagenco Thermal" data-site-scope="Thermal Power Fire Piping & Erection (Nagpur)"></path>
+                        <!-- Region 1: Odisha State Path -->
+                        <path class="state-region active-state" d="M 330,300 L 410,310 L 390,380 L 330,370 Z" data-state-name="Odisha" data-site-client="Jindal Steel & Power Ltd." data-site-scope="15,000+ MT Blasting & Coating Package (Angul)"></path>
+                        <!-- Odisha Location Beacon -->
+                        <g class="map-node-pulse" transform="translate(370, 340)">
+                            <circle r="12" fill="#0EA5E9" opacity="0.3"></circle>
+                            <circle r="6" fill="#0EA5E9" stroke="#FFF" stroke-width="2"></circle>
+                            <text x="12" y="4" fill="#FFF" font-weight="700" font-size="12">ODISHA (ANGUL)</text>
+                        </g>
 
-                    <!-- Telangana Path -->
-                    <path class="state-path" d="M 230,340 L 280,340 L 270,390 L 220,380 Z" data-state-name="Telangana" data-site-client="KEC / Maha Cement" data-site-scope="1,200 MT Clinker Line Structural Fabrication"></path>
+                        <!-- Region 2: Maharashtra State Path -->
+                        <path class="state-region" d="M 180,320 L 280,310 L 270,410 L 170,400 Z" data-state-name="Maharashtra" data-site-client="Mahagenco Thermal" data-site-scope="Thermal Power Fire Water Piping & Erection (Nagpur)"></path>
+                        <!-- Maharashtra Location Beacon -->
+                        <g class="map-node-pulse" transform="translate(230, 360)">
+                            <circle r="12" fill="#0EA5E9" opacity="0.3"></circle>
+                            <circle r="6" fill="#0EA5E9" stroke="#FFF" stroke-width="2"></circle>
+                            <text x="-120" y="4" fill="#FFF" font-weight="700" font-size="12">MAHARASHTRA (NAGPUR)</text>
+                        </g>
 
-                    <!-- Jharkhand Path -->
-                    <path class="state-path" d="M 310,220 L 350,220 L 350,260 L 310,260 Z" data-state-name="Jharkhand" data-site-client="Tata Projects Network" data-site-scope="2,400 MT Heavy Crane Girder Fabrication (Jamshedpur)"></path>
+                        <!-- Region 3: Telangana State Path -->
+                        <path class="state-region" d="M 270,410 L 330,410 L 310,480 L 250,470 Z" data-state-name="Telangana" data-site-client="KEC / Maha Cement" data-site-scope="1,200 MT Clinker Line Structural Fabrication"></path>
+                        <!-- Telangana Location Beacon -->
+                        <g class="map-node-pulse" transform="translate(285, 445)">
+                            <circle r="12" fill="#0EA5E9" opacity="0.3"></circle>
+                            <circle r="6" fill="#0EA5E9" stroke="#FFF" stroke-width="2"></circle>
+                            <text x="12" y="4" fill="#FFF" font-weight="700" font-size="12">TELANGANA</text>
+                        </g>
 
-                    <!-- Chhattisgarh Path -->
-                    <path class="state-path" d="M 260,260 L 300,260 L 290,320 L 250,310 Z" data-state-name="Chhattisgarh" data-site-client="ISGEC Heavy Engineering" data-site-scope="Boiler Ducting & Pressure Spool Fabrication"></path>
-                </svg>
+                        <!-- Region 4: Jharkhand State Path -->
+                        <path class="state-region" d="M 330,240 L 400,240 L 390,300 L 330,290 Z" data-state-name="Jharkhand" data-site-client="Tata Projects Network" data-site-scope="2,400 MT Heavy Crane Girder Fabrication (Jamshedpur)"></path>
+                        <!-- Jharkhand Location Beacon -->
+                        <g class="map-node-pulse" transform="translate(365, 270)">
+                            <circle r="12" fill="#0EA5E9" opacity="0.3"></circle>
+                            <circle r="6" fill="#0EA5E9" stroke="#FFF" stroke-width="2"></circle>
+                            <text x="12" y="4" fill="#FFF" font-weight="700" font-size="12">JHARKHAND (JAMSHEDPUR)</text>
+                        </g>
 
-                <!-- Site Card Displaying Selected State Information -->
-                <div class="map-site-card">
-                    <div>
-                        <span class="tag tag--accent" style="margin-bottom: 0.25rem;" id="map-site-client">Jindal Steel &amp; Power Ltd.</span>
-                        <h4 class="heading-md text-light" id="map-site-title" style="font-size: 1.1rem; margin: 0;">Odisha Deployment Hub (Angul)</h4>
-                        <p class="body-md text-light" id="map-site-scope" style="font-size: 0.85rem; opacity: 0.8; margin: 0;">15,000+ MT Blasting &amp; Coating Package</p>
-                    </div>
-                    <a href="projects.html" class="btn btn-outline btn--sm">Explore State Projects →</a>
+                        <!-- Region 5: Chhattisgarh State Path -->
+                        <path class="state-region" d="M 280,300 L 330,300 L 320,380 L 270,370 Z" data-state-name="Chhattisgarh" data-site-client="ISGEC Heavy Engineering" data-site-scope="Boiler Ducting & Pressure Spool Fabrication"></path>
+                    </svg>
                 </div>
+
+                <!-- Right: Selected State Hub Details Panel (No Overlap) -->
+                <div class="map-site-panel-v3">
+                    <span class="tag tag--accent" id="map-site-client" style="align-self: flex-start;">Jindal Steel &amp; Power Ltd.</span>
+                    <h3 class="heading-lg text-light" id="map-site-title" style="margin: 0;">Odisha Deployment Hub (Angul)</h3>
+                    <p class="body-lg text-light" id="map-site-scope" style="opacity: 0.85; margin: 0;">
+                        15,000+ MT Abrasive Blasting &amp; Protective Coating Package
+                    </p>
+                    <div style="padding: var(--s-md); background: rgba(255,255,255,0.05); border-radius: var(--radius-md); border-left: 4px solid var(--c-accent);">
+                        <strong>Site Capabilities:</strong> Full mobile grit blasting pots, airless spray setups, NDT Level-II inspection units &amp; site erection teams.
+                    </div>
+                    <div>
+                        <a href="projects.html" class="btn btn-primary" style="width: 100%;">Explore Full Projects Directory →</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
