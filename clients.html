@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Clients | Navtara Projects Pvt. Ltd.</title>
+    <meta name="description" content="Navtara Projects is a trusted partner to India's leading EPC companies, steel plants, power stations, and cement manufacturers.">
+    <meta property="og:title" content="Our Clients | Navtara Projects">
+    <meta property="og:image" content="assets/images/hero.png">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/fixes.css">
+    <style>
+        .page-header { padding: 120px 0 var(--space-xl); background: var(--color-primary); color: var(--color-white); text-align: center; }
+
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: var(--space-lg);
+        }
+
+        .client-card {
+            background: var(--color-white);
+            border-radius: 10px;
+            padding: var(--space-md);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            text-align: center;
+            transition: var(--transition-slow);
+            border-bottom: 3px solid transparent;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            min-height: 140px;
+        }
+        .client-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+            border-bottom-color: var(--color-accent-dark);
+        }
+        .client-name {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--color-primary);
+            letter-spacing: 0.5px;
+        }
+        .client-sector {
+            font-size: 0.78rem;
+            color: var(--color-accent-dark);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        .sector-divider {
+            display: flex; align-items: center; gap: 1rem;
+            margin: var(--space-lg) 0 var(--space-md);
+        }
+        .sector-divider h3 {
+            white-space: nowrap;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-dark-grey);
+            opacity: 0.6;
+        }
+        .sector-divider::before, .sector-divider::after {
+            content: ''; flex: 1;
+            height: 1px; background: var(--color-light-grey);
+        }
+
+        .testimonial-section {
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-xl) 0;
+            text-align: center;
+        }
+        .testimonial-quote {
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            font-style: italic;
+            max-width: 750px;
+            margin: var(--space-md) auto 0;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        .testimonial-author {
+            margin-top: 1.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar scrolled" role="navigation">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">NV <span>NAVTARA</span></a>
+            <div class="nav-links" id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="capabilities.html">Capabilities</a>
+                <a href="projects.html">Projects</a>
+                <a href="clients.html" style="color:var(--color-accent);">Clients</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="menu-toggle" aria-label="Open menu">☰</button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container reveal">
+            <h1 class="heading-lg">Our Clients</h1>
+            <p class="body-lg text-light" style="max-width:600px;margin:1rem auto 0;opacity:0.8;">Trusted by India's largest industrial organisations across steel, power, cement, and infrastructure.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+
+            <!-- EPC & Contractors -->
+            <div class="sector-divider reveal"><h3>EPC &amp; Main Contractors</h3></div>
+            <div class="client-grid">
+                <div class="client-card reveal delay-100"><div class="client-name">ISGEC Heavy Engineering</div><div class="client-sector">EPC / OEM</div></div>
+                <div class="client-card reveal delay-200"><div class="client-name">KEC International</div><div class="client-sector">EPC Contractor</div></div>
+                <div class="client-card reveal delay-300"><div class="client-name">Thermax Ltd.</div><div class="client-sector">EPC / Energy</div></div>
+                <div class="client-card reveal delay-100"><div class="client-name">BGR Energy Systems</div><div class="client-sector">EPC / Power</div></div>
+            </div>
+
+            <!-- Steel & Power -->
+            <div class="sector-divider reveal"><h3>Steel &amp; Power</h3></div>
+            <div class="client-grid">
+                <div class="client-card reveal delay-100"><div class="client-name">Jindal Steel &amp; Power Ltd.</div><div class="client-sector">Steel</div></div>
+                <div class="client-card reveal delay-200"><div class="client-name">Mahagenco</div><div class="client-sector">Power Generation</div></div>
+                <div class="client-card reveal delay-300"><div class="client-name">NTPC</div><div class="client-sector">Power</div></div>
+                <div class="client-card reveal delay-100"><div class="client-name">Tata Steel</div><div class="client-sector">Steel</div></div>
+            </div>
+
+            <!-- Cement -->
+            <div class="sector-divider reveal"><h3>Cement &amp; Mining</h3></div>
+            <div class="client-grid">
+                <div class="client-card reveal delay-100"><div class="client-name">ACC Limited</div><div class="client-sector">Cement</div></div>
+                <div class="client-card reveal delay-200"><div class="client-name">Maha Cement</div><div class="client-sector">Cement</div></div>
+                <div class="client-card reveal delay-300"><div class="client-name">UltraTech Cement</div><div class="client-sector">Cement</div></div>
+                <div class="client-card reveal delay-100"><div class="client-name">Sandvik Asia</div><div class="client-sector">Mining Equipment</div></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testimonial Band -->
+    <section class="testimonial-section">
+        <div class="container reveal">
+            <p style="font-size:0.75rem;letter-spacing:4px;text-transform:uppercase;opacity:0.4;">CLIENT CONFIDENCE</p>
+            <blockquote class="testimonial-quote">"Navtara has consistently delivered to the highest quality standards and safety norms. Their team's technical depth and on-site discipline is what sets them apart."</blockquote>
+            <p class="testimonial-author">— Senior Project Manager, Leading EPC Company</p>
+            <div style="margin-top:var(--space-md);">
+                <a href="contact.html" class="btn btn-primary">Work with Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-primary text-light">
+        <div class="container text-center" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.1);">
+            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <button id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+    <script src="js/main.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/cursor.js"></script>
+</body>
+</html>

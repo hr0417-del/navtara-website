@@ -1,0 +1,10 @@
+# Large source files — do not commit to repo
+*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp

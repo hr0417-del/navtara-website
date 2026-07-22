@@ -1,7 +1,20 @@
 /**
- * main.js – Core JS: scroll reveals, counters, navbar, curtain reveals
+ * main.js – Core JS: scroll reveals, counters, navbar, curtain reveals,
+ *            mobile menu, scroll-to-top, hero load animation
  */
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* ─── Hero Load Animation (above-the-fold) ─── */
+  // Elements with delay classes inside .hero animate in on load, not scroll
+  const heroContent = document.querySelector('.hero-content');
+  if (heroContent) {
+    heroContent.querySelectorAll('[class*="delay-"]').forEach(el => {
+      el.classList.add('hero-loaded');
+    });
+    // Also trigger the parent reveal immediately
+    setTimeout(() => heroContent.classList.add('active'), 50);
+  }
 
   /* ─── Navbar Scroll Effect ─── */
   const navbar = document.querySelector('.navbar');
@@ -20,9 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.classList.add('active');
         obs.unobserve(entry.target);
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-    revealEls.forEach(el => revealObs.observe(el));
+    revealEls.forEach(el => {
+      // Skip hero content — it's handled by the load animation above
+      if (el.closest('.hero')) return;
+      revealObs.observe(el);
+    });
   }
 
   /* ─── Curtain Image Reveal ─── */
@@ -31,12 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const curtainObs = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-        // Slight delay so curtain wipes after the section enters
         setTimeout(() => entry.target.classList.add('curtain-open'), 100);
         obs.unobserve(entry.target);
       });
     }, { threshold: 0.2 });
-
     curtains.forEach(el => curtainObs.observe(el));
   }
 
@@ -69,8 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
           obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.5 });
-
+    }, { threshold: 0.2 }); // lowered from 0.5 so it fires on small screens
     countObs.observe(statsSection);
   }
 
@@ -79,7 +93,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks   = document.querySelector('.nav-links');
   if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('nav-open');
+      const isOpen = navLinks.classList.toggle('nav-open');
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('nav-open');
+        menuToggle.textContent = '☰';
+      });
     });
   }
+
+  /* ─── Scroll to Top Button ─── */
+  const scrollBtn = document.getElementById('scroll-top-btn');
+  if (scrollBtn) {
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
 });

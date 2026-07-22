@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership | Navtara Projects Pvt. Ltd.</title>
+    <meta name="description" content="Meet the experienced engineering leaders driving Navtara Projects' vision of industrial excellence across India.">
+    <meta property="og:title" content="Leadership | Navtara Projects">
+    <meta property="og:image" content="assets/images/hero.png">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/fixes.css">
+    <style>
+        .page-header { padding: 120px 0 var(--space-xl); background: var(--color-primary); color: var(--color-white); text-align: center; }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .leader-profile {
+            background: var(--color-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: var(--transition-slow);
+        }
+        .leader-profile:hover { transform: translateY(-10px); box-shadow: 0 24px 60px rgba(0,0,0,0.12); }
+
+        .leader-photo {
+            height: 320px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .leader-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,25,47,0.6) 0%, transparent 60%);
+        }
+
+        .leader-body { padding: var(--space-md); }
+        .leader-role {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-accent-dark);
+            margin-bottom: 0.5rem;
+        }
+        .leader-name { font-size: 1.5rem; color: var(--color-primary); margin-bottom: 1rem; }
+        .leader-bio { font-size: 0.95rem; color: var(--color-dark-grey); line-height: 1.7; }
+        .leader-tags {
+            display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;
+        }
+        .leader-tag {
+            font-size: 0.75rem; font-weight: 600;
+            background: var(--color-light-grey);
+            color: var(--color-dark-grey);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+        }
+
+        .philosophy-section {
+            background: var(--color-charcoal);
+            color: white;
+            text-align: center;
+            padding: var(--space-xl) 0;
+        }
+        .philosophy-quote {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 700;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            color: white;
+        }
+        .philosophy-quote span { color: var(--color-accent); }
+    </style>
+</head>
+<body>
+    <nav class="navbar scrolled" role="navigation">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">NV <span>NAVTARA</span></a>
+            <div class="nav-links" id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="capabilities.html">Capabilities</a>
+                <a href="projects.html">Projects</a>
+                <a href="leadership.html" style="color:var(--color-accent);">Leadership</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="menu-toggle" aria-label="Open menu">☰</button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container reveal">
+            <h1 class="heading-lg">Our Leadership</h1>
+            <p class="body-lg text-light" style="max-width:600px;margin:1rem auto 0;opacity:0.8;">The team behind India's most reliable heavy engineering delivery.</p>
+        </div>
+    </header>
+
+    <!-- Leadership Profiles -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="leadership-grid">
+
+                <div class="leader-profile reveal delay-100">
+                    <div class="leader-photo">👤</div>
+                    <div class="leader-body">
+                        <p class="leader-role">Founder &amp; Managing Director</p>
+                        <h2 class="leader-name">Director, Navtara Projects</h2>
+                        <p class="leader-bio">A veteran of heavy engineering and industrial construction with over two decades of experience across steel, power, and cement sectors. Founded Navtara Projects with a vision to set a new benchmark for quality and reliability in industrial project execution across India.</p>
+                        <div class="leader-tags">
+                            <span class="leader-tag">Ex-Metso</span>
+                            <span class="leader-tag">Heavy Engineering</span>
+                            <span class="leader-tag">Pan-India Projects</span>
+                            <span class="leader-tag">EPC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leader-profile reveal delay-200">
+                    <div class="leader-photo">👤</div>
+                    <div class="leader-body">
+                        <p class="leader-role">Head of Engineering &amp; Technical Operations</p>
+                        <h2 class="leader-name">Head of Engineering</h2>
+                        <p class="leader-bio">Brings deep technical expertise in structural fabrication, erection methodology, and NDT inspection. Responsible for ensuring every project is executed to the highest quality standard with complete traceability and documentation.</p>
+                        <div class="leader-tags">
+                            <span class="leader-tag">Structural Engineering</span>
+                            <span class="leader-tag">NDT Certified</span>
+                            <span class="leader-tag">Quality Systems</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leader-profile reveal delay-300">
+                    <div class="leader-photo">👤</div>
+                    <div class="leader-body">
+                        <p class="leader-role">Project Director &amp; Site Operations</p>
+                        <h2 class="leader-name">Project Director</h2>
+                        <p class="leader-bio">Expert in large-scale project mobilisation, site management, and multi-disciplinary coordination. Has led the execution of over 40 industrial projects across Odisha, Maharashtra, Telangana, and beyond.</p>
+                        <div class="leader-tags">
+                            <span class="leader-tag">Site Management</span>
+                            <span class="leader-tag">Safety Leadership</span>
+                            <span class="leader-tag">Multi-state Ops</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Philosophy -->
+    <section class="philosophy-section">
+        <div class="container reveal">
+            <p style="font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;opacity:0.5;margin-bottom:2rem;">OUR PHILOSOPHY</p>
+            <blockquote class="philosophy-quote">
+                "We don't just deliver projects — we build <span>long-term partnerships</span> founded on trust, transparency, and technical excellence."
+            </blockquote>
+            <div style="margin-top:var(--space-md);">
+                <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-primary text-light">
+        <div class="container text-center" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.1);">
+            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <button id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+    <script src="js/main.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/cursor.js"></script>
+</body>
+</html>
