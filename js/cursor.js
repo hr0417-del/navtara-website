@@ -1,6 +1,6 @@
 /**
  * cursor.js – Custom cursor + magnetic button logic
- * Degrades gracefully: hidden on touch/mobile devices
+ * Degrades gracefully: hidden on touch/mobile devices and until initial mousemove
  */
 
 (function () {
@@ -15,24 +15,35 @@
   document.body.appendChild(dot);
   document.body.appendChild(ring);
 
-  let mouseX = 0, mouseY = 0;
-  let ringX  = 0, ringY  = 0;
-  let isHovering = false;
+  let mouseX = -100, mouseY = -100;
+  let ringX  = -100, ringY  = -100;
+  let initialized = false;
 
   /* ─── Track mouse ─── */
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
+
+    if (!initialized) {
+      initialized = true;
+      ringX = mouseX;
+      ringY = mouseY;
+      dot.style.opacity = '1';
+      ring.style.opacity = '0.6';
+    }
+
     dot.style.left  = mouseX + 'px';
     dot.style.top   = mouseY + 'px';
   });
 
   /* ─── Smooth ring follow ─── */
   function animateRing() {
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
-    ring.style.left = ringX + 'px';
-    ring.style.top  = ringY + 'px';
+    if (initialized) {
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
+      ring.style.left = ringX + 'px';
+      ring.style.top  = ringY + 'px';
+    }
     requestAnimationFrame(animateRing);
   }
   animateRing();

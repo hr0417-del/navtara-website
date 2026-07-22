@@ -25,14 +25,15 @@
     <style>
         .hero-v3 {
             position: relative;
-            min-height: 100vh;
+            min-height: 92vh;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, rgba(7, 17, 31, 0.92) 0%, rgba(13, 30, 53, 0.85) 100%),
                         url('assets/images/hero.png') center/cover no-repeat;
             color: var(--c-white);
             overflow: hidden;
-            padding-top: var(--nav-height);
+            padding-top: calc(var(--nav-height) + 2rem);
+            padding-bottom: var(--s-xl);
         }
 
         .hero-v3::before {
@@ -128,7 +129,7 @@
             position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
-            min-height: 480px;
+            min-height: 440px;
             display: flex;
             align-items: flex-end;
             cursor: pointer;
@@ -185,10 +186,7 @@
                 <a href="about.html">About</a>
                 <a href="capabilities.html">Capabilities</a>
                 <a href="projects.html">Projects</a>
-                <a href="machinery.html">Plant &amp; Machinery</a>
                 <a href="quality.html">Quality &amp; Safety</a>
-                <a href="leadership.html">Leadership</a>
-                <a href="clients.html">Clients</a>
                 <a href="contact.html">Contact</a>
             </div>
             <a href="contact.html" class="nav-cta">Request Quote →</a>
@@ -414,54 +412,54 @@
                 <div class="section-label section-label--light">Interactive Pan-India Map</div>
                 <h2 class="heading-lg text-light" id="map-heading">Our Nationwide Project Execution Footprint</h2>
                 <p class="body-lg text-light" style="opacity: 0.8; margin-top: var(--s-xs);">
-                    Click on any active state node below to view site deployment details.
+                    Click on any active state region below to view site deployment details.
                 </p>
             </div>
 
             <div class="india-map-grid-v3 reveal">
-                <!-- Left: Full Visible Vector SVG Map of India with High-Visibility Paths -->
+                <!-- Left: Full Visible Detailed Vector SVG Map of India with High-Visibility Paths -->
                 <div class="india-map-card-v3">
-                    <svg class="india-vector-svg-v3" viewBox="0 0 600 650" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Background India Map Silhouette -->
-                        <path d="M 280,40 L 320,60 L 350,110 L 390,140 L 450,160 L 490,190 L 430,220 L 380,240 L 360,310 L 320,380 L 290,480 L 270,550 L 250,570 L 230,520 L 200,430 L 160,370 L 110,320 L 80,280 L 120,250 L 180,230 L 230,170 L 250,110 Z" fill="#0B1A2E" stroke="rgba(14, 165, 233, 0.2)" stroke-width="2"></path>
+                    <svg class="india-vector-svg-v3" viewBox="0 0 600 680" xmlns="http://www.w3.org/2000/svg">
+                        <!-- High-Detail India Geographic Map Silhouette -->
+                        <path d="M 280,30 L 310,40 L 340,80 L 350,110 L 390,125 L 430,135 L 490,165 L 530,195 L 490,225 L 420,230 L 380,245 L 375,290 L 390,320 L 360,370 L 320,440 L 290,520 L 275,590 L 255,620 L 240,580 L 220,500 L 195,430 L 160,370 L 125,335 L 75,295 L 115,260 L 165,245 L 210,210 L 245,150 L 250,90 Z" fill="#183656" stroke="#0EA5E9" stroke-width="2.5"></path>
 
-                        <!-- Region 1: Odisha State Path -->
+                        <!-- Region 1: Odisha State Region -->
                         <path class="state-region active-state" d="M 330,300 L 410,310 L 390,380 L 330,370 Z" data-state-name="Odisha" data-site-client="Jindal Steel & Power Ltd." data-site-scope="15,000+ MT Blasting & Coating Package (Angul)"></path>
-                        <!-- Odisha Location Beacon -->
+                        <!-- Odisha Location Beacon & Label -->
                         <g class="map-node-pulse" transform="translate(370, 340)">
-                            <circle r="12" fill="#0EA5E9" opacity="0.3"></circle>
-                            <circle r="6" fill="#0EA5E9" stroke="#FFF" stroke-width="2"></circle>
-                            <text x="12" y="4" fill="#FFF" font-weight="700" font-size="12">ODISHA (ANGUL)</text>
+                            <circle r="14" fill="#0EA5E9" opacity="0.35"></circle>
+                            <circle r="7" fill="#0EA5E9" stroke="#FFF" stroke-width="2.5"></circle>
+                            <text x="14" y="5" fill="#FFF" font-weight="700" font-size="13">ODISHA (ANGUL)</text>
                         </g>
 
-                        <!-- Region 2: Maharashtra State Path -->
+                        <!-- Region 2: Maharashtra State Region -->
                         <path class="state-region" d="M 180,320 L 280,310 L 270,410 L 170,400 Z" data-state-name="Maharashtra" data-site-client="Mahagenco Thermal" data-site-scope="Thermal Power Fire Water Piping & Erection (Nagpur)"></path>
-                        <!-- Maharashtra Location Beacon -->
-                        <g class="map-node-pulse" transform="translate(230, 360)">
-                            <circle r="12" fill="#0EA5E9" opacity="0.3"></circle>
-                            <circle r="6" fill="#0EA5E9" stroke="#FFF" stroke-width="2"></circle>
-                            <text x="-120" y="4" fill="#FFF" font-weight="700" font-size="12">MAHARASHTRA (NAGPUR)</text>
+                        <!-- Maharashtra Location Beacon & Label -->
+                        <g class="map-node-pulse" transform="translate(225, 360)">
+                            <circle r="14" fill="#0EA5E9" opacity="0.35"></circle>
+                            <circle r="7" fill="#0EA5E9" stroke="#FFF" stroke-width="2.5"></circle>
+                            <text x="-145" y="5" fill="#FFF" font-weight="700" font-size="13">MAHARASHTRA (NAGPUR)</text>
                         </g>
 
-                        <!-- Region 3: Telangana State Path -->
+                        <!-- Region 3: Telangana State Region -->
                         <path class="state-region" d="M 270,410 L 330,410 L 310,480 L 250,470 Z" data-state-name="Telangana" data-site-client="KEC / Maha Cement" data-site-scope="1,200 MT Clinker Line Structural Fabrication"></path>
-                        <!-- Telangana Location Beacon -->
+                        <!-- Telangana Location Beacon & Label -->
                         <g class="map-node-pulse" transform="translate(285, 445)">
-                            <circle r="12" fill="#0EA5E9" opacity="0.3"></circle>
-                            <circle r="6" fill="#0EA5E9" stroke="#FFF" stroke-width="2"></circle>
-                            <text x="12" y="4" fill="#FFF" font-weight="700" font-size="12">TELANGANA</text>
+                            <circle r="14" fill="#0EA5E9" opacity="0.35"></circle>
+                            <circle r="7" fill="#0EA5E9" stroke="#FFF" stroke-width="2.5"></circle>
+                            <text x="14" y="5" fill="#FFF" font-weight="700" font-size="13">TELANGANA</text>
                         </g>
 
-                        <!-- Region 4: Jharkhand State Path -->
+                        <!-- Region 4: Jharkhand State Region -->
                         <path class="state-region" d="M 330,240 L 400,240 L 390,300 L 330,290 Z" data-state-name="Jharkhand" data-site-client="Tata Projects Network" data-site-scope="2,400 MT Heavy Crane Girder Fabrication (Jamshedpur)"></path>
-                        <!-- Jharkhand Location Beacon -->
+                        <!-- Jharkhand Location Beacon & Label -->
                         <g class="map-node-pulse" transform="translate(365, 270)">
-                            <circle r="12" fill="#0EA5E9" opacity="0.3"></circle>
-                            <circle r="6" fill="#0EA5E9" stroke="#FFF" stroke-width="2"></circle>
-                            <text x="12" y="4" fill="#FFF" font-weight="700" font-size="12">JHARKHAND (JAMSHEDPUR)</text>
+                            <circle r="14" fill="#0EA5E9" opacity="0.35"></circle>
+                            <circle r="7" fill="#0EA5E9" stroke="#FFF" stroke-width="2.5"></circle>
+                            <text x="14" y="5" fill="#FFF" font-weight="700" font-size="13">JHARKHAND (JAMSHEDPUR)</text>
                         </g>
 
-                        <!-- Region 5: Chhattisgarh State Path -->
+                        <!-- Region 5: Chhattisgarh State Region -->
                         <path class="state-region" d="M 280,300 L 330,300 L 320,380 L 270,370 Z" data-state-name="Chhattisgarh" data-site-client="ISGEC Heavy Engineering" data-site-scope="Boiler Ducting & Pressure Spool Fabrication"></path>
                     </svg>
                 </div>
