@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadership | Navtara Projects Pvt. Ltd.</title>
-    <meta name="description" content="Meet the executive leadership and technical directors behind Navtara Projects Pvt. Ltd. — engineers with Metso lineage driving industrial execution across India.">
-    <meta property="og:title" content="Executive Leadership | Navtara Projects">
+    <title>Executive Leadership & Core Team | Navtara Projects Pvt. Ltd.</title>
+    <meta name="description" content="Meet the directors and core technical team of Navtara Projects Pvt. Ltd. — Mr. Amit Kumar Singh (Ex-Metso Technocrat) and Ms. Jayanti Chauhan (MBA Banking & Finance).">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Executive Leadership & Core Team | Navtara Projects">
     <meta property="og:image" content="assets/images/hero.png">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
@@ -17,7 +19,7 @@
 
     <style>
         .page-header-v3 {
-            padding: calc(var(--nav-height) + var(--s-xl)) 0 var(--s-xl);
+            padding: calc(var(--nav-height) + var(--s-lg)) 0 var(--s-lg);
             background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-md) 100%);
             color: var(--c-white);
             text-align: center;
@@ -29,14 +31,91 @@
             border-radius: var(--radius-lg);
             padding: var(--s-xl);
             color: var(--c-white);
-            margin: var(--s-2xl) 0;
+            margin: var(--s-lg) 0;
             box-shadow: var(--shadow-xl);
+        }
+
+        .director-card-v3 {
+            background: var(--c-white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--c-grey-100);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: all 0.35s var(--ease-out);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .director-card-v3:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--c-accent-d);
+        }
+
+        .director-header {
+            background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-steel) 100%);
+            color: var(--c-white);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .director-avatar-badge {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--c-navy-md);
+            border: 3px solid var(--c-accent);
+            color: var(--c-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0 auto 1rem;
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+        }
+
+        .core-team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin-top: var(--s-lg);
+        }
+
+        .core-member-card {
+            background: var(--c-white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--c-grey-100);
+            padding: 1.25rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .core-member-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--c-accent-d);
+        }
+
+        .core-icon-circle {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--c-accent-d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin: 0 auto 0.75rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- ✦ Navigation Bar ✦ -->
     <nav class="navbar scrolled" role="navigation">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -51,10 +130,8 @@
                 <a href="about.html">About</a>
                 <a href="capabilities.html">Capabilities</a>
                 <a href="projects.html">Projects</a>
-                <a href="machinery.html">Plant &amp; Machinery</a>
                 <a href="quality.html">Quality &amp; Safety</a>
                 <a href="leadership.html" class="active">Leadership</a>
-                <a href="clients.html">Clients</a>
                 <a href="contact.html">Contact</a>
             </div>
             <a href="contact.html" class="nav-cta">Request Quote →</a>
@@ -62,99 +139,174 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
+    <!-- ✦ Page Header ✦ -->
     <header class="page-header-v3">
         <div class="container reveal">
-            <div class="section-label section-label--light">Trust &amp; Technical Vision</div>
-            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">Executive Leadership</h1>
+            <div class="section-label section-label--light">Trust &amp; Technical Governance</div>
+            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">Executive Leadership &amp; Core Team</h1>
             <p class="body-lg text-light" style="max-width: 680px; margin: 0 auto; opacity: 0.85;">
-                Navtara Projects is led by seasoned heavy engineering professionals committed to safety, engineering precision, and long-term client trust.
+                Founded by Ex-Metso technocrats and finance leaders, Navtara Projects is driven by a high-performance team of engineers, coordinators, and operational specialists.
             </p>
         </div>
     </header>
 
-    <!-- Founder Philosophy Section -->
+    <!-- ✦ Directors Section ✦ -->
     <section class="section bg-white">
         <div class="container">
-            <div class="founder-quote-box reveal">
-                <div class="section-label section-label--light" style="color: var(--c-accent);">Leadership Philosophy</div>
-                <blockquote style="font-family: var(--f-display); font-size: clamp(1.25rem, 2.5vw, 1.85rem); font-weight: 700; line-height: 1.4; margin-bottom: var(--s-md);">
-                    "In heavy engineering, credibility is not built on promises — it is forged in the precision of every weld, the safety of every lift, and the punctuality of every project handover."
-                </blockquote>
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--c-accent-d); display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">👤</div>
-                    <div>
-                        <div style="font-weight: 700; font-size: 1.1rem; color: var(--c-white);">Managing Director</div>
-                        <div style="font-size: 0.85rem; color: var(--c-grey-300);">Navtara Projects Pvt. Ltd.</div>
+            <div class="text-center reveal" style="max-width: 700px; margin: 0 auto var(--s-lg);">
+                <div class="section-label">Board of Directors</div>
+                <h2 class="heading-lg">Founding Leadership</h2>
+                <p class="body-lg" style="margin-top: 0.25rem;">
+                    Combining technical mastery with financial governance to build sustainable engineering excellence.
+                </p>
+            </div>
+
+            <div class="grid-2 reveal">
+                <!-- Director 1: Mr. Amit Kumar Singh -->
+                <div class="director-card-v3">
+                    <div class="director-header">
+                        <div class="director-avatar-badge">AS</div>
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem; background: rgba(14, 165, 233, 0.2);">EX-METSO TECHNOCRAT</span>
+                        <h3 class="heading-md text-light" style="margin-bottom: 0.2rem;">MR. AMIT KUMAR SINGH</h3>
+                        <p style="font-size: 0.85rem; color: var(--c-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">DIRECTOR &bull; MECHANICAL TECHNOCRAT</p>
+                    </div>
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="margin-bottom: 1rem; padding: 0.75rem 1rem; background: var(--c-off-white); border-radius: var(--radius-sm); border-left: 3px solid var(--c-accent-d); font-size: 0.875rem;">
+                                <strong>Qualifications:</strong> Diploma &amp; B.Tech (Mechanical Engineering)
+                            </div>
+                            <p class="body-md text-muted" style="margin-bottom: 1rem;">
+                                Deep technical expertise and strategic leadership in planning, operations, and heavy industrial project execution. Brings Metso-trained engineering standards to ensure high precision and client satisfaction across every package.
+                            </p>
+                        </div>
+                        <div style="border-top: 1px solid var(--c-grey-100); padding-top: 0.85rem; font-size: 0.825rem; color: var(--c-grey-500);">
+                            <strong>Core Focus:</strong> Planning, Structural Fabrication, Turnkey Erection &amp; Site Operations.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Director 2: Ms. Jayanti Chauhan -->
+                <div class="director-card-v3">
+                    <div class="director-header">
+                        <div class="director-avatar-badge">JC</div>
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem; background: rgba(14, 165, 233, 0.2);">MBA (BANKING &amp; FINANCE)</span>
+                        <h3 class="heading-md text-light" style="margin-bottom: 0.2rem;">MS. JAYANTI CHAUHAN</h3>
+                        <p style="font-size: 0.85rem; color: var(--c-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">DIRECTOR &bull; FINANCE &amp; GOVERNANCE</p>
+                    </div>
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="margin-bottom: 1rem; padding: 0.75rem 1rem; background: var(--c-off-white); border-radius: var(--radius-sm); border-left: 3px solid var(--c-accent-d); font-size: 0.875rem;">
+                                <strong>Qualifications:</strong> MBA in Banking &amp; Finance
+                            </div>
+                            <p class="body-md text-muted" style="margin-bottom: 1rem;">
+                                Strong financial acumen and strategic insight driving robust corporate governance, resource optimization, risk management, and sustainable enterprise growth for multi-crore industrial projects.
+                            </p>
+                        </div>
+                        <div style="border-top: 1px solid var(--c-grey-100); padding-top: 0.85rem; font-size: 0.825rem; color: var(--c-grey-500);">
+                            <strong>Core Focus:</strong> Financial Control, Banking Relations, Corporate Strategy &amp; Governance.
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Executive Leadership Cards -->
-            <div class="grid-3" style="margin-top: var(--s-xl);">
+            <!-- Founder Quote Box -->
+            <div class="founder-quote-box reveal" style="margin-top: var(--s-xl);">
+                <div class="section-label section-label--light" style="color: var(--c-accent);">Company Philosophy</div>
+                <blockquote style="font-family: var(--f-display); font-size: clamp(1.15rem, 2vw, 1.5rem); font-weight: 700; line-height: 1.4; margin-bottom: 1rem;">
+                    "At Navtara, we go beyond conventional project delivery — we become long-term partners in our clients' growth journey. Combine engineering excellence, innovation, and accountability to build systems that drive productivity, resilience, and measurable impact."
+                </blockquote>
+                <div style="font-size: 0.875rem; color: var(--c-grey-300);">
+                    — Board of Directors, Navtara Projects Pvt. Ltd.
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Leader 1 -->
-                <div class="leader-card-v3 reveal delay-100">
-                    <div class="leader-avatar-box">
-                        <div style="font-size: 5rem;">👤</div>
-                        <div class="leader-avatar-badge">FOUNDER &amp; MD</div>
-                    </div>
-                    <div style="padding: var(--s-lg);">
-                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">EXECUTIVE GOVERNANCE</span>
-                        <h3 class="heading-md" style="margin-bottom: 0.25rem;">Managing Director</h3>
-                        <p class="body-md text-muted" style="margin-bottom: 1rem; font-size: 0.9rem;">
-                            20+ years of industrial leadership across steel, power, and infrastructure sectors in India. Spearheading strategic direction, EPC client relations, and enterprise scale.
-                        </p>
-                        <div style="border-top: 1px solid var(--c-grey-100); padding-top: 0.75rem; font-size: 0.8rem; color: var(--c-grey-500);">
-                            <strong>Core Competencies:</strong> Enterprise Strategy, Turnkey Project Management, Client Assurance.
-                        </div>
-                    </div>
+    <!-- ✦ Core Team Section ✦ -->
+    <section class="section bg-off-white" aria-labelledby="core-team-heading">
+        <div class="container">
+            <div class="text-center reveal" style="max-width: 700px; margin: 0 auto var(--s-md);">
+                <div class="section-label">Departmental Leadership</div>
+                <h2 class="heading-lg" id="core-team-heading">Our Core Execution Team</h2>
+                <p class="body-lg" style="margin-top: 0.25rem;">
+                    Skilled professionals and department heads driving daily operations across projects, engineering, estimation, and finance.
+                </p>
+            </div>
+
+            <div class="core-team-grid reveal">
+
+                <!-- 1. Mritunjay Das -->
+                <div class="core-member-card">
+                    <div class="core-icon-circle">⚙️</div>
+                    <span class="tag tag--accent" style="font-size: 0.65rem; margin-bottom: 0.35rem;">PROJECTS</span>
+                    <h4 class="heading-md" style="font-size: 1rem; margin-bottom: 0.2rem;">MRITUNJAY DAS</h4>
+                    <p class="body-md text-muted" style="font-size: 0.825rem; font-weight: 600;">Mechanical Project Co-ordinator</p>
                 </div>
 
-                <!-- Leader 2 -->
-                <div class="leader-card-v3 reveal delay-200">
-                    <div class="leader-avatar-box">
-                        <div style="font-size: 5rem;">👤</div>
-                        <div class="leader-avatar-badge">HEAD OF TECHNICAL</div>
-                    </div>
-                    <div style="padding: var(--s-lg);">
-                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">EX-METSO LINEAGE</span>
-                        <h3 class="heading-md" style="margin-bottom: 0.25rem;">Head of Engineering</h3>
-                        <p class="body-md text-muted" style="margin-bottom: 1rem; font-size: 0.9rem;">
-                            Formative technical career rooted in Metso engineering systems. Leading WPS/PQR design, structural integrity audits, AWS codes compliance, and NDT Level II quality controls.
-                        </p>
-                        <div style="border-top: 1px solid var(--c-grey-100); padding-top: 0.75rem; font-size: 0.8rem; color: var(--c-grey-500);">
-                            <strong>Core Competencies:</strong> Structural Fabrication, Metallurgical Integrity, ASNT NDT Systems.
-                        </div>
-                    </div>
+                <!-- 2. Vinay Kumar -->
+                <div class="core-member-card">
+                    <div class="core-icon-circle">🏗️</div>
+                    <span class="tag tag--accent" style="font-size: 0.65rem; margin-bottom: 0.35rem;">PROJECTS</span>
+                    <h4 class="heading-md" style="font-size: 1rem; margin-bottom: 0.2rem;">VINAY KUMAR</h4>
+                    <p class="body-md text-muted" style="font-size: 0.825rem; font-weight: 600;">Project Co-ordinator</p>
                 </div>
 
-                <!-- Leader 3 -->
-                <div class="leader-card-v3 reveal delay-300">
-                    <div class="leader-avatar-box">
-                        <div style="font-size: 5rem;">👤</div>
-                        <div class="leader-avatar-badge">SITE OPERATIONS</div>
-                    </div>
-                    <div style="padding: var(--s-lg);">
-                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">PAN-INDIA DEPLOYMENT</span>
-                        <h3 class="heading-md" style="margin-bottom: 0.25rem;">Director of Site Operations</h3>
-                        <p class="body-md text-muted" style="margin-bottom: 1rem; font-size: 0.9rem;">
-                            Directing multi-state site mobilization, HSE protocols, site logistics, and heavy crane erection maneuvers across remote project sites in Odisha, Maharashtra, and Telangana.
-                        </p>
-                        <div style="border-top: 1px solid var(--c-grey-100); padding-top: 0.75rem; font-size: 0.8rem; color: var(--c-grey-500);">
-                            <strong>Core Competencies:</strong> Zero-Harm HSE Management, Heavy Crane Lifting, Turnkey Erection.
-                        </div>
-                    </div>
+                <!-- 3. Jayanti Chouhan -->
+                <div class="core-member-card">
+                    <div class="core-icon-circle">💼</div>
+                    <span class="tag tag--accent" style="font-size: 0.65rem; margin-bottom: 0.35rem;">FINANCE</span>
+                    <h4 class="heading-md" style="font-size: 1rem; margin-bottom: 0.2rem;">JAYANTI CHOUHAN</h4>
+                    <p class="body-md text-muted" style="font-size: 0.825rem; font-weight: 600;">Finance &amp; Accounts Head</p>
+                </div>
+
+                <!-- 4. Deepak Singh -->
+                <div class="core-member-card">
+                    <div class="core-icon-circle">🛒</div>
+                    <span class="tag tag--accent" style="font-size: 0.65rem; margin-bottom: 0.35rem;">PROCUREMENT</span>
+                    <h4 class="heading-md" style="font-size: 1rem; margin-bottom: 0.2rem;">DEEPAK SINGH</h4>
+                    <p class="body-md text-muted" style="font-size: 0.825rem; font-weight: 600;">Procurement &amp; Purchase Lead</p>
+                </div>
+
+                <!-- 5. Surbhi Srivastava -->
+                <div class="core-member-card">
+                    <div class="core-icon-circle">👥</div>
+                    <span class="tag tag--accent" style="font-size: 0.65rem; margin-bottom: 0.35rem;">HR &amp; ADMIN</span>
+                    <h4 class="heading-md" style="font-size: 1rem; margin-bottom: 0.2rem;">SURBHI SRIVASTAVA</h4>
+                    <p class="body-md text-muted" style="font-size: 0.825rem; font-weight: 600;">HR &amp; Administration Lead</p>
+                </div>
+
+                <!-- 6. Manoj Kumar Singh -->
+                <div class="core-member-card">
+                    <div class="core-icon-circle">📊</div>
+                    <span class="tag tag--accent" style="font-size: 0.65rem; margin-bottom: 0.35rem;">ACCOUNTS</span>
+                    <h4 class="heading-md" style="font-size: 1rem; margin-bottom: 0.2rem;">MANOJ KUMAR SINGH</h4>
+                    <p class="body-md text-muted" style="font-size: 0.825rem; font-weight: 600;">Account Associate</p>
+                </div>
+
+                <!-- 7. Vaishali Sahu -->
+                <div class="core-member-card">
+                    <div class="core-icon-circle">📐</div>
+                    <span class="tag tag--accent" style="font-size: 0.65rem; margin-bottom: 0.35rem;">ESTIMATION</span>
+                    <h4 class="heading-md" style="font-size: 1rem; margin-bottom: 0.2rem;">VAISHALI SAHU</h4>
+                    <p class="body-md text-muted" style="font-size: 0.825rem; font-weight: 600;">Estimation &amp; Costing Specialist</p>
+                </div>
+
+                <!-- 8. Rohit Garg -->
+                <div class="core-member-card">
+                    <div class="core-icon-circle">🚚</div>
+                    <span class="tag tag--accent" style="font-size: 0.65rem; margin-bottom: 0.35rem;">OPERATIONS</span>
+                    <h4 class="heading-md" style="font-size: 1rem; margin-bottom: 0.2rem;">ROHIT GARG</h4>
+                    <p class="body-md text-muted" style="font-size: 0.825rem; font-weight: 600;">Resource Management</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ✦ Footer ✦ -->
     <footer class="footer bg-charcoal text-light" role="contentinfo">
         <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
+            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved. Designed to Enterprise Standards.</p>
         </div>
     </footer>
 
