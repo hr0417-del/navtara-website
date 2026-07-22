@@ -1,9 +1,21 @@
 /**
- * main.js – Core Application Logic v3.1
+ * main.js – Core Application Logic v3.6
  * Navtara Projects Pvt. Ltd. Digital Headquarters
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* ─── Top Window Scroll Progress Bar ─── */
+  const progressBar = document.createElement('div');
+  progressBar.id = 'scroll-progress-bar';
+  document.body.appendChild(progressBar);
+
+  window.addEventListener('scroll', () => {
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    progressBar.style.width = scrolled + '%';
+  }, { passive: true });
 
   /* ─── Hero Animation Initializer ─── */
   const heroContent = document.querySelector('.hero-content');
@@ -134,21 +146,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ─── Interactive Vector Map Logic ─── */
-  const statePaths = document.querySelectorAll('.state-path');
+  /* ─── Interactive Radar Beacons Logic ─── */
+  const beaconNodes = document.querySelectorAll('.beacon-node');
   const siteTitle = document.getElementById('map-site-title');
   const siteClient = document.getElementById('map-site-client');
   const siteScope = document.getElementById('map-site-scope');
 
-  if (statePaths.length && siteTitle) {
-    statePaths.forEach(path => {
-      path.addEventListener('click', () => {
-        statePaths.forEach(p => p.classList.remove('active-state'));
-        path.classList.add('active-state');
+  if (beaconNodes.length && siteTitle) {
+    beaconNodes.forEach(node => {
+      node.addEventListener('click', () => {
+        beaconNodes.forEach(b => b.classList.remove('active-node'));
+        node.classList.add('active-node');
 
-        const stateName = path.getAttribute('data-state-name');
-        const client = path.getAttribute('data-site-client');
-        const scope = path.getAttribute('data-site-scope');
+        const stateName = node.getAttribute('data-state-name');
+        const client = node.getAttribute('data-site-client');
+        const scope = node.getAttribute('data-site-scope');
 
         siteTitle.textContent = `${stateName} Deployment Hub`;
         if (siteClient) siteClient.textContent = client;
@@ -214,36 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
-  }
-
-  /* ─── Interactive RFQ Scope Estimator Widget ─── */
-  const rfqCards = document.querySelectorAll('.option-radio-card');
-  const rfqMessageInput = document.getElementById('message');
-  let selectedSector = 'Steel';
-  let selectedScope = 'Fabrication & Erection';
-  let selectedScale = '1,000 - 3,000 MT';
-
-  if (rfqCards.length && rfqMessageInput) {
-    rfqCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const group = card.getAttribute('data-rfq-group');
-        const value = card.getAttribute('data-rfq-val');
-
-        document.querySelectorAll(`[data-rfq-group="${group}"]`).forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
-
-        if (group === 'sector') selectedSector = value;
-        if (group === 'scope') selectedScope = value;
-        if (group === 'scale') selectedScale = value;
-
-        rfqMessageInput.value = `[ESTIMATED RFQ DRAFT]
-Sector: ${selectedSector}
-Primary Scope: ${selectedScope}
-Estimated Package Scale: ${selectedScale}
-
-Please provide a formal technical quotation and mobilization schedule for the above requirements.`;
-      });
-    });
   }
 
 });

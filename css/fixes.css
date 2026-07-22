@@ -1,7 +1,49 @@
 /* ═══════════════════════════════════════════════════════
-   LAYOUT SAFEGUARDS & EXTENDED COMPONENTS — Navtara v3.4
-   "Compact Sleek Cards & Blinking Location Beacons"
+   LAYOUT SAFEGUARDS & VISUAL AESTHETICS — Navtara v3.6
+   "Glassmorphism, Metallic Gradients, & Ambient Mesh"
 ═══════════════════════════════════════════════════════ */
+
+/* ── Top Window Scroll Progress Bar ─────────────────── */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2.5px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--c-accent-d, #0070C0), var(--c-accent, #0EA5E9));
+  z-index: 10000;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.8);
+  transition: width 0.1s ease-out;
+}
+
+/* ── Metallic Gradient Text Utility ─────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 50%, #0070C0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Button Sheen Sweep Hover Animation ─────────────── */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-20deg);
+  transition: none;
+}
+
+.btn:hover::before {
+  animation: sheenSweep 0.75s ease-in-out;
+}
+
+@keyframes sheenSweep {
+  0%   { left: -100%; }
+  100% { left: 160%; }
+}
 
 /* ── Hero Load Animations ────────────────────────────── */
 .hero-content {
@@ -25,7 +67,7 @@
   animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
 }
 
-/* ── Pan-India Radar Beacons (No Map Outline, Only Blinking Dots) ── */
+/* ── Pan-India Radar Beacons (Glassmorphism & Radar Mesh) ── */
 .india-map-section-v3 {
   background: var(--c-navy);
   color: var(--c-white);
@@ -41,12 +83,13 @@
 }
 
 .radar-beacon-card-v3 {
-  background: var(--c-navy-md, #0D1E35);
-  border: 1.5px solid rgba(14, 165, 233, 0.25);
+  background: rgba(13, 30, 53, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(14, 165, 233, 0.3);
   border-radius: var(--radius-lg, 12px);
   padding: var(--s-md);
   position: relative;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,10 +102,10 @@
   position: absolute;
   inset: 0;
   background-image: 
-    radial-gradient(circle at center, rgba(14, 165, 233, 0.08) 0%, transparent 70%),
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 100% 100%, 30px 30px, 30px 30px;
+    radial-gradient(circle at center, rgba(14, 165, 233, 0.12) 0%, transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 28px 28px, 28px 28px;
   pointer-events: none;
 }
 
@@ -82,7 +125,7 @@
   background: var(--c-accent, #0EA5E9);
   border: 2px solid #FFF;
   border-radius: 50%;
-  box-shadow: 0 0 12px var(--c-accent);
+  box-shadow: 0 0 14px var(--c-accent);
   position: relative;
   z-index: 2;
   animation: beaconBlink 1.8s infinite ease-in-out;
@@ -103,11 +146,11 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--c-white);
-  background: rgba(7, 17, 31, 0.85);
-  backdrop-filter: blur(6px);
+  background: rgba(7, 17, 31, 0.88);
+  backdrop-filter: blur(8px);
   padding: 0.25rem 0.6rem;
   border-radius: 4px;
-  border: 1px solid rgba(14, 165, 233, 0.3);
+  border: 1px solid rgba(14, 165, 233, 0.35);
   white-space: nowrap;
   transition: all 0.25s ease;
 }
@@ -116,7 +159,7 @@
 .beacon-node.active-node .beacon-label {
   background: var(--c-accent-d);
   border-color: var(--c-accent);
-  box-shadow: 0 0 12px rgba(14, 165, 233, 0.5);
+  box-shadow: 0 0 14px rgba(14, 165, 233, 0.6);
 }
 
 @keyframes beaconBlink {
@@ -130,18 +173,18 @@
 }
 
 .map-site-panel-v3 {
-  background: rgba(13, 30, 53, 0.95);
-  backdrop-filter: blur(12px);
+  background: rgba(13, 30, 53, 0.85);
+  backdrop-filter: blur(16px);
   border: 1px solid rgba(14, 165, 233, 0.3);
   border-radius: var(--radius-lg, 12px);
   padding: var(--s-lg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-/* ── Sleek Compact Cards (Proportioned & Balanced) ──── */
+/* ── Glassmorphism Cards & Sleek Proportions ──────────── */
 .cap-card-v3 {
   background: var(--c-white);
   border-radius: var(--radius-lg, 12px);
@@ -159,12 +202,19 @@
 }
 
 .stat-card-v3 {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md, 8px);
   padding: 1rem 1.25rem;
   text-align: center;
   transition: all 0.35s var(--ease-out);
+}
+
+.stat-card-v3:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--c-accent);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.25);
 }
 
 .cs-card-large {
@@ -245,33 +295,6 @@
   color: var(--c-grey-500);
 }
 
-/* ── Interactive Industrial RFQ Estimator ────────────── */
-.rfq-estimator-card {
-  background: var(--c-white);
-  border-radius: var(--radius-lg, 12px);
-  border: 1px solid var(--c-grey-100);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-lg);
-  margin-bottom: var(--s-lg);
-}
-
-.option-radio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 0.75rem;
-  margin-top: 0.75rem;
-}
-
-.option-radio-card {
-  border: 1.5px solid var(--c-grey-100);
-  border-radius: var(--radius-md, 8px);
-  padding: 0.75rem 0.85rem;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  text-align: center;
-  font-size: 0.85rem;
-}
-
 /* ── Official Compliance Badge Wall ─────────────────── */
 .compliance-badge-grid {
   display: grid;
@@ -292,6 +315,12 @@
   flex-direction: column;
   align-items: center;
   gap: 0.35rem;
+}
+
+.compliance-badge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--c-accent-d);
 }
 
 .badge-seal-icon {
