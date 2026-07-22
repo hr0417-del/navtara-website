@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════
-   LAYOUT SAFEGUARDS & EXTENDED COMPONENTS — Navtara v3.2
-   "Zero Overlapping, 100% Map Visibility & Perfect Layout Alignment"
+   LAYOUT SAFEGUARDS & EXTENDED COMPONENTS — Navtara v3.4
+   "Compact Sleek Cards & Blinking Location Beacons"
 ═══════════════════════════════════════════════════════ */
 
 /* ── Hero Load Animations ────────────────────────────── */
@@ -25,78 +25,176 @@
   animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
 }
 
-/* ── Pan-India Map Side-by-Side (Zero Overlap Layout) ── */
+/* ── Pan-India Radar Beacons (No Map Outline, Only Blinking Dots) ── */
 .india-map-section-v3 {
   background: var(--c-navy);
   color: var(--c-white);
   position: relative;
-  padding: var(--s-2xl) 0;
+  padding: var(--s-lg) 0;
 }
 
 .india-map-grid-v3 {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: var(--s-xl);
+  gap: var(--s-lg);
   align-items: center;
 }
 
-.india-map-card-v3 {
+.radar-beacon-card-v3 {
   background: var(--c-navy-md, #0D1E35);
   border: 1.5px solid rgba(14, 165, 233, 0.25);
-  border-radius: var(--radius-lg, 16px);
-  padding: var(--s-lg);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--s-md);
   position: relative;
-  box-shadow: var(--shadow-xl, 0 32px 80px rgba(0,0,0,0.3));
+  box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 480px;
+  min-height: 380px;
+  overflow: hidden;
 }
 
-.india-vector-svg-v3 {
-  width: 100%;
-  max-width: 440px;
-  height: auto;
-  max-height: 440px;
-  filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));
+.radar-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at center, rgba(14, 165, 233, 0.08) 0%, transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 30px 30px, 30px 30px;
+  pointer-events: none;
 }
 
-.state-region {
-  fill: #162C4A;
-  stroke: rgba(255, 255, 255, 0.3);
-  stroke-width: 1.5;
-  transition: all 0.35s ease;
+.beacon-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
   cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.state-region:hover,
-.state-region.active-state {
-  fill: var(--c-accent-d, #0070C0);
-  stroke: var(--c-accent, #0EA5E9);
-  stroke-width: 2.5;
-  filter: drop-shadow(0 0 16px rgba(14, 165, 233, 0.8));
+.beacon-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--c-accent, #0EA5E9);
+  border: 2px solid #FFF;
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--c-accent);
+  position: relative;
+  z-index: 2;
+  animation: beaconBlink 1.8s infinite ease-in-out;
 }
 
-.map-node-pulse {
-  cursor: pointer;
-  transition: transform 0.3s ease;
+.beacon-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--c-accent);
+  animation: beaconPulse 2.2s infinite ease-out;
+  z-index: 1;
 }
 
-.map-node-pulse:hover {
-  transform: scale(1.25);
+.beacon-label {
+  font-family: var(--f-display);
+  font-size: 0.725rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--c-white);
+  background: rgba(7, 17, 31, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.beacon-node:hover .beacon-label,
+.beacon-node.active-node .beacon-label {
+  background: var(--c-accent-d);
+  border-color: var(--c-accent);
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.5);
+}
+
+@keyframes beaconBlink {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(0.85); opacity: 0.6; }
+}
+
+@keyframes beaconPulse {
+  0%   { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
 }
 
 .map-site-panel-v3 {
   background: rgba(13, 30, 53, 0.95);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(14, 165, 233, 0.3);
-  border-radius: var(--radius-lg, 16px);
-  padding: var(--s-xl);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--s-lg);
+  box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
+}
+
+/* ── Sleek Compact Cards (Proportioned & Balanced) ──── */
+.cap-card-v3 {
+  background: var(--c-white);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--c-grey-100);
+  padding: 1.25rem 1.5rem;
+  transition: all 0.35s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.cap-card-v3:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--c-accent-d);
+}
+
+.stat-card-v3 {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md, 8px);
+  padding: 1rem 1.25rem;
+  text-align: center;
+  transition: all 0.35s var(--ease-out);
+}
+
+.cs-card-large {
+  position: relative;
+  border-radius: var(--radius-lg, 12px);
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.leader-card-v3 {
+  background: var(--c-white);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--c-grey-100);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.35s var(--ease-out);
+}
+
+.leader-avatar-box {
+  height: 180px;
+  background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-steel) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-white);
+  position: relative;
+  overflow: hidden;
 }
 
 /* ── Interactive Engineering Workflow ───────────────── */
@@ -104,229 +202,109 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  margin: 3rem 0;
-  gap: 1rem;
+  margin: 2rem 0;
+  gap: 0.75rem;
 }
 
 .workflow-stepper::before {
   content: '';
   position: absolute;
-  top: 28px;
+  top: 24px;
   left: 5%;
   right: 5%;
-  height: 3px;
+  height: 2.5px;
   background: linear-gradient(90deg, var(--c-accent-d, #0070C0), var(--c-accent, #0EA5E9));
   z-index: 1;
 }
 
-.workflow-step {
-  position: relative;
-  z-index: 2;
-  flex: 1;
-  text-align: center;
-  cursor: pointer;
-}
-
 .workflow-step-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 1rem;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 0.75rem;
   border-radius: 50%;
   background: var(--c-navy, #07111F);
-  border: 3px solid var(--c-steel, #1E3A5C);
+  border: 2px solid var(--c-steel, #1E3A5C);
   color: var(--c-white, #fff);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
-  transition: all 0.4s var(--ease-out);
-}
-
-.workflow-step:hover .workflow-step-icon,
-.workflow-step.active .workflow-step-icon {
-  background: var(--c-accent-d, #0070C0);
-  border-color: var(--c-accent, #0EA5E9);
-  box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
-  transform: scale(1.1);
+  font-size: 1.15rem;
+  transition: all 0.35s var(--ease-out);
 }
 
 .workflow-step-title {
   font-family: var(--f-display);
-  font-size: 0.9rem;
+  font-size: 0.825rem;
   font-weight: 700;
   color: var(--c-navy, #07111F);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .workflow-step-desc {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--c-grey-500);
 }
 
 /* ── Interactive Industrial RFQ Estimator ────────────── */
 .rfq-estimator-card {
   background: var(--c-white);
-  border-radius: var(--radius-lg, 16px);
+  border-radius: var(--radius-lg, 12px);
   border: 1px solid var(--c-grey-100);
-  padding: var(--s-lg);
-  box-shadow: var(--shadow-xl);
-  margin-bottom: var(--s-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--s-lg);
 }
 
 .option-radio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
 }
 
 .option-radio-card {
   border: 1.5px solid var(--c-grey-100);
   border-radius: var(--radius-md, 8px);
-  padding: 1rem;
+  padding: 0.75rem 0.85rem;
   cursor: pointer;
   transition: all 0.25s ease;
   text-align: center;
-}
-
-.option-radio-card:hover,
-.option-radio-card.selected {
-  border-color: var(--c-accent-d);
-  background: rgba(0, 112, 192, 0.05);
-  box-shadow: 0 4px 15px rgba(0, 112, 192, 0.12);
+  font-size: 0.85rem;
 }
 
 /* ── Official Compliance Badge Wall ─────────────────── */
 .compliance-badge-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.25rem;
-  margin-top: var(--s-lg);
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: var(--s-md);
 }
 
 .compliance-badge-card {
   background: var(--c-white);
   border-radius: var(--radius-md, 8px);
   border: 1px solid var(--c-grey-100);
-  padding: 1.25rem;
+  padding: 1rem;
   text-align: center;
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-}
-
-.compliance-badge-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--c-accent-d);
+  gap: 0.35rem;
 }
 
 .badge-seal-icon {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-steel) 100%);
   color: var(--c-accent);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  font-weight: 900;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* ── Multi-Tab Project Modal ─────────────────────────── */
-.project-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(7, 17, 31, 0.85);
-  backdrop-filter: blur(10px);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-  padding: 1.5rem;
-}
-
-.project-modal.active {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.project-modal-content {
-  background: var(--c-white);
-  border-radius: var(--radius-lg, 16px);
-  max-width: 840px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-  transform: translateY(20px);
-  transition: transform 0.4s ease;
-}
-
-.project-modal.active .project-modal-content {
-  transform: translateY(0);
-}
-
-.modal-nav-tabs {
-  display: flex;
-  border-bottom: 2px solid var(--c-grey-50);
-  margin-bottom: 1.5rem;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.modal-tab-btn {
-  padding: 0.75rem 0;
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--c-grey-500);
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.modal-tab-btn.active {
-  color: var(--c-accent-d);
-  border-bottom-color: var(--c-accent-d);
-}
-
-.modal-tab-pane {
-  display: none;
-}
-
-.modal-tab-pane.active {
-  display: block;
-}
-
-.project-modal-close {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  cursor: pointer;
-  z-index: 10;
-  transition: background 0.2s;
-}
-
-.project-modal-close:hover {
-  background: rgba(0,0,0,0.12);
+  font-size: 1rem;
+  font-weight: 800;
 }
 
 /* ── UI QA Safeguards & Overlap Prevention ───────────── */
@@ -339,7 +317,6 @@ h1, h2, h3, h4, p, span, a, button {
   align-items: stretch;
 }
 
-/* Guarantee zero button text collisions */
 .btn {
   box-sizing: border-box;
   max-width: 100%;
@@ -355,20 +332,20 @@ h1, h2, h3, h4, p, span, a, button {
 @media (max-width: 768px) {
   .workflow-stepper {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
   .workflow-stepper::before {
     top: 5%;
     bottom: 5%;
-    left: 28px;
-    width: 3px;
+    left: 24px;
+    width: 2.5px;
     height: auto;
     right: auto;
   }
   .workflow-step {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.85rem;
     text-align: left;
   }
   .workflow-step-icon {

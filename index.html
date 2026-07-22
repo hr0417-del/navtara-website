@@ -25,15 +25,15 @@
     <style>
         .hero-v3 {
             position: relative;
-            min-height: 92vh;
+            min-height: 88vh;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, rgba(7, 17, 31, 0.92) 0%, rgba(13, 30, 53, 0.85) 100%),
                         url('assets/images/hero.png') center/cover no-repeat;
             color: var(--c-white);
             overflow: hidden;
-            padding-top: calc(var(--nav-height) + 2rem);
-            padding-bottom: var(--s-xl);
+            padding-top: calc(var(--nav-height) + 1.5rem);
+            padding-bottom: var(--s-lg);
         }
 
         .hero-v3::before {
@@ -41,8 +41,8 @@
             position: absolute;
             top: -20%;
             right: -10%;
-            width: 600px;
-            height: 600px;
+            width: 500px;
+            height: 500px;
             background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(7, 17, 31, 0) 70%);
             pointer-events: none;
         }
@@ -50,116 +50,33 @@
         .hero-badge-pill {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             background: rgba(14, 165, 233, 0.12);
             border: 1px solid rgba(14, 165, 233, 0.3);
             color: var(--c-accent);
-            padding: 0.4rem 1rem;
+            padding: 0.35rem 0.85rem;
             border-radius: var(--radius-pill);
             font-size: var(--t-xs);
             font-weight: 700;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            margin-bottom: var(--s-md);
+            margin-bottom: var(--s-sm);
         }
 
         .hero-badge-pill::before {
             content: '';
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             background: var(--c-accent);
-            box-shadow: 0 0 10px var(--c-accent);
-        }
-
-        .stat-card-v3 {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: var(--radius-md);
-            padding: var(--s-md);
-            text-align: center;
-            transition: all 0.35s var(--ease-out);
-        }
-
-        .stat-card-v3:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: var(--c-accent);
-            transform: translateY(-4px);
-        }
-
-        .cap-card-v3 {
-            background: var(--c-white);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--c-grey-100);
-            padding: var(--s-lg);
-            transition: all 0.4s var(--ease-out);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cap-card-v3:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--c-accent-d);
-        }
-
-        .cap-card-v3::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--c-accent-d);
-            transition: width 0.3s ease;
-        }
-
-        .cap-card-v3:hover::before {
-            width: 8px;
+            box-shadow: 0 0 8px var(--c-accent);
         }
 
         .case-study-hero-grid {
             display: grid;
             grid-template-columns: 1.4fr 1fr;
             gap: var(--s-md);
-            margin-top: var(--s-lg);
-        }
-
-        .cs-card-large {
-            position: relative;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            min-height: 440px;
-            display: flex;
-            align-items: flex-end;
-            cursor: pointer;
-        }
-
-        .cs-card-large img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s var(--ease-out);
-        }
-
-        .cs-card-large:hover img {
-            transform: scale(1.06);
-        }
-
-        .cs-card-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(7, 17, 31, 0.95) 0%, rgba(7, 17, 31, 0.2) 60%);
-            z-index: 1;
-        }
-
-        .cs-card-body {
-            position: relative;
-            z-index: 2;
-            padding: var(--s-lg);
-            color: var(--c-white);
+            margin-top: var(--s-md);
         }
 
         @media (max-width: 992px) {
@@ -198,11 +115,11 @@
     <header class="hero-v3" role="banner">
         <div class="container hero-content">
             <div class="hero-badge-pill">Precision Engineering &bull; Pan-India Execution</div>
-            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-md);">
+            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-sm);">
                 Engineering Industrial Excellence.<br>
                 <span class="text-accent">Delivering Mission-Critical Projects.</span>
             </h1>
-            <p class="body-lg text-light" style="max-width: 680px; margin-bottom: var(--s-lg); opacity: 0.9;">
+            <p class="body-lg text-light" style="max-width: 640px; margin-bottom: var(--s-md); opacity: 0.9;">
                 Navtara Projects Pvt. Ltd. is a trusted heavy engineering enterprise specializing in high-tolerance structural fabrication, plant erection, industrial piping, and protective surface coatings for Steel, Power, Cement, and Infrastructure sectors.
             </p>
             <div class="hero-buttons">
@@ -214,7 +131,7 @@
 
     <!-- ✦ Trusted Client Partner Infinite Marquee ✦ -->
     <section class="section--xs bg-off-white" aria-label="Trusted Industry Partners">
-        <div class="container text-center" style="margin-bottom: var(--s-sm);">
+        <div class="container text-center" style="margin-bottom: 0.5rem;">
             <div class="section-label">Trusted Partner to India's Core Industrial Leaders</div>
         </div>
         <div class="marquee-wrapper" role="region" aria-label="Client marquee">
@@ -268,7 +185,7 @@
     <section class="section--sm bg-white">
         <div class="container text-center reveal">
             <div class="section-label">Quality &amp; Code Governance</div>
-            <h2 class="heading-lg" style="margin-bottom: var(--s-md);">Built to International Code Standards</h2>
+            <h2 class="heading-lg" style="margin-bottom: var(--s-sm);">Built to International Code Standards</h2>
             <div class="compliance-badge-grid">
                 <div class="compliance-badge-card">
                     <div class="badge-seal-icon">ISO</div>
@@ -302,7 +219,7 @@
     <!-- ✦ Strategic Positioning: Why Navtara ✦ -->
     <section class="section bg-off-white" aria-labelledby="why-navtara-heading">
         <div class="container">
-            <div class="text-center reveal" style="max-width: 760px; margin: 0 auto var(--s-xl);">
+            <div class="text-center reveal" style="max-width: 720px; margin: 0 auto var(--s-lg);">
                 <div class="section-label">Engineering Leadership</div>
                 <h2 class="heading-lg" id="why-navtara-heading">Built on Discipline. Driven by Precision.</h2>
                 <p class="body-lg" style="margin-top: var(--s-xs);">
@@ -312,43 +229,43 @@
 
             <div class="grid-3">
                 <div class="cap-card-v3 reveal delay-100">
-                    <div style="font-size: 2.2rem; margin-bottom: var(--s-sm);">⚙️</div>
-                    <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Metso Technical Lineage</h3>
+                    <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">⚙️</div>
+                    <h3 class="heading-md" style="margin-bottom: 0.25rem;">Metso Technical Lineage</h3>
                     <p class="body-md text-muted">
                         Our leadership and core technical team stem from Metso-trained engineering standards, ensuring world-class quality systems and high-precision execution.
                     </p>
                 </div>
                 <div class="cap-card-v3 reveal delay-200">
-                    <div style="font-size: 2.2rem; margin-bottom: var(--s-sm);">🛡️</div>
-                    <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Zero-Harm HSE Culture</h3>
+                    <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">🛡️</div>
+                    <h3 class="heading-md" style="margin-bottom: 0.25rem;">Zero-Harm HSE Culture</h3>
                     <p class="body-md text-muted">
                         Integrated Safety Management Systems with mandatory JSA, Daily Toolbox Talks, PPE compliance, and zero-accident target operational protocols.
                     </p>
                 </div>
                 <div class="cap-card-v3 reveal delay-300">
-                    <div style="font-size: 2.2rem; margin-bottom: var(--s-sm);">📐</div>
-                    <h3 class="heading-md" style="margin-bottom: var(--s-xs);">AWS / ASME Compliance</h3>
+                    <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">📐</div>
+                    <h3 class="heading-md" style="margin-bottom: 0.25rem;">AWS / ASME Compliance</h3>
                     <p class="body-md text-muted">
                         Fabrication procedures governed by approved WPS/PQR, qualified welders, and certified ASNT Level II Non-Destructive Testing (UT, RT, MPI).
                     </p>
                 </div>
                 <div class="cap-card-v3 reveal delay-100">
-                    <div style="font-size: 2.2rem; margin-bottom: var(--s-sm);">🚚</div>
-                    <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Pan-India Mobilization</h3>
+                    <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">🚚</div>
+                    <h3 class="heading-md" style="margin-bottom: 0.25rem;">Pan-India Mobilization</h3>
                     <p class="body-md text-muted">
                         Rapid deployment capabilities across remote and demanding industrial zones in Odisha, Maharashtra, Telangana, Jharkhand, and Chhattisgarh.
                     </p>
                 </div>
                 <div class="cap-card-v3 reveal delay-200">
-                    <div style="font-size: 2.2rem; margin-bottom: var(--s-sm);">🖌️</div>
-                    <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Advanced Surface Protection</h3>
+                    <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">🖌️</div>
+                    <h3 class="heading-md" style="margin-bottom: 0.25rem;">Advanced Surface Protection</h3>
                     <p class="body-md text-muted">
                         Heavy abrasive blasting (Sa 2.5) and high-ratio airless spray coating for maximum structural lifespan in hostile chemical and marine environments.
                     </p>
                 </div>
                 <div class="cap-card-v3 reveal delay-300">
-                    <div style="font-size: 2.2rem; margin-bottom: var(--s-sm);">⏱️</div>
-                    <h3 class="heading-md" style="margin-bottom: var(--s-xs);">Guaranteed On-Time Handover</h3>
+                    <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">⏱️</div>
+                    <h3 class="heading-md" style="margin-bottom: 0.25rem;">Guaranteed On-Time Handover</h3>
                     <p class="body-md text-muted">
                         Rigorous Primavera / MS Project milestone tracking ensuring reliable turnaround time for plant shutdowns and new greenfield projects.
                     </p>
@@ -360,7 +277,7 @@
     <!-- ✦ Proof of Execution: Featured Projects & Explorer ✦ -->
     <section class="section bg-white" aria-labelledby="featured-projects-heading">
         <div class="container">
-            <div class="text-center reveal" style="max-width: 700px; margin: 0 auto var(--s-lg);">
+            <div class="text-center reveal" style="max-width: 680px; margin: 0 auto var(--s-md);">
                 <div class="section-label">Proof of Execution</div>
                 <h2 class="heading-lg" id="featured-projects-heading">Case Studies &amp; High-Impact Deliveries</h2>
                 <p class="body-lg" style="margin-top: var(--s-xs);">
@@ -374,103 +291,100 @@
                     <img src="assets/images/fabrication.png" alt="Jindal Steel Project Fabrication" loading="lazy">
                     <div class="cs-card-overlay"></div>
                     <div class="cs-card-body">
-                        <span class="tag tag--accent" style="margin-bottom: 0.75rem;">STEEL &amp; POWER</span>
-                        <h3 class="heading-md text-light" style="margin-bottom: 0.5rem;">Jindal Steel &amp; Power Ltd. — Angul</h3>
-                        <p class="body-md text-light" style="opacity: 0.85; margin-bottom: 1rem;">Surface Preparation &amp; Protective Coating Package (₹3.8 Cr)</p>
+                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">STEEL &amp; POWER</span>
+                        <h3 class="heading-md text-light" style="margin-bottom: 0.25rem;">Jindal Steel &amp; Power Ltd. — Angul</h3>
+                        <p class="body-md text-light" style="opacity: 0.85; margin-bottom: 0.75rem;">Surface Preparation &amp; Protective Coating Package (₹3.8 Cr)</p>
                         <span class="btn btn-outline btn--sm">View Case Study &amp; Specs →</span>
                     </div>
                 </div>
 
                 <!-- Secondary Featured Cards -->
-                <div style="display: flex; flex-direction: column; gap: var(--s-md);">
+                <div style="display: flex; flex-direction: column; gap: var(--s-sm);">
                     <div class="card" style="padding: var(--s-md); background: var(--c-navy-md); color: var(--c-white);" data-project-trigger data-title="Industrial Fire Protection &amp; Piping System" data-client="Mahagenco" data-loc="Nagpur, Maharashtra" data-value="Turnkey Package" data-scope="Fire Water Piping, Pumping Station Erection &amp; Automated Deluge Valves" data-desc="Execution of complete fire safety and high-pressure water piping networks for Mahagenco thermal power units.">
-                        <span class="tag tag--accent" style="margin-bottom: 0.5rem; align-self: flex-start;">POWER SECTOR</span>
-                        <h3 class="heading-md text-light" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Mahagenco Thermal Station</h3>
-                        <p class="body-md text-light" style="opacity: 0.75; font-size: 0.875rem; margin-bottom: 1rem;">Fire Fighting &amp; Piping Installation Package</p>
+                        <span class="tag tag--accent" style="margin-bottom: 0.35rem; align-self: flex-start;">POWER SECTOR</span>
+                        <h3 class="heading-md text-light" style="font-size: 1.05rem; margin-bottom: 0.2rem;">Mahagenco Thermal Station</h3>
+                        <p class="body-md text-light" style="opacity: 0.75; font-size: 0.85rem; margin-bottom: 0.75rem;">Fire Fighting &amp; Piping Installation Package</p>
                         <span class="btn btn-outline btn--sm" style="align-self: flex-start;">View Details</span>
                     </div>
 
                     <div class="card" style="padding: var(--s-md); background: var(--c-navy-lt); color: var(--c-white);" data-project-trigger data-title="Cement Plant Structural Fabrication &amp; Erection" data-client="KEC International / Maha Cement" data-loc="Telangana" data-value="₹1.9 Crore" data-scope="Structural Steel Fabrication, Silo Erection &amp; Conveyor Support Fabrication" data-desc="Heavy structural fabrication package for cement clinker plant expansion. Total tonnage executed: 1,200 MT within tight shutdown timeline.">
-                        <span class="tag tag--accent" style="margin-bottom: 0.5rem; align-self: flex-start;">CEMENT &amp; MINING</span>
-                        <h3 class="heading-md text-light" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Maha Cement Clinker Line</h3>
-                        <p class="body-md text-light" style="opacity: 0.75; font-size: 0.875rem; margin-bottom: 1rem;">Fabrication &amp; Erection Package (₹1.9 Cr)</p>
+                        <span class="tag tag--accent" style="margin-bottom: 0.35rem; align-self: flex-start;">CEMENT &amp; MINING</span>
+                        <h3 class="heading-md text-light" style="font-size: 1.05rem; margin-bottom: 0.2rem;">Maha Cement Clinker Line</h3>
+                        <p class="body-md text-light" style="opacity: 0.75; font-size: 0.85rem; margin-bottom: 0.75rem;">Fabrication &amp; Erection Package (₹1.9 Cr)</p>
                         <span class="btn btn-outline btn--sm" style="align-self: flex-start;">View Details</span>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center" style="margin-top: var(--s-xl);">
-                <a href="projects.html" class="btn btn-primary btn--lg">Explore Full 100+ Project Directory →</a>
+            <div class="text-center" style="margin-top: var(--s-lg);">
+                <a href="projects.html" class="btn btn-primary">Explore Full 100+ Project Directory →</a>
             </div>
         </div>
     </section>
 
-    <!-- ✦ Interactive Vector India Project Map (Zero Overlap Side-by-Side Layout) ✦ -->
+    <!-- ✦ Radar Beacons & Active Hubs (Blinking Dots Only - NO MAP SHAPE) ✦ -->
     <section class="india-map-section-v3" aria-labelledby="map-heading">
         <div class="container">
-            <div class="text-center reveal" style="max-width: 700px; margin: 0 auto var(--s-xl);">
-                <div class="section-label section-label--light">Interactive Pan-India Map</div>
+            <div class="text-center reveal" style="max-width: 680px; margin: 0 auto var(--s-lg);">
+                <div class="section-label section-label--light">Pan-India Site Beacons</div>
                 <h2 class="heading-lg text-light" id="map-heading">Our Nationwide Project Execution Footprint</h2>
                 <p class="body-lg text-light" style="opacity: 0.8; margin-top: var(--s-xs);">
-                    Click on any active state region below to view site deployment details.
+                    Click on any active site beacon below to inspect hub deployment details.
                 </p>
             </div>
 
             <div class="india-map-grid-v3 reveal">
-                <!-- Left: Complete Real Detailed Vector SVG Map of India -->
-                <div class="india-map-card-v3">
-                    <svg class="india-vector-svg-v3" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
-                        <!-- REAL COMPLETE OUTLINE OF INDIA (High Accuracy Path) -->
-                        <path d="M 280,25 
-                                 L 295,15 L 310,20 L 325,45 L 340,65 L 360,85 L 380,105 L 395,120 
-                                 L 425,130 L 460,140 L 515,160 L 555,185 L 575,205 L 545,225 
-                                 L 510,230 L 470,240 L 440,245 L 420,250 
-                                 L 410,270 L 415,310 L 425,325 L 400,340 L 385,385 
-                                 L 360,425 L 330,470 L 305,530 L 285,600 L 270,660 L 255,640 
-                                 L 240,580 L 220,510 L 195,435 L 165,370 L 130,335 L 90,320 
-                                 L 70,295 L 95,275 L 130,265 L 155,255 L 180,240 L 205,215 
-                                 L 230,175 L 245,120 L 250,75 L 265,45 Z" 
-                              fill="#183656" stroke="#0EA5E9" stroke-width="2.5" filter="drop-shadow(0 0 12px rgba(14,165,233,0.4))"></path>
+                <!-- Left: Sleek Abstract Radar Grid with Blinking Beacons (No Map Geometry) -->
+                <div class="radar-beacon-card-v3">
+                    <div class="radar-grid-bg"></div>
 
-                        <!-- Region 1: Odisha State Region -->
-                        <path class="state-region active-state" d="M 330,300 L 410,310 L 390,380 L 330,370 Z" data-state-name="Odisha" data-site-client="Jindal Steel & Power Ltd." data-site-scope="15,000+ MT Blasting & Coating Package (Angul)"></path>
-                        <!-- Odisha Location Beacon & Label -->
-                        <g class="map-node-pulse" transform="translate(370, 340)">
-                            <circle r="14" fill="#0EA5E9" opacity="0.35"></circle>
-                            <circle r="7" fill="#0EA5E9" stroke="#FFF" stroke-width="2.5"></circle>
-                            <text x="14" y="5" fill="#FFF" font-weight="700" font-size="13">ODISHA (ANGUL)</text>
-                        </g>
+                    <!-- Beacon 1: Odisha -->
+                    <div class="beacon-node active-node" style="top: 48%; left: 72%;" data-state-name="Odisha" data-site-client="Jindal Steel & Power Ltd." data-site-scope="15,000+ MT Blasting & Coating Package (Angul)">
+                        <div class="beacon-dot">
+                            <div class="beacon-ring"></div>
+                        </div>
+                        <span class="beacon-label">ODISHA (ANGUL)</span>
+                    </div>
 
-                        <!-- Region 2: Maharashtra State Region -->
-                        <path class="state-region" d="M 180,320 L 280,310 L 270,410 L 170,400 Z" data-state-name="Maharashtra" data-site-client="Mahagenco Thermal" data-site-scope="Thermal Power Fire Water Piping & Erection (Nagpur)"></path>
-                        <!-- Maharashtra Location Beacon & Label -->
-                        <g class="map-node-pulse" transform="translate(225, 360)">
-                            <circle r="14" fill="#0EA5E9" opacity="0.35"></circle>
-                            <circle r="7" fill="#0EA5E9" stroke="#FFF" stroke-width="2.5"></circle>
-                            <text x="-145" y="5" fill="#FFF" font-weight="700" font-size="13">MAHARASHTRA (NAGPUR)</text>
-                        </g>
+                    <!-- Beacon 2: Maharashtra -->
+                    <div class="beacon-node" style="top: 55%; left: 32%;" data-state-name="Maharashtra" data-site-client="Mahagenco Thermal" data-site-scope="Thermal Power Fire Water Piping & Erection (Nagpur)">
+                        <div class="beacon-dot">
+                            <div class="beacon-ring"></div>
+                        </div>
+                        <span class="beacon-label">MAHARASHTRA (NAGPUR)</span>
+                    </div>
 
-                        <!-- Region 3: Telangana State Region -->
-                        <path class="state-region" d="M 270,410 L 330,410 L 310,480 L 250,470 Z" data-state-name="Telangana" data-site-client="KEC / Maha Cement" data-site-scope="1,200 MT Clinker Line Structural Fabrication"></path>
-                        <!-- Telangana Location Beacon & Label -->
-                        <g class="map-node-pulse" transform="translate(285, 445)">
-                            <circle r="14" fill="#0EA5E9" opacity="0.35"></circle>
-                            <circle r="7" fill="#0EA5E9" stroke="#FFF" stroke-width="2.5"></circle>
-                            <text x="14" y="5" fill="#FFF" font-weight="700" font-size="13">TELANGANA</text>
-                        </g>
+                    <!-- Beacon 3: Telangana -->
+                    <div class="beacon-node" style="top: 68%; left: 45%;" data-state-name="Telangana" data-site-client="KEC / Maha Cement" data-site-scope="1,200 MT Clinker Line Structural Fabrication">
+                        <div class="beacon-dot">
+                            <div class="beacon-ring"></div>
+                        </div>
+                        <span class="beacon-label">TELANGANA</span>
+                    </div>
 
-                        <!-- Region 4: Jharkhand State Region -->
-                        <path class="state-region" d="M 330,240 L 400,240 L 390,300 L 330,290 Z" data-state-name="Jharkhand" data-site-client="Tata Projects Network" data-site-scope="2,400 MT Heavy Crane Girder Fabrication (Jamshedpur)"></path>
-                        <!-- Jharkhand Location Beacon & Label -->
-                        <g class="map-node-pulse" transform="translate(365, 270)">
-                            <circle r="14" fill="#0EA5E9" opacity="0.35"></circle>
-                            <circle r="7" fill="#0EA5E9" stroke="#FFF" stroke-width="2.5"></circle>
-                            <text x="14" y="5" fill="#FFF" font-weight="700" font-size="13">JHARKHAND (JAMSHEDPUR)</text>
-                        </g>
+                    <!-- Beacon 4: Jharkhand -->
+                    <div class="beacon-node" style="top: 38%; left: 68%;" data-state-name="Jharkhand" data-site-client="Tata Projects Network" data-site-scope="2,400 MT Heavy Crane Girder Fabrication (Jamshedpur)">
+                        <div class="beacon-dot">
+                            <div class="beacon-ring"></div>
+                        </div>
+                        <span class="beacon-label">JHARKHAND</span>
+                    </div>
 
-                        <!-- Region 5: Chhattisgarh State Region -->
-                        <path class="state-region" d="M 280,300 L 330,300 L 320,380 L 270,370 Z" data-state-name="Chhattisgarh" data-site-client="ISGEC Heavy Engineering" data-site-scope="Boiler Ducting & Pressure Spool Fabrication"></path>
-                    </svg>
+                    <!-- Beacon 5: Chhattisgarh -->
+                    <div class="beacon-node" style="top: 50%; left: 56%;" data-state-name="Chhattisgarh" data-site-client="ISGEC Heavy Engineering" data-site-scope="Boiler Ducting & Pressure Spool Fabrication">
+                        <div class="beacon-dot">
+                            <div class="beacon-ring"></div>
+                        </div>
+                        <span class="beacon-label">CHHATTISGARH</span>
+                    </div>
+
+                    <!-- Beacon 6: Gujarat -->
+                    <div class="beacon-node" style="top: 42%; left: 18%;" data-state-name="Gujarat" data-site-client="Industrial EPC Network" data-site-scope="Chemical Plant Erection & Protective Coating">
+                        <div class="beacon-dot">
+                            <div class="beacon-ring"></div>
+                        </div>
+                        <span class="beacon-label">GUJARAT</span>
+                    </div>
                 </div>
 
                 <!-- Right: Selected State Hub Details Panel (No Overlap) -->
@@ -480,8 +394,8 @@
                     <p class="body-lg text-light" id="map-site-scope" style="opacity: 0.85; margin: 0;">
                         15,000+ MT Abrasive Blasting &amp; Protective Coating Package
                     </p>
-                    <div style="padding: var(--s-md); background: rgba(255,255,255,0.05); border-radius: var(--radius-md); border-left: 4px solid var(--c-accent);">
-                        <strong>Site Capabilities:</strong> Full mobile grit blasting pots, airless spray setups, NDT Level-II inspection units &amp; site erection teams.
+                    <div style="padding: 1rem; background: rgba(255,255,255,0.05); border-radius: var(--radius-md); border-left: 3px solid var(--c-accent); font-size: 0.875rem;">
+                        <strong>Site Capabilities:</strong> Mobile grit blasting pots, airless spray setups, NDT Level-II inspection units &amp; site erection teams.
                     </div>
                     <div>
                         <a href="projects.html" class="btn btn-primary" style="width: 100%;">Explore Full Projects Directory →</a>
@@ -495,7 +409,7 @@
     <!-- ✦ Executive Leadership Preview ✦ -->
     <section class="section bg-white" aria-labelledby="leadership-heading">
         <div class="container">
-            <div class="text-center reveal" style="max-width: 700px; margin: 0 auto var(--s-xl);">
+            <div class="text-center reveal" style="max-width: 680px; margin: 0 auto var(--s-lg);">
                 <div class="section-label">Trust &amp; Governance</div>
                 <h2 class="heading-lg" id="leadership-heading">Executive Leadership</h2>
                 <p class="body-lg" style="margin-top: var(--s-xs);">
@@ -506,13 +420,13 @@
             <div class="grid-3">
                 <div class="leader-card-v3 reveal delay-100">
                     <div class="leader-avatar-box">
-                        <div style="font-size: 5rem;">👤</div>
+                        <div style="font-size: 3.5rem;">👤</div>
                         <div class="leader-avatar-badge">FOUNDER &amp; MD</div>
                     </div>
-                    <div style="padding: var(--s-md);">
-                        <p class="tag tag--accent" style="margin-bottom: 0.5rem;">STRATEGIC VISION</p>
-                        <h3 class="heading-md" style="margin-bottom: 0.25rem;">Director, Navtara Projects</h3>
-                        <p class="body-md text-muted" style="font-size: 0.9rem;">
+                    <div style="padding: 1.25rem;">
+                        <p class="tag tag--accent" style="margin-bottom: 0.35rem;">STRATEGIC VISION</p>
+                        <h3 class="heading-md" style="margin-bottom: 0.2rem; font-size: 1.05rem;">Director, Navtara Projects</h3>
+                        <p class="body-md text-muted" style="font-size: 0.85rem;">
                             Over 20+ years driving large-scale industrial construction, EPC execution, and corporate engineering governance across India.
                         </p>
                     </div>
@@ -520,13 +434,13 @@
 
                 <div class="leader-card-v3 reveal delay-200">
                     <div class="leader-avatar-box">
-                        <div style="font-size: 5rem;">👤</div>
+                        <div style="font-size: 3.5rem;">👤</div>
                         <div class="leader-avatar-badge">HEAD OF ENGINEERING</div>
                     </div>
-                    <div style="padding: var(--s-md);">
-                        <p class="tag tag--accent" style="margin-bottom: 0.5rem;">EX-METSO LINEAGE</p>
-                        <h3 class="heading-md" style="margin-bottom: 0.25rem;">Head of Technical Operations</h3>
-                        <p class="body-md text-muted" style="font-size: 0.9rem;">
+                    <div style="padding: 1.25rem;">
+                        <p class="tag tag--accent" style="margin-bottom: 0.35rem;">EX-METSO LINEAGE</p>
+                        <h3 class="heading-md" style="margin-bottom: 0.2rem; font-size: 1.05rem;">Head of Technical Operations</h3>
+                        <p class="body-md text-muted" style="font-size: 0.85rem;">
                             Specialist in heavy structural design, WPS/PQR validation, AWS codes, and Level-II NDT quality control frameworks.
                         </p>
                     </div>
@@ -534,20 +448,20 @@
 
                 <div class="leader-card-v3 reveal delay-300">
                     <div class="leader-avatar-box">
-                        <div style="font-size: 5rem;">👤</div>
+                        <div style="font-size: 3.5rem;">👤</div>
                         <div class="leader-avatar-badge">PROJECT DIRECTOR</div>
                     </div>
-                    <div style="padding: var(--s-md);">
-                        <p class="tag tag--accent" style="margin-bottom: 0.5rem;">SITE EXECUTION</p>
-                        <h3 class="heading-md" style="margin-bottom: 0.25rem;">Director of Site Operations</h3>
-                        <p class="body-md text-muted" style="font-size: 0.9rem;">
+                    <div style="padding: 1.25rem;">
+                        <p class="tag tag--accent" style="margin-bottom: 0.35rem;">SITE EXECUTION</p>
+                        <h3 class="heading-md" style="margin-bottom: 0.2rem; font-size: 1.05rem;">Director of Site Operations</h3>
+                        <p class="body-md text-muted" style="font-size: 0.85rem;">
                             Directing site mobilization, HSE compliance, resource management, and turnkey commissionings for steel &amp; power plants.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center" style="margin-top: var(--s-xl);">
+            <div class="text-center" style="margin-top: var(--s-lg);">
                 <a href="leadership.html" class="btn btn-outline" style="color: var(--c-navy); border-color: var(--c-navy);">Read Leadership Vision &amp; Philosophy →</a>
             </div>
         </div>
@@ -669,7 +583,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Scroll to Top Button -->
     <button id="scroll-top-btn" aria-label="Scroll to top">↑</button>
