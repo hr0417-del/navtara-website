@@ -1,5 +1,5 @@
 /**
- * main.js – Core Application Logic v3.0
+ * main.js – Core Application Logic v3.1
  * Navtara Projects Pvt. Ltd. Digital Headquarters
  */
 
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ─── Interactive Workflow Stepper Logic ─── */
+  /* ─── Interactive Workflow Stepper ─── */
   const workflowSteps = document.querySelectorAll('.workflow-step');
   const workflowPanes = document.querySelectorAll('.workflow-pane');
   if (workflowSteps.length && workflowPanes.length) {
@@ -134,10 +134,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ─── Interactive Case Study Modal ─── */
+  /* ─── Interactive Vector Map Logic ─── */
+  const statePaths = document.querySelectorAll('.state-path');
+  const siteTitle = document.getElementById('map-site-title');
+  const siteClient = document.getElementById('map-site-client');
+  const siteScope = document.getElementById('map-site-scope');
+
+  if (statePaths.length && siteTitle) {
+    statePaths.forEach(path => {
+      path.addEventListener('click', () => {
+        statePaths.forEach(p => p.classList.remove('active-state'));
+        path.classList.add('active-state');
+
+        const stateName = path.getAttribute('data-state-name');
+        const client = path.getAttribute('data-site-client');
+        const scope = path.getAttribute('data-site-scope');
+
+        siteTitle.textContent = `${stateName} Deployment Hub`;
+        if (siteClient) siteClient.textContent = client;
+        if (siteScope) siteScope.textContent = scope;
+      });
+    });
+  }
+
+  /* ─── Multi-Tab Project Case Study Modal ─── */
   const modal = document.getElementById('project-detail-modal');
   const modalClose = document.getElementById('modal-close-btn');
   const projectTriggers = document.querySelectorAll('[data-project-trigger]');
+  const modalTabs = document.querySelectorAll('.modal-tab-btn');
+  const modalPanes = document.querySelectorAll('.modal-tab-pane');
 
   if (modal) {
     projectTriggers.forEach(btn => {
@@ -174,6 +199,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modal.addEventListener('click', (e) => {
       if (e.target === modal) modal.classList.remove('active');
+    });
+
+    if (modalTabs.length) {
+      modalTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-tab');
+          modalTabs.forEach(t => t.classList.remove('active'));
+          modalPanes.forEach(p => p.classList.remove('active'));
+
+          tab.classList.add('active');
+          const pane = document.getElementById(`modal-pane-${target}`);
+          if (pane) pane.classList.add('active');
+        });
+      });
+    }
+  }
+
+  /* ─── Interactive RFQ Scope Estimator Widget ─── */
+  const rfqCards = document.querySelectorAll('.option-radio-card');
+  const rfqMessageInput = document.getElementById('message');
+  let selectedSector = 'Steel';
+  let selectedScope = 'Fabrication & Erection';
+  let selectedScale = '1,000 - 3,000 MT';
+
+  if (rfqCards.length && rfqMessageInput) {
+    rfqCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const group = card.getAttribute('data-rfq-group');
+        const value = card.getAttribute('data-rfq-val');
+
+        document.querySelectorAll(`[data-rfq-group="${group}"]`).forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+
+        if (group === 'sector') selectedSector = value;
+        if (group === 'scope') selectedScope = value;
+        if (group === 'scale') selectedScale = value;
+
+        rfqMessageInput.value = `[ESTIMATED RFQ DRAFT]
+Sector: ${selectedSector}
+Primary Scope: ${selectedScope}
+Estimated Package Scale: ${selectedScale}
+
+Please provide a formal technical quotation and mobilization schedule for the above requirements.`;
+      });
     });
   }
 

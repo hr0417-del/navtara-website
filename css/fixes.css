@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   LAYOUT SAFEGUARDS & EXTENDED COMPONENTS — Navtara v3.0
+   LAYOUT SAFEGUARDS & EXTENDED COMPONENTS — Navtara v3.1
 ═══════════════════════════════════════════════════════ */
 
 /* ── Hero Load Animations ────────────────────────────── */
@@ -24,25 +24,62 @@
   animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
 }
 
-/* ── Interactive India Map Styling ────────────────────── */
+/* ── Interactive India Vector Map Styling ────────────── */
 .india-map-container {
   position: relative;
   width: 100%;
-  max-width: 900px;
-  height: 480px;
+  max-width: 960px;
+  height: 520px;
   margin: 0 auto;
   background: var(--c-navy-md, #0D1E35);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg, 16px);
   overflow: hidden;
   box-shadow: var(--shadow-xl, 0 32px 80px rgba(0,0,0,0.14));
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.india-map-svg {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  opacity: 0.25;
+.india-vector-svg {
+  width: 90%;
+  height: 90%;
+  max-height: 480px;
+}
+
+.state-path {
+  fill: #1A3459;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 1.5;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.state-path:hover,
+.state-path.active-state {
+  fill: var(--c-accent-d, #0070C0);
+  stroke: var(--c-accent, #0EA5E9);
+  filter: drop-shadow(0 0 12px rgba(14, 165, 233, 0.6));
+}
+
+.map-site-card {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background: rgba(7, 17, 31, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: var(--radius-md, 8px);
+  padding: 1rem 1.5rem;
+  color: var(--c-white, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  z-index: 30;
+  transition: all 0.3s ease;
 }
 
 /* ── Interactive Engineering Workflow ───────────────── */
@@ -109,7 +146,100 @@
   color: var(--c-grey-500);
 }
 
-/* ── Project Modal / Drawer ──────────────────────────── */
+/* ── Interactive Industrial RFQ Estimator ────────────── */
+.rfq-estimator-card {
+  background: var(--c-white);
+  border-radius: var(--radius-lg, 16px);
+  border: 1px solid var(--c-grey-100);
+  padding: var(--s-lg);
+  box-shadow: var(--shadow-xl);
+  margin-bottom: var(--s-xl);
+}
+
+.estimator-step-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: var(--s-md);
+}
+
+.estimator-step-pill {
+  flex: 1;
+  height: 6px;
+  background: var(--c-grey-100);
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.estimator-step-pill.active {
+  background: var(--c-accent-d);
+}
+
+.option-radio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.option-radio-card {
+  border: 1.5px solid var(--c-grey-100);
+  border-radius: var(--radius-md, 8px);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: center;
+}
+
+.option-radio-card:hover,
+.option-radio-card.selected {
+  border-color: var(--c-accent-d);
+  background: rgba(0, 112, 192, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 112, 192, 0.12);
+}
+
+/* ── Official Compliance Badge Wall ─────────────────── */
+.compliance-badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-top: var(--s-lg);
+}
+
+.compliance-badge-card {
+  background: var(--c-white);
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--c-grey-100);
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.compliance-badge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--c-accent-d);
+}
+
+.badge-seal-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-steel) 100%);
+  color: var(--c-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 900;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ── Multi-Tab Project Modal ─────────────────────────── */
 .project-modal {
   position: fixed;
   inset: 0;
@@ -133,7 +263,7 @@
 .project-modal-content {
   background: var(--c-white);
   border-radius: var(--radius-lg, 16px);
-  max-width: 800px;
+  max-width: 840px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
@@ -147,10 +277,41 @@
   transform: translateY(0);
 }
 
+.modal-nav-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--c-grey-50);
+  margin-bottom: 1.5rem;
+  gap: 1.5rem;
+}
+
+.modal-tab-btn {
+  padding: 0.75rem 0;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--c-grey-500);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-tab-btn.active {
+  color: var(--c-accent-d);
+  border-bottom-color: var(--c-accent-d);
+}
+
+.modal-tab-pane {
+  display: none;
+}
+
+.modal-tab-pane.active {
+  display: block;
+}
+
 .project-modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.25rem;
+  right: 1.25rem;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -166,48 +327,6 @@
 
 .project-modal-close:hover {
   background: rgba(0,0,0,0.12);
-}
-
-/* ── Executive Leader Card Styling ───────────────────── */
-.leader-card-v3 {
-  background: var(--c-white);
-  border-radius: var(--radius-lg, 16px);
-  border: 1px solid var(--c-grey-100);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  transition: all 0.4s var(--ease-out);
-}
-
-.leader-card-v3:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--c-accent-d);
-}
-
-.leader-avatar-box {
-  height: 280px;
-  background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-steel) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--c-white);
-  position: relative;
-  overflow: hidden;
-}
-
-.leader-avatar-badge {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  background: rgba(7, 17, 31, 0.85);
-  backdrop-filter: blur(8px);
-  color: var(--c-accent);
-  padding: 0.35rem 0.85rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 
 /* ── UI QA Safeguards ────────────────────────────────── */
@@ -242,5 +361,9 @@ h1, h2, h3, h4, p, span, a, button {
   .workflow-step-icon {
     margin: 0;
     flex-shrink: 0;
+  }
+  .map-site-card {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

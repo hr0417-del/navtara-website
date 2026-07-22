@@ -3,215 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Navtara Projects Pvt. Ltd.</title>
-    <meta name="description" content="Contact Navtara Projects Pvt. Ltd. to discuss your heavy engineering project requirements. Request a quote today.">
-    <meta property="og:title" content="Contact Navtara Projects Pvt. Ltd.">
+    <title>Contact &amp; RFQ Portal | Navtara Projects Pvt. Ltd.</title>
+    <meta name="description" content="Contact Navtara Projects Pvt. Ltd. or use our interactive Industrial RFQ Estimator to request formal tenders for heavy engineering, fabrication, erection, and coating packages.">
+    <meta property="og:title" content="Contact &amp; RFQ Portal | Navtara Projects">
     <meta property="og:image" content="assets/images/hero.png">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/fixes.css">
+
     <style>
-        .page-header { padding: 120px 0 var(--space-xl); background: var(--color-primary); color: var(--color-white); text-align: center; }
-
-        .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: var(--space-xl); align-items: start; }
-
-        .contact-info { background: var(--color-primary); color: var(--color-white); padding: var(--space-lg); border-radius: 12px; }
-        .contact-info h3 { color: var(--color-accent); margin-bottom: var(--space-md); font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; }
-
-        .info-item { margin-bottom: var(--space-md); display: flex; gap: 1rem; align-items: flex-start; }
-        .info-icon { font-size: 1.5rem; margin-top: 0.1rem; }
-        .info-text strong { display: block; color: var(--color-white); margin-bottom: 0.25rem; }
-        .info-text p { color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.6; margin: 0; }
-
-        .contact-form { background: var(--color-white); padding: var(--space-lg); border-radius: 12px; box-shadow: 0 16px 50px rgba(0,0,0,0.08); }
-        .contact-form h3 { margin-bottom: var(--space-md); }
-
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .form-group { margin-bottom: 1.25rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.875rem; color: var(--color-dark-grey); }
-        .form-control {
-            width: 100%; padding: 0.9rem 1rem;
-            border: 1.5px solid #E2E8F0;
-            border-radius: 6px;
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            transition: border-color 0.2s;
-            color: var(--color-charcoal);
-        }
-        .form-control:focus { outline: none; border-color: var(--color-accent-dark); box-shadow: 0 0 0 3px rgba(0,102,204,0.1); }
-        select.form-control { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232D3748' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
-
-        .form-submit { width: 100%; padding: 1.1rem; font-size: 1rem; }
-
-        .form-success {
-            display: none;
-            background: #F0FFF4;
-            border: 1px solid #9AE6B4;
-            border-radius: 8px;
-            padding: 1.5rem;
+        .page-header-v3 {
+            padding: calc(var(--nav-height) + var(--s-xl)) 0 var(--s-xl);
+            background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-md) 100%);
+            color: var(--c-white);
             text-align: center;
-            color: #276749;
-            font-weight: 600;
-            margin-top: 1rem;
+        }
+
+        .contact-grid-v3 {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: var(--s-2xl);
+            align-items: start;
         }
 
         @media (max-width: 992px) {
-            .contact-grid { grid-template-columns: 1fr; }
-            .form-row { grid-template-columns: 1fr; }
+            .contact-grid-v3 {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <nav class="navbar scrolled" role="navigation">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">NV <span>NAVTARA</span></a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-mark">NV</span>
+                <div>
+                    <span class="logo-text">NAVTARA</span>
+                    <span class="logo-sub">PROJECTS PVT. LTD.</span>
+                </div>
+            </a>
             <div class="nav-links" id="main-nav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="capabilities.html">Capabilities</a>
                 <a href="projects.html">Projects</a>
-                <a href="contact.html" style="color:var(--color-accent);">Contact</a>
+                <a href="machinery.html">Plant &amp; Machinery</a>
+                <a href="quality.html">Quality &amp; Safety</a>
+                <a href="leadership.html">Leadership</a>
+                <a href="clients.html">Clients</a>
+                <a href="contact.html" class="active">Contact</a>
             </div>
-            <button class="menu-toggle" aria-label="Open menu">☰</button>
+            <a href="contact.html" class="nav-cta">Request Quote →</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
         </div>
     </nav>
 
-    <header class="page-header">
+    <!-- Page Header -->
+    <header class="page-header-v3">
         <div class="container reveal">
-            <h1 class="heading-lg">Let's Work Together</h1>
-            <p class="body-lg text-light" style="max-width:600px;margin:1rem auto 0;opacity:0.8;">Tell us about your project. Our team will respond within 24 hours.</p>
+            <div class="section-label section-label--light">Tender &amp; Procurement Desk</div>
+            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">Request a Project Quotation</h1>
+            <p class="body-lg text-light" style="max-width: 680px; margin: 0 auto; opacity: 0.85;">
+                Connect with our tender desk or use our interactive RFQ estimator below to submit package specifications directly to our estimation team.
+            </p>
         </div>
     </header>
 
-    <section class="section-padding">
-        <div class="container contact-grid">
+    <!-- Contact & Interactive RFQ Section -->
+    <section class="section bg-off-white">
+        <div class="container">
 
-            <!-- Info Panel -->
-            <div class="contact-info reveal-left">
-                <h3>Get in Touch</h3>
+            <!-- Interactive RFQ Estimator Widget -->
+            <div class="rfq-estimator-card reveal">
+                <div class="section-label">Procurement Estimator Tool</div>
+                <h2 class="heading-md" style="margin-bottom: var(--s-xs);">Build Your RFQ Scope Estimate</h2>
+                <p class="body-md text-muted" style="margin-bottom: var(--s-md);">Select your sector, primary scope, and estimated package scale to auto-generate a structured RFQ draft.</p>
 
-                <div class="info-item">
-                    <span class="info-icon">📧</span>
-                    <div class="info-text">
-                        <strong>Email</strong>
-                        <p>info@navtaraprojects.com<br>sales@navtaraprojects.com</p>
+                <div class="grid-3" style="gap: var(--s-lg);">
+                    <!-- Step 1: Sector -->
+                    <div>
+                        <strong>1. Select Industry Sector</strong>
+                        <div class="option-radio-grid">
+                            <div class="option-radio-card selected" data-rfq-group="sector" data-rfq-val="Steel Plant Package">
+                                🏭 Steel Mill
+                            </div>
+                            <div class="option-radio-card" data-rfq-group="sector" data-rfq-val="Power Generation Station">
+                                ⚡ Power Station
+                            </div>
+                            <div class="option-radio-card" data-rfq-group="sector" data-rfq-val="Cement & Mining Facility">
+                                🧱 Cement &amp; Mining
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="info-item">
-                    <span class="info-icon">📞</span>
-                    <div class="info-text">
-                        <strong>Phone</strong>
-                        <p>+91 (Update with actual number)<br>Mon – Sat, 9:00 AM – 6:00 PM IST</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <span class="info-icon">🏢</span>
-                    <div class="info-text">
-                        <strong>Corporate Office</strong>
-                        <p>Navtara Projects Pvt. Ltd.<br>India (Pan-India Operations)</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <span class="info-icon">🗺️</span>
-                    <div class="info-text">
-                        <strong>Project Sites</strong>
-                        <p>Odisha • Maharashtra • Telangana<br>and 7+ more states across India</p>
-                    </div>
-                </div>
 
-                <hr style="border-color:rgba(255,255,255,0.1);margin:var(--space-md) 0;">
-                <p style="font-size:0.85rem;opacity:0.6;line-height:1.6;">For RFQs, tender submissions, or project inquiries, please use the contact form. We review all submissions and respond promptly.</p>
+                    <!-- Step 2: Scope -->
+                    <div>
+                        <strong>2. Primary Engineering Scope</strong>
+                        <div class="option-radio-grid">
+                            <div class="option-radio-card selected" data-rfq-group="scope" data-rfq-val="Structural Fabrication & Erection">
+                                ⚙️ Fabrication &amp; Erection
+                            </div>
+                            <div class="option-radio-card" data-rfq-group="scope" data-rfq-val="Surface Preparation & Coating (Sa 2.5)">
+                                🖌️ Blast &amp; Coating
+                            </div>
+                            <div class="option-radio-card" data-rfq-group="scope" data-rfq-val="Industrial Piping & Mechanical">
+                                🔧 Piping &amp; Mechanical
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Scale -->
+                    <div>
+                        <strong>3. Estimated Package Scale</strong>
+                        <div class="option-radio-grid">
+                            <div class="option-radio-card selected" data-rfq-group="scale" data-rfq-val="500 - 1,500 MT Scope">
+                                📦 500 – 1,500 MT
+                            </div>
+                            <div class="option-radio-card" data-rfq-group="scale" data-rfq-val="1,500 - 5,000 MT Scope">
+                                🏗️ 1,500 – 5,000 MT
+                            </div>
+                            <div class="option-radio-card" data-rfq-group="scale" data-rfq-val="5,000+ MT Major Package">
+                                🚀 5,000+ MT Major
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Contact Form (wired to Formspree) -->
-            <div class="contact-form reveal-right delay-100">
-                <h3 class="heading-md">Request a Quote</h3>
-                <!--
-                    ACTION: Replace YOUR_FORMSPREE_ID below with your actual Formspree endpoint.
-                    Get a free endpoint at https://formspree.io/ — no backend required.
-                -->
-                <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Company / Organisation *</label>
-                            <input type="text" id="company" name="company" class="form-control" placeholder="Company Name" required>
-                        </div>
+            <div class="contact-grid-v3">
+
+                <!-- Left Panel: Corporate Desk -->
+                <div class="reveal-left" style="background: var(--c-navy); color: var(--c-white); padding: var(--s-xl); border-radius: var(--radius-lg);">
+                    <h3 class="heading-md text-light" style="margin-bottom: var(--s-md);">Corporate Desk &amp; Head Office</h3>
+
+                    <div style="margin-bottom: var(--s-md);">
+                        <strong style="color: var(--c-accent); display: block; margin-bottom: 0.25rem;">Tender &amp; Inquiry Desk</strong>
+                        <p class="body-md text-light" style="opacity: 0.85;">info@navtaraprojects.com<br>tenders@navtaraprojects.com</p>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="you@company.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91 98765 43210">
-                        </div>
+
+                    <div style="margin-bottom: var(--s-md);">
+                        <strong style="color: var(--c-accent); display: block; margin-bottom: 0.25rem;">Corporate Headquarters</strong>
+                        <p class="body-md text-light" style="opacity: 0.85;">Navtara Projects Pvt. Ltd.<br>India (Pan-India Project Operations)</p>
                     </div>
-                    <div class="form-group">
-                        <label for="service">Service Required</label>
-                        <select id="service" name="service" class="form-control">
-                            <option value="">Select a Service</option>
-                            <option>Fabrication</option>
-                            <option>Erection &amp; Construction</option>
-                            <option>Surface Protection / Painting</option>
-                            <option>Civil Works</option>
-                            <option>Industrial Maintenance</option>
-                            <option>EPC / Turnkey</option>
-                            <option>Other</option>
-                        </select>
+
+                    <div style="margin-bottom: var(--s-md);">
+                        <strong style="color: var(--c-accent); display: block; margin-bottom: 0.25rem;">Active Site Mobilization Hubs</strong>
+                        <p class="body-md text-light" style="opacity: 0.85;">Odisha • Maharashtra • Telangana • Jharkhand • Chhattisgarh</p>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Project Details / Inquiry *</label>
-                        <textarea id="message" name="message" class="form-control" rows="5" placeholder="Brief description of your project scope, location, and requirements..." required></textarea>
-                    </div>
-                    <input type="hidden" name="_subject" value="New Inquiry - Navtara Projects Website">
-                    <input type="text" name="_gotcha" style="display:none"> <!-- Honeypot spam filter -->
-                    <button type="submit" class="btn btn-primary form-submit">Send Inquiry →</button>
-                </form>
-                <div class="form-success" id="form-success">
-                    ✅ Thank you! Your inquiry has been submitted. Our team will contact you within 24 hours.
                 </div>
+
+                <!-- Right Form: Connected to Formspree -->
+                <div class="reveal-right" style="background: var(--c-white); padding: var(--s-xl); border-radius: var(--radius-lg); border: 1px solid var(--c-grey-100); box-shadow: var(--shadow-md);">
+                    <h3 class="heading-md" style="margin-bottom: var(--s-md);">Submit Formal Project Inquiry</h3>
+
+                    <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                        <div class="grid-2" style="gap: 1rem; margin-bottom: 1rem;">
+                            <div>
+                                <label style="font-weight: 600; font-size: 0.85rem; display: block; margin-bottom: 0.35rem;">Full Name *</label>
+                                <input type="text" name="name" required style="width: 100%; padding: 0.85rem; border: 1.5px solid var(--c-grey-100); border-radius: 6px;" placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label style="font-weight: 600; font-size: 0.85rem; display: block; margin-bottom: 0.35rem;">Enterprise / Company *</label>
+                                <input type="text" name="company" required style="width: 100%; padding: 0.85rem; border: 1.5px solid var(--c-grey-100); border-radius: 6px;" placeholder="Company Name">
+                            </div>
+                        </div>
+
+                        <div class="grid-2" style="gap: 1rem; margin-bottom: 1rem;">
+                            <div>
+                                <label style="font-weight: 600; font-size: 0.85rem; display: block; margin-bottom: 0.35rem;">Work Email *</label>
+                                <input type="email" name="email" required style="width: 100%; padding: 0.85rem; border: 1.5px solid var(--c-grey-100); border-radius: 6px;" placeholder="you@company.com">
+                            </div>
+                            <div>
+                                <label style="font-weight: 600; font-size: 0.85rem; display: block; margin-bottom: 0.35rem;">Phone / Mobile</label>
+                                <input type="tel" name="phone" style="width: 100%; padding: 0.85rem; border: 1.5px solid var(--c-grey-100); border-radius: 6px;" placeholder="+91 98765 43210">
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 1rem;">
+                            <label style="font-weight: 600; font-size: 0.85rem; display: block; margin-bottom: 0.35rem;">Project RFQ Details *</label>
+                            <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 0.85rem; border: 1.5px solid var(--c-grey-100); border-radius: 6px; font-family: inherit;" placeholder="Your auto-generated RFQ draft will appear here upon selecting options above...">[ESTIMATED RFQ DRAFT]
+Sector: Steel Plant Package
+Primary Scope: Structural Fabrication & Erection
+Estimated Package Scale: 500 - 1,500 MT Scope
+
+Please provide a formal technical quotation and mobilization schedule for the above requirements.</textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry to Estimation Desk →</button>
+                    </form>
+                </div>
+
             </div>
 
         </div>
     </section>
 
-    <footer class="footer bg-primary text-light">
-        <div class="container text-center" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.1);">
+    <!-- Footer -->
+    <footer class="footer bg-charcoal text-light" role="contentinfo">
+        <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
             <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
     <button id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
+    <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/transitions.js"></script>
     <script src="js/cursor.js"></script>
-    <script>
-        // Show success message after Formspree submission
-        const form = document.getElementById('contact-form');
-        const success = document.getElementById('form-success');
-        if (form) {
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const data = new FormData(form);
-                try {
-                    const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-                    if (res.ok) {
-                        form.style.display = 'none';
-                        success.style.display = 'block';
-                    } else {
-                        alert('There was an error sending your message. Please email us directly at info@navtaraprojects.com');
-                    }
-                } catch {
-                    alert('Network error. Please try again or email us directly.');
-                }
-            });
-        }
-    </script>
 </body>
 </html>
