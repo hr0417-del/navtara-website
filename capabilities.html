@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Capabilities | Navtara Projects Pvt. Ltd.</title>
-    <meta name="description" content="Explore Navtara Projects' core heavy engineering capabilities: Structural Fabrication, Mechanical Equipment Erection, Surface Protection, and Industrial Civil Infrastructure.">
+    <title>Engineering Capabilities &amp; Services | Navtara Projects Pvt. Ltd.</title>
+    <meta name="description" content="Explore Navtara Projects' end-to-end engineering capabilities across 5 core sectors: Heavy Structural Fabrication, Erection, Surface Protection, Industrial Piping, Fire Protection & Civil Works.">
+
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Engineering Capabilities | Navtara Projects">
-    <meta property="og:image" content="assets/images/hero.png">
+    <meta property="og:image" content="assets/images/fabrication_bay.jpg">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
     <!-- CSS Architecture -->
@@ -17,31 +19,76 @@
 
     <style>
         .page-header-v3 {
-            padding: calc(var(--nav-height) + var(--s-xl)) 0 var(--s-xl);
+            padding: calc(var(--nav-height) + var(--s-lg)) 0 var(--s-lg);
             background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-md) 100%);
             color: var(--c-white);
             text-align: center;
+        }
+
+        .sector-badge-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin: var(--s-lg) 0;
+        }
+
+        .sector-badge-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(14, 165, 233, 0.25);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 0.75rem;
+            text-align: center;
+            color: var(--c-white);
+            transition: all 0.3s ease;
+        }
+
+        .sector-badge-card:hover {
+            background: rgba(14, 165, 233, 0.15);
+            border-color: var(--c-accent);
+            transform: translateY(-4px);
         }
 
         .capability-detail-card {
             background: var(--c-white);
             border-radius: var(--radius-lg);
             border: 1px solid var(--c-grey-100);
-            padding: var(--s-xl);
-            box-shadow: var(--shadow-md);
-            margin-bottom: var(--s-xl);
-            transition: all 0.4s var(--ease-out);
+            padding: var(--s-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--s-lg);
+            transition: all 0.35s var(--ease-out);
         }
 
         .capability-detail-card:hover {
-            box-shadow: var(--shadow-xl);
+            box-shadow: var(--shadow-lg);
             border-color: var(--c-accent-d);
+        }
+
+        .capability-img-box {
+            height: 280px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: #07111F;
+        }
+
+        .capability-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .capability-detail-card:hover .capability-img-box img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 992px) {
+            .sector-badge-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- ✦ Navigation Bar ✦ -->
     <nav class="navbar scrolled" role="navigation">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -67,94 +114,150 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
+    <!-- ✦ Page Header ✦ -->
     <header class="page-header-v3">
         <div class="container reveal">
-            <div class="section-label section-label--light">Technical Mastery</div>
-            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">Engineering Expertise</h1>
+            <div class="section-label section-label--light">Technical Mastery &bull; End-to-End Engineering</div>
+            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">NPPL Capabilities &amp; Key Services</h1>
             <p class="body-lg text-light" style="max-width: 680px; margin: 0 auto; opacity: 0.85;">
-                From heavy structural shop fabrication to site erection, pressure piping, protective coatings, and turnkey civil infrastructure.
+                End-to-End Engineering &bull; Built on Expertise &bull; Delivered with Precision across 5 core industrial sectors.
             </p>
+
+            <!-- 5 Core Sectors from Page 3 of PDF -->
+            <div class="sector-badge-grid">
+                <div class="sector-badge-card">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.35rem;">⛏️</div>
+                    <strong style="color: var(--c-accent); font-size: 0.9rem; display: block;">MINING</strong>
+                    <span style="font-size: 0.725rem; opacity: 0.85;">Material Handling &amp; Operations</span>
+                </div>
+                <div class="sector-badge-card">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.35rem;">🧱</div>
+                    <strong style="color: var(--c-accent); font-size: 0.9rem; display: block;">CEMENT</strong>
+                    <span style="font-size: 0.725rem; opacity: 0.85;">Manufacturing &amp; Processing</span>
+                </div>
+                <div class="sector-badge-card">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.35rem;">⚙️</div>
+                    <strong style="color: var(--c-accent); font-size: 0.9rem; display: block;">STEEL</strong>
+                    <span style="font-size: 0.725rem; opacity: 0.85;">High-Performance Structures</span>
+                </div>
+                <div class="sector-badge-card">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.35rem;">⚡</div>
+                    <strong style="color: var(--c-accent); font-size: 0.9rem; display: block;">POWER PLANTS</strong>
+                    <span style="font-size: 0.725rem; opacity: 0.85;">Generation &amp; Infrastructure</span>
+                </div>
+                <div class="sector-badge-card">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.35rem;">⛽</div>
+                    <strong style="color: var(--c-accent); font-size: 0.9rem; display: block;">PETROCHEM</strong>
+                    <span style="font-size: 0.725rem; opacity: 0.85;">Refining &amp; Process Facilities</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Detailed Capability Sections -->
+    <!-- ✦ Key Services Breakdown (Page 6 of PDF) ✦ -->
     <section class="section bg-off-white">
         <div class="container">
 
-            <!-- Capability 1 -->
+            <!-- Category 1: Industrial Engineering -->
             <div class="capability-detail-card reveal">
-                <div class="grid-2" style="align-items: center; gap: var(--s-xl);">
+                <div class="grid-2" style="align-items: center; gap: var(--s-lg);">
                     <div>
-                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">CAPABILITY 01</span>
-                        <h2 class="heading-lg" style="margin-bottom: var(--s-xs);">Heavy Structural Fabrication</h2>
-                        <p class="body-lg text-muted" style="margin-bottom: var(--s-md);">
-                            Precision fabrication of complex steel structures, crane girders, technology frames, boiler ducting, hoppers, and pressure spools conducted under strict AWS D1.1 and ASME Section IX codes.
+                        <span class="tag tag--accent" style="margin-bottom: 0.4rem;">SERVICE PILLAR 01</span>
+                        <h2 class="heading-lg" style="margin-bottom: 0.5rem; font-size: 1.4rem;">Industrial Engineering &amp; Fabrication</h2>
+                        <p class="body-md text-muted" style="margin-bottom: 1rem; font-size: 0.9rem;">
+                            Precision fabrication of heavy structural steel, mechanical process equipment, pipe racks, and technology frames conducted under strict international standards.
                         </p>
-                        <ul class="body-md text-muted" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: var(--s-md);">
-                            <li>✓ Submerged Arc Welding (SAW) &amp; Multi-pass MIG/MMA welding</li>
-                            <li>✓ Trial assembly of heavy technology structures in workshop bays</li>
-                            <li>✓ Full material traceability against Mill Test Certificates (MTC)</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary btn--sm">Inquire Fabrication Package →</a>
+                        <div style="display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.85rem; color: var(--c-grey-700); margin-bottom: 1.25rem;">
+                            <div><strong>✦ Structural &amp; Heavy Fabrication:</strong> Precision fabrication for structures, equipment &amp; industrial components.</div>
+                            <div><strong>✦ Erection &amp; Installation:</strong> Safe and efficient erection of structures, equipment &amp; piping networks.</div>
+                            <div><strong>✦ Piping &amp; Mechanical Services:</strong> Piping fabrication, hydrostatic testing, and mechanical execution.</div>
+                            <div><strong>✦ Fire Protection Systems:</strong> Design, supply, installation &amp; commissioning of fire safety systems.</div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary btn--sm">Inquire Fabrication &amp; Erection Package →</a>
                     </div>
-                    <div class="curtain-wrap" style="height: 340px;">
-                        <img src="assets/images/fabrication.png" alt="Heavy structural fabrication workshop" loading="lazy">
+                    <div class="capability-img-box">
+                        <img src="assets/images/fabrication_bay.jpg" alt="Heavy structural fabrication bay" loading="lazy">
                     </div>
                 </div>
             </div>
 
-            <!-- Capability 2 -->
+            <!-- Category 2: Surface Protection & Coatings -->
             <div class="capability-detail-card reveal delay-100">
-                <div class="grid-2" style="align-items: center; gap: var(--s-xl);">
-                    <div class="curtain-wrap" style="height: 340px;">
-                        <img src="assets/images/hero.png" alt="Mechanical equipment erection" loading="lazy">
+                <div class="grid-2" style="align-items: center; gap: var(--s-lg);">
+                    <div class="capability-img-box">
+                        <img src="assets/images/bridge_coating.jpg" alt="Abrasive blasting and coating" loading="lazy">
                     </div>
                     <div>
-                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">CAPABILITY 02</span>
-                        <h2 class="heading-lg" style="margin-bottom: var(--s-xs);">Mechanical Erection &amp; Plant Piping</h2>
-                        <p class="body-lg text-muted" style="margin-bottom: var(--s-md);">
-                            Field erection of heavy industrial machinery, rotary kilns, mill shells, boilers, electrostatic precipitators (ESP), and high-pressure carbon/stainless steel process piping networks.
+                        <span class="tag tag--accent" style="margin-bottom: 0.4rem;">SERVICE PILLAR 02</span>
+                        <h2 class="heading-lg" style="margin-bottom: 0.5rem; font-size: 1.4rem;">Surface Protection &amp; Metalising</h2>
+                        <p class="body-md text-muted" style="margin-bottom: 1rem; font-size: 0.9rem;">
+                            Industrial abrasive blasting for clean, contaminant-free surface profiles (Sa 2.5) paired with high-performance protective coating systems.
                         </p>
-                        <ul class="body-md text-muted" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: var(--s-md);">
-                            <li>✓ Engineered heavy crane lifting plans and rigging calculations</li>
-                            <li>✓ Optical alignment, laser leveling, and precision grouting</li>
-                            <li>✓ Hydrostatic testing up to 350 bar with calibrated logging</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary btn--sm">Inquire Erection Package →</a>
+                        <div style="display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.85rem; color: var(--c-grey-700); margin-bottom: 1.25rem;">
+                            <div><strong>✦ Surface Preparation:</strong> Abrasive blasting for ideal surface profile and anchor depth.</div>
+                            <div><strong>✦ Industrial Painting:</strong> High-performance coating systems with 14 airless spray machines.</div>
+                            <div><strong>✦ Protective Coatings:</strong> Corrosion protection with tailored epoxy, polyurethane, and glass-flake solutions.</div>
+                            <div><strong>✦ Specialized Finishes &amp; Metalising:</strong> Thermal spray metalising, heat resistant, and chemical resistant coatings.</div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary btn--sm">Inquire Blasting &amp; Coating Package →</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Capability 3 -->
+            <!-- Category 3: Infrastructure, Civil & Facility -->
             <div class="capability-detail-card reveal delay-200">
-                <div class="grid-2" style="align-items: center; gap: var(--s-xl);">
+                <div class="grid-2" style="align-items: center; gap: var(--s-lg);">
                     <div>
-                        <span class="tag tag--accent" style="margin-bottom: 0.5rem;">CAPABILITY 03</span>
-                        <h2 class="heading-lg" style="margin-bottom: var(--s-xs);">Surface Protection &amp; Industrial Coatings</h2>
-                        <p class="body-lg text-muted" style="margin-bottom: var(--s-md);">
-                            Heavy abrasive grit blasting (Sa 2.5) and high-ratio airless spray application of protective epoxies, polyurethane, glass-flake linings, and passive fireproofing systems.
+                        <span class="tag tag--accent" style="margin-bottom: 0.4rem;">SERVICE PILLAR 03</span>
+                        <h2 class="heading-lg" style="margin-bottom: 0.5rem; font-size: 1.4rem;">Infrastructure, Civil &amp; Facility Support</h2>
+                        <p class="body-md text-muted" style="margin-bottom: 1rem; font-size: 0.9rem;">
+                            Reliable civil engineering, industrial foundations, plant shutdown maintenance, sheeting solutions, and long-term facility management.
                         </p>
-                        <ul class="body-md text-muted" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: var(--s-md);">
-                            <li>✓ Environmental logging (dew point, relative humidity) before application</li>
-                            <li>✓ Digital DFT gauge auditing per SSPC-PA2 guidelines</li>
-                            <li>✓ High-voltage holiday spark testing for pinhole verification</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary btn--sm">Inquire Coating Package →</a>
+                        <div style="display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.85rem; color: var(--c-grey-700); margin-bottom: 1.25rem;">
+                            <div><strong>✦ Civil Engineering &amp; Construction:</strong> Industrial civil works, foundations, structures &amp; concrete works.</div>
+                            <div><strong>✦ Plant Maintenance &amp; Repairs:</strong> Mechanical maintenance, shutdown support, and equipment servicing.</div>
+                            <div><strong>✦ Sheeting &amp; Cladding:</strong> High-quality industrial sheeting for process plants and buildings.</div>
+                            <div><strong>✦ Industrial Facility Management:</strong> Comprehensive operations support and interior/surface refinishing.</div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary btn--sm">Inquire Civil &amp; Infrastructure Package →</a>
                     </div>
-                    <div style="background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-steel) 100%); border-radius: var(--radius-lg); height: 340px; display: flex; align-items: center; justify-content: center; color: var(--c-white); font-size: 5rem;">
-                        🖌️
+                    <div class="capability-img-box">
+                        <img src="assets/images/silo_erection.jpg" alt="Industrial plant civil and silo infrastructure" loading="lazy">
                     </div>
+                </div>
+            </div>
+
+            <!-- 4 Execution Pillars from Page 4 of PDF -->
+            <div class="grid-4 reveal" style="gap: 1rem; margin-top: var(--s-xl);">
+                <div style="background: var(--c-white); padding: 1.25rem; border-radius: var(--radius-md); border-top: 3px solid var(--c-accent-d); text-align: center; box-shadow: var(--shadow-sm);">
+                    <div style="font-size: 1.6rem; margin-bottom: 0.35rem;">🛡️</div>
+                    <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--c-navy); margin-bottom: 0.2rem;">Quality Driven</h3>
+                    <p style="font-size: 0.8rem; color: var(--c-grey-500); margin: 0;">Committed to excellence in every detail &amp; code compliance.</p>
+                </div>
+                <div style="background: var(--c-white); padding: 1.25rem; border-radius: var(--radius-md); border-top: 3px solid var(--c-accent-d); text-align: center; box-shadow: var(--shadow-sm);">
+                    <div style="font-size: 1.6rem; margin-bottom: 0.35rem;">🦺</div>
+                    <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--c-navy); margin-bottom: 0.2rem;">Safety First</h3>
+                    <p style="font-size: 0.8rem; color: var(--c-grey-500); margin: 0;">Zero compromise on safety across all site operations.</p>
+                </div>
+                <div style="background: var(--c-white); padding: 1.25rem; border-radius: var(--radius-md); border-top: 3px solid var(--c-accent-d); text-align: center; box-shadow: var(--shadow-sm);">
+                    <div style="font-size: 1.6rem; margin-bottom: 0.35rem;">👥</div>
+                    <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--c-navy); margin-bottom: 0.2rem;">Expert Team</h3>
+                    <p style="font-size: 0.8rem; color: var(--c-grey-500); margin: 0;">250+ skilled professionals with deep industry experience.</p>
+                </div>
+                <div style="background: var(--c-white); padding: 1.25rem; border-radius: var(--radius-md); border-top: 3px solid var(--c-accent-d); text-align: center; box-shadow: var(--shadow-sm);">
+                    <div style="font-size: 1.6rem; margin-bottom: 0.35rem;">⏱️</div>
+                    <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--c-navy); margin-bottom: 0.2rem;">Timely Delivery</h3>
+                    <p style="font-size: 0.8rem; color: var(--c-grey-500); margin: 0;">On-time execution with total focus on client satisfaction.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ✦ Footer ✦ -->
     <footer class="footer bg-charcoal text-light" role="contentinfo">
         <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
+            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved. Designed to Enterprise Standards.</p>
         </div>
     </footer>
 

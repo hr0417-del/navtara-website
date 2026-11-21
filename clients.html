@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Clients | Navtara Projects Pvt. Ltd.</title>
-    <meta name="description" content="Navtara Projects Pvt. Ltd. is a trusted heavy engineering partner to India's leading EPC main contractors, steel majors, power stations, and cement manufacturers.">
+    <title>Our Clients &amp; Industry Associations | Navtara Projects Pvt. Ltd.</title>
+    <meta name="description" content="Proud to be associated with leading heavy engineering and infrastructure organizations across India — Adani Petrochemical, Tata Projects, L&T, Jindal Steel & Power, ISGEC, KEC, BHEL, AM/NS India.">
+
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Industry Clients | Navtara Projects">
     <meta property="og:image" content="assets/images/hero.png">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -17,7 +19,7 @@
 
     <style>
         .page-header-v3 {
-            padding: calc(var(--nav-height) + var(--s-xl)) 0 var(--s-xl);
+            padding: calc(var(--nav-height) + var(--s-lg)) 0 var(--s-lg);
             background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-md) 100%);
             color: var(--c-white);
             text-align: center;
@@ -27,7 +29,7 @@
             background: var(--c-white);
             border-radius: var(--radius-md);
             border: 1px solid var(--c-grey-100);
-            padding: var(--s-lg);
+            padding: 1.25rem 1rem;
             text-align: center;
             box-shadow: var(--shadow-sm);
             transition: all 0.35s var(--ease-out);
@@ -35,11 +37,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 140px;
+            min-height: 120px;
         }
 
         .client-logo-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
             border-color: var(--c-accent-d);
         }
@@ -47,16 +49,39 @@
         .client-name-heading {
             font-family: var(--f-display);
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             color: var(--c-navy);
             margin-bottom: 0.25rem;
             letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .client-stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: var(--s-lg) 0;
+        }
+
+        .client-stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(14, 165, 233, 0.25);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            text-align: center;
+            color: var(--c-white);
+        }
+
+        @media (max-width: 992px) {
+            .client-stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- ✦ Navigation Bar ✦ -->
     <nav class="navbar scrolled" role="navigation">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -82,88 +107,191 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
+    <!-- ✦ Page Header ✦ -->
     <header class="page-header-v3">
         <div class="container reveal">
-            <div class="section-label section-label--light">Industry Endorsements</div>
-            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">Trusted Partner Network</h1>
+            <div class="section-label section-label--light">Industry Associations</div>
+            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">Our Prestigious Clients</h1>
             <p class="body-lg text-light" style="max-width: 680px; margin: 0 auto; opacity: 0.85;">
-                Privileged to collaborate with India's most respected EPC main contractors, steel producers, power utilities, and industrial groups.
+                Proud to be associated with leading organizations across India &mdash; trusted partner to industry leaders with a proven track record of excellence.
             </p>
+
+            <!-- Metrics from Page 5 of PDF -->
+            <div class="client-stats-bar">
+                <div class="client-stat-box">
+                    <div class="heading-lg text-accent" style="font-size: 2rem; font-weight: 800; margin-bottom: 0.2rem;">35+</div>
+                    <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;">Projects Handed Over &amp; In Execution</div>
+                </div>
+                <div class="client-stat-box">
+                    <div class="heading-lg text-accent" style="font-size: 2rem; font-weight: 800; margin-bottom: 0.2rem;">30+</div>
+                    <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;">Happy Enterprise Clients</div>
+                </div>
+                <div class="client-stat-box">
+                    <div class="heading-lg text-accent" style="font-size: 2rem; font-weight: 800; margin-bottom: 0.2rem;">15+</div>
+                    <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;">States Served Across India</div>
+                </div>
+                <div class="client-stat-box">
+                    <div class="heading-lg text-accent" style="font-size: 2rem; font-weight: 800; margin-bottom: 0.2rem;">250+</div>
+                    <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;">Skilled Technical Professionals</div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Client Directory Section -->
+    <!-- ✦ Client Directory Section (Page 5 of PDF) ✦ -->
     <section class="section bg-off-white">
         <div class="container">
 
-            <div class="section-label" style="margin-bottom: var(--s-md);">EPC Contractors &amp; Main Contractors</div>
-            <div class="grid-4" style="margin-bottom: var(--s-2xl);">
-                <div class="client-logo-card reveal delay-100">
-                    <div class="client-name-heading">ISGEC HEAVY ENGINEERING</div>
-                    <span class="tag tag--accent">EPC CONTRACTOR</span>
-                </div>
-                <div class="client-logo-card reveal delay-200">
-                    <div class="client-name-heading">KEC INTERNATIONAL</div>
-                    <span class="tag tag--accent">EPC / INFRASTRUCTURE</span>
-                </div>
-                <div class="client-logo-card reveal delay-300">
-                    <div class="client-name-heading">THERMAX LIMITED</div>
-                    <span class="tag tag--accent">ENERGY &amp; BOILERS</span>
-                </div>
-                <div class="client-logo-card reveal delay-400">
-                    <div class="client-name-heading">LARSEN &amp; TOUBRO PARTNERS</div>
-                    <span class="tag tag--accent">EPC MAJOR</span>
+            <!-- Category 1: EPC Majors & Main Contractors -->
+            <div class="reveal" style="margin-bottom: var(--s-xl);">
+                <div class="section-label">EPC &amp; Heavy Engineering Majors</div>
+                <h2 class="heading-md" style="margin-bottom: 1rem;">Core Industrial Contractors</h2>
+                <div class="grid-4" style="gap: 1rem;">
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">TATA PROJECTS</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">EPC &amp; INFRASTRUCTURE</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">LARSEN &amp; TOUBRO</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">EPC CONGLOMERATE</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">ISGEC HEAVY ENGINEERING</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">BOILERS &amp; HEAVY PLANTS</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">KEC INTERNATIONAL LIMITED</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">INFRASTRUCTURE EPC</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">ARDEE ENGINEERING</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">ADANI PETROCHEMICAL EPC</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">BHEL</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">BHARAT HEAVY ELECTRICALS</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">ZETWERK</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">ZETWERK BIW</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">SIMPLEX INFRASTRUCTURES</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">CIVIL &amp; INDUSTRIAL EPC</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="section-label" style="margin-bottom: var(--s-md);">Steel &amp; Power Generation</div>
-            <div class="grid-4" style="margin-bottom: var(--s-2xl);">
-                <div class="client-logo-card reveal delay-100">
-                    <div class="client-name-heading">JINDAL STEEL &amp; POWER</div>
-                    <span class="tag tag--accent">STEEL MAJOR</span>
-                </div>
-                <div class="client-logo-card reveal delay-200">
-                    <div class="client-name-heading">MAHAGENCO</div>
-                    <span class="tag tag--accent">STATE POWER UTILITY</span>
-                </div>
-                <div class="client-logo-card reveal delay-300">
-                    <div class="client-name-heading">TATA PROJECTS NETWORK</div>
-                    <span class="tag tag--accent">STEEL &amp; INFRA</span>
-                </div>
-                <div class="client-logo-card reveal delay-400">
-                    <div class="client-name-heading">BGR ENERGY SYSTEMS</div>
-                    <span class="tag tag--accent">POWER EPC</span>
+            <!-- Category 2: Steel, Energy & Petrochemical Producers -->
+            <div class="reveal" style="margin-bottom: var(--s-xl);">
+                <div class="section-label">Steel, Power &amp; Petrochemicals</div>
+                <h2 class="heading-md" style="margin-bottom: 1rem;">Plant Owners &amp; Primary Producers</h2>
+                <div class="grid-4" style="gap: 1rem;">
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">JINDAL STEEL &amp; POWER</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">STEEL MAJOR (ANGUL)</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">AM/NS INDIA</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">ARCELORMITTAL NIPPON STEEL</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">JSSL (JSW SEVERFIELD)</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">JSW STRUCTURAL STEEL</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">MAHAGENCO</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">STATE POWER UTILITY</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">ESSAR</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">ENERGY &amp; METALS</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">BGR ENERGY SYSTEMS</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">POWER PLANT EQUIPMENT</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">ATMASTCO LTD</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">HEAVY FABRICATION</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">FERRO METALS</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">ISO 9001:2008 METALS</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="section-label" style="margin-bottom: var(--s-md);">Cement &amp; Mineral Processing</div>
-            <div class="grid-4">
-                <div class="client-logo-card reveal delay-100">
-                    <div class="client-name-heading">ACC LIMITED</div>
-                    <span class="tag tag--accent">CEMENT MAJOR</span>
+            <!-- Category 3: Cement, Technology & Specialized Contractors -->
+            <div class="reveal">
+                <div class="section-label">Cement, Infrastructure &amp; Commercial</div>
+                <h2 class="heading-md" style="margin-bottom: 1rem;">Cement &amp; Infrastructure Networks</h2>
+                <div class="grid-4" style="gap: 1rem;">
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">ACC LIMITED</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">CEMENT CONGLOMERATE</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">DCPL</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">BALODA BAZAR CEMENT</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">LNV TECH</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">TOWERING TECHNOLOGY</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">MERIT TECHNOLOGIES</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">PARADIP SILO SYSTEMS</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">VRINDA ENGINEERS PVT LTD</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">ENGINEERING WORKS</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">STRUC-RITE METAL SYSTEMS</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">PEB &amp; METALISING</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">PNC INFRATECH LTD</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">HIGHWAYS &amp; INFRA</span>
+                    </div>
+                    <div class="client-logo-card">
+                        <div class="client-name-heading">OMAXE CITY</div>
+                        <span class="tag tag--accent" style="font-size: 0.65rem;">COMMERCIAL INFRASTRUCTURE</span>
+                    </div>
                 </div>
-                <div class="client-logo-card reveal delay-200">
-                    <div class="client-name-heading">MAHA CEMENT</div>
-                    <span class="tag tag--accent">CEMENT MANUFACTURER</span>
+            </div>
+
+            <!-- Client Trust Pillars -->
+            <div class="grid-3 reveal" style="gap: 1.5rem; margin-top: var(--s-2xl);">
+                <div style="background: var(--c-white); padding: 1.5rem; border-radius: var(--radius-md); border-left: 4px solid var(--c-accent-d); box-shadow: var(--shadow-sm);">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.35rem;">🛡️</div>
+                    <h3 class="heading-md" style="font-size: 1.05rem; margin-bottom: 0.25rem;">Trusted Partner to Industry Leaders</h3>
+                    <p class="body-md text-muted" style="font-size: 0.85rem;">Long-standing master vendor agreements with India's most demanding EPC main contractors.</p>
                 </div>
-                <div class="client-logo-card reveal delay-300">
-                    <div class="client-name-heading">ULTRATECH NETWORK</div>
-                    <span class="tag tag--accent">CEMENT &amp; RMC</span>
+                <div style="background: var(--c-white); padding: 1.5rem; border-radius: var(--radius-md); border-left: 4px solid var(--c-accent-d); box-shadow: var(--shadow-sm);">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.35rem;">✦</div>
+                    <h3 class="heading-md" style="font-size: 1.05rem; margin-bottom: 0.25rem;">Proven Track Record of Excellence</h3>
+                    <p class="body-md text-muted" style="font-size: 0.85rem;">Over 35 heavy engineering packages completed and in progress with zero contract defaults.</p>
                 </div>
-                <div class="client-logo-card reveal delay-400">
-                    <div class="client-name-heading">METSO LINEAGE PARTNERS</div>
-                    <span class="tag tag--accent">MINING OEM</span>
+                <div style="background: var(--c-white); padding: 1.5rem; border-radius: var(--radius-md); border-left: 4px solid var(--c-accent-d); box-shadow: var(--shadow-sm);">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.35rem;">⚙️</div>
+                    <h3 class="heading-md" style="font-size: 1.05rem; margin-bottom: 0.25rem;">Commitment to Quality &amp; Safety</h3>
+                    <p class="body-md text-muted" style="font-size: 0.85rem;">Integrated HSE protocols, WPS/PQR certified welders, and 100% volumetric NDT compliance.</p>
                 </div>
+            </div>
+
+            <div class="text-center" style="margin-top: var(--s-xl);">
+                <a href="contact.html" class="btn btn-primary btn--lg">Initiate Vendor Empanelment &amp; Inquire for Tenders →</a>
             </div>
 
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ✦ Footer ✦ -->
     <footer class="footer bg-charcoal text-light" role="contentinfo">
         <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
+            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved. Designed to Enterprise Standards.</p>
         </div>
     </footer>
 

@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant &amp; Machinery Fleet | Navtara Projects Pvt. Ltd.</title>
-    <meta name="description" content="Inspect Navtara Projects' owned heavy plant equipment fleet: fabrication workshop, EOT cranes, airless painting setups, NDT testing units, and heavy machinery.">
+    <title>Plant, Machinery &amp; Testing Capabilities | Navtara Projects Pvt. Ltd.</title>
+    <meta name="description" content="Official machinery, equipment fleet and testing capabilities of Navtara Projects Pvt. Ltd. — 14 Airless Painting Machines, 15 Blasting Hoppers, 18 MIG, 32 ARC, 4 Hydra Cranes, UT & DPT inspection kits.">
+
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Plant &amp; Machinery Fleet | Navtara Projects">
-    <meta property="og:image" content="assets/images/hero.png">
+    <meta property="og:image" content="assets/images/hydra_erection.jpg">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
     <!-- CSS Architecture -->
@@ -17,61 +19,95 @@
 
     <style>
         .page-header-v3 {
-            padding: calc(var(--nav-height) + var(--s-xl)) 0 var(--s-xl);
+            padding: calc(var(--nav-height) + var(--s-lg)) 0 var(--s-lg);
             background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-md) 100%);
             color: var(--c-white);
             text-align: center;
         }
 
-        .machinery-category {
-            margin-bottom: var(--s-2xl);
+        .highlight-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: var(--s-lg) 0;
         }
 
-        .machinery-category-title {
-            font-size: 1.5rem;
+        .highlight-stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(14, 165, 233, 0.25);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 1rem;
+            text-align: center;
+            color: var(--c-white);
+        }
+
+        .highlight-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--c-accent);
+            line-height: 1;
+            margin-bottom: 0.35rem;
+        }
+
+        .highlight-label {
+            font-size: 0.75rem;
             font-weight: 700;
-            color: var(--c-navy);
-            margin-bottom: var(--s-md);
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--c-grey-100);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.9;
         }
 
-        .equipment-card-v3 {
+        .machinery-table-wrapper {
             background: var(--c-white);
             border-radius: var(--radius-lg);
             border: 1px solid var(--c-grey-100);
-            padding: var(--s-md);
-            box-shadow: var(--shadow-md);
-            transition: all 0.35s var(--ease-out);
-            border-top: 4px solid var(--c-accent-d);
+            box-shadow: var(--shadow-sm);
+            overflow-x: auto;
+            margin-bottom: var(--s-xl);
         }
 
-        .equipment-card-v3:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-xl);
-            border-top-color: var(--c-accent);
+        .machinery-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            text-align: left;
         }
 
-        .eq-status-badge {
-            display: inline-block;
-            font-size: 0.7rem;
+        .machinery-table th {
+            background: var(--c-navy);
+            color: var(--c-white);
+            padding: 0.85rem 1rem;
             font-weight: 700;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
+            font-size: 0.75rem;
+            border-bottom: 2px solid var(--c-accent-d);
+            white-space: nowrap;
+        }
+
+        .machinery-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--c-grey-100);
+            color: var(--c-grey-700);
+        }
+
+        .machinery-table tr:hover {
+            background: var(--c-off-white);
+        }
+
+        .badge-qty {
+            background: rgba(14, 165, 233, 0.12);
             color: var(--c-accent-d);
-            background: rgba(0, 112, 192, 0.08);
+            font-weight: 800;
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
-            margin-bottom: 0.5rem;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- ✦ Navigation Bar ✦ -->
     <nav class="navbar scrolled" role="navigation">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -97,133 +133,216 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
+    <!-- ✦ Page Header ✦ -->
     <header class="page-header-v3">
         <div class="container reveal">
             <div class="section-label section-label--light">Execution Infrastructure</div>
-            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">Owned Plant &amp; Equipment Fleet</h1>
-            <p class="body-lg text-light" style="max-width: 680px; margin: 0 auto 1.5rem; opacity: 0.85;">
-                We present our machinery fleet as tangible proof of execution capability — enabling rapid mobilization, self-performance, and high-tolerance quality control.
+            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-xs);">Plant, Machinery &amp; Testing Capabilities</h1>
+            <p class="body-lg text-light" style="max-width: 680px; margin: 0 auto; opacity: 0.85;">
+                Comprehensive inventory of heavy fabrication tools, mobile cranes, surface preparation systems, airless painting equipment, and certified NDT testing apparatus.
             </p>
-            <a href="#" onclick="alert('Downloading Machinery Fleet Specification Dossier (PDF preview)'); return false;" class="btn btn-outline btn--sm">📄 Download Fleet Specification Factsheet (PDF)</a>
+
+            <!-- Key Fleet Highlights (From Page 9 of PDF) -->
+            <div class="highlight-stat-grid">
+                <div class="highlight-stat-card">
+                    <div class="highlight-number">14</div>
+                    <div class="highlight-label">Airless Painting Machines</div>
+                </div>
+                <div class="highlight-stat-card">
+                    <div class="highlight-number">15</div>
+                    <div class="highlight-label">Blasting Hopper Sets</div>
+                </div>
+                <div class="highlight-stat-card">
+                    <div class="highlight-number">18</div>
+                    <div class="highlight-label">MIG Machines</div>
+                </div>
+                <div class="highlight-stat-card">
+                    <div class="highlight-number">32</div>
+                    <div class="highlight-label">ARC Welding Machines</div>
+                </div>
+                <div class="highlight-stat-card">
+                    <div class="highlight-number">20</div>
+                    <div class="highlight-label">Magnetic Drill Machines</div>
+                </div>
+                <div class="highlight-stat-card">
+                    <div class="highlight-number">55</div>
+                    <div class="highlight-label">Heavy Grinders</div>
+                </div>
+                <div class="highlight-stat-card">
+                    <div class="highlight-number">4</div>
+                    <div class="highlight-label">Hydra Cranes (15T)</div>
+                </div>
+                <div class="highlight-stat-card">
+                    <div class="highlight-number">12</div>
+                    <div class="highlight-label">Digital DFT Meters</div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Machinery Directory Section -->
+    <!-- ✦ Detailed Machinery Inventory (Page 9 of PDF) ✦ -->
     <section class="section bg-off-white">
         <div class="container">
 
-            <!-- Category 1: Workshop & Heavy Lifting -->
-            <div class="machinery-category reveal">
-                <h2 class="machinery-category-title">
-                    <span>🏗️</span> Workshop Infrastructure &amp; Heavy Lifting Equipment
+            <!-- Section 1: Surface Preparation & Painting Fleet -->
+            <div class="reveal" style="margin-bottom: var(--s-xl);">
+                <div class="section-label">Surface Protection Fleet</div>
+                <h2 class="heading-md" style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span>🖌️</span> Surface Preparation, Finishing &amp; Painting Equipment
                 </h2>
-                <div class="grid-3">
-                    <div class="equipment-card-v3">
-                        <span class="eq-status-badge">OWNED ASSET</span>
-                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">EOT Cranes (10T &amp; 15T Capacity)</h3>
-                        <p class="body-md text-muted">Overhead traveling cranes for heavy plate handling, component positioning, and trial assembly in fabrication bays.</p>
+                <div class="grid-2" style="gap: var(--s-md);">
+
+                    <!-- Table 1A: Painting Machinery -->
+                    <div class="machinery-table-wrapper">
+                        <table class="machinery-table">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Description</th>
+                                    <th>Specification</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1.1</td><td>Heavy Industrial Compressor</td><td>60 HP Diesel</td><td><span class="badge-qty">2 Nos</span></td></tr>
+                                <tr><td>1.2</td><td>Industrial Air Compressor</td><td>60 HP Electrical</td><td><span class="badge-qty">6 Nos</span></td></tr>
+                                <tr><td>1.3</td><td>Industrial Air Compressor</td><td>50 HP Electrical</td><td><span class="badge-qty">9 Nos</span></td></tr>
+                                <tr><td>1.4</td><td>Industrial Air Compressor</td><td>40 HP Electrical</td><td><span class="badge-qty">2 Nos</span></td></tr>
+                                <tr><td>1.5</td><td>Auxiliary Air Compressor</td><td>7.5 HP Electrical</td><td><span class="badge-qty">3 Nos</span></td></tr>
+                                <tr><td>1.6</td><td>Auxiliary Air Compressor</td><td>5 HP Electrical</td><td><span class="badge-qty">3 Nos</span></td></tr>
+                                <tr><td>1.7</td><td>Shop Air Compressor</td><td>3 HP Electrical</td><td><span class="badge-qty">3 Nos</span></td></tr>
+                                <tr><td>2.1</td><td>Airless Painting Machine</td><td>63/1 High Ratio</td><td><span class="badge-qty">6 Nos</span></td></tr>
+                                <tr><td>2.2</td><td>Airless Painting Machine</td><td>45/1 Ratio</td><td><span class="badge-qty">8 Nos</span></td></tr>
+                                <tr><td>3</td><td>Abrasive Blasting Hopper Set</td><td>Complete with Nozzles &amp; Hoses</td><td><span class="badge-qty">15 Sets</span></td></tr>
+                                <tr><td>4.1</td><td>Air Receiver Tank</td><td>2,000 Litres</td><td><span class="badge-qty">2 Nos</span></td></tr>
+                                <tr><td>4.2</td><td>Air Receiver Tank</td><td>1,500 Litres</td><td><span class="badge-qty">2 Nos</span></td></tr>
+                                <tr><td>4.3</td><td>Air Receiver Tank</td><td>1,000 Litres</td><td><span class="badge-qty">6 Nos</span></td></tr>
+                            </tbody>
+                        </table>
                     </div>
 
-                    <div class="equipment-card-v3">
-                        <span class="eq-status-badge">FLEET ASSET</span>
-                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Hydraulic Mobile Cranes (20T – 50T)</h3>
-                        <p class="body-md text-muted">Telescopic and lattice boom cranes dedicated for site erection, structural placement, and heavy ducting positionings.</p>
+                    <!-- Table 1B: Coating Testing & Inspection -->
+                    <div class="machinery-table-wrapper">
+                        <table class="machinery-table">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Inspection / Testing Tool</th>
+                                    <th>Application</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Salt Contamination Testing Kit</td><td>Bresle Patch Chloride Test</td><td><span class="badge-qty">4 Kits</span></td></tr>
+                                <tr><td>2</td><td>Digital Hygrometer</td><td>Ambient Dew Point &amp; Humidity</td><td><span class="badge-qty">6 Nos</span></td></tr>
+                                <tr><td>3</td><td>Metal Surface Temperature Gun</td><td>Infrared Substrate Temp</td><td><span class="badge-qty">8 Nos</span></td></tr>
+                                <tr><td>4</td><td>Digital DFT Meter</td><td>Dry Film Thickness Audit (SSPC-PA2)</td><td><span class="badge-qty">12 Nos</span></td></tr>
+                                <tr><td>5</td><td>Comb WFT Meter</td><td>Wet Film Thickness Verification</td><td><span class="badge-qty">6 Nos</span></td></tr>
+                                <tr><td>6</td><td>Surface Profile Gauge</td><td>Sa 2.5 Anchor Profile Depth</td><td><span class="badge-qty">6 Nos</span></td></tr>
+                                <tr><td>7</td><td>Paint Peel-off Cross-Hatch Kit</td><td>Coating Adhesion Testing</td><td><span class="badge-qty">4 Kits</span></td></tr>
+                                <tr><td>8</td><td>Holiday Detector (High &amp; Low Voltage)</td><td>Pinhole &amp; Porosity Detection</td><td><span class="badge-qty">2 Nos</span></td></tr>
+                            </tbody>
+                        </table>
                     </div>
 
-                    <div class="equipment-card-v3">
-                        <span class="eq-status-badge">WORKSHOP ASSET</span>
-                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Hydraulic Plate Bending &amp; Press</h3>
-                        <p class="body-md text-muted">100T capacity hydraulic press and 3-roll bending machine for heavy shell, cone, and hopper fabrication.</p>
+                </div>
+            </div>
+
+            <!-- Section 2: Fabrication & Heavy Erection Equipment -->
+            <div class="reveal">
+                <div class="section-label">Fabrication &amp; Erection Infrastructure</div>
+                <h2 class="heading-md" style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span>⚙️</span> Fabrication Plant, Machinery, Tools &amp; NDT Testing
+                </h2>
+                <div class="grid-2" style="gap: var(--s-md);">
+
+                    <!-- Table 2A: Fabrication Tools -->
+                    <div class="machinery-table-wrapper">
+                        <table class="machinery-table">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Plant Equipment / Tool</th>
+                                    <th>Capacity / Model</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>MIG Welding Machine</td><td>Heavy Duty Inverter</td><td><span class="badge-qty">18 Nos</span></td></tr>
+                                <tr><td>2</td><td>ARC Welding Machine</td><td>Continuous Duty Rectifier</td><td><span class="badge-qty">32 Nos</span></td></tr>
+                                <tr><td>3</td><td>Magnetic Drill Machine</td><td>Up to 1095 mm diameter</td><td><span class="badge-qty">20 Nos</span></td></tr>
+                                <tr><td>4</td><td>Plasma Cutting Machine</td><td>High Precision Thermal Arc</td><td><span class="badge-qty">3 Nos</span></td></tr>
+                                <tr><td>5</td><td>Pug Cutting Machine Set</td><td>Automated Straight/Bevel Cut</td><td><span class="badge-qty">15 Sets</span></td></tr>
+                                <tr><td>6</td><td>Manual Gas Cutting Set</td><td>Oxygen-Acetylene Rig</td><td><span class="badge-qty">18 Sets</span></td></tr>
+                                <tr><td>7</td><td>Industrial Angle Grinder AG-4</td><td>4 Inch Heavy Duty</td><td><span class="badge-qty">25 Nos</span></td></tr>
+                                <tr><td>8</td><td>Industrial Angle Grinder AG-5</td><td>5 Inch Medium Duty</td><td><span class="badge-qty">14 Nos</span></td></tr>
+                                <tr><td>9</td><td>Industrial Angle Grinder AG-7</td><td>7 Inch Heavy Beveling</td><td><span class="badge-qty">16 Nos</span></td></tr>
+                                <tr><td>10</td><td>Pre-heat Heating Torch</td><td>Multi-Flame Gas Torch</td><td><span class="badge-qty">10 Nos</span></td></tr>
+                                <tr><td>11</td><td>Industrial Electrode Baking Oven</td><td>Calibrated Temperature Oven</td><td><span class="badge-qty">4 Nos</span></td></tr>
+                                <tr><td>12</td><td>ACE Hydra Crane</td><td>15 Ton Lifting Capacity</td><td><span class="badge-qty">4 Nos</span></td></tr>
+                                <tr><td>13</td><td>Chain Pulley Block</td><td>Up to 5 Ton Lifting Capacity</td><td><span class="badge-qty">10 Nos</span></td></tr>
+                                <tr><td>14</td><td>Industrial Electric Extension Board</td><td>Heavy Site Distribution</td><td><span class="badge-qty">13 Nos</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Table 2B: Quality & NDT Testing Apparatus -->
+                    <div class="machinery-table-wrapper">
+                        <table class="machinery-table">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Testing &amp; Inspection Tool</th>
+                                    <th>Standard / Specification</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Ultrasonic Testing (UT) Machine</td><td>Volumetric Weld Flaw Detection</td><td><span class="badge-qty">1 Unit</span></td></tr>
+                                <tr><td>2</td><td>Dye Penetrant Testing (DPT) Kit</td><td>Surface Crack Detection (ASNT)</td><td><span class="badge-qty">1 Kit</span></td></tr>
+                                <tr><td>3</td><td>Precision Vernier Caliper</td><td>Mechanical Dimensional QC</td><td><span class="badge-qty">5 Nos</span></td></tr>
+                                <tr><td>4</td><td>Digital Vernier Caliper</td><td>High-Precision Micro-Audit</td><td><span class="badge-qty">3 Nos</span></td></tr>
+                                <tr><td>5</td><td>Outside Micro Meter</td><td>Precision Thickness Gauging</td><td><span class="badge-qty">2 Nos</span></td></tr>
+                                <tr><td>6.1</td><td>Measuring Tape &mdash; 5 Metre</td><td>Heavy Duty Calibrated Tape</td><td><span class="badge-qty">8 Nos</span></td></tr>
+                                <tr><td>6.2</td><td>Measuring Tape &mdash; 15 Metre</td><td>Structural Alignment Tape</td><td><span class="badge-qty">10 Nos</span></td></tr>
+                                <tr><td>6.3</td><td>Measuring Tape &mdash; 30 Metre</td><td>Layout &amp; Grid Survey Tape</td><td><span class="badge-qty">6 Nos</span></td></tr>
+                                <tr><td>6.4</td><td>Measuring Tape &mdash; 50 Metre</td><td>Long Span Foundation Tape</td><td><span class="badge-qty">7 Nos</span></td></tr>
+                                <tr><td>7</td><td>Precision Steel Scale</td><td>Machinist Rule</td><td><span class="badge-qty">8 Nos</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Field Photo Showcase -->
+            <div class="reveal" style="margin-top: var(--s-lg);">
+                <div class="section-label">Field Execution Proof</div>
+                <h3 class="heading-md" style="margin-bottom: 1rem;">Owned Machinery Operating on Live Sites</h3>
+                <div class="grid-3" style="gap: 1.25rem;">
+                    <div style="border-radius: var(--radius-md); overflow: hidden; height: 240px; box-shadow: var(--shadow-sm);">
+                        <img src="assets/images/hydra_erection.jpg" alt="15 Ton Hydra Crane Erection" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="border-radius: var(--radius-md); overflow: hidden; height: 240px; box-shadow: var(--shadow-sm);">
+                        <img src="assets/images/heavy_girder.jpg" alt="Airless Paint Spray Rig on Heavy Girder" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="border-radius: var(--radius-md); overflow: hidden; height: 240px; box-shadow: var(--shadow-sm);">
+                        <img src="assets/images/fabrication_bay.jpg" alt="Heavy Fabrication Bay in Raipur" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
             </div>
 
-            <!-- Category 2: Fabrication & Welding -->
-            <div class="machinery-category reveal delay-100">
-                <h2 class="machinery-category-title">
-                    <span>⚙️</span> Welding &amp; Fabrication Systems
-                </h2>
-                <div class="grid-3">
-                    <div class="equipment-card-v3">
-                        <span class="eq-status-badge">HEAVY CAPABILITY</span>
-                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Submerged Arc Welding (SAW) Rigs</h3>
-                        <p class="body-md text-muted">Automatic SAW column and boom machines for heavy girder webs, flanges, and longitudinal shell seams.</p>
-                    </div>
-
-                    <div class="equipment-card-v3">
-                        <span class="eq-status-badge">WORKSHOP UNITS</span>
-                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">MIG / TIG / MMA Inverter Welders</h3>
-                        <p class="body-md text-muted">High-efficiency Lincoln &amp; ESAB digital inverter power sources for structural and stainless steel piping spools.</p>
-                    </div>
-
-                    <div class="equipment-card-v3">
-                        <span class="eq-status-badge">PRECISION CUTTING</span>
-                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">CNC Oxy-Fuel &amp; Plasma Profile Cutters</h3>
-                        <p class="body-md text-muted">Multi-torch CNC cutting beds capable of profiling heavy carbon steel plates up to 100mm thickness.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category 3: Surface Preparation & Painting -->
-            <div class="machinery-category reveal delay-200">
-                <h2 class="machinery-category-title">
-                    <span>🖌️</span> Surface Protection &amp; Coating Systems
-                </h2>
-                <div class="grid-3">
-                    <div class="equipment-card-v3">
-                        <span class="eq-status-badge">HIGH-PRESSURE</span>
-                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Airless Spray Painting Machines</h3>
-                        <p class="body-md text-muted">Heavy-duty pneumatic airless spray pumps (Graco / Wiwa) for high-build epoxy and polyurethane application.</p>
-                    </div>
-
-                    <div class="equipment-card-v3">
-                        <span class="eq-status-badge">MOBILE BLASTING</span>
-                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Abrasive Grit Blasting Pots &amp; Compressors</h3>
-                        <p class="body-md text-muted">High-CFM diesel screw compressors and pressure blast pots for achieving Sa 2.5 near-white metal surface finishes.</p>
-                    </div>
-
-                    <div class="equipment-card-v3">
-                        <span class="eq-status-badge">COATING AUDIT</span>
-                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Calibrated Elcometer Inspection Suite</h3>
-                        <p class="body-md text-muted">Digital DFT gauges, surface profile gauges, blast pressure meters, and holiday detectors.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category 4: Inspection & Testing -->
-            <div class="machinery-category reveal delay-300">
-                <h2 class="machinery-category-title">
-                    <span>🔬</span> Inspection, Testing &amp; Quality Control Instruments
-                </h2>
-                <div class="grid-3">
-                    <div class="equipment-card-v3">
-                        <span class="eq-status-badge">ASNT LEVEL II</span>
-                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Ultrasonic Flaw Detectors (UT)</h3>
-                        <p class="body-md text-muted">Digital flaw detectors for volumetric weld inspection and base metal thickness gauging.</p>
-                    </div>
-
-                    <div class="equipment-card-v3">
-                        <span class="eq-status-badge">MPI TESTING</span>
-                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Magnetic Particle Yokes &amp; Contrast Media</h3>
-                        <p class="body-md text-muted">Portable AC/DC yokes for surface defect detection on structural welds and crane girders.</p>
-                    </div>
-
-                    <div class="equipment-card-v3">
-                        <span class="eq-status-badge">HYDRO TESTING</span>
-                        <h3 class="heading-md" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Motorized Hydrostatic Test Pumps</h3>
-                        <p class="body-md text-muted">High-pressure test pumps up to 350 bar with calibrated chart recorders for piping and vessel testing.</p>
-                    </div>
-                </div>
+            <div class="text-center" style="margin-top: var(--s-xl);">
+                <a href="contact.html" class="btn btn-primary btn--lg">Request Equipment Mobilization Schedule for Your Site →</a>
             </div>
 
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ✦ Footer ✦ -->
     <footer class="footer bg-charcoal text-light" role="contentinfo">
         <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</p>
+            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved. Designed to Enterprise Standards.</p>
         </div>
     </footer>
 
