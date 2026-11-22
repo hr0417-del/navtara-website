@@ -252,4 +252,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ─── Hero Live Execution HUD Controller ─── */
+  const hudContainer = document.getElementById('heroLiveHud');
+  if (hudContainer) {
+    const slides = hudContainer.querySelectorAll('.hud-slide');
+    const dots = hudContainer.querySelectorAll('.hud-step-dot');
+    let currentIndex = 0;
+    let autoCycleTimer = null;
+    const CYCLE_INTERVAL = 4500; // 4.5 seconds
+
+    const goToSlide = (index) => {
+      if (index === currentIndex || !slides[index]) return;
+      slides[currentIndex].classList.remove('active');
+      dots[currentIndex]?.classList.remove('active');
+
+      currentIndex = index;
+
+      slides[currentIndex].classList.add('active');
+      dots[currentIndex]?.classList.add('active');
+    };
+
+    const nextSlide = () => {
+      const nextIdx = (currentIndex + 1) % slides.length;
+      goToSlide(nextIdx);
+    };
+
+    const startTimer = () => {
+      stopTimer();
+      autoCycleTimer = setInterval(nextSlide, CYCLE_INTERVAL);
+    };
+
+    const stopTimer = () => {
+      if (autoCycleTimer) {
+        clearInterval(autoCycleTimer);
+        autoCycleTimer = null;
+      }
+    };
+
+    // Manual navigation on dot click
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        goToSlide(idx);
+        startTimer(); // Restart timer after user interaction
+      });
+    });
+
+    // Pause on hover
+    hudContainer.addEventListener('mouseenter', stopTimer);
+    hudContainer.addEventListener('mouseleave', startTimer);
+
+    // Initial timer launch
+    startTimer();
+  }
+
 });
