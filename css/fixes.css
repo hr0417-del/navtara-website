@@ -1434,6 +1434,99 @@ h1, h2, h3, h4, p, span, a, button {
   }
 }
 
+/* ── Ex-Metso Industrial Lineage Banner ──────────────────── */
+.heritage-box {
+  background: linear-gradient(135deg, rgba(7, 17, 31, 0.95) 0%, rgba(13, 30, 53, 0.9) 100%);
+  border: 1px solid rgba(14, 165, 233, 0.35);
+  border-left: 5px solid var(--c-accent, #0EA5E9);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.5rem 1.75rem;
+  color: #FFFFFF;
+  margin: var(--s-lg) 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.heritage-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.heritage-badge {
+  background: var(--c-accent, #0EA5E9);
+  color: #000000;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Third-Party Inspection Agency (TPA) Grid ───────────── */
+.tpa-badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: var(--s-md) 0;
+}
+
+.tpa-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 100px;
+  padding: 0.5rem 1.15rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--c-navy, #0D1E35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tpa-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-accent, #0EA5E9);
+}
+
+.tpa-check {
+  color: #25D366;
+  font-weight: 800;
+}
+
+/* ── Fleet Readiness Banner ─────────────────────────────── */
+.fleet-readiness-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(13, 30, 53, 0.9);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-md, 10px);
+  color: #FFFFFF;
+  margin: var(--s-md) 0 var(--s-lg);
+  font-size: 0.85rem;
+}
+
+.fleet-readiness-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .fleet-readiness-banner {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}
+
+
 
 
 
