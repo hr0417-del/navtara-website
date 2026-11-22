@@ -8,8 +8,13 @@
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Project Portfolio | Navtara Projects">
-    <meta property="og:image" content="assets/images/fabrication_bay.jpg">
+    <meta property="og:image" content="assets/images/fabrication_bay.webp">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+        <!-- Google Fonts Preconnect & High-Performance Load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap">
 
     <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/style.css">
@@ -242,13 +247,30 @@
             </a>
             <div class="nav-links" id="main-nav">
                 <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="capabilities.html">Capabilities</a>
-                <a href="projects.html" class="active">Projects</a>
-                <a href="machinery.html">Plant &amp; Machinery</a>
-                <a href="quality.html">Quality &amp; Safety</a>
-                <a href="leadership.html">Leadership</a>
-                <a href="clients.html">Clients</a>
+
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                        Company <span class="nav-dropdown-arrow">▼</span>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="about.html">About Overview</a>
+                        <a href="leadership.html">Board of Directors</a>
+                        <a href="quality.html">Quality &amp; Safety Policy</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                        Operations <span class="nav-dropdown-arrow">▼</span>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="capabilities.html">Capabilities &amp; Sectors</a>
+                        <a href="machinery.html">Plant &amp; Machinery</a>
+                        <a href="clients.html">Client Marquee</a>
+                    </div>
+                </div>
+
+                <a href="projects.html" class="active">Projects (35)</a>
                 <a href="contact.html">Contact</a>
             </div>
             <a href="contact.html" class="nav-cta">Request Quote →</a>
@@ -293,6 +315,13 @@
                 </p>
             </div>
 
+                        <!-- Interactive Instant Search & Category Filter -->
+            <div class="project-search-bar-wrap reveal">
+                <span class="project-search-icon">🔍</span>
+                <input type="text" id="project-search-input" class="project-search-input" placeholder="Search 35 projects by client, location, sector, or scope (e.g. Adani, Angul, ISGEC, Blast, Piping)..." aria-label="Search projects">
+                <div id="project-search-stats" class="project-search-stats">Showing 35 of 35 engineering packages across India</div>
+            </div>
+
             <!-- Category Filter Buttons -->
             <div class="filter-nav reveal">
                 <button class="filter-btn active" data-filter="all">All Packages (35)</button>
@@ -309,7 +338,7 @@
                 <!-- Featured 1: Adani Petrochemical Mundra - Fabrication (₹8 Cr) -->
                 <div class="project-card-v3 reveal" data-category="wip petro">
                     <div class="project-card-img">
-                        <img src="assets/images/fabrication_bay.jpg" alt="Ardee Engineering / Adani Petrochemical Mundra" loading="lazy">
+                        <img src="assets/images/fabrication_bay.webp" alt="Ardee Engineering / Adani Petrochemical Mundra" loading="lazy">
                         <span class="project-badge-value">₹8.0 Cr</span>
                         <span class="project-badge-status status-wip">5% WIP &bull; In Progress</span>
                     </div>
@@ -328,7 +357,7 @@
                 <!-- Featured 2: Adani Petrochemical Mundra - Erection (₹5 Cr) -->
                 <div class="project-card-v3 reveal delay-100" data-category="wip petro">
                     <div class="project-card-img">
-                        <img src="assets/images/heavy_girder.jpg" alt="Adani Petrochemical Erection" loading="lazy">
+                        <img src="assets/images/heavy_girder.webp" alt="Adani Petrochemical Erection" loading="lazy">
                         <span class="project-badge-value">₹5.0 Cr</span>
                         <span class="project-badge-status status-wip">5% WIP &bull; In Progress</span>
                     </div>
@@ -347,7 +376,7 @@
                 <!-- Featured 3: Jindal Steel Angul (₹3.8 Cr) -->
                 <div class="project-card-v3 reveal delay-200" data-category="wip steel">
                     <div class="project-card-img">
-                        <img src="assets/images/bridge_coating.jpg" alt="Jindal Steel & Power Angul" loading="lazy">
+                        <img src="assets/images/bridge_coating.webp" alt="Jindal Steel & Power Angul" loading="lazy">
                         <span class="project-badge-value">₹3.8 Cr</span>
                         <span class="project-badge-status status-wip">40% WIP &bull; In Progress</span>
                     </div>
@@ -366,7 +395,7 @@
                 <!-- Featured 4: Mahagenco Thermal (₹2.9 Cr) -->
                 <div class="project-card-v3 reveal delay-100" data-category="completed steel">
                     <div class="project-card-img">
-                        <img src="assets/images/power_plant.jpg" alt="Mahagenco Thermal Station" loading="lazy">
+                        <img src="assets/images/power_plant.webp" alt="Mahagenco Thermal Station" loading="lazy">
                         <span class="project-badge-value">₹2.9 Cr</span>
                         <span class="project-badge-status status-completed">100% Completed</span>
                     </div>
@@ -385,7 +414,7 @@
                 <!-- Featured 5: KEC International / Maha Cement (₹1.9 Cr) -->
                 <div class="project-card-v3 reveal delay-200" data-category="completed cement">
                     <div class="project-card-img">
-                        <img src="assets/images/silo_erection.jpg" alt="KEC Maha Cement Silo Project" loading="lazy">
+                        <img src="assets/images/silo_erection.webp" alt="KEC Maha Cement Silo Project" loading="lazy">
                         <span class="project-badge-value">₹1.9 Cr</span>
                         <span class="project-badge-status status-completed">100% Completed</span>
                     </div>
@@ -404,7 +433,7 @@
                 <!-- Featured 6: Struc-Rite Metal Building Systems (₹2.5 Cr) -->
                 <div class="project-card-v3 reveal delay-300" data-category="wip steel">
                     <div class="project-card-img">
-                        <img src="assets/images/fabrication_yard.jpg" alt="Struc-Rite Metal Building Systems" loading="lazy">
+                        <img src="assets/images/fabrication_yard.webp" alt="Struc-Rite Metal Building Systems" loading="lazy">
                         <span class="project-badge-value">₹2.5 Cr</span>
                         <span class="project-badge-status status-wip">80% WIP &bull; In Progress</span>
                     </div>
@@ -441,7 +470,8 @@
                 <h3 class="heading-md" style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
                     <span>⚙️</span> Current Execution &mdash; 8 Active Packages (₹25.8 Cr Portfolio)
                 </h3>
-                <div class="portfolio-table-wrapper">
+                <div class="table-responsive-wrapper">
+                    <div class="table-scroll-hint">⇄ Swipe horizontally to inspect full specifications</div>
                     <table class="portfolio-table">
                         <thead>
                             <tr>
@@ -454,64 +484,56 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>1</strong></td>
+                            <tr data-category="wip petro"><td><strong>1</strong></td>
                                 <td><strong>Ardee Engineering Limited / Adani Petrochemical</strong></td>
                                 <td>Mundra, Gujarat</td>
                                 <td>Heavy Structural Fabrication</td>
                                 <td><strong>₹8.0 Cr</strong></td>
                                 <td><span class="project-badge-status status-wip" style="position:static;">5% WIP</span></td>
                             </tr>
-                            <tr>
-                                <td><strong>2</strong></td>
+                            <tr data-category="wip petro"><td><strong>2</strong></td>
                                 <td><strong>Ardee Engineering Limited / Adani Petrochemical</strong></td>
                                 <td>Mundra, Gujarat</td>
                                 <td>Industrial Erection &amp; Installation</td>
                                 <td><strong>₹5.0 Cr</strong></td>
                                 <td><span class="project-badge-status status-wip" style="position:static;">5% WIP</span></td>
                             </tr>
-                            <tr>
-                                <td><strong>3</strong></td>
+                            <tr data-category="wip steel"><td><strong>3</strong></td>
                                 <td><strong>BSA Enterprises</strong></td>
                                 <td>Bhilai, Chhattisgarh</td>
                                 <td>Fabrication, Blasting &amp; Painting</td>
                                 <td><strong>₹1.5 Cr</strong></td>
                                 <td><span class="project-badge-status status-wip" style="position:static;">15% WIP</span></td>
                             </tr>
-                            <tr>
-                                <td><strong>4</strong></td>
+                            <tr data-category="wip steel"><td><strong>4</strong></td>
                                 <td><strong>Zetwerk BIW</strong></td>
                                 <td>Bhilai, Chhattisgarh</td>
                                 <td>Blasting &amp; Painting</td>
                                 <td><strong>₹70 Lacs</strong></td>
                                 <td><span class="project-badge-status status-wip" style="position:static;">10% WIP</span></td>
                             </tr>
-                            <tr>
-                                <td><strong>5</strong></td>
+                            <tr data-category="wip steel"><td><strong>5</strong></td>
                                 <td><strong>Jindal Steel &amp; Power Ltd.</strong></td>
                                 <td>Angul, Odisha</td>
                                 <td>Abrasive Blasting &amp; Protective Painting</td>
                                 <td><strong>₹3.8 Cr</strong></td>
                                 <td><span class="project-badge-status status-wip" style="position:static;">40% WIP</span></td>
                             </tr>
-                            <tr>
-                                <td><strong>6</strong></td>
+                            <tr data-category="wip cement"><td><strong>6</strong></td>
                                 <td><strong>DCPL</strong></td>
                                 <td>Baloda Bazar, Chhattisgarh</td>
                                 <td>Industrial Painting Work</td>
                                 <td><strong>₹50 Lakh</strong></td>
                                 <td><span class="project-badge-status status-wip" style="position:static;">50% WIP</span></td>
                             </tr>
-                            <tr>
-                                <td><strong>7</strong></td>
+                            <tr data-category="wip cement"><td><strong>7</strong></td>
                                 <td><strong>DCPL (ACC Project)</strong></td>
                                 <td>Baloda Bazar, Chhattisgarh</td>
                                 <td>Heavy Structural Fabrication</td>
                                 <td><strong>₹1.8 Cr</strong></td>
                                 <td><span class="project-badge-status status-wip" style="position:static;">80% WIP</span></td>
                             </tr>
-                            <tr>
-                                <td><strong>8</strong></td>
+                            <tr data-category="wip steel"><td><strong>8</strong></td>
                                 <td><strong>Struc-Rite Metal Building Systems</strong></td>
                                 <td>Durg, Chhattisgarh</td>
                                 <td>Metalising Work &amp; Thermal Spray</td>
@@ -524,11 +546,12 @@
             </div>
 
             <!-- Completed Projects Table (27 Projects) -->
-            <div class="reveal">
+            <div class="reveal" id="completed-projects-section">
                 <h3 class="heading-md" style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
                     <span>✓</span> Completed Deliveries &mdash; 27 Projects Handed Over (100% On-Time)
                 </h3>
-                <div class="portfolio-table-wrapper">
+                <div class="table-responsive-wrapper">
+                    <div class="table-scroll-hint">⇄ Swipe horizontally to inspect full specifications</div>
                     <table class="portfolio-table">
                         <thead>
                             <tr>
@@ -541,33 +564,33 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>9</td><td>ISGEC Heavy Engineering Ltd.</td><td>Kalinga Paradip Port, Odisha</td><td>Sheeting Work</td><td>₹85 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>10</td><td>ISGEC Heavy Engineering Ltd.</td><td>NSPCL Durgapur</td><td>Industrial Pipeline Blasting &amp; Painting Work</td><td>₹30 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>11</td><td>Merit Technologies India Ltd.</td><td>Paradip Port, Odisha</td><td>Silo &amp; Hopper Erection Painting Work</td><td>₹5 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>12</td><td>OMAXE City</td><td>Ludhiana, Punjab</td><td>Wall Painting &amp; Decorative Work</td><td>₹1.4 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>13</td><td>Tata Projects Ltd.</td><td>Jodhpur IIT College</td><td>Wall Painting</td><td>₹40 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>14</td><td>ISGEC Heavy Engineering Ltd.</td><td>Kalinga Paradip Port, Odisha</td><td>Brush Painting</td><td>₹1.6 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>15</td><td>Encore Projects Pvt. Ltd.</td><td>Bhilai, Chhattisgarh</td><td>Painting &amp; Wrapping Work</td><td>₹35 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>16</td><td>Shanta Techno Pvt. Ltd.</td><td>Raipur, Chhattisgarh</td><td>Fabrication, Blasting &amp; Painting</td><td>₹25 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>17</td><td>ISGEC Heavy Engineering Ltd.</td><td>Dahej Workshop</td><td>Fabrication, Blasting &amp; Painting</td><td>₹1.3 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>18</td><td>Kalinga Project</td><td>Paradip Port, Odisha</td><td>Fire Fighting Work</td><td>₹3.6 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>19</td><td>BGR Energy Systems Ltd.</td><td>Hamirpur, Uttar Pradesh</td><td>Blasting &amp; Painting</td><td>₹65 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>20</td><td>L&amp;T Pvt. Ltd.</td><td>Hyderabad, Telangana</td><td>Wall Painting &amp; Interior Decoration Work</td><td>₹1.5 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>21</td><td>ASHMEC Equipment Pvt. Ltd.</td><td>Bhilai Workshop</td><td>Blasting, Painting &amp; Wrapping Work</td><td>₹2.3 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>22</td><td>JSW Paradip Port</td><td>Kalinga, Odisha</td><td>Manpower Supply &amp; Technical Support</td><td>₹65 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>23</td><td>Simplex Infrastructures Ltd.</td><td>Pan-India</td><td>Blasting, Painting &amp; Wrapping Work</td><td>₹1.3 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>24</td><td>ISGEC Heavy Engineering Ltd.</td><td>Dahej Workshop</td><td>Fabrication Work</td><td>₹1.44 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>25</td><td>ISGEC Heavy Engineering Ltd.</td><td>Bhilai Workshop</td><td>Fabrication Work</td><td>₹87 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>26</td><td>PNC Infratech Ltd.</td><td>Niwari, Madhya Pradesh</td><td>Divider &amp; Structural Painting</td><td>₹3.2 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>27</td><td>Semcorp India Pvt. Ltd. – Plant 1</td><td>Pan-India</td><td>Structure Maintenance</td><td>₹70 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>28</td><td>KEC International Ltd. (Maha Cement)</td><td>Suryapet, Telangana</td><td>Fabrication &amp; Erection Work</td><td>₹1.9 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>29</td><td>BHEL</td><td>Ramagundam, Telangana</td><td>Brush Painting &amp; Sheeting Work</td><td>₹1.12 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>30</td><td>Fairfax IT Infra Pvt. Ltd.</td><td>Pan-India</td><td>Civil Engineering Work</td><td>₹86 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>31</td><td>Stellar Park</td><td>Noida, Uttar Pradesh</td><td>Civil Maintenance Work</td><td>₹1.79 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>32</td><td>KEC International Ltd. (My Home Cement)</td><td>Telangana</td><td>Industrial Pipeline, Fire Fighting Pipeline, Erection &amp; Fabrication Work</td><td>₹1.9 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>33</td><td>Bhilai Engineering Corporation (by AMNS)</td><td>Bhilai, Chhattisgarh</td><td>Painting Work &amp; Industrial Finishing</td><td>₹2.5 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>34</td><td>OMAXE City</td><td>Ludhiana, Punjab</td><td>Wall Painting, Interior Decoration, Divider &amp; Road Side Painting</td><td>₹2.8 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
-                            <tr><td>35</td><td>Mahagenco Project</td><td>Nagpur, Maharashtra</td><td>Fire Fighting &amp; High-Pressure Piping Work</td><td>₹2.9 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed petro"><td>9</td><td>ISGEC Heavy Engineering Ltd.</td><td>Kalinga Paradip Port, Odisha</td><td>Sheeting Work</td><td>₹85 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed petro steel"><td>10</td><td>ISGEC Heavy Engineering Ltd.</td><td>NSPCL Durgapur</td><td>Industrial Pipeline Blasting &amp; Painting Work</td><td>₹30 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed petro"><td>11</td><td>Merit Technologies India Ltd.</td><td>Paradip Port, Odisha</td><td>Silo &amp; Hopper Erection Painting Work</td><td>₹5 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed cement"><td>12</td><td>OMAXE City</td><td>Ludhiana, Punjab</td><td>Wall Painting &amp; Decorative Work</td><td>₹1.4 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed cement"><td>13</td><td>Tata Projects Ltd.</td><td>Jodhpur IIT College</td><td>Wall Painting</td><td>₹40 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed petro"><td>14</td><td>ISGEC Heavy Engineering Ltd.</td><td>Kalinga Paradip Port, Odisha</td><td>Brush Painting</td><td>₹1.6 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed steel"><td>15</td><td>Encore Projects Pvt. Ltd.</td><td>Bhilai, Chhattisgarh</td><td>Painting &amp; Wrapping Work</td><td>₹35 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed steel"><td>16</td><td>Shanta Techno Pvt. Ltd.</td><td>Raipur, Chhattisgarh</td><td>Fabrication, Blasting &amp; Painting</td><td>₹25 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed petro"><td>17</td><td>ISGEC Heavy Engineering Ltd.</td><td>Dahej Workshop</td><td>Fabrication, Blasting &amp; Painting</td><td>₹1.3 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed petro"><td>18</td><td>Kalinga Project</td><td>Paradip Port, Odisha</td><td>Fire Fighting Work</td><td>₹3.6 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed steel"><td>19</td><td>BGR Energy Systems Ltd.</td><td>Hamirpur, Uttar Pradesh</td><td>Blasting &amp; Painting</td><td>₹65 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed cement"><td>20</td><td>L&amp;T Pvt. Ltd.</td><td>Hyderabad, Telangana</td><td>Wall Painting &amp; Interior Decoration Work</td><td>₹1.5 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed steel"><td>21</td><td>ASHMEC Equipment Pvt. Ltd.</td><td>Bhilai Workshop</td><td>Blasting, Painting &amp; Wrapping Work</td><td>₹2.3 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed steel"><td>22</td><td>JSW Paradip Port</td><td>Kalinga, Odisha</td><td>Manpower Supply &amp; Technical Support</td><td>₹65 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed cement"><td>23</td><td>Simplex Infrastructures Ltd.</td><td>Pan-India</td><td>Blasting, Painting &amp; Wrapping Work</td><td>₹1.3 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed petro"><td>24</td><td>ISGEC Heavy Engineering Ltd.</td><td>Dahej Workshop</td><td>Fabrication Work</td><td>₹1.44 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed steel"><td>25</td><td>ISGEC Heavy Engineering Ltd.</td><td>Bhilai Workshop</td><td>Fabrication Work</td><td>₹87 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed cement"><td>26</td><td>PNC Infratech Ltd.</td><td>Niwari, Madhya Pradesh</td><td>Divider &amp; Structural Painting</td><td>₹3.2 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed steel"><td>27</td><td>Semcorp India Pvt. Ltd. – Plant 1</td><td>Pan-India</td><td>Structure Maintenance</td><td>₹70 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed cement"><td>28</td><td>KEC International Ltd. (Maha Cement)</td><td>Suryapet, Telangana</td><td>Fabrication &amp; Erection Work</td><td>₹1.9 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed steel"><td>29</td><td>BHEL</td><td>Ramagundam, Telangana</td><td>Brush Painting &amp; Sheeting Work</td><td>₹1.12 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed cement"><td>30</td><td>Fairfax IT Infra Pvt. Ltd.</td><td>Pan-India</td><td>Civil Engineering Work</td><td>₹86 Lacs</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed cement"><td>31</td><td>Stellar Park</td><td>Noida, Uttar Pradesh</td><td>Civil Maintenance Work</td><td>₹1.79 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed cement"><td>32</td><td>KEC International Ltd. (My Home Cement)</td><td>Telangana</td><td>Industrial Pipeline, Fire Fighting Pipeline, Erection &amp; Fabrication Work</td><td>₹1.9 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed steel"><td>33</td><td>Bhilai Engineering Corporation (by AMNS)</td><td>Bhilai, Chhattisgarh</td><td>Painting Work &amp; Industrial Finishing</td><td>₹2.5 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed cement"><td>34</td><td>OMAXE City</td><td>Ludhiana, Punjab</td><td>Wall Painting, Interior Decoration, Divider &amp; Road Side Painting</td><td>₹2.8 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
+                            <tr data-category="completed steel"><td>35</td><td>Mahagenco Project</td><td>Nagpur, Maharashtra</td><td>Fire Fighting &amp; High-Pressure Piping Work</td><td>₹2.9 Cr</td><td><span class="project-badge-status status-completed" style="position:static;">100%</span></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -644,8 +667,75 @@
 
     <!-- ✦ Footer ✦ -->
     <footer class="footer bg-charcoal text-light" role="contentinfo">
-        <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved. Designed to Enterprise Standards.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" aria-label="Navtara Projects Home">
+                        <span class="logo-mark">NV</span>
+                        <div>
+                            <span class="logo-text">NAVTARA</span>
+                            <span class="logo-sub">PROJECTS PVT. LTD.</span>
+                        </div>
+                    </a>
+                    <p style="margin-top: var(--s-md); font-size: 0.875rem; line-height: 1.6; opacity: 0.85;">
+                        Navtara Projects Pvt. Ltd. delivers high-precision heavy engineering, fabrication, erection, protective coatings, and industrial solutions for India's core infrastructure sectors.
+                    </p>
+                    <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--c-grey-300); line-height: 1.6;">
+                        <strong>GSTIN:</strong> 09AAKCN7407P1ZP &bull; <strong>PAN:</strong> AAKCN7407P<br>
+                        <strong>UDYAM:</strong> UP 500274423 &bull; <strong>EPFO:</strong> UPLKO3681930000
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Navigation</h5>
+                    <ul>
+                        <li><a href="about.html">About Enterprise</a></li>
+                        <li><a href="capabilities.html">Core Capabilities</a></li>
+                        <li><a href="projects.html">Project Directory (35)</a></li>
+                        <li><a href="machinery.html">Plant &amp; Machinery</a></li>
+                        <li><a href="quality.html">Quality &amp; Safety</a></li>
+                        <li><a href="leadership.html">Leadership &amp; Team</a></li>
+                        <li><a href="clients.html">Clients &amp; Partners</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Sectors Served</h5>
+                    <ul>
+                        <li><a href="capabilities.html">Mining Operations</a></li>
+                        <li><a href="capabilities.html">Cement &amp; Processing</a></li>
+                        <li><a href="capabilities.html">Steel Plants</a></li>
+                        <li><a href="capabilities.html">Power Plants</a></li>
+                        <li><a href="capabilities.html">Petrochemical &amp; Refinery</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-contact">
+                    <h5>Corporate Desk</h5>
+                    <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.5rem;">
+                        <strong>🏢 Office:</strong><br>
+                        KHASRA NO: 327/1, Amity University Road,<br>
+                        Nearby BADI DEVARIYA, Lolaai,<br>
+                        Lucknow, Uttar Pradesh, 226028.
+                    </p>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.35rem;">
+                        <strong>📞 Phone:</strong><br>
+                        +91 98388 89618 &bull; +91 91299 45522
+                    </p>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">
+                        <strong>📧 Email:</strong><br>
+                        Navtaraprojects@outlook.com
+                    </p>
+                    <div>
+                        <a href="contact.html" class="btn btn-primary btn--sm">Inquire for Tenders</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</span>
+                <span>Corporate Registration: Lucknow, Uttar Pradesh.</span>
+            </div>
         </div>
     </footer>
 
@@ -654,7 +744,5 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
-    <script src="js/transitions.js"></script>
-    <script src="js/cursor.js"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 /* ═══════════════════════════════════════════════════════
    NAVTARA PROJECTS PVT. LTD.
-   Enterprise Design System — v3.4
+   Enterprise Design System — v3.7
    "Apple-level simplicity meets world-class engineering."
 ═══════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap');
+/* Font links are preconnected and preloaded in HTML <head> for zero render-blocking */
 
 /* ── Root Tokens ─────────────────────────────────────── */
 :root {

@@ -1,40 +1,70 @@
 /**
- * main.js – Core Application Logic v3.6
+ * main.js – High-Performance Application Core v3.7
  * Navtara Projects Pvt. Ltd. Digital Headquarters
+ * Locked 60 FPS, Zero-Jank Scroll, Instant Search & Synchronized Project Registry
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ─── Top Window Scroll Progress Bar ─── */
+  /* ─── 1. Throttled 60 FPS Scroll Manager ─── */
   const progressBar = document.createElement('div');
   progressBar.id = 'scroll-progress-bar';
   document.body.appendChild(progressBar);
 
+  const navbar = document.querySelector('.navbar');
+  const scrollBtn = document.getElementById('scroll-top-btn');
+
+  let scrollTicking = false;
+
+  function updateScrollState() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    
+    // Top Progress Bar
+    if (docHeight > 0) {
+      const scrolled = (scrollY / docHeight) * 100;
+      progressBar.style.width = scrolled + '%';
+    }
+
+    // Sticky Navbar Glass Toggle
+    if (navbar) {
+      navbar.classList.toggle('scrolled', scrollY > 30);
+    }
+
+    // Scroll to Top Button Visibility
+    if (scrollBtn) {
+      scrollBtn.classList.toggle('visible', scrollY > 360);
+    }
+
+    scrollTicking = false;
+  }
+
   window.addEventListener('scroll', () => {
-    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    progressBar.style.width = scrolled + '%';
+    if (!scrollTicking) {
+      window.requestAnimationFrame(updateScrollState);
+      scrollTicking = true;
+    }
   }, { passive: true });
 
-  /* ─── Hero Animation Initializer ─── */
+  // Initial trigger
+  updateScrollState();
+
+  if (scrollBtn) {
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ─── 2. Hero Content Entrance ─── */
   const heroContent = document.querySelector('.hero-content');
   if (heroContent) {
     heroContent.querySelectorAll('[class*="delay-"]').forEach(el => {
       el.classList.add('hero-loaded');
     });
-    setTimeout(() => heroContent.classList.add('active'), 50);
+    setTimeout(() => heroContent.classList.add('active'), 40);
   }
 
-  /* ─── Navbar Scroll Effect ─── */
-  const navbar = document.querySelector('.navbar');
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
-  }
-
-  /* ─── Scroll Reveal Observer ─── */
+  /* ─── 3. Scroll Reveal Observer (Zero GPU Memory Bloat) ─── */
   const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
   if (revealEls.length) {
     const revealObs = new IntersectionObserver((entries, obs) => {
@@ -43,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.classList.add('active');
         obs.unobserve(entry.target);
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
     revealEls.forEach(el => {
       if (el.closest('.hero')) return;
@@ -51,21 +81,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ─── Curtain Image Reveal Observer ─── */
+  /* ─── 4. Curtain Image Reveal Observer ─── */
   const curtains = document.querySelectorAll('.curtain-wrap');
   if (curtains.length) {
     const curtainObs = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-        setTimeout(() => entry.target.classList.add('curtain-open'), 100);
+        setTimeout(() => entry.target.classList.add('curtain-open'), 80);
         obs.unobserve(entry.target);
       });
-    }, { threshold: 0.18 });
+    }, { threshold: 0.15 });
 
     curtains.forEach(el => curtainObs.observe(el));
   }
 
-  /* ─── Animated Counters ─── */
+  /* ─── 5. Animated Numbers Counter ─── */
   const counters = document.querySelectorAll('.counter-value');
   const statsSection = document.querySelector('.stats-section');
   if (counters.length && statsSection) {
@@ -75,21 +105,26 @@ document.addEventListener('DOMContentLoaded', () => {
         if (entry.isIntersecting && !hasCounted) {
           hasCounted = true;
           counters.forEach(counter => {
-            const target   = +counter.getAttribute('data-target');
-            const duration = 1800;
-            const fps      = 60;
-            const increment = target / (duration / (1000 / fps));
-            let current = 0;
-            const tick = () => {
-              current += increment;
-              if (current < target) {
-                counter.innerText = Math.ceil(current);
-                requestAnimationFrame(tick);
+            const target = +counter.getAttribute('data-target');
+            const duration = 1600;
+            const startTime = performance.now();
+
+            const updateCount = (now) => {
+              const elapsed = now - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              // Ease-out cubic formula
+              const easeOut = 1 - Math.pow(1 - progress, 3);
+              const current = Math.floor(easeOut * target);
+
+              counter.innerText = current;
+
+              if (progress < 1) {
+                requestAnimationFrame(updateCount);
               } else {
                 counter.innerText = target;
               }
             };
-            tick();
+            requestAnimationFrame(updateCount);
           });
           obs.unobserve(entry.target);
         }
@@ -99,9 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
     countObs.observe(statsSection);
   }
 
-  /* ─── Mobile Navigation Toggle ─── */
+  /* ─── 6. Mobile Drawer Navigation ─── */
   const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks   = document.querySelector('.nav-links');
+  const navLinks = document.querySelector('.nav-links');
   if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('nav-open');
@@ -117,19 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ─── Scroll to Top Button ─── */
-  const scrollBtn = document.getElementById('scroll-top-btn');
-  if (scrollBtn) {
-    window.addEventListener('scroll', () => {
-      scrollBtn.classList.toggle('visible', window.scrollY > 380);
-    }, { passive: true });
-
-    scrollBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  /* ─── Interactive Workflow Stepper ─── */
+  /* ─── 7. Interactive Workflow Stepper ─── */
   const workflowSteps = document.querySelectorAll('.workflow-step');
   const workflowPanes = document.querySelectorAll('.workflow-pane');
   if (workflowSteps.length && workflowPanes.length) {
@@ -146,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ─── Interactive Radar Beacons Logic ─── */
+  /* ─── 8. Pan-India Radar Beacons ─── */
   const beaconNodes = document.querySelectorAll('.beacon-node');
   const siteTitle = document.getElementById('map-site-title');
   const siteClient = document.getElementById('map-site-client');
@@ -169,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ─── Multi-Tab Project Case Study Modal ─── */
+  /* ─── 9. Multi-Tab Project Case Study Modal ─── */
   const modal = document.getElementById('project-detail-modal');
   const modalClose = document.getElementById('modal-close-btn');
   const projectTriggers = document.querySelectorAll('[data-project-trigger]');
@@ -213,6 +236,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target === modal) modal.classList.remove('active');
     });
 
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+
     if (modalTabs.length) {
       modalTabs.forEach(tab => {
         tab.addEventListener('click', () => {
@@ -228,81 +257,191 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ─── Project Explorer Filtering ─── */
+  /* ─── 10. Synchronized Project Filtering & Real-Time Search ─── */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card-v3');
+  const tableRows = document.querySelectorAll('.portfolio-table tbody tr');
+  const completedTableSection = document.getElementById('completed-projects-section');
+  const searchInput = document.getElementById('project-search-input');
+  const searchStats = document.getElementById('project-search-stats');
 
-  if (filterBtns.length && projectCards.length) {
+  let activeCategory = 'all';
+  let searchQuery = '';
+
+  function applyProjectFilters() {
+    let visibleCards = 0;
+    let visibleRows = 0;
+
+    // Filter Cards
+    projectCards.forEach(card => {
+      const category = (card.getAttribute('data-category') || '').toLowerCase();
+      const text = card.textContent.toLowerCase();
+
+      const matchesCat = (activeCategory === 'all') ||
+        (activeCategory === 'wip' && category.includes('wip')) ||
+        (activeCategory === 'completed' && category.includes('completed')) ||
+        (activeCategory !== 'wip' && activeCategory !== 'completed' && category.includes(activeCategory));
+
+      const matchesSearch = !searchQuery || text.includes(searchQuery);
+
+      if (matchesCat && matchesSearch) {
+        card.style.display = 'flex';
+        visibleCards++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Filter Table Rows
+    tableRows.forEach(row => {
+      const category = (row.getAttribute('data-category') || 'completed').toLowerCase();
+      const text = row.textContent.toLowerCase();
+
+      const matchesCat = (activeCategory === 'all') ||
+        (activeCategory === 'wip' && category.includes('wip')) ||
+        (activeCategory === 'completed' && category.includes('completed')) ||
+        (activeCategory !== 'wip' && activeCategory !== 'completed' && category.includes(activeCategory));
+
+      const matchesSearch = !searchQuery || text.includes(searchQuery);
+
+      if (matchesCat && matchesSearch) {
+        row.style.display = '';
+        visibleRows++;
+      } else {
+        row.style.display = 'none';
+      }
+    });
+
+    // Toggle Completed Table Section visibility based on WIP filter
+    if (completedTableSection) {
+      if (activeCategory === 'wip') {
+        completedTableSection.style.display = 'none';
+      } else {
+        completedTableSection.style.display = visibleRows > 0 ? 'block' : 'none';
+      }
+    }
+
+    // Update Counter Stats
+    if (searchStats) {
+      const totalVisible = visibleCards + visibleRows;
+      searchStats.textContent = `Showing ${totalVisible} of 35 engineering packages across India`;
+    }
+  }
+
+  if (filterBtns.length) {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
-        const filter = btn.getAttribute('data-filter');
-
-        projectCards.forEach(card => {
-          const category = card.getAttribute('data-category') || '';
-          if (filter === 'all' || category.includes(filter)) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+        activeCategory = btn.getAttribute('data-filter') || 'all';
+        applyProjectFilters();
       });
     });
   }
 
-  /* ─── Hero Live Execution HUD Controller ─── */
-  const hudContainer = document.getElementById('heroLiveHud');
-  if (hudContainer) {
-    const slides = hudContainer.querySelectorAll('.hud-slide');
-    const dots = hudContainer.querySelectorAll('.hud-step-dot');
-    let currentIndex = 0;
-    let autoCycleTimer = null;
-    const CYCLE_INTERVAL = 4500; // 4.5 seconds
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      applyProjectFilters();
+    });
+  }
 
-    const goToSlide = (index) => {
-      if (index === currentIndex || !slides[index]) return;
-      slides[currentIndex].classList.remove('active');
-      dots[currentIndex]?.classList.remove('active');
+  /* ─── 11. Interactive RFQ Generator & Dispatch Engine (Contact) ─── */
+  const rfqCards = document.querySelectorAll('.option-radio-card');
+  const messageBox = document.getElementById('message');
 
-      currentIndex = index;
+  let rfqState = {
+    sector: 'Steel Plant Package',
+    scope: 'Structural Fabrication & Erection',
+    scale: '500 - 1,500 MT Scope'
+  };
 
-      slides[currentIndex].classList.add('active');
-      dots[currentIndex]?.classList.add('active');
-    };
+  function updateRFQDraft() {
+    if (!messageBox) return;
+    messageBox.value = `[OFFICIAL NAVTARA RFQ DOSSIER]
+Target Sector: ${rfqState.sector}
+Primary Engineering Scope: ${rfqState.scope}
+Estimated Package Scale: ${rfqState.scale}
 
-    const nextSlide = () => {
-      const nextIdx = (currentIndex + 1) % slides.length;
-      goToSlide(nextIdx);
-    };
+Please provide formal engineering feasibility, mobilization schedule, and preliminary commercial quotation for our project scope.`;
+  }
 
-    const startTimer = () => {
-      stopTimer();
-      autoCycleTimer = setInterval(nextSlide, CYCLE_INTERVAL);
-    };
+  if (rfqCards.length) {
+    rfqCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const group = card.getAttribute('data-rfq-group');
+        const val = card.getAttribute('data-rfq-val');
 
-    const stopTimer = () => {
-      if (autoCycleTimer) {
-        clearInterval(autoCycleTimer);
-        autoCycleTimer = null;
-      }
-    };
+        document.querySelectorAll(`.option-radio-card[data-rfq-group="${group}"]`).forEach(c => {
+          c.classList.remove('selected');
+        });
 
-    // Manual navigation on dot click
-    dots.forEach((dot, idx) => {
-      dot.addEventListener('click', () => {
-        goToSlide(idx);
-        startTimer(); // Restart timer after user interaction
+        card.classList.add('selected');
+        if (group && val) {
+          rfqState[group] = val;
+          updateRFQDraft();
+        }
       });
     });
+  }
 
-    // Pause on hover
-    hudContainer.addEventListener('mouseenter', stopTimer);
-    hudContainer.addEventListener('mouseleave', startTimer);
+  // Toast notification helper
+  function showToast(msg) {
+    let toast = document.getElementById('rfq-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'rfq-toast';
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = `<span>✓</span> <span>${msg}</span>`;
+    toast.classList.add('visible');
+    setTimeout(() => toast.classList.remove('visible'), 3500);
+  }
 
-    // Initial timer launch
-    startTimer();
+  // Form Dispatch Handlers
+  const contactForm = document.getElementById('contact-form');
+  const copyBtn = document.getElementById('btn-copy-rfq');
+  const emailBtn = document.getElementById('btn-email-rfq');
+  const waBtn = document.getElementById('btn-wa-rfq');
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const text = messageBox ? messageBox.value : '';
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('RFQ Dossier copied to clipboard!');
+      }).catch(() => {
+        showToast('Please select and copy the text box.');
+      });
+    });
+  }
+
+  if (emailBtn) {
+    emailBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const subject = encodeURIComponent(`Tender RFQ - ${rfqState.sector} (${rfqState.scale})`);
+      const body = encodeURIComponent(messageBox ? messageBox.value : '');
+      window.location.href = `mailto:Navtaraprojects@outlook.com?subject=${subject}&body=${body}`;
+      showToast('Opening default email client (Outlook)...');
+    });
+  }
+
+  if (waBtn) {
+    waBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const text = encodeURIComponent(`*Tender RFQ - Navtara Projects*\n\n` + (messageBox ? messageBox.value : ''));
+      window.open(`https://wa.me/919838889618?text=${text}`, '_blank');
+      showToast('Opening WhatsApp dispatch...');
+    });
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const subject = encodeURIComponent(`Tender Inquiry - ${rfqState.sector}`);
+      const body = encodeURIComponent(messageBox ? messageBox.value : '');
+      window.location.href = `mailto:Navtaraprojects@outlook.com?subject=${subject}&body=${body}`;
+      showToast('Dispatching inquiry to estimation desk via email...');
+    });
   }
 
 });

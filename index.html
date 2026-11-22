@@ -9,12 +9,17 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Navtara Projects Pvt. Ltd. | Industrial Heavy Engineering">
     <meta property="og:description" content="Engineering Industrial Excellence. Delivering Mission-Critical Heavy Projects across India.">
-    <meta property="og:image" content="assets/images/fabrication_bay.jpg">
+    <meta property="og:image" content="assets/images/fabrication_bay.webp">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hr0417-del.github.io/navtara-website/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+        <!-- Google Fonts Preconnect & High-Performance Load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap">
 
     <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/style.css">
@@ -29,7 +34,7 @@
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, rgba(7, 17, 31, 0.92) 0%, rgba(13, 30, 53, 0.85) 100%),
-                        url('assets/images/power_plant.jpg') center/cover no-repeat;
+                        url('assets/images/power_plant.webp') center/cover no-repeat;
             color: var(--c-white);
             overflow: hidden;
             padding-top: calc(var(--nav-height) + 1.5rem);
@@ -120,13 +125,30 @@
             </a>
             <div class="nav-links" id="main-nav">
                 <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
-                <a href="capabilities.html">Capabilities</a>
-                <a href="projects.html">Projects</a>
-                <a href="machinery.html">Plant &amp; Machinery</a>
-                <a href="quality.html">Quality &amp; Safety</a>
-                <a href="leadership.html">Leadership</a>
-                <a href="clients.html">Clients</a>
+
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                        Company <span class="nav-dropdown-arrow">▼</span>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="about.html">About Overview</a>
+                        <a href="leadership.html">Board of Directors</a>
+                        <a href="quality.html">Quality &amp; Safety Policy</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                        Operations <span class="nav-dropdown-arrow">▼</span>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="capabilities.html">Capabilities &amp; Sectors</a>
+                        <a href="machinery.html">Plant &amp; Machinery</a>
+                        <a href="clients.html">Client Marquee</a>
+                    </div>
+                </div>
+
+                <a href="projects.html">Projects (35)</a>
                 <a href="contact.html">Contact</a>
             </div>
             <a href="contact.html" class="nav-cta">Request Quote →</a>
@@ -136,217 +158,18 @@
 
     <!-- ✦ Hero Section ✦ -->
     <header class="hero-v3" role="banner">
-        <div class="container hero-grid-v3">
-            <!-- Left Column: Copy & Primary CTAs -->
-            <div class="hero-content">
-                <div class="hero-badge-pill">Precision Engineering &bull; Pan-India Execution</div>
-                <h1 class="heading-xl text-light" style="margin-bottom: var(--s-sm);">
-                    Engineering Industrial Excellence.<br>
-                    <span class="text-gradient">Delivering Mission-Critical Projects.</span>
-                </h1>
-                <p class="body-lg text-light" style="max-width: 600px; margin-bottom: var(--s-md); opacity: 0.9;">
-                    Navtara Projects Pvt. Ltd. is a trusted heavy engineering enterprise delivering high-tolerance structural fabrication, plant erection, industrial piping, and protective surface coatings across Mining, Cement, Steel, Power, and Petrochemical sectors.
-                </p>
-                <div class="hero-buttons">
-                    <a href="capabilities.html" class="btn btn-primary btn--lg">Our Capabilities</a>
-                    <a href="projects.html" class="btn btn-outline btn--lg">Project Explorer (35)</a>
-                </div>
-
-                <!-- Hero Grounding Metric Strip -->
-                <div class="hero-telemetry-strip">
-                    <div class="hts-item">
-                        <span class="hts-val">35+</span>
-                        <span class="hts-lbl">Delivered &amp; WIP Sites</span>
-                    </div>
-                    <div class="hts-sep"></div>
-                    <div class="hts-item">
-                        <span class="hts-val">₹25.8 Cr+</span>
-                        <span class="hts-lbl">Active WIP Orderbook</span>
-                    </div>
-                    <div class="hts-sep"></div>
-                    <div class="hts-item">
-                        <span class="hts-val">100%</span>
-                        <span class="hts-lbl">Zero-LTI Safety Record</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Column: Live Execution Telemetry HUD Card -->
-            <div class="hero-hud-col">
-                <div class="hero-hud-card" id="heroLiveHud" aria-live="polite">
-                    <!-- Tech Corner CAD Brackets -->
-                    <span class="hud-corner-tl" aria-hidden="true"></span>
-                    <span class="hud-corner-br" aria-hidden="true"></span>
-
-                    <!-- HUD Top Bar -->
-                    <div class="hud-topbar">
-                        <div class="hud-pulse-status">
-                            <span class="hud-beacon-dot"></span>
-                            <span class="hud-beacon-label">LIVE EXECUTION TELEMETRY</span>
-                        </div>
-                        <div class="hud-tag-active">
-                            <span class="hud-live-tag">8 SITES ACTIVE</span>
-                        </div>
-                    </div>
-
-                    <!-- HUD Carousel Slides -->
-                    <div class="hud-carousel-container">
-                        <!-- Slide 0: Adani Petrochemical -->
-                        <div class="hud-slide active" data-slide-index="0">
-                            <div class="hud-contract-meta">
-                                <span class="hud-contract-tag">CONTRACT 01 &bull; GUJARAT</span>
-                                <span class="hud-badge-wip">5% WIP</span>
-                            </div>
-
-                            <h3 class="hud-client-name">Adani Petrochemical Ltd.</h3>
-                            <div class="hud-location-text">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px; margin-right:4px; color: var(--c-accent);" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                                Mundra Petrochemical Complex, Gujarat
-                            </div>
-
-                            <div class="hud-work-brief">
-                                <div class="hud-brief-label">Scope &bull; Active Mobilization</div>
-                                <div class="hud-brief-content">Heavy Structural Fabrication (₹8.0 Cr) &bull; Plant Erection (₹5.0 Cr)</div>
-                            </div>
-
-                            <div class="hud-metrics-grid">
-                                <div class="hud-metric-box">
-                                    <span class="hm-key">Order Value</span>
-                                    <span class="hm-val">₹13.0 Cr</span>
-                                </div>
-                                <div class="hud-metric-box">
-                                    <span class="hm-key">Tonnage</span>
-                                    <span class="hm-val">5,000+ MT</span>
-                                </div>
-                                <div class="hud-metric-box">
-                                    <span class="hm-key">Execution Mode</span>
-                                    <span class="hm-val text-accent">Fabrication &amp; Erection</span>
-                                </div>
-                            </div>
-
-                            <div class="hud-progress-block">
-                                <div class="hud-pb-header">
-                                    <span>Phase 1: Yard Fabrication &bull; Active</span>
-                                    <span class="hud-pct-text">5%</span>
-                                </div>
-                                <div class="hud-pb-bar">
-                                    <div class="hud-pb-fill" style="width: 5%;"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 1: Jindal Steel & Power -->
-                        <div class="hud-slide" data-slide-index="1">
-                            <div class="hud-contract-meta">
-                                <span class="hud-contract-tag">CONTRACT 02 &bull; ODISHA</span>
-                                <span class="hud-badge-wip">40% WIP</span>
-                            </div>
-
-                            <h3 class="hud-client-name">Jindal Steel &amp; Power Ltd.</h3>
-                            <div class="hud-location-text">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px; margin-right:4px; color: var(--c-accent);" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                                Angul Integrated Steel Plant, Odisha
-                            </div>
-
-                            <div class="hud-work-brief">
-                                <div class="hud-brief-label">Scope &bull; Active Mobilization</div>
-                                <div class="hud-brief-content">15,000+ MT High-Durability Abrasive Blasting &amp; Protective Coating</div>
-                            </div>
-
-                            <div class="hud-metrics-grid">
-                                <div class="hud-metric-box">
-                                    <span class="hm-key">Fleet Deployed</span>
-                                    <span class="hm-val">14 Airless Sprayers</span>
-                                </div>
-                                <div class="hud-metric-box">
-                                    <span class="hm-key">Blasting Hoppers</span>
-                                    <span class="hm-val">15 Units</span>
-                                </div>
-                                <div class="hud-metric-box">
-                                    <span class="hm-key">Execution Mode</span>
-                                    <span class="hm-val text-accent">Surface Treatment</span>
-                                </div>
-                            </div>
-
-                            <div class="hud-progress-block">
-                                <div class="hud-pb-header">
-                                    <span>Phase 2: Heavy Girder Coating &bull; Active</span>
-                                    <span class="hud-pct-text">40%</span>
-                                </div>
-                                <div class="hud-pb-bar">
-                                    <div class="hud-pb-fill" style="width: 40%;"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2: Struc-Rite Metal Building Systems -->
-                        <div class="hud-slide" data-slide-index="2">
-                            <div class="hud-contract-meta">
-                                <span class="hud-contract-tag">CONTRACT 03 &bull; CHHATTISGARH</span>
-                                <span class="hud-badge-wip">80% WIP</span>
-                            </div>
-
-                            <h3 class="hud-client-name">Struc-Rite Metal Systems</h3>
-                            <div class="hud-location-text">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px; margin-right:4px; color: var(--c-accent);" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                                Durg Industrial Zone, Chhattisgarh
-                            </div>
-
-                            <div class="hud-work-brief">
-                                <div class="hud-brief-label">Scope &bull; Active Mobilization</div>
-                                <div class="hud-brief-content">High-Velocity Thermal Spray Metalising &amp; Anti-Corrosion Systems</div>
-                            </div>
-
-                            <div class="hud-metrics-grid">
-                                <div class="hud-metric-box">
-                                    <span class="hm-key">Order Value</span>
-                                    <span class="hm-val">₹2.5 Cr</span>
-                                </div>
-                                <div class="hud-metric-box">
-                                    <span class="hm-key">Technology</span>
-                                    <span class="hm-val">Arc Spray Metalising</span>
-                                </div>
-                                <div class="hud-metric-box">
-                                    <span class="hm-key">Execution Mode</span>
-                                    <span class="hm-val text-accent">DFT Pre-Despatch</span>
-                                </div>
-                            </div>
-
-                            <div class="hud-progress-block">
-                                <div class="hud-pb-header">
-                                    <span>Phase 3: Final Inspection &bull; Pre-Despatch</span>
-                                    <span class="hud-pct-text">80%</span>
-                                </div>
-                                <div class="hud-pb-bar">
-                                    <div class="hud-pb-fill" style="width: 80%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- HUD Footer Controls -->
-                    <div class="hud-controls-footer">
-                        <div class="hud-step-dots" role="tablist" aria-label="HUD Projects">
-                            <button class="hud-step-dot active" data-target-slide="0" aria-label="Adani Petrochemical Contract" title="Adani Petrochemical">
-                                <span class="hsd-pill"></span>
-                                <span class="hsd-num">01</span>
-                            </button>
-                            <button class="hud-step-dot" data-target-slide="1" aria-label="Jindal Steel & Power Contract" title="Jindal Steel & Power">
-                                <span class="hsd-pill"></span>
-                                <span class="hsd-num">02</span>
-                            </button>
-                            <button class="hud-step-dot" data-target-slide="2" aria-label="Struc-Rite Metal Systems Contract" title="Struc-Rite Metal Systems">
-                                <span class="hsd-pill"></span>
-                                <span class="hsd-num">03</span>
-                            </button>
-                        </div>
-                        <div class="hud-cta-link-wrap">
-                            <a href="projects.html" class="hud-link-all">
-                                All 35 Projects <span class="hud-arrow">→</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <div class="container hero-content">
+            <div class="hero-badge-pill">Precision Engineering &bull; Pan-India Execution</div>
+            <h1 class="heading-xl text-light" style="margin-bottom: var(--s-sm);">
+                Engineering Industrial Excellence.<br>
+                <span class="text-gradient">Delivering Mission-Critical Projects.</span>
+            </h1>
+            <p class="body-lg text-light" style="max-width: 660px; margin-bottom: var(--s-md); opacity: 0.9;">
+                Navtara Projects Pvt. Ltd. is a trusted heavy engineering enterprise delivering high-tolerance structural fabrication, plant erection, industrial piping, and protective surface coatings across Mining, Cement, Steel, Power, and Petrochemical sectors.
+            </p>
+            <div class="hero-buttons">
+                <a href="capabilities.html" class="btn btn-primary btn--lg">Our Capabilities</a>
+                <a href="projects.html" class="btn btn-outline btn--lg">Project Explorer (35)</a>
             </div>
         </div>
     </header>
@@ -516,7 +339,7 @@
             <div class="case-study-hero-grid reveal">
                 <!-- Main Featured Project Card: Adani Petrochemical Mundra -->
                 <div class="cs-card-large" data-project-trigger data-title="Heavy Structural Fabrication &amp; Erection Package" data-client="Ardee Engineering / Adani Petrochemical" data-loc="Mundra, Gujarat" data-value="₹13.0 Crore Total Package" data-scope="Heavy Structural Steel Fabrication (₹8 Cr) &amp; Industrial Erection (₹5 Cr) for Petrochemical Expansion" data-desc="Major turnkey petrochemical package mobilized under strict AWS D1.1 structural welding standards and zero-incident HSE governance at Mundra, Gujarat.">
-                    <img src="assets/images/fabrication_bay.jpg" alt="Adani Petrochemical Mundra Structural Fabrication" loading="lazy">
+                    <img src="assets/images/fabrication_bay.webp" alt="Adani Petrochemical Mundra Structural Fabrication" loading="lazy">
                     <div class="cs-card-overlay"></div>
                     <div class="cs-card-body">
                         <span class="tag tag--accent" style="margin-bottom: 0.5rem;">PETROCHEMICAL &bull; ₹13 CR TOTAL</span>
@@ -651,7 +474,7 @@
                 <!-- Mr. Amit Kumar Singh -->
                 <div class="leader-card-v3 reveal delay-100">
                     <div class="leader-img-box-home">
-                        <img src="assets/images/amit_kumar_singh.png" alt="Mr. Amit Kumar Singh - Director">
+                        <img src="assets/images/amit_kumar_singh.webp" alt="Mr. Amit Kumar Singh - Director">
                     </div>
                     <div style="padding: 1.25rem;">
                         <span class="tag tag--accent" style="margin-bottom: 0.35rem;">EX-METSO TECHNOCRAT</span>
@@ -666,7 +489,7 @@
                 <!-- Ms. Jayanti Chauhan -->
                 <div class="leader-card-v3 reveal delay-200">
                     <div class="leader-img-box-home">
-                        <img src="assets/images/jayanti_chauhan.png" alt="Ms. Jayanti Chauhan - Director">
+                        <img src="assets/images/jayanti_chauhan.webp" alt="Ms. Jayanti Chauhan - Director">
                     </div>
                     <div style="padding: 1.25rem;">
                         <span class="tag tag--accent" style="margin-bottom: 0.35rem;">MBA (BANKING &amp; FINANCE)</span>
@@ -826,7 +649,5 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
-    <script src="js/transitions.js"></script>
-    <script src="js/cursor.js"></script>
 </body>
 </html>

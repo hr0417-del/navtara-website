@@ -6,8 +6,13 @@
     <title>About Us | Navtara Projects Pvt. Ltd.</title>
     <meta name="description" content="Learn about Navtara Projects Pvt. Ltd. — founded by Mr. Amit Kumar Singh (Ex-Metso Technocrat) and Ms. Jayanti Chauhan (MBA Banking & Finance). Heavy engineering, erection, and industrial solutions across India.">
     <meta property="og:title" content="About Navtara Projects Pvt. Ltd.">
-    <meta property="og:image" content="assets/images/amit_kumar_singh.png">
+    <meta property="og:image" content="assets/images/amit_kumar_singh.webp">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+        <!-- Google Fonts Preconnect & High-Performance Load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap">
 
     <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/style.css">
@@ -123,13 +128,30 @@
             </a>
             <div class="nav-links" id="main-nav">
                 <a href="index.html">Home</a>
-                <a href="about.html" class="active">About</a>
-                <a href="capabilities.html">Capabilities</a>
-                <a href="projects.html">Projects</a>
-                <a href="machinery.html">Plant &amp; Machinery</a>
-                <a href="quality.html">Quality &amp; Safety</a>
-                <a href="leadership.html">Leadership</a>
-                <a href="clients.html">Clients</a>
+
+                <div class="nav-dropdown active">
+                    <button class="nav-dropdown-trigger active" aria-haspopup="true" aria-expanded="false">
+                        Company <span class="nav-dropdown-arrow">▼</span>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="about.html" class="active">About Overview</a>
+                        <a href="leadership.html">Board of Directors</a>
+                        <a href="quality.html">Quality &amp; Safety Policy</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                        Operations <span class="nav-dropdown-arrow">▼</span>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="capabilities.html">Capabilities &amp; Sectors</a>
+                        <a href="machinery.html">Plant &amp; Machinery</a>
+                        <a href="clients.html">Client Marquee</a>
+                    </div>
+                </div>
+
+                <a href="projects.html">Projects (35)</a>
                 <a href="contact.html">Contact</a>
             </div>
             <a href="contact.html" class="nav-cta">Request Quote →</a>
@@ -188,7 +210,7 @@
                     <div class="director-mini-grid">
                         <div class="director-mini-card">
                             <div class="director-mini-avatar">
-                                <img src="assets/images/amit_kumar_singh.png" alt="Mr. Amit Kumar Singh">
+                                <img src="assets/images/amit_kumar_singh.webp" alt="Mr. Amit Kumar Singh">
                             </div>
                             <div>
                                 <span class="tag tag--accent" style="font-size: 0.65rem;">EX-METSO</span>
@@ -199,7 +221,7 @@
 
                         <div class="director-mini-card">
                             <div class="director-mini-avatar">
-                                <img src="assets/images/jayanti_chauhan.png" alt="Ms. Jayanti Chauhan">
+                                <img src="assets/images/jayanti_chauhan.webp" alt="Ms. Jayanti Chauhan">
                             </div>
                             <div>
                                 <span class="tag tag--accent" style="font-size: 0.65rem;">FINANCE &amp; GOVERNANCE</span>
@@ -212,7 +234,7 @@
 
                 <div class="reveal-right" style="position: relative;">
                     <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl); height: 420px; background: #07111F;">
-                        <img src="assets/images/pressure_vessel.jpg" alt="Massive Pressure Vessel Transportation" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="assets/images/pressure_vessel.webp" alt="Massive Pressure Vessel Transportation" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; right: 1.5rem; background: rgba(7, 17, 31, 0.9); backdrop-filter: blur(8px); padding: 1rem 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--c-accent); color: #fff;">
                         <strong style="color: var(--c-accent); font-size: 0.85rem; display: block; margin-bottom: 0.2rem;">HEAVY LOGISTICS &amp; MOBILIZATION</strong>
@@ -298,8 +320,75 @@
 
     <!-- ✦ Footer ✦ -->
     <footer class="footer bg-charcoal text-light" role="contentinfo">
-        <div class="container text-center" style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved. Designed to Enterprise Standards.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" aria-label="Navtara Projects Home">
+                        <span class="logo-mark">NV</span>
+                        <div>
+                            <span class="logo-text">NAVTARA</span>
+                            <span class="logo-sub">PROJECTS PVT. LTD.</span>
+                        </div>
+                    </a>
+                    <p style="margin-top: var(--s-md); font-size: 0.875rem; line-height: 1.6; opacity: 0.85;">
+                        Navtara Projects Pvt. Ltd. delivers high-precision heavy engineering, fabrication, erection, protective coatings, and industrial solutions for India's core infrastructure sectors.
+                    </p>
+                    <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--c-grey-300); line-height: 1.6;">
+                        <strong>GSTIN:</strong> 09AAKCN7407P1ZP &bull; <strong>PAN:</strong> AAKCN7407P<br>
+                        <strong>UDYAM:</strong> UP 500274423 &bull; <strong>EPFO:</strong> UPLKO3681930000
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Navigation</h5>
+                    <ul>
+                        <li><a href="about.html">About Enterprise</a></li>
+                        <li><a href="capabilities.html">Core Capabilities</a></li>
+                        <li><a href="projects.html">Project Directory (35)</a></li>
+                        <li><a href="machinery.html">Plant &amp; Machinery</a></li>
+                        <li><a href="quality.html">Quality &amp; Safety</a></li>
+                        <li><a href="leadership.html">Leadership &amp; Team</a></li>
+                        <li><a href="clients.html">Clients &amp; Partners</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Sectors Served</h5>
+                    <ul>
+                        <li><a href="capabilities.html">Mining Operations</a></li>
+                        <li><a href="capabilities.html">Cement &amp; Processing</a></li>
+                        <li><a href="capabilities.html">Steel Plants</a></li>
+                        <li><a href="capabilities.html">Power Plants</a></li>
+                        <li><a href="capabilities.html">Petrochemical &amp; Refinery</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-contact">
+                    <h5>Corporate Desk</h5>
+                    <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.5rem;">
+                        <strong>🏢 Office:</strong><br>
+                        KHASRA NO: 327/1, Amity University Road,<br>
+                        Nearby BADI DEVARIYA, Lolaai,<br>
+                        Lucknow, Uttar Pradesh, 226028.
+                    </p>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.35rem;">
+                        <strong>📞 Phone:</strong><br>
+                        +91 98388 89618 &bull; +91 91299 45522
+                    </p>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">
+                        <strong>📧 Email:</strong><br>
+                        Navtaraprojects@outlook.com
+                    </p>
+                    <div>
+                        <a href="contact.html" class="btn btn-primary btn--sm">Inquire for Tenders</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Navtara Projects Pvt. Ltd. All Rights Reserved.</span>
+                <span>Corporate Registration: Lucknow, Uttar Pradesh.</span>
+            </div>
         </div>
     </footer>
 
@@ -308,7 +397,5 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
-    <script src="js/transitions.js"></script>
-    <script src="js/cursor.js"></script>
 </body>
 </html>
