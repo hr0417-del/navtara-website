@@ -142,13 +142,30 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = navLinks.classList.toggle('nav-open');
       menuToggle.textContent = isOpen ? '✕' : '☰';
       menuToggle.setAttribute('aria-expanded', isOpen);
+      document.body.classList.toggle('nav-open-lock', isOpen);
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('nav-open');
-        if (menuToggle) menuToggle.textContent = '☰';
+        document.body.classList.remove('nav-open-lock');
+        if (menuToggle) {
+          menuToggle.textContent = '☰';
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
       });
+    });
+
+    // Close drawer when pressing Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('nav-open')) {
+        navLinks.classList.remove('nav-open');
+        document.body.classList.remove('nav-open-lock');
+        if (menuToggle) {
+          menuToggle.textContent = '☰';
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
     });
   }
 

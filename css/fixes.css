@@ -1526,6 +1526,472 @@ h1, h2, h3, h4, p, span, a, button {
   }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   v3.9 ULTRA-RESPONSIVE MOBILE OPTIMIZATION SUITE
+   Touch-Target Ergonomics, iOS Safari Safeguards, & Zero-Jank
+═══════════════════════════════════════════════════════════ */
+
+/* ── 1. Root & Viewport Safeguards ─────────────────────── */
+html, body {
+  overflow-x: clip !important;
+  max-width: 100vw;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.nav-open-lock {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+/* ── 2. iOS Safari Form Zoom Prevention ─────────────────── */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="search"],
+  input[type="number"],
+  textarea,
+  select {
+    font-size: 16px !important; /* Prevents iOS Safari auto-zoom on focus */
+  }
+}
+
+/* ── 3. Touch Target Sizing (WCAG 44x44px Minimum) ──────── */
+button, 
+.btn, 
+.filter-btn, 
+.estimator-btn, 
+.option-radio-card, 
+.faq-header,
+.menu-toggle {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── 4. Mobile Navigation Drawer Polish ─────────────────── */
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #FFFFFF;
+    font-size: 1.35rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  
+  .menu-toggle:active {
+    background: rgba(14, 165, 233, 0.25);
+    transform: scale(0.95);
+  }
+
+  .nav-links {
+    background: rgba(7, 17, 31, 0.98) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    padding: calc(var(--nav-height) + 1.5rem) 1.5rem 3rem !important;
+  }
+
+  .nav-links a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .nav-dropdown-trigger {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-dropdown-menu a {
+    min-height: 42px;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* ── 5. Hero Command Deck on Mobile ─────────────────────── */
+@media (max-width: 600px) {
+  .hero-v3 {
+    min-height: auto;
+    padding-top: calc(var(--nav-height) + 1.25rem);
+    padding-bottom: 2rem;
+  }
+
+  .hero-v3 h1.heading-xl {
+    font-size: clamp(1.65rem, 7vw, 2.2rem) !important;
+    line-height: 1.2;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .hero-specs-array {
+    gap: 0.4rem;
+    margin: 0.75rem 0 1rem 0;
+  }
+
+  .hero-spec-pill {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  .hero-spec-pill svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+    font-size: 0.85rem;
+  }
+
+  .hero-status-bar {
+    border-radius: 8px;
+    width: 100%;
+    font-size: 0.75rem;
+    padding: 0.65rem 0.85rem;
+    align-items: flex-start;
+    line-height: 1.45;
+  }
+
+  .hero-status-dot {
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+}
+
+/* ── 6. Client Marquee Mobile Touch Interaction ─────────── */
+.marquee-wrapper {
+  touch-action: pan-y;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .marquee-track-v2 {
+    gap: 0.75rem;
+    animation-duration: 28s;
+  }
+
+  .marquee-card-v2 {
+    min-width: 160px;
+    padding: 0.5rem 0.85rem;
+  }
+
+  .marquee-client-name {
+    font-size: 0.78rem;
+  }
+
+  .marquee-client-scope {
+    font-size: 0.68rem;
+  }
+}
+
+/* ── 7. Metric Grids & Counters Ergonomics ───────────────── */
+@media (max-width: 768px) {
+  .client-stats-bar,
+  .highlight-stat-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .client-stats-bar,
+  .highlight-stat-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem;
+  }
+
+  .client-stat-box,
+  .highlight-stat-card {
+    padding: 0.85rem 0.5rem;
+  }
+
+  .client-stat-box .heading-lg,
+  .highlight-number {
+    font-size: 1.55rem !important;
+  }
+
+  .client-stat-box div[style*="font-size: 0.75rem"],
+  .highlight-label {
+    font-size: 0.68rem !important;
+    line-height: 1.35;
+  }
+}
+
+/* ── 8. Sector Badges Grid on Mobile (capabilities.html) ─── */
+@media (max-width: 640px) {
+  .sector-badge-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem;
+  }
+
+  .sector-badge-card {
+    padding: 1rem 0.5rem;
+  }
+
+  .sector-badge-card:last-child {
+    grid-column: span 2; /* Center the 5th odd badge */
+  }
+
+  .sector-badge-card .heading-md {
+    font-size: 0.85rem;
+  }
+}
+
+/* ── 9. Client Logo Cards on Mobile (clients.html) ───────── */
+@media (max-width: 640px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
+  }
+
+  .client-logo-card {
+    padding: 0.85rem 0.6rem;
+    min-height: 100px;
+  }
+
+  .client-name-heading {
+    font-size: 0.85rem;
+  }
+}
+
+/* ── 10. Horizontal Project Filter Carousel (projects.html) ─ */
+@media (max-width: 640px) {
+  .filter-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0.25rem 0 0.75rem;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.5rem;
+    scrollbar-width: none;
+  }
+
+  .filter-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    padding: 0.45rem 1rem;
+    min-height: 40px;
+  }
+
+  .project-grid-v3 {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem;
+  }
+
+  .project-card-img {
+    height: 190px;
+  }
+}
+
+/* ── 11. RFQ & Estimator Interactive Cards (contact.html & index.html) ── */
+.rfq-estimator-card {
+  background: var(--c-white);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--c-grey-100, #E2E8F0);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  padding: 1.75rem;
+  margin-bottom: var(--s-xl);
+}
+
+.option-radio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.option-radio-card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.85rem;
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: var(--radius-sm, 6px);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c-navy, #0D1E35);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+}
+
+.option-radio-card:hover {
+  background: #F0F9FF;
+  border-color: var(--c-accent, #0EA5E9);
+}
+
+.option-radio-card.selected {
+  background: rgba(14, 165, 233, 0.1);
+  border-color: var(--c-accent, #0EA5E9);
+  color: var(--c-accent-d, #0070C0);
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.15);
+}
+
+.option-radio-card .icon-inline {
+  width: 18px;
+  height: 18px;
+  color: var(--c-accent, #0EA5E9);
+  flex-shrink: 0;
+}
+
+@media (max-width: 850px) {
+  .rfq-estimator-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .contact-grid-v3 {
+    grid-template-columns: 1fr;
+    gap: var(--s-lg);
+  }
+}
+
+@media (max-width: 600px) {
+  .estimator-spec-item {
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.5rem 0;
+  }
+
+  .estimator-spec-item span.val {
+    text-align: left !important;
+    max-width: 100% !important;
+  }
+
+  #btn-wa-rfq, #btn-copy-rfq {
+    width: 100% !important;
+  }
+
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── 12. Floating Actions & Symmetrical Mobile Dock ──────── */
+@media (max-width: 600px) {
+  .floating-ops-desk {
+    bottom: 16px !important;
+    left: 16px !important;
+    padding: 0 !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    justify-content: center !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .floating-ops-desk span.text-label {
+    display: none !important;
+  }
+
+  .floating-ops-desk-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .floating-ops-desk-badge {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 10px;
+    height: 10px;
+  }
+
+  #scroll-top-btn {
+    bottom: 16px !important;
+    right: 16px !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  #rfq-toast {
+    bottom: 76px !important;
+    left: 16px !important;
+    right: 16px !important;
+    font-size: 0.8rem !important;
+    padding: 0.75rem 1rem !important;
+    justify-content: center !important;
+  }
+}
+
+/* ── 13. Mobile Vertical Workflow Stepper (about.html) ──── */
+@media (max-width: 768px) {
+  .workflow-stepper {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding-left: 0.5rem;
+  }
+
+  .workflow-stepper::before {
+    top: 10px;
+    bottom: 10px;
+    left: 28px;
+    right: auto;
+    width: 2.5px;
+    height: auto;
+  }
+
+  .workflow-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .workflow-step-icon {
+    margin: 0;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* ── 14. Responsive Tables with Momentum Scroll ─────────── */
+.table-responsive-wrapper,
+.machinery-table-wrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .standards-table th,
+  .standards-table td,
+  .machinery-table th,
+  .machinery-table td {
+    padding: 0.65rem 0.75rem;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+}
+
 
 
 
