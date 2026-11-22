@@ -178,7 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
       m1: '₹13.0 Cr', l1: 'Contract Scale',
       m2: '4,200 MT', l2: 'Fabrication',
       m3: '100% NDT', l3: 'Weld Clearance',
-      caps: 'Heavy fabrication shop, ACE 15T mobile hydra cranes, Lincoln 500A inverter MIG welding, airless painting & certified NDT inspection.'
+      caps: 'Heavy fabrication shop, ACE 15T mobile hydra cranes, Lincoln 500A inverter MIG welding, airless painting & certified NDT inspection.',
+      telemetry: 'LOC: 22.84° N, 69.72° E | MUNDRA RADAR LOCK'
     },
     odisha: {
       title: 'Odisha (Angul & Paradip Port) Hub',
@@ -187,7 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
       m1: '₹4.2 Cr+', l1: 'Active Packages',
       m2: '15,000+ MT', l2: 'Blasting & Coating',
       m3: 'Sa 2.5', l3: 'Profile 75µ',
-      caps: 'Graco Xtreme 70:1 airless spray units, 750 CFM screw compressors, copper slag blast pots & NACE Level II inspection.'
+      caps: 'Graco Xtreme 70:1 airless spray units, 750 CFM screw compressors, copper slag blast pots & NACE Level II inspection.',
+      telemetry: 'LOC: 20.84° N, 85.10° E | ANGUL & PARADIP LOCK'
     },
     maharashtra: {
       title: 'Maharashtra (Nagpur) Power Utility Hub',
@@ -196,7 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
       m1: '₹2.9 Cr', l1: 'Piping Package',
       m2: '8,500 RMT', l2: 'Pipe Erection',
       m3: '40 Bar', l3: 'Hydro-Tested',
-      caps: 'Pipe bevelling machines, TIG/MIG orbital welding units, calibrated hydro-testing skids & IBR-qualified pipe welders.'
+      caps: 'Pipe bevelling machines, TIG/MIG orbital welding units, calibrated hydro-testing skids & IBR-qualified pipe welders.',
+      telemetry: 'LOC: 21.14° N, 79.08° E | NAGPUR RADAR LOCK'
     },
     telangana: {
       title: 'Telangana (Cement & Power) Hub',
@@ -205,7 +208,8 @@ document.addEventListener('DOMContentLoaded', () => {
       m1: '1,200 MT', l1: 'Clinker Line Fab',
       m2: '18,000 SQM', l2: 'Industrial Sheeting',
       m3: 'On-Schedule', l3: 'Milestone Delivery',
-      caps: 'Heavy plate bending rolls, 400A welding rectifiers, 50m boom cranes & certified height-safety rigging crews.'
+      caps: 'Heavy plate bending rolls, 400A welding rectifiers, 50m boom cranes & certified height-safety rigging crews.',
+      telemetry: 'LOC: 17.14° N, 79.62° E | SURYAPET RADAR LOCK'
     },
     jharkhand: {
       title: 'Jharkhand (Steel Plant Engineering) Hub',
@@ -214,7 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
       m1: '850 MT', l1: 'Crane Girders',
       m2: '100% UT', l2: 'Groove Welds',
       m3: 'Zero Defect', l3: 'Shop Sign-Off',
-      caps: 'Submerged arc welding (SAW), automated gantry cutting torches, ultrasonic flaw detectors & ASME IX certified crew.'
+      caps: 'Submerged arc welding (SAW), automated gantry cutting torches, ultrasonic flaw detectors & ASME IX certified crew.',
+      telemetry: 'LOC: 22.80° N, 86.20° E | JAMSHEDPUR RADAR LOCK'
     },
     chhattisgarh: {
       title: 'Chhattisgarh (Central Industrial Basin) Hub',
@@ -223,7 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
       m1: '₹2.5 Cr', l1: 'Metalising & Painting',
       m2: '250 Micron', l2: 'High-Build Epoxy',
       m3: 'ISO Sa 3', l3: 'Metalising Substrate',
-      caps: 'Twin-wire arc spray metalising systems, blast chambers, mobile hydra units & protective coating inspection.'
+      caps: 'Twin-wire arc spray metalising systems, blast chambers, mobile hydra units & protective coating inspection.',
+      telemetry: 'LOC: 21.19° N, 81.28° E | BHILAI RADAR LOCK'
     }
   };
 
@@ -239,6 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hubM3 = document.getElementById('hub-m3');
   const hubL3 = document.getElementById('hub-l3');
   const siteCaps = document.getElementById('map-site-caps');
+  const radarTelemetry = document.getElementById('radar-telemetry-text');
 
   function selectStateHub(hubId) {
     const hub = stateHubs[hubId];
@@ -261,6 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hubM3) hubM3.textContent = hub.m3;
     if (hubL3) hubL3.textContent = hub.l3;
     if (siteCaps) siteCaps.innerHTML = `<strong>Site Capabilities:</strong> ${hub.caps}`;
+    if (radarTelemetry && hub.telemetry) radarTelemetry.textContent = hub.telemetry;
   }
 
   if (statePills.length) {
@@ -508,6 +516,93 @@ Please provide formal engineering feasibility, mobilization schedule, and prelim
       const body = encodeURIComponent(messageBox ? messageBox.value : '');
       window.location.href = `mailto:Navtaraprojects@outlook.com?subject=${subject}&body=${body}`;
       showToast('Dispatching inquiry to estimation desk via email...');
+    });
+  }
+
+  /* ─── 12. Instant 60-Second EPC Tonnage & Mobilization Estimator (Home) ─── */
+  const estButtons = document.querySelectorAll('.estimator-btn');
+  const estTimeVal = document.getElementById('est-time-val');
+  const estFleetVal = document.getElementById('est-fleet-val');
+  const estCrewVal = document.getElementById('est-crew-val');
+  const estWindowVal = document.getElementById('est-window-val');
+  const estWaBtn = document.getElementById('btn-est-wa');
+  const estEmailBtn = document.getElementById('btn-est-email');
+
+  let estimatorState = {
+    sector: 'Steel Plant',
+    scope: 'Structural Fabrication & Erection',
+    scale: '500 - 1,500 MT'
+  };
+
+  const scaleProfiles = {
+    '< 500 MT': {
+      time: '7–10 Working Days',
+      fleet: '1x ACE 15T Hydra + 6x 400A Inverter Welders',
+      crew: '25–35 Certified Fabricators & Welders',
+      window: '45–60 Calendar Days'
+    },
+    '500 - 1,500 MT': {
+      time: '7–10 Working Days',
+      fleet: '2x ACE 15T Hydra + 12x 500A Inverters + Graco Airless',
+      crew: '45–65 Certified Fabricators & AWS 3G/6G Welders',
+      window: '75–100 Calendar Days'
+    },
+    '1,500 - 5,000 MT': {
+      time: '10–14 Working Days',
+      fleet: '3x Heavy Cranes + Submerged Arc (SAW) + 20x Inverters',
+      crew: '85–120 Multi-Disciplinary Riggers & NDT Technicians',
+      window: '120–160 Calendar Days'
+    },
+    '5,000+ MT': {
+      time: '14–18 Working Days',
+      fleet: 'Full Dedicated On-Site Shop + Heavy Rigging Fleet',
+      crew: '150–220 Structural Boilersmiths & ASNT Level II Team',
+      window: '180–240 Calendar Days'
+    }
+  };
+
+  function updateEstimatorDisplay() {
+    const profile = scaleProfiles[estimatorState.scale] || scaleProfiles['500 - 1,500 MT'];
+    if (estTimeVal) estTimeVal.textContent = profile.time;
+    if (estFleetVal) estFleetVal.textContent = profile.fleet;
+    if (estCrewVal) estCrewVal.textContent = profile.crew;
+    if (estWindowVal) estWindowVal.textContent = profile.window;
+  }
+
+  if (estButtons.length) {
+    estButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.getAttribute('data-est-group');
+        const val = btn.getAttribute('data-est-val');
+        if (!group || !val) return;
+
+        document.querySelectorAll(`.estimator-btn[data-est-group="${group}"]`).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        estimatorState[group] = val;
+        updateEstimatorDisplay();
+      });
+    });
+  }
+
+  if (estWaBtn) {
+    estWaBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const profile = scaleProfiles[estimatorState.scale] || scaleProfiles['500 - 1,500 MT'];
+      const text = encodeURIComponent(`*Tender Inquiry - Navtara Projects*\n\nTarget Sector: ${estimatorState.sector}\nPrimary Scope: ${estimatorState.scope}\nEstimated Scale: ${estimatorState.scale}\nEstimated Mobilization: ${profile.time}\nEstimated Fleet: ${profile.fleet}\nEstimated Crew: ${profile.crew}\n\nPlease share formal engineering feasibility, mobilization schedule, and preliminary quotation.`);
+      window.open(`https://wa.me/919838889618?text=${text}`, '_blank');
+      showToast('Opening WhatsApp with your project parameters...');
+    });
+  }
+
+  if (estEmailBtn) {
+    estEmailBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const profile = scaleProfiles[estimatorState.scale] || scaleProfiles['500 - 1,500 MT'];
+      const subject = encodeURIComponent(`Tender RFQ - ${estimatorState.sector} (${estimatorState.scale})`);
+      const body = encodeURIComponent(`Dear Navtara Projects Estimations Team,\n\nWe require an official commercial proposal and mobilization timeline for our project:\n\n- Target Sector: ${estimatorState.sector}\n- Engineering Scope: ${estimatorState.scope}\n- Estimated Scale: ${estimatorState.scale}\n- Expected Mobilization: ${profile.time}\n- Expected Crew: ${profile.crew}\n\nPlease review feasibility and get in touch.\n\nThank you.`);
+      window.location.href = `mailto:Navtaraprojects@outlook.com?subject=${subject}&body=${body}`;
+      showToast('Opening Outlook email with RFQ specs...');
     });
   }
 
