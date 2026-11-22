@@ -723,6 +723,245 @@ h1, h2, h3, h4, p, span, a, button {
   stroke-linejoin: round;
 }
 
+/* ── Floating Operations Desk WhatsApp Pill (Bottom-Left) ── */
+.floating-ops-desk {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #09172A;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(37, 211, 102, 0.45);
+  padding: 0.65rem 1.15rem;
+  border-radius: var(--radius-pill, 100px);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.floating-ops-desk:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: #25D366;
+  box-shadow: 0 14px 36px rgba(37, 211, 102, 0.35);
+}
+
+.floating-ops-desk-icon {
+  width: 22px;
+  height: 22px;
+  color: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.floating-ops-desk-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.floating-ops-desk-badge {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #25D366;
+  box-shadow: 0 0 8px #25D366;
+  animation: beaconBlink 1.8s infinite ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .floating-ops-desk span.text-label {
+    display: none;
+  }
+  .floating-ops-desk {
+    padding: 0.75rem;
+    border-radius: 50%;
+  }
+}
+
+/* ── Technical Prequalification FAQ Accordion ────────────── */
+.faq-section {
+  padding: var(--s-xl) 0;
+  background: var(--c-off-white, #F8FAFC);
+}
+
+.faq-section.dark {
+  background: var(--c-navy-dark, #071324);
+  color: #FFFFFF;
+}
+
+.faq-accordion {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.faq-item {
+  background: var(--c-white, #FFFFFF);
+  border: 1px solid var(--c-border, #E2E8F0);
+  border-radius: var(--radius-md, 10px);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.faq-section.dark .faq-item {
+  background: rgba(13, 30, 53, 0.8);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.faq-item.active {
+  border-color: var(--c-accent, #0EA5E9);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.12);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.15rem 1.4rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-navy, #0D1E35);
+  line-height: 1.45;
+  transition: color 0.2s ease;
+}
+
+.faq-section.dark .faq-question {
+  color: #FFFFFF;
+}
+
+.faq-item.active .faq-question {
+  color: var(--c-accent, #0EA5E9);
+}
+
+.faq-toggle-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(14, 165, 233, 0.08);
+  color: var(--c-accent, #0EA5E9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+
+.faq-item.active .faq-toggle-icon {
+  transform: rotate(180deg);
+  background: var(--c-accent, #0EA5E9);
+  color: #FFFFFF;
+}
+
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, padding 0.3s ease;
+  padding: 0 1.4rem;
+  font-size: 0.925rem;
+  line-height: 1.65;
+  color: var(--c-grey-600, #475569);
+}
+
+.faq-section.dark .faq-answer {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 400px;
+  opacity: 1;
+  padding: 0 1.4rem 1.35rem 1.4rem;
+}
+
+/* ── Interactive State Hub Inspector (Pan-India Section) ── */
+.state-pill-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: var(--s-md);
+}
+
+.state-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-pill, 100px);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.state-pill:hover,
+.state-pill.active {
+  background: var(--c-accent, #0EA5E9);
+  border-color: var(--c-accent, #0EA5E9);
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.35);
+  transform: translateY(-2px);
+}
+
+.hub-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.hub-metric-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm, 6px);
+  padding: 0.65rem 0.75rem;
+  text-align: center;
+}
+
+.hub-metric-card .num {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--c-accent, #0EA5E9);
+  line-height: 1.1;
+}
+
+.hub-metric-card .label {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .hub-metric-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+
+
 
 
 

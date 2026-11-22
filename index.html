@@ -13,6 +13,84 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hr0417-del.github.io/navtara-website/">
 
+    <!-- Enterprise Schema.org JSON-LD (Rich Snippets & Corporate Knowledge Graph) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["Organization", "GeneralContractor"],
+          "@id": "https://hr0417-del.github.io/navtara-website/#organization",
+          "name": "Navtara Projects Pvt. Ltd.",
+          "alternateName": "Navtara Projects",
+          "legalName": "Navtara Projects Private Limited",
+          "url": "https://hr0417-del.github.io/navtara-website/",
+          "logo": "https://hr0417-del.github.io/navtara-website/assets/images/amit_kumar_singh.webp",
+          "image": "https://hr0417-del.github.io/navtara-website/assets/images/fabrication_bay.webp",
+          "description": "Navtara Projects Pvt. Ltd. is a premier Indian heavy engineering contractor delivering structural fabrication, industrial erection, abrasive blasting (Sa 2.5), protective coatings, and plant maintenance across India.",
+          "foundingDate": "2023",
+          "taxID": "09AAKCN7407P1ZP",
+          "vatID": "09AAKCN7407P1ZP",
+          "telephone": "+91-9838889618",
+          "email": "Navtaraprojects@outlook.com",
+          "priceRange": "₹₹₹₹",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "KHASRA NO: 327/1, Amity University Road, Nearby BADI DEVARIYA, Lolaai",
+            "addressLocality": "Lucknow",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "226028",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 26.8467,
+            "longitude": 80.9462
+          },
+          "founder": [
+            {
+              "@type": "Person",
+              "name": "Amit Kumar Singh",
+              "jobTitle": "Director & Head of Operations"
+            },
+            {
+              "@type": "Person",
+              "name": "Sudha Singh",
+              "jobTitle": "Director & Finance Controller"
+            }
+          ],
+          "areaServed": [
+            { "@type": "State", "name": "Gujarat" },
+            { "@type": "State", "name": "Odisha" },
+            { "@type": "State", "name": "Maharashtra" },
+            { "@type": "State", "name": "Telangana" },
+            { "@type": "State", "name": "Jharkhand" },
+            { "@type": "State", "name": "Chhattisgarh" },
+            { "@type": "Country", "name": "India" }
+          ],
+          "knowsAbout": [
+            "Heavy Structural Fabrication",
+            "Industrial Plant Erection",
+            "Abrasive Grit Blasting Sa 2.5",
+            "Industrial Protective Coatings & Epoxies",
+            "Thermal & Petrochemical Piping Systems",
+            "Non-Destructive Testing (UT, MPI, DPT)",
+            "AWS D1.1 & ASME Section IX Certified Welding"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://hr0417-del.github.io/navtara-website/#website",
+          "url": "https://hr0417-del.github.io/navtara-website/",
+          "name": "Navtara Projects Pvt. Ltd.",
+          "publisher": {
+            "@id": "https://hr0417-del.github.io/navtara-website/#organization"
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
@@ -378,12 +456,22 @@
     <!-- ✦ Radar Beacons & Active Hubs (Blinking Dots Only - NO MAP SHAPE) ✦ -->
     <section class="india-map-section-v3" aria-labelledby="map-heading">
         <div class="container">
-            <div class="text-center reveal" style="max-width: 680px; margin: 0 auto var(--s-lg);">
+            <div class="text-center reveal" style="max-width: 680px; margin: 0 auto var(--s-md);">
                 <div class="section-label section-label--light">Pan-India Site Beacons</div>
                 <h2 class="heading-lg text-light" id="map-heading">Our Nationwide Project Execution Footprint</h2>
                 <p class="body-lg text-light" style="opacity: 0.8; margin-top: var(--s-xs);">
-                    Click on any active site beacon below to inspect hub deployment details.
+                    Select an operational hub below or click on the radar beacons to inspect real-time deployment metrics, machinery, and ongoing contracts.
                 </p>
+            </div>
+
+            <!-- Interactive State Selector Pills -->
+            <div class="state-pill-selector reveal">
+                <button type="button" class="state-pill active" data-state-id="gujarat">Gujarat (Mundra Mega Hub)</button>
+                <button type="button" class="state-pill" data-state-id="odisha">Odisha (Angul &amp; Paradip)</button>
+                <button type="button" class="state-pill" data-state-id="maharashtra">Maharashtra (Nagpur)</button>
+                <button type="button" class="state-pill" data-state-id="telangana">Telangana (Cement &amp; Power)</button>
+                <button type="button" class="state-pill" data-state-id="jharkhand">Jharkhand (Tata Network)</button>
+                <button type="button" class="state-pill" data-state-id="chhattisgarh">Chhattisgarh (AM/NS &amp; Bhilai)</button>
             </div>
 
             <div class="india-map-grid-v3 reveal">
@@ -392,7 +480,7 @@
                     <div class="radar-grid-bg"></div>
 
                     <!-- Beacon 1: Gujarat (Mundra) -->
-                    <div class="beacon-node active-node" style="top: 42%; left: 18%;" data-state-name="Gujarat (Mundra)" data-site-client="Adani Petrochemical / Ardee" data-site-scope="₹13.0 Cr Structural Fabrication &amp; Erection Package">
+                    <div class="beacon-node active-node" style="top: 42%; left: 18%;" data-state-id="gujarat" data-state-name="Gujarat (Mundra)" data-site-client="Adani Petrochemical / Ardee" data-site-scope="₹13.0 Cr Structural Fabrication &amp; Erection Package">
                         <div class="beacon-dot">
                             <div class="beacon-ring"></div>
                         </div>
@@ -400,7 +488,7 @@
                     </div>
 
                     <!-- Beacon 2: Odisha (Angul / Paradip) -->
-                    <div class="beacon-node" style="top: 48%; left: 72%;" data-state-name="Odisha" data-site-client="Jindal Steel &amp; ISGEC Heavy Eng" data-site-scope="15,000+ MT Blasting &amp; Coating + Paradip Port Marine Scaffolding">
+                    <div class="beacon-node" style="top: 48%; left: 72%;" data-state-id="odisha" data-state-name="Odisha" data-site-client="Jindal Steel &amp; ISGEC Heavy Eng" data-site-scope="15,000+ MT Blasting &amp; Coating + Paradip Port Marine Scaffolding">
                         <div class="beacon-dot">
                             <div class="beacon-ring"></div>
                         </div>
@@ -408,7 +496,7 @@
                     </div>
 
                     <!-- Beacon 3: Maharashtra (Nagpur) -->
-                    <div class="beacon-node" style="top: 55%; left: 32%;" data-state-name="Maharashtra" data-site-client="Mahagenco Thermal" data-site-scope="₹2.9 Cr Thermal Power Fire Water Piping &amp; Erection (Nagpur)">
+                    <div class="beacon-node" style="top: 55%; left: 32%;" data-state-id="maharashtra" data-state-name="Maharashtra" data-site-client="Mahagenco Thermal" data-site-scope="₹2.9 Cr Thermal Power Fire Water Piping &amp; Erection (Nagpur)">
                         <div class="beacon-dot">
                             <div class="beacon-ring"></div>
                         </div>
@@ -416,7 +504,7 @@
                     </div>
 
                     <!-- Beacon 4: Telangana (Suryapet & Ramagundam) -->
-                    <div class="beacon-node" style="top: 68%; left: 45%;" data-state-name="Telangana" data-site-client="KEC Maha Cement &amp; BHEL" data-site-scope="1,200 MT Clinker Line Structural Fabrication &amp; BHEL Sheeting">
+                    <div class="beacon-node" style="top: 68%; left: 45%;" data-state-id="telangana" data-state-name="Telangana" data-site-client="KEC Maha Cement &amp; BHEL" data-site-scope="1,200 MT Clinker Line Structural Fabrication &amp; BHEL Sheeting">
                         <div class="beacon-dot">
                             <div class="beacon-ring"></div>
                         </div>
@@ -424,7 +512,7 @@
                     </div>
 
                     <!-- Beacon 5: Jharkhand (Jamshedpur) -->
-                    <div class="beacon-node" style="top: 38%; left: 68%;" data-state-name="Jharkhand" data-site-client="Tata Projects Network" data-site-scope="Heavy Crane Girder Fabrication &amp; Plant Erection">
+                    <div class="beacon-node" style="top: 38%; left: 68%;" data-state-id="jharkhand" data-state-name="Jharkhand" data-site-client="Tata Projects Network" data-site-scope="Heavy Crane Girder Fabrication &amp; Plant Erection">
                         <div class="beacon-dot">
                             <div class="beacon-ring"></div>
                         </div>
@@ -432,7 +520,7 @@
                     </div>
 
                     <!-- Beacon 6: Chhattisgarh (Bhilai / Raipur / Durg) -->
-                    <div class="beacon-node" style="top: 50%; left: 56%;" data-state-name="Chhattisgarh" data-site-client="AM/NS India &bull; Struc-Rite &bull; DCPL" data-site-scope="₹2.5 Cr Metalising, BEC Painting &amp; DCPL Cement Fabrication">
+                    <div class="beacon-node" style="top: 50%; left: 56%;" data-state-id="chhattisgarh" data-state-name="Chhattisgarh" data-site-client="AM/NS India &bull; Struc-Rite &bull; DCPL" data-site-scope="₹2.5 Cr Metalising, BEC Painting &amp; DCPL Cement Fabrication">
                         <div class="beacon-dot">
                             <div class="beacon-ring"></div>
                         </div>
@@ -443,15 +531,32 @@
                 <!-- Right: Selected State Hub Details Panel -->
                 <div class="map-site-panel-v3">
                     <span class="tag tag--accent" id="map-site-client" style="align-self: flex-start;">Adani Petrochemical / Ardee</span>
-                    <h3 class="heading-lg text-light" id="map-site-title" style="margin: 0;">Gujarat (Mundra) Deployment Hub</h3>
+                    <h3 class="heading-lg text-light" id="map-site-title" style="margin: 0;">Gujarat (Mundra) Mega Hub</h3>
                     <p class="body-lg text-light" id="map-site-scope" style="opacity: 0.85; margin: 0;">
-                        ₹13.0 Cr Structural Fabrication &amp; Erection Package
+                        ₹13.0 Cr Structural Fabrication (₹8 Cr) &amp; Erection (₹5 Cr) Package for coal conveyor gantry and transfer towers.
                     </p>
-                    <div style="padding: 1rem; background: rgba(255,255,255,0.05); border-radius: var(--radius-md); border-left: 3px solid var(--c-accent); font-size: 0.875rem;">
-                        <strong>Site Capabilities:</strong> Heavy fabrication shop, ACE 15T mobile hydra cranes, multi-pass MIG welding, airless painting &amp; certified NDT inspection.
+
+                    <!-- Real-Time Deployment Metrics -->
+                    <div class="hub-metric-grid" id="map-site-metrics">
+                        <div class="hub-metric-card">
+                            <div class="num" id="hub-m1">₹13.0 Cr</div>
+                            <div class="label" id="hub-l1">Contract Scale</div>
+                        </div>
+                        <div class="hub-metric-card">
+                            <div class="num" id="hub-m2">4,200 MT</div>
+                            <div class="label" id="hub-l2">Fabrication</div>
+                        </div>
+                        <div class="hub-metric-card">
+                            <div class="num" id="hub-m3">100% NDT</div>
+                            <div class="label" id="hub-l3">Weld Clearance</div>
+                        </div>
+                    </div>
+
+                    <div id="map-site-caps" style="padding: 1rem; background: rgba(255,255,255,0.05); border-radius: var(--radius-md); border-left: 3px solid var(--c-accent); font-size: 0.875rem;">
+                        <strong>Site Capabilities:</strong> Heavy fabrication shop, ACE 15T mobile hydra cranes, Lincoln 500A inverter MIG welding, airless painting &amp; certified NDT inspection.
                     </div>
                     <div>
-                        <a href="projects.html" class="btn btn-primary" style="width: 100%;">Explore Full Projects Directory →</a>
+                        <a href="projects.html" class="btn btn-primary" style="width: 100%;">Explore Full Projects Directory (35 Packages) →</a>
                     </div>
                 </div>
 
@@ -583,6 +688,19 @@
     </footer>
 
     <!-- Scroll to Top Button -->
+        <!-- Floating Operations & Mobilization Desk Pill (Bottom-Left) -->
+    <a href="https://wa.me/919838889618?text=Hello%20Navtara%20Projects%2C%20we%20would%20like%20to%20inquire%20about%20industrial%20engineering%20mobilization%20and%20tenders." 
+       class="floating-ops-desk" 
+       target="_blank" 
+       rel="noopener" 
+       aria-label="Direct WhatsApp Operations &amp; Mobilization Desk">
+        <span class="floating-ops-desk-icon">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        </span>
+        <span class="floating-ops-desk-badge"></span>
+        <span class="text-label">Mobilization Desk &bull; +91 98388 89618</span>
+    </a>
+
     <button id="scroll-top-btn" aria-label="Scroll to top">↑</button>
 
     <!-- Scripts -->

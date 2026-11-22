@@ -169,25 +169,125 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ─── 8. Pan-India Radar Beacons ─── */
+  /* ─── 8. Pan-India State-by-State Project Inspector ─── */
+  const stateHubs = {
+    gujarat: {
+      title: 'Gujarat (Mundra) Mega Hub',
+      client: 'Adani Petrochemical / Ardee Infrastructure',
+      scope: '₹13.0 Cr Structural Fabrication (₹8 Cr) & Erection (₹5 Cr) Package for coal conveyor gantry and transfer towers.',
+      m1: '₹13.0 Cr', l1: 'Contract Scale',
+      m2: '4,200 MT', l2: 'Fabrication',
+      m3: '100% NDT', l3: 'Weld Clearance',
+      caps: 'Heavy fabrication shop, ACE 15T mobile hydra cranes, Lincoln 500A inverter MIG welding, airless painting & certified NDT inspection.'
+    },
+    odisha: {
+      title: 'Odisha (Angul & Paradip Port) Hub',
+      client: 'Jindal Steel & Power Ltd. & ISGEC Heavy Eng',
+      scope: '15,000+ MT Sa 2.5 Grit Blasting & Polyurethane Coating + Paradip Marine Scaffolding & Mechanical Rigging.',
+      m1: '₹4.2 Cr+', l1: 'Active Packages',
+      m2: '15,000+ MT', l2: 'Blasting & Coating',
+      m3: 'Sa 2.5', l3: 'Profile 75µ',
+      caps: 'Graco Xtreme 70:1 airless spray units, 750 CFM screw compressors, copper slag blast pots & NACE Level II inspection.'
+    },
+    maharashtra: {
+      title: 'Maharashtra (Nagpur) Power Utility Hub',
+      client: 'Mahagenco Thermal Power Station',
+      scope: '₹2.9 Cr High-Pressure Fire Fighting Water Piping, Pump House Erection & Thermal Line Fabrication (Nagpur).',
+      m1: '₹2.9 Cr', l1: 'Piping Package',
+      m2: '8,500 RMT', l2: 'Pipe Erection',
+      m3: '40 Bar', l3: 'Hydro-Tested',
+      caps: 'Pipe bevelling machines, TIG/MIG orbital welding units, calibrated hydro-testing skids & IBR-qualified pipe welders.'
+    },
+    telangana: {
+      title: 'Telangana (Cement & Power) Hub',
+      client: 'KEC Maha Cement & BHEL Power Sector',
+      scope: '1,200 MT Clinker Line Structural Fabrication, Raw Mill Ducting & BHEL Thermal Sheeting Installation.',
+      m1: '1,200 MT', l1: 'Clinker Line Fab',
+      m2: '18,000 SQM', l2: 'Industrial Sheeting',
+      m3: 'On-Schedule', l3: 'Milestone Delivery',
+      caps: 'Heavy plate bending rolls, 400A welding rectifiers, 50m boom cranes & certified height-safety rigging crews.'
+    },
+    jharkhand: {
+      title: 'Jharkhand (Steel Plant Engineering) Hub',
+      client: 'Tata Projects Contractor Network',
+      scope: 'Heavy Crane Girder Fabrication, Rolling Mill Foundation Inserts & High-Bay Erection Packages (Jamshedpur / Bokaro).',
+      m1: '850 MT', l1: 'Crane Girders',
+      m2: '100% UT', l2: 'Groove Welds',
+      m3: 'Zero Defect', l3: 'Shop Sign-Off',
+      caps: 'Submerged arc welding (SAW), automated gantry cutting torches, ultrasonic flaw detectors & ASME IX certified crew.'
+    },
+    chhattisgarh: {
+      title: 'Chhattisgarh (Central Industrial Basin) Hub',
+      client: 'AM/NS India • Struc-Rite • DCPL Cement',
+      scope: '₹2.5 Cr Thermal Spray Metalising, BEC Heavy Equipment Painting & DCPL Cement Plant Fabrication (Bhilai / Durg / Raipur).',
+      m1: '₹2.5 Cr', l1: 'Metalising & Painting',
+      m2: '250 Micron', l2: 'High-Build Epoxy',
+      m3: 'ISO Sa 3', l3: 'Metalising Substrate',
+      caps: 'Twin-wire arc spray metalising systems, blast chambers, mobile hydra units & protective coating inspection.'
+    }
+  };
+
+  const statePills = document.querySelectorAll('.state-pill');
   const beaconNodes = document.querySelectorAll('.beacon-node');
   const siteTitle = document.getElementById('map-site-title');
   const siteClient = document.getElementById('map-site-client');
   const siteScope = document.getElementById('map-site-scope');
+  const hubM1 = document.getElementById('hub-m1');
+  const hubL1 = document.getElementById('hub-l1');
+  const hubM2 = document.getElementById('hub-m2');
+  const hubL2 = document.getElementById('hub-l2');
+  const hubM3 = document.getElementById('hub-m3');
+  const hubL3 = document.getElementById('hub-l3');
+  const siteCaps = document.getElementById('map-site-caps');
+
+  function selectStateHub(hubId) {
+    const hub = stateHubs[hubId];
+    if (!hub) return;
+
+    // Update Pill active states
+    statePills.forEach(p => p.classList.toggle('active', p.getAttribute('data-state-id') === hubId));
+
+    // Update Beacon active states
+    beaconNodes.forEach(b => b.classList.toggle('active-node', b.getAttribute('data-state-id') === hubId));
+
+    // Update Details
+    if (siteTitle) siteTitle.textContent = hub.title;
+    if (siteClient) siteClient.textContent = hub.client;
+    if (siteScope) siteScope.textContent = hub.scope;
+    if (hubM1) hubM1.textContent = hub.m1;
+    if (hubL1) hubL1.textContent = hub.l1;
+    if (hubM2) hubM2.textContent = hub.m2;
+    if (hubL2) hubL2.textContent = hub.l2;
+    if (hubM3) hubM3.textContent = hub.m3;
+    if (hubL3) hubL3.textContent = hub.l3;
+    if (siteCaps) siteCaps.innerHTML = `<strong>Site Capabilities:</strong> ${hub.caps}`;
+  }
+
+  if (statePills.length) {
+    statePills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const hubId = pill.getAttribute('data-state-id');
+        selectStateHub(hubId);
+      });
+    });
+  }
 
   if (beaconNodes.length && siteTitle) {
     beaconNodes.forEach(node => {
       node.addEventListener('click', () => {
-        beaconNodes.forEach(b => b.classList.remove('active-node'));
-        node.classList.add('active-node');
-
-        const stateName = node.getAttribute('data-state-name');
-        const client = node.getAttribute('data-site-client');
-        const scope = node.getAttribute('data-site-scope');
-
-        siteTitle.textContent = `${stateName} Deployment Hub`;
-        if (siteClient) siteClient.textContent = client;
-        if (siteScope) siteScope.textContent = scope;
+        const hubId = node.getAttribute('data-state-id');
+        if (hubId && stateHubs[hubId]) {
+          selectStateHub(hubId);
+        } else {
+          beaconNodes.forEach(b => b.classList.remove('active-node'));
+          node.classList.add('active-node');
+          const stateName = node.getAttribute('data-state-name');
+          const client = node.getAttribute('data-site-client');
+          const scope = node.getAttribute('data-site-scope');
+          siteTitle.textContent = `${stateName} Deployment Hub`;
+          if (siteClient) siteClient.textContent = client;
+          if (siteScope) siteScope.textContent = scope;
+        }
       });
     });
   }
@@ -278,6 +378,38 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.trim().toLowerCase();
       applyProjectFilters();
+    });
+  }
+
+  /* ─── 10. Technical Tender Prequalification FAQ Accordion ─── */
+  const faqItems = document.querySelectorAll('.faq-item');
+  if (faqItems.length) {
+    faqItems.forEach(item => {
+      const questionBtn = item.querySelector('.faq-question');
+      if (questionBtn) {
+        questionBtn.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          const parentAccordion = item.closest('.faq-accordion');
+          if (parentAccordion) {
+            parentAccordion.querySelectorAll('.faq-item').forEach(other => {
+              if (other !== item) {
+                other.classList.remove('active');
+                const btn = other.querySelector('.faq-question');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+              }
+            });
+          }
+
+          if (isActive) {
+            item.classList.remove('active');
+            questionBtn.setAttribute('aria-expanded', 'false');
+          } else {
+            item.classList.add('active');
+            questionBtn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      }
     });
   }
 
