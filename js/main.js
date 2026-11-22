@@ -192,72 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ─── 9. Multi-Tab Project Case Study Modal ─── */
-  const modal = document.getElementById('project-detail-modal');
-  const modalClose = document.getElementById('modal-close-btn');
-  const projectTriggers = document.querySelectorAll('[data-project-trigger]');
-  const modalTabs = document.querySelectorAll('.modal-tab-btn');
-  const modalPanes = document.querySelectorAll('.modal-tab-pane');
-
-  if (modal) {
-    projectTriggers.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const title = btn.getAttribute('data-title') || 'Industrial Heavy Engineering Package';
-        const client = btn.getAttribute('data-client') || 'Tier-1 Enterprise EPC';
-        const loc = btn.getAttribute('data-loc') || 'Pan-India Operations';
-        const value = btn.getAttribute('data-value') || 'Multi-Crore Scope';
-        const scope = btn.getAttribute('data-scope') || 'Fabrication, Erection & Surface Protection';
-        const desc = btn.getAttribute('data-desc') || 'Full turn-key structural engineering package executed under strict AWS D1.1 & ASME quality benchmarks.';
-
-        const modalTitle = document.getElementById('modal-project-title');
-        const modalClient = document.getElementById('modal-project-client');
-        const modalLoc = document.getElementById('modal-project-loc');
-        const modalVal = document.getElementById('modal-project-value');
-        const modalScope = document.getElementById('modal-project-scope');
-        const modalDesc = document.getElementById('modal-project-desc');
-
-        if (modalTitle) modalTitle.textContent = title;
-        if (modalClient) modalClient.textContent = client;
-        if (modalLoc) modalLoc.textContent = loc;
-        if (modalVal) modalVal.textContent = value;
-        if (modalScope) modalScope.textContent = scope;
-        if (modalDesc) modalDesc.textContent = desc;
-
-        modal.classList.add('active');
-      });
-    });
-
-    if (modalClose) {
-      modalClose.addEventListener('click', () => modal.classList.remove('active'));
-    }
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.classList.remove('active');
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        modal.classList.remove('active');
-      }
-    });
-
-    if (modalTabs.length) {
-      modalTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          const target = tab.getAttribute('data-tab');
-          modalTabs.forEach(t => t.classList.remove('active'));
-          modalPanes.forEach(p => p.classList.remove('active'));
-
-          tab.classList.add('active');
-          const pane = document.getElementById(`modal-pane-${target}`);
-          if (pane) pane.classList.add('active');
-        });
-      });
-    }
-  }
-
-  /* ─── 10. Synchronized Project Filtering & Real-Time Search ─── */
+  /* ─── 9. Synchronized Project Filtering & Real-Time Search ─── */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card-v3');
   const tableRows = document.querySelectorAll('.portfolio-table tbody tr');
