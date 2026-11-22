@@ -604,3 +604,124 @@ h1, h2, h3, h4, p, span, a, button {
   pointer-events: all;
 }
 
+/* ═══════════════════════════════════════════════════════
+   v3.8 HIGH-PRECISION SVG VECTOR ICON SYSTEM
+═══════════════════════════════════════════════════════ */
+
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  color: var(--c-accent, #0EA5E9);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  flex-shrink: 0;
+  margin-bottom: 0.75rem;
+}
+
+.icon-badge svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 2;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-badge--sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+.icon-badge--sm svg {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-badge--lg {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+}
+.icon-badge--lg svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Light / Card Variants */
+.card:hover .icon-badge,
+.highlight-stat-card:hover .icon-badge,
+.cap-card:hover .icon-badge {
+  transform: translateY(-3px);
+  background: rgba(14, 165, 233, 0.2);
+  border-color: var(--c-accent, #0EA5E9);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
+}
+
+/* Inline Text Icons */
+.icon-inline {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: -0.2em;
+  margin-right: 0.45rem;
+  color: var(--c-accent, #0EA5E9);
+  flex-shrink: 0;
+}
+
+.icon-inline svg {
+  width: 17px;
+  height: 17px;
+  stroke-width: 2;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-inline--sm svg {
+  width: 14px;
+  height: 14px;
+}
+
+.core-icon-circle svg,
+.workflow-step-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.workflow-step-icon {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-accent, #0EA5E9) !important;
+}
+
+.project-search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-search-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+
