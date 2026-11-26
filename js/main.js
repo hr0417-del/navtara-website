@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scope: '15,000+ MT Sa 2.5 Grit Blasting & Polyurethane Coating + Paradip Marine Scaffolding & Mechanical Rigging.',
       m1: '₹4.2 Cr+', l1: 'Active Packages',
       m2: '15,000+ MT', l2: 'Blasting & Coating',
-      m3: 'Sa 2.5', l3: 'Profile 75µ',
+      m3: 'Sa 2.5', l3: '75 Micron Profile',
       caps: 'Graco Xtreme 70:1 airless spray units, 750 CFM screw compressors, copper slag blast pots & NACE Level II inspection.',
       telemetry: 'LOC: 20.84° N, 85.10° E | ANGUL & PARADIP LOCK'
     },

@@ -39,6 +39,7 @@
   requestAnimationFrame(render);
 
   window.addEventListener('mousemove', (e) => {
+    if (e.clientX <= 2 && e.clientY <= 2) return;
     mouseX = e.clientX;
     mouseY = e.clientY;
 

@@ -310,21 +310,23 @@
 }
 .footer-col ul a:hover { color: var(--c-white); }
 .footer-contact p {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
+  display: block;
   font-size: var(--t-sm);
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.72);
   margin-bottom: 0.75rem;
+  line-height: 1.55;
 }
-.footer-contact p strong { color: var(--c-white); min-width: 2rem; }
+.footer-contact p strong {
+  color: var(--c-white);
+  margin-left: 0.35rem;
+}
 .footer-bottom {
-  padding: var(--s-md) 0;
+  padding: var(--s-md) 0 4.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: var(--t-xs);
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.45);
   gap: 1rem;
   flex-wrap: wrap;
 }
