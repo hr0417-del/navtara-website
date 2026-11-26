@@ -623,4 +623,57 @@ Please provide formal engineering feasibility, mobilization schedule, and prelim
     });
   }
 
+  /* ─── 13. Universal Client Logo Badge Injector ─── */
+  const clientLogoRules = [
+    { match: /adani|ardee/i, src: 'assets/logos/adani.svg', alt: 'Adani Group' },
+    { match: /tata/i, src: 'assets/logos/tata_projects.svg', alt: 'Tata Projects' },
+    { match: /larsen|l&t/i, src: 'assets/logos/lnt.svg', alt: 'Larsen & Toubro' },
+    { match: /jindal|jspl/i, src: 'assets/logos/jspl.svg', alt: 'Jindal Steel & Power' },
+    { match: /isgec/i, src: 'assets/logos/isgec.png', alt: 'ISGEC Heavy Engineering' },
+    { match: /kec/i, src: 'assets/logos/kec.png', alt: 'KEC International' },
+    { match: /bhel/i, src: 'assets/logos/bhel.svg', alt: 'BHEL' },
+    { match: /am\/ns|arcelor/i, src: 'assets/logos/amns.svg', alt: 'AM/NS India' },
+    { match: /jssl|jsw/i, src: 'assets/logos/jssl.png', alt: 'JSW Severfield' },
+    { match: /essar/i, src: 'assets/logos/essar.svg', alt: 'Essar' },
+    { match: /zetwerk/i, src: 'assets/logos/zetwerk.png', alt: 'Zetwerk' },
+    { match: /bgr/i, src: 'assets/logos/bgr.png', alt: 'BGR Energy' },
+    { match: /atmastco/i, src: 'assets/logos/atmastco.png', alt: 'Atmastco' },
+    { match: /omaxe/i, src: 'assets/logos/omaxe.png', alt: 'Omaxe' },
+    { match: /mahagenco/i, monogram: 'MG' },
+    { match: /simplex/i, monogram: 'SI' },
+    { match: /ferro/i, monogram: 'FM' },
+    { match: /acc\b/i, monogram: 'ACC' },
+    { match: /dcpl|dalmia/i, monogram: 'DCPL' },
+    { match: /lnv/i, monogram: 'LNV' },
+    { match: /merit/i, monogram: 'MT' },
+    { match: /vrinda/i, monogram: 'VE' },
+    { match: /struc-rite|struc/i, monogram: 'SR' },
+    { match: /pnc/i, monogram: 'PNC' }
+  ];
+
+  document.querySelectorAll('.project-client-name').forEach(el => {
+    if (el.querySelector('.client-inline-logo')) return;
+    const text = el.textContent || '';
+    const rule = clientLogoRules.find(r => r.match.test(text));
+    if (!rule) return;
+
+    const badge = document.createElement('span');
+    badge.className = rule.src ? 'client-inline-logo' : 'client-inline-logo monogram';
+    if (rule.src) {
+      const img = document.createElement('img');
+      img.src = rule.src;
+      img.alt = rule.alt;
+      img.loading = 'lazy';
+      badge.appendChild(img);
+    } else {
+      badge.textContent = rule.monogram;
+    }
+
+    el.style.display = 'inline-flex';
+    el.style.alignItems = 'center';
+    el.style.gap = '0.45rem';
+    el.style.flexWrap = 'wrap';
+    el.prepend(badge);
+  });
+
 });
